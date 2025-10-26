@@ -37,13 +37,7 @@ function NavBar() {
   };
 
   return (
-    <div 
-      className="md:sticky md:top-0 md:shadow-none z-[9999]"
-      style={{
-        transform: `translateY(${scrollY * 0.3}px)`,
-        transition: "transform 0.05s ease-out",
-      }}
-    >
+    <div className="md:sticky md:top-0 md:shadow-none z-[9999]">
       {/* DESKTOP */}
       <div 
         className="hidden lg:block animate-in fade-in zoom-in bg-background p-4 pt-0 pb-0 border-b border-b-superGray"
