@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import MainButton from "./MainButton";
 import Link from "next/link";
@@ -9,6 +9,15 @@ import { usePathname } from "next/navigation";
 function NavBar() {
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   
   const toggleMenu = () => {
     setMenu(!menu);
@@ -28,9 +37,22 @@ function NavBar() {
   };
 
   return (
-    <div className="md:sticky md:top-0 md:shadow-none z-[9999]">
+    <div 
+      className="md:sticky md:top-0 md:shadow-none z-[9999]"
+      style={{
+        transform: `translateY(${scrollY * 0.3}px)`,
+        transition: "transform 0.05s ease-out",
+      }}
+    >
       {/* DESKTOP */}
-      <div className="hidden lg:block animate-in fade-in zoom-in bg-background p-4 pt-0 pb-0 border-b border-b-superGray">
+      <div 
+        className="hidden lg:block animate-in fade-in zoom-in bg-background p-4 pt-0 pb-0 border-b border-b-superGray"
+        style={{
+          backdropFilter: scrollY > 50 ? "blur(12px)" : "none",
+          backgroundColor: scrollY > 50 ? "rgba(0, 0, 0, 0.8)" : "rgb(0, 0, 0)",
+          transition: "all 0.3s ease",
+        }}
+      >
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
