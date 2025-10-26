@@ -51,12 +51,12 @@ function NavBar() {
             >
               About Me
             </Link>
-            <p
-              onClick={() => scrollToSection("portfolio")}
+            <Link
+              href="/collections"
               className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
-              Portfolio
-            </p>
+              Collections
+            </Link>
             <p
               onClick={() => scrollToSection("services")}
               className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
@@ -133,9 +133,9 @@ function NavBar() {
               <Link href="/about" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 About Me
               </Link>
-              <p onClick={() => scrollToSection("portfolio")} className="text-white cursor-pointer">
-                Portfolio
-              </p>
+              <Link href="/collections" onClick={() => setMenu(false)} className="text-white cursor-pointer">
+                Collections
+              </Link>
               <p onClick={() => scrollToSection("services")} className="text-white cursor-pointer">
                 Services
               </p>
