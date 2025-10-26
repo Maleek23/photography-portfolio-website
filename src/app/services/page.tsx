@@ -5,7 +5,7 @@ import FooterSection from "@/components/sections/FooterSection";
 import { useState } from "react";
 
 export default function ServicesPage() {
-  const [activeTab, setActiveTab] = useState<"grad" | "solo">("grad");
+  const [activeTab, setActiveTab] = useState<"grad" | "solo" | "events">("grad");
 
   const gradPackages = [
     {
@@ -89,7 +89,46 @@ export default function ServicesPage() {
     },
   ];
 
-  const packages = activeTab === "grad" ? gradPackages : soloPackages;
+  const eventsPackages = [
+    {
+      name: "Bronze",
+      price: 300,
+      duration: "2 Hours",
+      features: [
+        "Event Coverage",
+        "50+ Edited Images",
+        "Candid & Posed Shots",
+      ],
+      accent: "#CD7F32",
+    },
+    {
+      name: "Silver",
+      price: 450,
+      duration: "3 Hours",
+      features: [
+        "Extended Coverage",
+        "100+ Edited Images",
+        "Candid & Posed Shots",
+        "30 sec Highlight Reel",
+      ],
+      popular: true,
+      accent: "#C0C0C0",
+    },
+    {
+      name: "Gold",
+      price: 650,
+      duration: "5 Hours",
+      features: [
+        "Full Event Coverage",
+        "150+ Edited Images",
+        "Candid & Posed Shots",
+        "1 min Highlight Reel",
+      ],
+      accent: "#FFD700",
+    },
+  ];
+
+  const packages = activeTab === "grad" ? gradPackages : activeTab === "solo" ? soloPackages : eventsPackages;
 
   return (
     <main className="bg-background">
@@ -127,6 +166,16 @@ export default function ServicesPage() {
               }`}
             >
               Solo
+            </button>
+            <button
+              onClick={() => setActiveTab("events")}
+              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
+                activeTab === "events"
+                  ? "border-primary text-white"
+                  : "border-transparent text-customGrayAlt hover:text-white"
+              }`}
+            >
+              Events
             </button>
           </div>
 
