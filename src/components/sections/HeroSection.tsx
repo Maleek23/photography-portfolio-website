@@ -12,9 +12,9 @@ function HeroSection() {
   return (
     <section className="relative">
       {/* Simple Clean Hero */}
-      <section className="flex justify-center items-center flex-col px-4 md:px-[6rem] py-[3rem] md:py-[4rem]">
+      <section className="flex justify-center items-center flex-col px-4 md:px-[6rem] py-[2rem] md:py-[2.5rem]">
         <div className="text-center max-w-5xl">
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-3 mb-3">
             <div className="h-[1px] w-12 bg-primary"></div>
             <p className="text-primary uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-widest">
               Stunning Creativity
@@ -22,7 +22,7 @@ function HeroSection() {
             <div className="h-[1px] w-12 bg-primary"></div>
           </div>
           
-          <h1 className="uppercase font-[700] text-[2.5rem] md:text-[4.5rem] text-white leading-[0.95] tracking-tight mb-4">
+          <h1 className="uppercase font-[700] text-[2.5rem] md:text-[4.5rem] text-white leading-[0.95] tracking-tight mb-3">
             {PORTFOLIO_OWNER_FULLNAME}
           </h1>
           
@@ -47,7 +47,7 @@ function HeroSection() {
       </section>
 
       {/* Hero Images */}
-      <section className="flex w-full md:px-[6rem] mt-[2rem]">
+      <section className="flex w-full md:px-[6rem] mt-[1rem]">
         <img
           src="/images/hero.png"
           className="hidden md:block grow"
