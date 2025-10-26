@@ -34,7 +34,7 @@ function PortfolioSection() {
   return (
     <section className="" id="portfolio">
       {/* Header with View All */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-5">
         <div className="flex items-baseline gap-4">
           <h2 className="text-white text-[2rem] md:text-[3rem] font-[600] uppercase">
             Collections

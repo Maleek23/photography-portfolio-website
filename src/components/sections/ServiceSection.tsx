@@ -20,7 +20,7 @@ function ServiceSection() {
   return (
     <section className="" id="services">
       {/* Header */}
-      <div className="mb-8">
+      <div className="mb-5">
         <h2 className="text-white text-[2rem] md:text-[3rem] font-[600] uppercase mb-2">
           Services
         </h2>
@@ -30,7 +30,7 @@ function ServiceSection() {
       </div>
 
       {/* Service Cards - Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         {services.map((service, index) => (
           <div
             key={index}
