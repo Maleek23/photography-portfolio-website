@@ -34,7 +34,7 @@ function NavBar() {
               className="cursor-pointer flex items-center py-2"
               onClick={scrollToTop}
             >
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4rem] object-contain" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[6.5rem] object-contain" />
             </div>
           </div>
           <div className="flex text-[16px] items-center select-none border border-superGray h-[4rem] rounded-t-[0.75rem] mt-[1rem]">
@@ -97,7 +97,7 @@ function NavBar() {
                 className="cursor-pointer flex items-center py-2"
                 onClick={scrollToTop}
               >
-                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3.5rem] object-contain" />
+                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[5.5rem] object-contain" />
               </div>
             </div>
           </div>
