@@ -15,6 +15,12 @@ function ServiceSection() {
       priceRange: "$185 - $400",
       features: ["Bronze through Platinum packages", "30 mins to 3 hours", "Up to 40+ edited images", "Cinematic clips available"],
     },
+    {
+      title: "Events/Concerts",
+      description: "Professional coverage for concerts, parties, and special events",
+      priceRange: "$100/hour",
+      features: ["Hourly rate", "All edited images included", "Candid & posed shots", "Quick turnaround"],
+    },
   ];
 
   return (
@@ -30,7 +36,7 @@ function ServiceSection() {
       </div>
 
       {/* Service Cards - Overview */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
         {services.map((service, index) => (
           <div
             key={index}
