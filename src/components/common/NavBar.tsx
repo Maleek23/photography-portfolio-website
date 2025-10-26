@@ -83,11 +83,12 @@ function NavBar() {
           <div className="flex items-center gap-[40px] select-none">
             <div className="flex gap-[2.5rem] items-center">
               <div className="text-2xl md:text-4xl font-extrabold uppercase text-white">
-                <MainButton 
-                  text="Contact Me" 
-                  action={() => scrollToSection("footer")}
-                  compact={true}
-                />
+                <Link href="/contact">
+                  <MainButton 
+                    text="Contact Me" 
+                    compact={true}
+                  />
+                </Link>
               </div>
               <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
             </div>
@@ -157,11 +158,12 @@ function NavBar() {
                 Services
               </Link>
               <div className="flex flex-col gap-[40px] select-none">
-                <MainButton 
-                  text="Contact Me" 
-                  classes="hover:bg-background" 
-                  action={() => scrollToSection("footer")}
-                />
+                <Link href="/contact" onClick={() => setMenu(false)}>
+                  <MainButton 
+                    text="Contact Me" 
+                    classes="hover:bg-background"
+                  />
+                </Link>
               </div>
             </div>
           </div>
