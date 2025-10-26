@@ -29,36 +29,36 @@ function NavBar() {
       <div className="hidden lg:block animate-in fade-in zoom-in bg-background p-4 pt-0 pb-0 border-b border-b-superGray">
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
-            <div className="flex border-r border-r-superGray self-stretch h-[7.15rem]"></div>
+            <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
             <div 
-              className="cursor-pointer h-[4rem] flex items-center"
+              className="cursor-pointer flex items-center py-2"
               onClick={scrollToTop}
             >
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3rem] object-contain" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4rem] object-contain" />
             </div>
           </div>
-          <div className="flex text-[16px] items-center select-none border border-superGray h-[5.34rem] rounded-t-[0.75rem] mt-[1.88rem]">
+          <div className="flex text-[16px] items-center select-none border border-superGray h-[4rem] rounded-t-[0.75rem] mt-[1rem]">
             <p
               onClick={scrollToTop}
-              className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[3.12rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               Home
             </p>
             <p
               onClick={() => scrollToSection("about")}
-              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[3.12rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               About Me
             </p>
             <p
               onClick={() => scrollToSection("portfolio")}
-              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[3.12rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               Portfolio
             </p>
             <p
               onClick={() => scrollToSection("services")}
-              className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[3.12rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
             >
               Services
             </p>
@@ -71,7 +71,7 @@ function NavBar() {
                   action={() => scrollToSection("footer")}
                 />
               </div>
-              <div className="flex border-r border-r-superGray self-stretch h-[7.15rem]"></div>
+              <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
             </div>
           </div>
         </div>
@@ -91,13 +91,13 @@ function NavBar() {
           >
             <div className="flex gap-4 items-center">
               {!menu && (
-                <div className="flex border-r border-r-superGray self-stretch h-[6.4rem]"></div>
+                <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
               )}
               <div 
-                className="cursor-pointer h-[3rem] flex items-center"
+                className="cursor-pointer flex items-center py-2"
                 onClick={scrollToTop}
               >
-                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[2.5rem] object-contain" />
+                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3.5rem] object-contain" />
               </div>
             </div>
           </div>
@@ -119,7 +119,7 @@ function NavBar() {
                     />
                   </div>
                   {!menu && (
-                    <div className="flex border-r border-r-superGray self-stretch h-[4.15rem] mr-3"></div>
+                    <div className="flex border-r border-r-superGray self-stretch h-[3.5rem] mr-3"></div>
                   )}
                 </div>
               </div>
