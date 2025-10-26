@@ -86,6 +86,7 @@ function NavBar() {
                 <MainButton 
                   text="Contact Me" 
                   action={() => scrollToSection("footer")}
+                  compact={true}
                 />
               </div>
               <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>

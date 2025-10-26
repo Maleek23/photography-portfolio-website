@@ -12,17 +12,18 @@ function FooterSection() {
           {/* Branding Section */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/">
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3rem] object-contain mb-3" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3rem] object-contain mb-4" />
             </Link>
-            <p className="text-customGrayAlt text-[0.75rem] leading-relaxed max-w-sm mb-4">
-              Self-taught HTX/DTX photographer, videographer, and visual artist capturing moments through a creative lens.
-            </p>
             <div>
-              <p className="text-white text-[0.75rem] font-[500] mb-1">Contact</p>
-              <a href="mailto:leekshotit@gmail.com" className="text-primary text-[0.75rem] hover:underline">
+              <p className="text-white text-[0.75rem] font-[500] mb-2">Contact</p>
+              <a href="mailto:leekshotit@gmail.com" className="flex items-center gap-2 text-primary text-[0.75rem] hover:underline mb-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
                 leekshotit@gmail.com
               </a>
-              <p className="text-customGrayAlt text-[0.75rem] mt-0.5">Texas, USA</p>
+              <p className="text-customGrayAlt text-[0.75rem]">Texas, USA</p>
             </div>
           </div>
 
