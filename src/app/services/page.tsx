@@ -91,40 +91,17 @@ export default function ServicesPage() {
 
   const eventsPackages = [
     {
-      name: "Bronze",
-      price: 300,
-      duration: "2 Hours",
+      name: "Hourly Rate",
+      price: 150,
+      duration: "Per Hour",
       features: [
-        "Event Coverage",
-        "50+ Edited Images",
+        "Professional Event Coverage",
+        "All Edited Images Included",
         "Candid & Posed Shots",
+        "Quick Turnaround",
       ],
-      accent: "#CD7F32",
-    },
-    {
-      name: "Silver",
-      price: 450,
-      duration: "3 Hours",
-      features: [
-        "Extended Coverage",
-        "100+ Edited Images",
-        "Candid & Posed Shots",
-        "30 sec Highlight Reel",
-      ],
+      accent: "#2563EB",
       popular: true,
-      accent: "#C0C0C0",
-    },
-    {
-      name: "Gold",
-      price: 650,
-      duration: "5 Hours",
-      features: [
-        "Full Event Coverage",
-        "150+ Edited Images",
-        "Candid & Posed Shots",
-        "1 min Highlight Reel",
-      ],
-      accent: "#FFD700",
     },
   ];
 
