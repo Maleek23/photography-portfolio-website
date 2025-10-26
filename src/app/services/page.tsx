@@ -16,7 +16,6 @@ export default function ServicesPage() {
         "1 Outfit & 2 Locations",
         "20 Edited Images",
       ],
-      color: "from-amber-700 to-amber-900",
     },
     {
       name: "Silver",
@@ -27,7 +26,6 @@ export default function ServicesPage() {
         "30 Edited Images",
         "15 sec Cinematic Clip",
       ],
-      color: "from-gray-400 to-gray-600",
       popular: true,
     },
     {
@@ -39,7 +37,6 @@ export default function ServicesPage() {
         "35+ Edited Images",
         "30-45 sec Cinematic Clip",
       ],
-      color: "from-yellow-500 to-yellow-700",
     },
   ];
 
@@ -52,7 +49,6 @@ export default function ServicesPage() {
         "1 Outfit & Location",
         "20 Edited Images",
       ],
-      color: "from-amber-700 to-amber-900",
     },
     {
       name: "Silver",
@@ -62,7 +58,6 @@ export default function ServicesPage() {
         "1-2 Outfits & Locations",
         "30 Edited Images",
       ],
-      color: "from-gray-400 to-gray-600",
       popular: true,
     },
     {
@@ -74,7 +69,6 @@ export default function ServicesPage() {
         "35+ Edited Images",
         "15 sec Cinematic Clip",
       ],
-      color: "from-yellow-500 to-yellow-700",
     },
     {
       name: "Platinum",
@@ -85,7 +79,6 @@ export default function ServicesPage() {
         "40+ Edited Images",
         "15-30 sec Cinematic Clip",
       ],
-      color: "from-primary to-blue-700",
     },
   ];
 
@@ -98,110 +91,99 @@ export default function ServicesPage() {
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
           {/* Header */}
           <div className="mb-12">
-            <h1 className="text-white text-[3rem] md:text-[5rem] font-[700] uppercase mb-4">
-              Services & Pricing
+            <h1 className="text-white text-[3rem] md:text-[4.5rem] font-[700] uppercase mb-4 tracking-tight">
+              Pricing
             </h1>
-            <p className="text-customGrayAlt text-[1.125rem] md:text-[1.25rem] max-w-3xl">
-              Professional photography packages for graduation and solo sessions. All packages include professional editing and digital delivery.
+            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] max-w-2xl">
+              Professional photography sessions with all images professionally edited and delivered digitally
             </p>
           </div>
 
-          {/* Tab Switcher */}
-          <div className="flex gap-4 mb-8">
+          {/* Tab Switcher - Minimal */}
+          <div className="flex gap-2 mb-12 border-b border-superGray">
             <button
               onClick={() => setActiveTab("grad")}
-              className={`px-6 py-3 rounded-lg font-[600] uppercase text-[0.875rem] transition-all ${
+              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
                 activeTab === "grad"
-                  ? "bg-primary text-white"
-                  : "bg-lightDark text-customGrayAlt hover:bg-superGray"
+                  ? "border-primary text-white"
+                  : "border-transparent text-customGrayAlt hover:text-white"
               }`}
             >
-              Grad Sessions
+              Graduation
             </button>
             <button
               onClick={() => setActiveTab("solo")}
-              className={`px-6 py-3 rounded-lg font-[600] uppercase text-[0.875rem] transition-all ${
+              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
                 activeTab === "solo"
-                  ? "bg-primary text-white"
-                  : "bg-lightDark text-customGrayAlt hover:bg-superGray"
+                  ? "border-primary text-white"
+                  : "border-transparent text-customGrayAlt hover:text-white"
               }`}
             >
-              Solo Sessions
+              Solo
             </button>
           </div>
 
-          {/* Pricing Cards */}
+          {/* Pricing Table - Clean */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`relative group bg-lightDark border-2 ${
+                className={`relative bg-background border ${
                   pkg.popular ? "border-primary" : "border-superGray"
-                } rounded-xl p-6 hover:border-primary transition-all duration-300 hover:scale-105`}
+                } rounded-lg overflow-hidden hover:border-primary transition-all duration-300`}
               >
-                {/* Popular Badge */}
+                {/* Popular Label - Minimal */}
                 {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-[0.75rem] font-[600] px-4 py-1 rounded-full uppercase">
-                    Popular
+                  <div className="absolute top-4 right-4 text-primary text-[0.625rem] font-[600] uppercase tracking-widest">
+                    Most Popular
                   </div>
                 )}
 
-                {/* Package Name with Gradient */}
-                <div className={`bg-gradient-to-r ${pkg.color} text-white text-center py-3 rounded-lg mb-4`}>
-                  <h3 className="text-[1.25rem] font-[700] uppercase tracking-wide">
+                <div className="p-8">
+                  {/* Package Name */}
+                  <h3 className="text-white text-[1rem] font-[500] uppercase tracking-wider mb-8">
                     {pkg.name}
                   </h3>
-                </div>
 
-                {/* Price */}
-                <div className="text-center mb-4">
-                  <span className="text-primary text-[0.875rem] font-[500]">$</span>
-                  <span className="text-white text-[3rem] font-[700] leading-none">{pkg.price}</span>
-                </div>
-
-                {/* Duration */}
-                <div className="text-center mb-6">
-                  <p className="text-customGrayAlt text-[0.875rem] uppercase tracking-wider">
-                    {pkg.duration}
-                  </p>
-                </div>
-
-                {/* Features */}
-                <div className="space-y-3 mb-6">
-                  {pkg.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-2">
-                      <span className="text-primary text-[1rem] mt-1">✓</span>
-                      <p className="text-customGrayAlt2 text-[0.875rem] leading-tight">
-                        {feature}
-                      </p>
+                  {/* Price */}
+                  <div className="mb-8">
+                    <div className="flex items-start mb-2">
+                      <span className="text-white text-[0.875rem] mt-2">$</span>
+                      <span className="text-white text-[3.5rem] font-[300] leading-none tracking-tight">{pkg.price}</span>
                     </div>
-                  ))}
-                </div>
+                    <p className="text-customGrayAlt text-[0.875rem]">{pkg.duration}</p>
+                  </div>
 
-                {/* Book Button */}
-                <a 
-                  href="mailto:leekshotit@gmail.com"
-                  className="block w-full bg-primary hover:bg-primary/80 text-white font-[600] py-3 rounded-lg uppercase text-[0.875rem] transition-all text-center"
-                >
-                  Book Now
-                </a>
+                  {/* Features */}
+                  <div className="space-y-3 mb-8 pt-6 border-t border-superGray">
+                    {pkg.features.map((feature, i) => (
+                      <div key={i} className="flex items-start gap-3">
+                        <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-customGrayAlt2 text-[0.875rem] leading-relaxed">
+                          {feature}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Book Button - Minimal */}
+                  <a
+                    href="mailto:leekshotit@gmail.com"
+                    className="block w-full text-center border border-primary text-primary hover:bg-primary hover:text-white font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all"
+                  >
+                    Book Session
+                  </a>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Additional Info */}
-          <div className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-[0.75rem] text-customGrayAlt">
-            <div className="flex items-center gap-2">
-              <span className="text-primary">•</span>
-              <p>50% deposit required</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-primary">•</span>
-              <p>3-9 day delivery</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-primary">•</span>
-              <p>$50 upcharge for 24hr delivery</p>
+          {/* Additional Info - Subtle */}
+          <div className="mt-12 pt-8 border-t border-superGray">
+            <div className="flex flex-wrap gap-x-12 gap-y-3 text-[0.875rem] text-customGrayAlt">
+              <p>50% deposit required for all bookings</p>
+              <p>3-9 day delivery time</p>
+              <p>$50 upcharge for 24-hour delivery</p>
             </div>
           </div>
         </div>
