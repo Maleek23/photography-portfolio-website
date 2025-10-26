@@ -92,7 +92,7 @@ export default function ServicesPage() {
   const eventsPackages = [
     {
       name: "Hourly Rate",
-      price: 150,
+      price: 100,
       duration: "Per Hour",
       features: [
         "Professional Event Coverage",
