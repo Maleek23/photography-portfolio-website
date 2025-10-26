@@ -73,12 +73,12 @@ function NavBar() {
             >
               Collections
             </Link>
-            <p
-              onClick={() => scrollToSection("services")}
+            <Link
+              href="/services"
               className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
             >
               Services
-            </p>
+            </Link>
           </div>
           <div className="flex items-center gap-[40px] select-none">
             <div className="flex gap-[2.5rem] items-center">
@@ -152,9 +152,9 @@ function NavBar() {
               <Link href="/collections" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Collections
               </Link>
-              <p onClick={() => scrollToSection("services")} className="text-white cursor-pointer">
+              <Link href="/services" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Services
-              </p>
+              </Link>
               <div className="flex flex-col gap-[40px] select-none">
                 <MainButton 
                   text="Contact Me" 
