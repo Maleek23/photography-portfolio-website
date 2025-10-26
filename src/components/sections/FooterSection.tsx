@@ -1,125 +1,65 @@
 import React from "react";
 import { Separator } from "../ui/separator";
 import Socials from "../common/Socials";
+import Link from "next/link";
 
 function FooterSection() {
-  const homeData = ["About Me", "My Works", "Testimonials"];
-  const clientData = ["KLOVESTO", "Nukeway", "Cloven's", "MenVol"];
-  const portfolioData = [
-    "Events",
-    "Portrait",
-    "Branding",
-    "Commerciale",
-    "Wedding",
-  ];
-  const servicesData = ["Portraits", "Events", "Commercial"];
   return (
-    <section id="footer">
-      <div className="flex justify-between">
-        <div className="pt-4 md:pt-[5rem] hidden xl:block">
-          <img src="/images/stylish_e.png" alt="stylish e symbol left" />
-        </div>
-        <div className="border-x border-x-lightDark flex-grow flex justify-between flex-col lg:flex-row">
-          <div className="p-4 md:p-[5rem]">
-            <p className="text-customGrayAlt text-[1.25rem] mb-16 font-[600]">
-              A more meaningful home for photography
+    <section id="footer" className="bg-background">
+      {/* Main Footer Content */}
+      <div className="border-t border-lightDark px-4 md:px-[6rem] py-8 md:py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Branding Section */}
+          <div className="col-span-1 md:col-span-2">
+            <Link href="/">
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4rem] object-contain mb-4" />
+            </Link>
+            <p className="text-customGrayAlt text-[0.875rem] leading-relaxed max-w-sm">
+              Self-taught HTX/DTX photographer, videographer, and visual artist capturing moments through a creative lens.
             </p>
-            <div className="mt-[1.25rem] md:mt-[0]">
-              <div className="flex gap-2">
-                <p className="text-[1.75rem] md:text-[3.625rem] text-white font-[600]">
-                  Let&apos;s
-                </p>
-                <img
-                  src="/images/arrow_purple_button.png"
-                  alt="arrow purple button"
-                />
-              </div>
-              <div className="text-[1.75rem] md:text-[3.625rem] text-white font-[600]">
-                Work Together
-              </div>
+            <div className="mt-6">
+              <p className="text-white text-[0.875rem] font-[500] mb-2">Contact</p>
+              <a href="mailto:leekshotit@gmail.com" className="text-primary text-[0.875rem] hover:underline">
+                leekshotit@gmail.com
+              </a>
+              <p className="text-customGrayAlt text-[0.875rem] mt-1">Texas, USA</p>
             </div>
           </div>
-          <div className="flex justify-between flex-wrap gap-8 w-full p-4 md:p-[5rem]">
-            <div>
-              <p className="uppercase mb-[1.63rem] text-customGrayAlt text-[1.125rem] font-[600]">
-                Home
-              </p>
-              {homeData.map((item, index) => (
-                <div className="mb-[1.13rem]" key={index}>
-                  <p className="uppercase text-[#F2F2F3] text-[1.125rem] font-[600]  cursor-pointer">
-                    {item}
-                  </p>
-                  <div className="w-[6rem]">
-                    <Separator className="bg-superGray h-[2px]" />
-                  </div>
-                </div>
-              ))}
-            </div>
 
-            <div>
-              <p className="uppercase mb-[1.63rem] text-customGrayAlt text-[1.125rem] font-[600]">
-                Clients
-              </p>
-              {clientData.map((item, index) => (
-                <div className="mb-[1.13rem]" key={index}>
-                  <p className="uppercase text-[#F2F2F3] text-[1.125rem] font-[600]  cursor-pointer">
-                    {item}
-                  </p>
-                  <div className="w-[6rem]">
-                    <Separator className="bg-superGray h-[2px]" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div>
-              <p className="uppercase mb-[1.63rem] text-customGrayAlt text-[1.125rem] font-[600]">
-                Portfolio
-              </p>
-              {portfolioData.map((item, index) => (
-                <div className="mb-[1.13rem]" key={index}>
-                  <p className="uppercase text-[#F2F2F3] text-[1.125rem] font-[600]  cursor-pointer">
-                    {item}
-                  </p>
-                  <div className="w-[6rem]">
-                    <Separator className="bg-superGray h-[2px]" />
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div>
-              <p className="uppercase mb-[1.63rem] text-customGrayAlt text-[1.125rem] font-[600]">
-                Services
-              </p>
-              {servicesData.map((item, index) => (
-                <div className="mb-[1.13rem]" key={index}>
-                  <p className="uppercase text-[#F2F2F3] text-[1.125rem] font-[600]  cursor-pointer">
-                    {item}
-                  </p>
-                  <div className="w-[6rem]">
-                    <Separator className="bg-superGray h-[2px]" />
-                  </div>
-                </div>
-              ))}
+          {/* Quick Links */}
+          <div>
+            <p className="uppercase mb-4 text-white text-[0.875rem] font-[600]">Quick Links</p>
+            <div className="flex flex-col gap-2">
+              <Link href="/" className="text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Home</Link>
+              <Link href="/about" className="text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">About Me</Link>
+              <Link href="/collections" className="text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Collections</Link>
+              <a href="#services" className="text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Services</a>
             </div>
           </div>
-        </div>
-        <div className="pt-4 md:pt-[5rem] hidden xl:block">
-          <img src="/images/stylish_e_right.png" alt="stylish e symbol right" />
+
+          {/* Collections */}
+          <div>
+            <p className="uppercase mb-4 text-white text-[0.875rem] font-[600]">Collections</p>
+            <div className="flex flex-col gap-2">
+              <p className="text-customGrayAlt text-[0.875rem]">Portraits</p>
+              <p className="text-customGrayAlt text-[0.875rem]">Graduation</p>
+              <p className="text-customGrayAlt text-[0.875rem]">Creative Projects</p>
+              <p className="text-customGrayAlt text-[0.875rem]">Concerts/Events</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div className="px-4 md:px-[10rem] border-t py-[1.25rem] border-lightDark text-customGrayAlt text-[1.125rem] flex justify-between flex-col gap-4 xl:flex-row items-center">
-        <div className="flex gap-3 items-center">
-          <p>Terms & Conditions</p>
-          <Separator
-            orientation="vertical"
-            className="h-[1.3125rem] bg-lightDark"
-          />
-          <p>Privacy Policy</p>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-lightDark px-4 md:px-[6rem] py-4">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[0.75rem]">
+          <p className="text-customGrayAlt">© 2024 Leekshotit Photography. All rights reserved.</p>
+          <Socials />
+          <div className="flex gap-4 text-customGrayAlt">
+            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">Terms & Conditions</a>
+          </div>
         </div>
-        <Socials />
-        <p>© 2024 Leekshotit Photography. All rights reserved.</p>
       </div>
     </section>
   );
