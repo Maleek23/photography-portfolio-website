@@ -1,5 +1,4 @@
 import NavBar from "@/components/common/NavBar";
-import AboutSection from "@/components/sections/AboutSection";
 import FooterSection from "@/components/sections/FooterSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
@@ -13,7 +12,6 @@ export default function Home() {
       <div className="pt-[10rem] lg:pt-0">
         <HeroSection />
         <div className="px-4 md:px-[6rem] flex flex-col gap-[5rem] md:gap-[12.5rem] mt-[5rem] md:mt-[12.5rem]">
-          <AboutSection />
           <ServiceSection />
           <PortfolioSection />
           <TestimonialSection />
