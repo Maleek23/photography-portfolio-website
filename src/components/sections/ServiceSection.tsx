@@ -181,28 +181,19 @@ function ServiceSection() {
         ))}
       </div>
 
-      {/* Additional Info */}
-      <div className="mt-8 bg-lightDark border border-superGray rounded-lg p-6">
-        <h4 className="text-white text-[1.125rem] font-[600] mb-4">Important Information</h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-[0.875rem]">
-          <div className="flex items-start gap-2">
-            <span className="text-primary">•</span>
-            <p className="text-customGrayAlt2">
-              <span className="text-white font-[500]">50% deposit</span> required for all bookings
-            </p>
-          </div>
-          <div className="flex items-start gap-2">
-            <span className="text-primary">•</span>
-            <p className="text-customGrayAlt2">
-              <span className="text-white font-[500]">3-9 day</span> delivery time
-            </p>
-          </div>
-          <div className="flex items-start gap-2">
-            <span className="text-primary">•</span>
-            <p className="text-customGrayAlt2">
-              <span className="text-white font-[500]">$50 upcharge</span> for 24-hour delivery
-            </p>
-          </div>
+      {/* Additional Info - Subtle */}
+      <div className="mt-6 flex flex-wrap gap-x-8 gap-y-2 text-[0.75rem] text-customGrayAlt">
+        <div className="flex items-center gap-2">
+          <span className="text-primary">•</span>
+          <p>50% deposit required</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-primary">•</span>
+          <p>3-9 day delivery</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="text-primary">•</span>
+          <p>$50 upcharge for 24hr delivery</p>
         </div>
       </div>
     </section>
