@@ -48,7 +48,7 @@ function HeroSection() {
       {/* Hero Content with Glass Morphism */}
       <section 
         ref={heroRef}
-        className="relative flex justify-center items-center flex-col px-4 md:px-[6rem] py-[2rem] md:py-[2.5rem] min-h-[60vh]"
+        className="relative flex justify-center items-center flex-col px-4 md:px-[6rem] py-[1rem] md:py-[1.5rem]"
         style={{
           transform: `translateY(${scrollY * 0.2}px)`,
         }}
@@ -61,7 +61,7 @@ function HeroSection() {
           }}
         >
           {/* Glass Card Container */}
-          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+          <div className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 shadow-2xl">
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-primary/10 rounded-3xl opacity-50" />
             
