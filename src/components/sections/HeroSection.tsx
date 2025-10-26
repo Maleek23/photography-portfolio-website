@@ -67,16 +67,16 @@ function HeroSection() {
             
             {/* Content */}
             <div className="relative z-10">
-              <div className="flex items-center justify-center gap-3 mb-3">
-                <div className="h-[1px] w-12 bg-primary shadow-lg shadow-primary/50"></div>
-                <p className="text-primary uppercase text-[0.875rem] md:text-[1rem] font-[600] tracking-widest drop-shadow-lg">
+              <div className="flex items-center justify-center gap-3 mb-2">
+                <div className="h-[1px] w-10 bg-primary shadow-lg shadow-primary/50"></div>
+                <p className="text-primary uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-widest drop-shadow-lg">
                   Stunning Creativity
                 </p>
-                <div className="h-[1px] w-12 bg-primary shadow-lg shadow-primary/50"></div>
+                <div className="h-[1px] w-10 bg-primary shadow-lg shadow-primary/50"></div>
               </div>
               
               <h1 
-                className="uppercase font-[700] text-[2.75rem] md:text-[5.5rem] text-white leading-[0.95] tracking-tight"
+                className="uppercase font-[700] text-[2rem] md:text-[3.5rem] text-white leading-[0.95] tracking-tight"
                 style={{
                   textShadow: "0 0 40px rgba(37, 99, 235, 0.5), 0 4px 20px rgba(0, 0, 0, 0.8)",
                   transform: `translateZ(20px)`,
@@ -86,7 +86,7 @@ function HeroSection() {
               </h1>
               
               <p 
-                className="text-customGrayAlt text-[0.875rem] md:text-[1rem] font-[400] mt-3 tracking-wide"
+                className="text-customGrayAlt text-[0.75rem] md:text-[0.875rem] font-[400] mt-2 tracking-wide"
                 style={{
                   transform: `translateZ(10px)`,
                 }}
