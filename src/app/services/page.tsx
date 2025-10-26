@@ -16,6 +16,7 @@ export default function ServicesPage() {
         "1 Outfit & 2 Locations",
         "20 Edited Images",
       ],
+      accent: "#CD7F32",
     },
     {
       name: "Silver",
@@ -27,6 +28,7 @@ export default function ServicesPage() {
         "15 sec Cinematic Clip",
       ],
       popular: true,
+      accent: "#C0C0C0",
     },
     {
       name: "Gold",
@@ -37,6 +39,7 @@ export default function ServicesPage() {
         "35+ Edited Images",
         "30-45 sec Cinematic Clip",
       ],
+      accent: "#FFD700",
     },
   ];
 
@@ -49,6 +52,7 @@ export default function ServicesPage() {
         "1 Outfit & Location",
         "20 Edited Images",
       ],
+      accent: "#CD7F32",
     },
     {
       name: "Silver",
@@ -59,6 +63,7 @@ export default function ServicesPage() {
         "30 Edited Images",
       ],
       popular: true,
+      accent: "#C0C0C0",
     },
     {
       name: "Gold",
@@ -69,6 +74,7 @@ export default function ServicesPage() {
         "35+ Edited Images",
         "15 sec Cinematic Clip",
       ],
+      accent: "#FFD700",
     },
     {
       name: "Platinum",
@@ -79,6 +85,7 @@ export default function ServicesPage() {
         "40+ Edited Images",
         "15-30 sec Cinematic Clip",
       ],
+      accent: "#2563EB",
     },
   ];
 
@@ -130,7 +137,11 @@ export default function ServicesPage() {
                 key={index}
                 className={`relative bg-background border ${
                   pkg.popular ? "border-primary" : "border-superGray"
-                } rounded-lg overflow-hidden hover:border-primary transition-all duration-300`}
+                } rounded-lg overflow-hidden transition-all duration-300`}
+                style={{
+                  borderTopColor: pkg.accent,
+                  borderTopWidth: '3px',
+                }}
               >
                 {/* Popular Label - Minimal */}
                 {pkg.popular && (
@@ -141,7 +152,10 @@ export default function ServicesPage() {
 
                 <div className="p-8">
                   {/* Package Name */}
-                  <h3 className="text-white text-[1rem] font-[500] uppercase tracking-wider mb-8">
+                  <h3 
+                    className="text-[1rem] font-[500] uppercase tracking-wider mb-8"
+                    style={{ color: pkg.accent }}
+                  >
                     {pkg.name}
                   </h3>
 
@@ -158,7 +172,10 @@ export default function ServicesPage() {
                   <div className="space-y-3 mb-8 pt-6 border-t border-superGray">
                     {pkg.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
-                        <div className="w-1 h-1 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        <div 
+                          className="w-1 h-1 rounded-full mt-2 flex-shrink-0"
+                          style={{ backgroundColor: pkg.accent }}
+                        ></div>
                         <p className="text-customGrayAlt2 text-[0.875rem] leading-relaxed">
                           {feature}
                         </p>
@@ -169,7 +186,11 @@ export default function ServicesPage() {
                   {/* Book Button - Minimal */}
                   <a
                     href="mailto:leekshotit@gmail.com"
-                    className="block w-full text-center border border-primary text-primary hover:bg-primary hover:text-white font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all"
+                    className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10"
+                    style={{ 
+                      borderColor: pkg.accent,
+                      color: pkg.accent,
+                    }}
                   >
                     Book Session
                   </a>
