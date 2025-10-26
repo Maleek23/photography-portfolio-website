@@ -3,9 +3,13 @@
 import { useState } from "react";
 import { X } from "lucide-react";
 import MainButton from "./MainButton";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
+  const pathname = usePathname();
+  
   const toggleMenu = () => {
     setMenu(!menu);
   };
@@ -30,26 +34,23 @@ function NavBar() {
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
-            <div 
-              className="cursor-pointer flex items-center py-2"
-              onClick={scrollToTop}
-            >
+            <Link href="/" className="cursor-pointer flex items-center py-2">
               <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[6.5rem] object-contain" />
-            </div>
+            </Link>
           </div>
           <div className="flex text-[16px] items-center select-none border border-superGray h-[4rem] rounded-t-[0.75rem] mt-[1rem]">
-            <p
-              onClick={scrollToTop}
+            <Link
+              href="/"
               className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               Home
-            </p>
-            <p
-              onClick={() => scrollToSection("about")}
+            </Link>
+            <Link
+              href="/about"
               className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               About Me
-            </p>
+            </Link>
             <p
               onClick={() => scrollToSection("portfolio")}
               className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
@@ -93,12 +94,9 @@ function NavBar() {
               {!menu && (
                 <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
               )}
-              <div 
-                className="cursor-pointer flex items-center py-2"
-                onClick={scrollToTop}
-              >
+              <Link href="/" className="cursor-pointer flex items-center py-2">
                 <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[5.5rem] object-contain" />
-              </div>
+              </Link>
             </div>
           </div>
           <div className="flex items-center gap-[40px]">
@@ -129,12 +127,12 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              <p onClick={scrollToTop} className="text-white cursor-pointer">
+              <Link href="/" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Home
-              </p>
-              <p onClick={() => scrollToSection("about")} className="text-white cursor-pointer">
+              </Link>
+              <Link href="/about" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 About Me
-              </p>
+              </Link>
               <p onClick={() => scrollToSection("portfolio")} className="text-white cursor-pointer">
                 Portfolio
               </p>
