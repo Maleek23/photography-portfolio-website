@@ -49,12 +49,12 @@ function NavBar() {
       >
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
-            <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
+            <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
             <Link href="/" className="cursor-pointer flex items-center py-2">
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[6.5rem] object-contain" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4.5rem] object-contain" />
             </Link>
           </div>
-          <div className="flex text-[16px] items-center select-none border border-superGray h-[4rem] rounded-t-[0.75rem] mt-[1rem]">
+          <div className="flex text-[16px] items-center select-none border border-superGray h-[3rem] rounded-t-[0.75rem] mt-[0.5rem]">
             <Link
               href="/"
               className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
@@ -88,7 +88,7 @@ function NavBar() {
                   action={() => scrollToSection("footer")}
                 />
               </div>
-              <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
+              <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
             </div>
           </div>
         </div>
