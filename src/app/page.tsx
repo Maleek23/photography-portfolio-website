@@ -12,8 +12,8 @@ export default function Home() {
       <div className="pt-[10rem] lg:pt-0">
         <HeroSection />
         <div className="px-4 md:px-[6rem] flex flex-col gap-[5rem] md:gap-[12.5rem] mt-[5rem] md:mt-[12.5rem]">
-          <ServiceSection />
           <PortfolioSection />
+          <ServiceSection />
           <TestimonialSection />
         </div>
 
