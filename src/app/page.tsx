@@ -1,9 +1,7 @@
 import NavBar from "@/components/common/NavBar";
 import AboutSection from "@/components/sections/AboutSection";
-import FaqSection from "@/components/sections/FaqSection";
 import FooterSection from "@/components/sections/FooterSection";
 import HeroSection from "@/components/sections/HeroSection";
-import LargeTextSection from "@/components/sections/LargeTextSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import ServiceSection from "@/components/sections/ServiceSection";
 import TestimonialSection from "@/components/sections/TestimonialSection";
@@ -18,11 +16,9 @@ export default function Home() {
           <AboutSection />
           <ServiceSection />
           <PortfolioSection />
-          <FaqSection />
           <TestimonialSection />
         </div>
 
-        <LargeTextSection />
         <FooterSection />
       </div>
     </main>

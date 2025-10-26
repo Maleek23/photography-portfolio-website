@@ -14,7 +14,7 @@ function FooterSection() {
   ];
   const servicesData = ["Portraits", "Events", "Commercial"];
   return (
-    <section>
+    <section id="footer">
       <div className="flex justify-between">
         <div className="pt-4 md:pt-[5rem] hidden xl:block">
           <img src="/images/stylish_e.png" alt="stylish e symbol left" />
@@ -119,7 +119,7 @@ function FooterSection() {
           <p>Privacy Policy</p>
         </div>
         <Socials />
-        <p>© 2024 Damien Braun Photography. All rights reserved.</p>
+        <p>© 2024 Leekshotit Photography. All rights reserved.</p>
       </div>
     </section>
   );
