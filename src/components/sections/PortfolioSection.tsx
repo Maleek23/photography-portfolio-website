@@ -7,25 +7,25 @@ function PortfolioSection() {
   const portfolioData = [
     {
       id: 0,
-      title: "Creative & Concept",
+      title: "Portraits",
       count: "24",
       imageUrl: "/images/lady_1.png",
     },
     {
       id: 1,
-      title: "Fashion & Portrait",
+      title: "Graduation",
       count: "18",
       imageUrl: "/images/lady_2.png",
     },
     {
       id: 2,
-      title: "Events",
+      title: "Creative Projects",
       count: "32",
       imageUrl: "/images/box.png",
     },
     {
       id: 3,
-      title: "Commercial",
+      title: "Concerts/Events",
       count: "15",
       imageUrl: "/images/hero.png",
     },

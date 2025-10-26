@@ -3,10 +3,10 @@ import React from "react";
 
 function HeroSection() {
   const categories = [
-    "CREATIVE & CONCEPT",
-    "FASHION & PORTRAIT", 
-    "EVENTS",
-    "COMMERCIAL",
+    "PORTRAITS",
+    "GRADUATION", 
+    "CREATIVE PROJECTS",
+    "CONCERTS/EVENTS",
   ];
 
   return (
