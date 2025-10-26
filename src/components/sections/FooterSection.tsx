@@ -12,7 +12,7 @@ function FooterSection() {
           {/* Branding Section */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/">
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[3rem] object-contain mb-4" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4.5rem] object-contain mb-4" />
             </Link>
             <div>
               <p className="text-white text-[0.75rem] font-[500] mb-2">Contact</p>

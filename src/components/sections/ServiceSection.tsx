@@ -62,7 +62,7 @@ function ServiceSection() {
       </div>
 
       {/* View All Button */}
-      <div className="text-center">
+      <div className="text-center mt-8">
         <Link
           href="/services"
           className="inline-block bg-primary hover:bg-primary/80 text-white font-[600] px-8 py-4 rounded-lg uppercase text-[0.875rem] transition-all"
