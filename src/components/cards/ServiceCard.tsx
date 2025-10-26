@@ -48,7 +48,7 @@ function ServiceCard() {
       <div>
         <img
           src="/images/damien_2.png"
-          alt="damien on stage"
+          alt="Malik at event"
           className="rounded-[1.25rem] rounded-bl-[6.25rem]"
         />
       </div>

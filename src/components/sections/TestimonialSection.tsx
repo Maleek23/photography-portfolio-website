@@ -1,7 +1,5 @@
 import React from "react";
 import Header from "../common/Header";
-import MainButton from "../common/MainButton";
-import { ArrowRight } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import TestimonialCard from "../cards/TestimonialCard";
 
@@ -10,23 +8,23 @@ function TestimonialSection() {
     {
       id: 0,
       name: "Emily Johnson",
-      country: "USA, California",
+      country: "USA, Texas",
       review:
-        "Damien's photography doesn't just capture moments; it captures emotions. Hes work is simply mesmerizing.",
+        "Malik's photography doesn't just capture moments; it captures emotions. His work is simply mesmerizing.",
     },
     {
       id: 1,
       name: "John Smith",
-      country: "USA, California",
+      country: "USA, Texas",
       review:
-        "Damien's photography doesn't just capture moments; it captures emotions. Hes work is simply mesmerizing.",
+        "Malik's photography doesn't just capture moments; it captures emotions. His work is simply mesmerizing.",
     },
     {
       id: 2,
       name: "Samantha",
-      country: "USA, California",
+      country: "USA, Texas",
       review:
-        "I was blown away by Damien's ability to capture the essence of our wedding day. Hes photographs are our cherished memories.",
+        "I was blown away by Malik's ability to capture the essence of our wedding day. His photographs are our cherished memories.",
     },
   ];
   return (
@@ -40,25 +38,6 @@ function TestimonialSection() {
       <section className="flex justify-between gap-[1.25rem]">
         <div>
           <Header title="Total Reviews" description="323" isSmall />
-        </div>
-        <div className="flex items-center gap-8">
-          <div className="hidden lg:inline-flex border border-lightDark rounded-[6.25rem]  justify-between p-[0.62rem] gap-4 w-[170px]">
-            <img
-              src="/images/left_icon.png"
-              alt="facebook icon"
-              className="cursor-pointer"
-            />
-            <img
-              src="/images/right_icon.png"
-              alt="x icon"
-              className="cursor-pointer"
-            />
-          </div>
-          <MainButton
-            text="View All Testimonials"
-            rightIconComponent={<ArrowRight />}
-            classes="w-[15.12rem]"
-          />
         </div>
       </section>
       <Separator className="bg-lightDark my-8 mb-[2.5rem] md:mb-[5rem]" />
