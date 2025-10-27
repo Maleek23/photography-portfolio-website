@@ -1,11 +1,13 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import Link from "next/link";
 
 export default function CollectionsPage() {
   const collections = [
     {
       id: 0,
       title: "Portraits",
+      slug: "portraits",
       description: "Capturing personality, style, and the essence of individuals",
       count: "24 Projects",
       imageUrl: "/images/lady_1.png",
@@ -13,6 +15,7 @@ export default function CollectionsPage() {
     {
       id: 1,
       title: "Graduation",
+      slug: "graduation",
       description: "Documenting milestone moments and celebrating achievements",
       count: "18 Projects",
       imageUrl: "/images/lady_2.png",
@@ -20,6 +23,7 @@ export default function CollectionsPage() {
     {
       id: 2,
       title: "Creative Projects",
+      slug: "creative-projects",
       description: "Pushing boundaries through experimental and conceptual photography",
       count: "32 Projects",
       imageUrl: "/images/box.png",
@@ -27,6 +31,7 @@ export default function CollectionsPage() {
     {
       id: 3,
       title: "Concerts/Events",
+      slug: "concerts-events",
       description: "Live music, performances, and unforgettable experiences",
       count: "15 Projects",
       imageUrl: "/images/hero.png",
@@ -49,8 +54,9 @@ export default function CollectionsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {collections.map((collection) => (
-              <div
+              <Link
                 key={collection.id}
+                href={`/collections/${collection.slug}`}
                 className="group relative overflow-hidden rounded-lg cursor-pointer aspect-[4/3] bg-lightDark border border-superGray hover:border-primary transition-all duration-300"
               >
                 <img
@@ -71,7 +77,7 @@ export default function CollectionsPage() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

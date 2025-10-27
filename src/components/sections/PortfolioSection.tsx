@@ -8,24 +8,28 @@ function PortfolioSection() {
     {
       id: 0,
       title: "Portraits",
+      slug: "portraits",
       count: "24",
       imageUrl: "/images/lady_1.png",
     },
     {
       id: 1,
       title: "Graduation",
+      slug: "graduation",
       count: "18",
       imageUrl: "/images/lady_2.png",
     },
     {
       id: 2,
       title: "Creative Projects",
+      slug: "creative-projects",
       count: "32",
       imageUrl: "/images/box.png",
     },
     {
       id: 3,
       title: "Concerts/Events",
+      slug: "concerts-events",
       count: "15",
       imageUrl: "/images/hero.png",
     },
@@ -58,7 +62,7 @@ function PortfolioSection() {
             {portfolioData.map((item) => (
               <Link
                 key={item.id}
-                href="/collections"
+                href={`/collections/${item.slug}`}
                 className="group relative overflow-hidden rounded-lg cursor-pointer w-[280px] md:w-[320px] aspect-[3/4] bg-lightDark flex-shrink-0 border border-transparent hover:border-primary transition-all duration-300"
               >
                 <img
