@@ -1,8 +1,8 @@
-# Photography Portfolio Website
+# Leekshotit Photography Portfolio Website
 
 ## Overview
 
-This is a modern photography portfolio website showcasing the work of photographer Damien Braun. Built with Next.js 14, the application features a responsive, dark-themed design that highlights photography services, portfolio work, client testimonials, and contact information. The site serves as a professional online presence for a photographer, allowing visitors to explore various photography categories including events, portraits, branding, commercial work, and weddings.
+This is a modern photography portfolio website showcasing the work of photographer Abdulmalik Ajisegiri (Leekshotit brand), a self-taught HTX/DTX photographer, videographer, and artist. Built with Next.js 14, the application features a clean, minimalist, professional dark-themed design with blue accents (#2563EB) that puts the photography work front and center. The site serves as a comprehensive online presence featuring four main photography categories: Portraits, Graduation, Creative Projects, and Concerts/Events.
 
 ## User Preferences
 
@@ -24,11 +24,12 @@ Preferred communication style: Simple, everyday language.
 - **UI Primitives** (`src/components/ui/`): Shadcn-based components for Accordion, Button, and Separator
 
 **Styling Approach**: Utility-first CSS with Tailwind CSS
-- Custom color palette defined in `tailwind.config.ts` featuring primary purple (#4A2CED), dark backgrounds, and various gray tones
-- Tailwind CSS with custom theme extensions for brand-specific colors
+- Custom color palette defined in `tailwind.config.ts` featuring primary blue (#2563EB), dark backgrounds, and various gray tones
+- Tailwind CSS with custom theme extensions for brand-specific colors (Leekshotit blue)
 - Dark mode enabled via class-based strategy
 - Responsive design using Tailwind's responsive modifiers (md:, lg:, xl:)
-- Custom animations for accordion interactions
+- Clean, minimalist, professional design with subtle sophisticated color accents
+- Custom animations for accordion interactions and hover effects
 
 **Typography**: Google Fonts integration
 - Manrope font family loaded with weights 400, 500, and 600
@@ -36,9 +37,11 @@ Preferred communication style: Simple, everyday language.
 
 **Design Philosophy**:
 - Mobile-first responsive design approach
-- Dark theme throughout with purple accents
+- Dark theme throughout with blue (#2563EB) accents
+- Clean, minimalist, professional design - photography-focused, not busy
 - Grid-based layouts that adapt from single column (mobile) to multi-column (desktop)
 - Image-heavy presentation suitable for portfolio showcase
+- Sophisticated color-coded pricing tiers (bronze/copper, silver/gray, gold, platinum/blue)
 
 ### Component Design Patterns
 
@@ -56,11 +59,13 @@ Preferred communication style: Simple, everyday language.
 
 ### Data Management
 
-**Content Strategy**: Hardcoded data within components
-- Static portfolio items, testimonials, FAQs, and service information defined as JavaScript arrays
-- Constants file (`src/lib/constant.ts`) for portfolio owner information
+**Content Strategy**: Hardcoded data within components and dedicated data files
+- Static portfolio items, service information defined in components
+- Blog content in dedicated data file (`src/lib/blogData.ts`) with 4 sample posts
+- Portfolio category data with photo arrays for each collection
+- Constants file (`src/lib/constant.ts`) for photographer information (Leekshotit brand)
 - No database or CMS integration in current implementation
-- All images served statically from public directory
+- All images served statically from public directory (currently placeholder images)
 
 **Rationale**: Chosen for simplicity as portfolio content changes infrequently. Future enhancement could add a headless CMS for easier content updates without code changes.
 
@@ -70,10 +75,16 @@ Preferred communication style: Simple, everyday language.
 
 ### Navigation & Routing
 
-**Single Page Application**: All content on homepage (`src/app/page.tsx`)
-- No multi-page routing implemented
-- Smooth scrolling sections instead of separate pages
-- Simple navigation structure suitable for portfolio presentation
+**Multi-Page Application**: Full site structure with dedicated pages
+- **Home** (`/`): Hero section, collections preview, services overview
+- **About** (`/about`): Photographer bio and story
+- **Collections** (`/collections`): Overview of all 4 photography categories
+  - **Individual Category Pages** (`/collections/[category]`): Detailed photo galleries for each category (Portraits, Graduation, Creative Projects, Concerts/Events) with lightbox functionality
+- **Blog** (`/blog`): Blog listing page with photography tips and behind-the-scenes content
+  - **Individual Blog Posts** (`/blog/[slug]`): Full article pages with related posts
+- **Services** (`/services`): Comprehensive pricing page with 3 session types and booking form
+- **Contact** (`/contact`): Contact form and photographer information
+- Navigation menu includes: Home, About Me, Collections, Blog, Services, Contact Me (button)
 
 ### Performance Optimizations
 
@@ -139,6 +150,35 @@ Preferred communication style: Simple, everyday language.
 - No user authentication or dynamic data fetching
 - Future enhancements could add a database for dynamic portfolio management or contact form submissions
 
-**No API Routes**: No backend functionality currently implemented
-- Could add Next.js API routes for contact form handling
-- Could integrate with email services (SendGrid, Mailgun) for contact functionality
+**API Routes**: Basic API routes for form submissions
+- Contact form API route (`/api/contact/route.ts`) - currently logging to console
+- Booking form API route (`/api/booking/route.ts`) - currently logging to console
+- Email service integration pending (Resend, SendGrid, or Replit Mail recommended)
+- Forms are functional but need email service setup to send actual emails
+
+## Site Features
+
+### Photography Collections
+- **4 Main Categories**: Portraits, Graduation, Creative Projects, Concerts/Events
+- **Individual Gallery Pages**: Each category has its own page with 9-12 photos in a responsive grid
+- **Lightbox Viewer**: Click any photo to view full-screen with overlay and close button
+- **Portfolio Navigation**: Clickable cards on homepage and collections page link to individual galleries
+
+### Pricing & Services
+- **Graduation Sessions**: Bronze ($220), Silver ($310), Gold ($400)
+- **Solo Sessions**: Bronze ($185), Silver ($220), Gold ($310), Platinum ($400)
+- **Events/Concerts**: $100/hour
+- **Pricing Details**: 50% deposit required, 3-9 day delivery, $50 upcharge for 24hr rush delivery
+- **Color-Coded Tiers**: Bronze (#CD7F32), Silver (#C0C0C0), Gold (#FFD700), Platinum (#2563EB blue)
+- **Booking Form**: Comprehensive form on services page with session type, package tier, date picker, and details
+
+### Blog Section
+- **Blog Listing Page** (`/blog`): Shows all blog posts in 2-column grid with featured images
+- **Sample Content**: 4 blog posts covering photography tips, lighting techniques, graduation sessions, and creative projects
+- **Individual Post Pages**: Full article layout with featured image, content, and related posts section
+- **Categories**: Photography Tips, Lighting, Session Planning, Behind the Scenes
+
+### Contact & Forms
+- **Contact Page**: General inquiry form with name, email, phone, message fields
+- **Services Booking Form**: Detailed booking form with session type, package selection, date picker
+- **Forms Status**: Both forms functional with API routes but email service integration pending
