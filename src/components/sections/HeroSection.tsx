@@ -46,53 +46,18 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* Hero Bento Grid */}
-      <section className="w-full px-4 md:px-[6rem] mt-[1rem]">
-        {/* Desktop Layout */}
-        <div className="hidden md:grid md:grid-cols-[300px_1fr_500px_300px] md:grid-rows-[280px_280px] gap-3 h-[560px]">
-          {/* Column 1: Top small + bottom small */}
-          <div className="space-y-3">
-            <div className="h-[calc(50%-6px)] overflow-hidden rounded-lg bg-blue-600">
-              <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="Portrait" />
-            </div>
-            <div className="h-[calc(50%-6px)] overflow-hidden rounded-lg bg-teal-600">
-              <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="Graduation" />
-            </div>
-          </div>
-          
-          {/* Column 2: Large center portrait */}
-          <div className="row-span-2 overflow-hidden rounded-lg bg-amber-200">
-            <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover object-center" alt="Creative" />
-          </div>
-          
-          {/* Column 3: Large portrait on right */}
-          <div className="row-span-2 overflow-hidden rounded-lg bg-orange-600">
-            <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="Portrait showcase" />
-          </div>
-          
-          {/* Column 4: Top + bottom */}
-          <div className="space-y-3">
-            <div className="h-[calc(50%-6px)] overflow-hidden rounded-lg bg-gray-200">
-              <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="Style" />
-            </div>
-            <div className="h-[calc(50%-6px)] overflow-hidden rounded-lg bg-gray-400">
-              <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover" alt="Creative shot" />
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Layout */}
-        <div className="grid md:hidden grid-cols-2 gap-2 auto-rows-[200px]">
-          <div className="overflow-hidden rounded-lg">
-            <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="Portrait" />
-          </div>
-          <div className="overflow-hidden rounded-lg">
-            <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover" alt="Creative" />
-          </div>
-          <div className="col-span-2 overflow-hidden rounded-lg">
-            <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="Graduation" />
-          </div>
-        </div>
+      {/* Hero Images */}
+      <section className="flex w-full md:px-[6rem] mt-[1rem]">
+        <img
+          src="/images/hero.png"
+          className="hidden md:block grow"
+          alt="photography showcase"
+        />
+        <img
+          src="/images/hero_small.png"
+          className="block md:hidden grow"
+          alt="photography showcase"
+        />
       </section>
     </section>
   );
