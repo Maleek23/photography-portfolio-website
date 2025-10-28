@@ -29,13 +29,13 @@ export default function LandingPage() {
         {/* Light overlay for text readability only */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/15"></div>
 
-        {/* Center content - Simple button, no glow */}
+        {/* Center content - Outline button, no fill */}
         <div className="relative z-10 text-center">
           <Link
             href="/home"
             className="group inline-flex items-center gap-2 px-8 py-3 rounded-lg uppercase text-[0.875rem] font-[600] tracking-wide transition-all duration-300
-            bg-primary/90 backdrop-blur-sm border border-primary text-white
-            hover:bg-primary hover:scale-105"
+            backdrop-blur-sm border-2 border-white/80 text-white
+            hover:border-white hover:bg-white/10 hover:scale-105"
           >
             <span>Enter Portfolio</span>
             <svg
