@@ -14,7 +14,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background relative overflow-hidden">
       {/* Logo top left - Fade in from top */}
       <div 
-        className={`absolute top-12 left-8 z-10 transition-all duration-1000 ${
+        className={`absolute top-12 left-8 z-10 transition-all duration-700 ${
           loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
         }`}
       >
@@ -25,7 +25,7 @@ export default function LandingPage() {
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
         {/* Photo Grid Background - Fade in with scale */}
         <div 
-          className={`absolute inset-0 grid grid-cols-3 gap-2 p-4 transition-all duration-1200 ${
+          className={`absolute inset-0 grid grid-cols-3 gap-2 p-4 transition-all duration-800 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
@@ -48,12 +48,13 @@ export default function LandingPage() {
 
         {/* Center content - Button fades in from center */}
         <div 
-          className={`relative z-10 text-center transition-all duration-1000 delay-300 ${
+          className={`relative z-10 text-center transition-all duration-700 delay-200 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
         >
           <Link
             href="/home"
+            prefetch={true}
             className="group inline-flex items-center gap-2 px-8 py-3 rounded-lg uppercase text-[0.875rem] font-[600] tracking-wide transition-all duration-300
             backdrop-blur-sm border-2 border-white/80 text-white
             hover:border-white hover:bg-white/10 hover:scale-105"
@@ -80,7 +81,7 @@ export default function LandingPage() {
 
       {/* Bottom right - Signature fades in from right */}
       <div 
-        className={`absolute bottom-8 right-8 z-10 text-right transition-all duration-1000 delay-500 ${
+        className={`absolute bottom-8 right-8 z-10 text-right transition-all duration-700 delay-300 ${
           loaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
         }`}
       >
@@ -94,7 +95,7 @@ export default function LandingPage() {
 
       {/* Bottom left - Social Icons fade in from left */}
       <div 
-        className={`absolute bottom-8 left-8 z-10 transition-all duration-1000 delay-500 ${
+        className={`absolute bottom-8 left-8 z-10 transition-all duration-700 delay-300 ${
           loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
         }`}
       >
