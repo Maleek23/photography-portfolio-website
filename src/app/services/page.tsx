@@ -59,8 +59,15 @@ export default function ServicesPage() {
       alert("This booking option is not yet set up. Please contact leekshotit@gmail.com to book.");
       return;
     }
-    setSelectedCalendlyUrl(url);
-    setShowCalendly(true);
+    
+    // Use Calendly's built-in popup
+    if (typeof window !== 'undefined' && (window as any).Calendly) {
+      (window as any).Calendly.initPopupWidget({ url });
+    } else {
+      console.error('Calendly not loaded yet');
+      // Fallback to direct link if script not loaded
+      window.open(url, '_blank');
+    }
   };
 
   const closeCalendly = () => {
@@ -69,13 +76,21 @@ export default function ServicesPage() {
   };
 
   useEffect(() => {
+    // Load Calendly popup widget script
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
     script.async = true;
-    document.body.appendChild(script);
+    
+    script.onload = () => {
+      console.log('Calendly script loaded');
+    };
+    
+    if (!document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')) {
+      document.head.appendChild(script);
+    }
     
     return () => {
-      document.body.removeChild(script);
+      // Don't remove script on unmount to avoid reload issues
     };
   }, []);
 
@@ -190,24 +205,6 @@ export default function ServicesPage() {
   return (
     <main className="bg-background">
       <NavBar />
-      
-      {/* Calendly Modal */}
-      {showCalendly && (
-        <div className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4" onClick={closeCalendly}>
-          <div className="bg-background border border-superGray rounded-lg w-full max-w-4xl max-h-[90vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-4 border-b border-superGray">
-              <h3 className="text-white text-[1.25rem] font-[600]">Book Your Session</h3>
-              <button onClick={closeCalendly} className="text-white hover:text-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-              </button>
-            </div>
-            <div className="calendly-inline-widget" data-url={selectedCalendlyUrl} style={{ minWidth: '320px', height: '700px' }}></div>
-          </div>
-        </div>
-      )}
 
       <div className="pt-[10rem] lg:pt-0">
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
