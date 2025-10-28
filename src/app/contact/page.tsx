@@ -47,14 +47,14 @@ export default function ContactPage() {
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
           <div className="max-w-4xl mx-auto">
             {/* Header */}
-            <div className="mb-12">
-              <h1 className="text-white text-[3rem] md:text-[4.5rem] font-[700] uppercase mb-4 tracking-tight">
+            <div className="mb-8 md:mb-12">
+              <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
                 Get In Touch
               </h1>
-              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
+              <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] leading-relaxed">
                 Have a question, custom project idea, or collaboration opportunity? Fill out the form below and I'll get back to you within 24 hours.
               </p>
-              <p className="text-customGrayAlt2 text-[0.875rem] mt-3">
+              <p className="text-customGrayAlt2 text-[0.813rem] md:text-[0.875rem] mt-2 md:mt-3">
                 For session bookings, please visit the <a href="/services" className="text-primary hover:underline">Booking & Services</a> page.
               </p>
             </div>
