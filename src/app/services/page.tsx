@@ -89,7 +89,7 @@ export default function ServicesPage() {
         "20 Edited Images",
       ],
       accent: "#CD7F32",
-      calendlyUrl: "https://calendly.com/leekshotit/30min",
+      calendlyUrl: "https://calendly.com/leekshotit/60min",
     },
     {
       name: "Silver",
