@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - Lower position */}
+      {/* Logo top left - Bigger */}
       <div className="absolute top-12 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[6.5rem] md:h-[7.5rem] object-contain" />
+        <img src="/images/logo.png" alt="Logo" className="h-[7rem] md:h-[8rem] object-contain" />
       </div>
 
       {/* Main content */}
@@ -29,47 +29,42 @@ export default function LandingPage() {
         {/* Light overlay for text readability only */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/15"></div>
 
-        {/* Center content - Button and signature */}
+        {/* Center content - Simple button, no glow */}
         <div className="relative z-10 text-center">
           <Link
             href="/home"
-            className="group relative inline-flex items-center gap-3 px-12 py-6 rounded-xl uppercase text-[1.125rem] font-[700] tracking-wide transition-all duration-500
-            bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 backdrop-blur-xl 
-            border-2 border-primary/60 text-white
-            hover:from-primary/30 hover:via-primary/20 hover:to-primary/30
-            hover:border-primary hover:scale-105
-            shadow-[0_0_30px_rgba(37,99,235,0.6),0_0_60px_rgba(37,99,235,0.3),inset_0_0_20px_rgba(37,99,235,0.1)]
-            hover:shadow-[0_0_50px_rgba(37,99,235,0.9),0_0_100px_rgba(37,99,235,0.5),inset_0_0_30px_rgba(37,99,235,0.2)]
-            before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-1000"
+            className="group inline-flex items-center gap-2 px-8 py-3 rounded-lg uppercase text-[0.875rem] font-[600] tracking-wide transition-all duration-300
+            bg-primary/90 backdrop-blur-sm border border-primary text-white
+            hover:bg-primary hover:scale-105"
           >
-            <span className="relative z-10">Enter Portfolio</span>
+            <span>Enter Portfolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="22"
-              height="22"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2.5"
+              strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="relative z-10 transition-transform duration-300 group-hover:translate-x-2"
+              className="transition-transform duration-300 group-hover:translate-x-1"
             >
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </Link>
-          
-          {/* Signature-style name - below button - SMALLER TEXT */}
-          <div className="mt-8">
-            <h1 className="text-white text-[1rem] md:text-[1.125rem] font-[600] uppercase leading-tight tracking-wide mb-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-              ABDULMALIK AJISEGIRI
-            </h1>
-            <p className="text-white/80 text-[0.625rem] md:text-[0.75rem] font-[400] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-              Photographer • Videographer • Visual Artist
-            </p>
-          </div>
         </div>
+      </div>
+
+      {/* Bottom right - Signature */}
+      <div className="absolute bottom-8 right-8 z-10 text-right">
+        <h1 className="text-white text-[1rem] md:text-[1.125rem] font-[600] uppercase leading-tight tracking-wide mb-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          ABDULMALIK AJISEGIRI
+        </h1>
+        <p className="text-white/80 text-[0.625rem] md:text-[0.75rem] font-[400] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          Photographer • Videographer • Visual Artist
+        </p>
       </div>
 
       {/* Bottom left - Social Icons only */}
