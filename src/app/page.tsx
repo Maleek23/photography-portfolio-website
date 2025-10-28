@@ -52,7 +52,7 @@ export default function LandingPage() {
 
         {/* Mobile: Slideshow Background */}
         <div 
-          className={`md:hidden absolute inset-0 p-4 transition-all duration-800 ${
+          className={`md:hidden absolute inset-0 p-2 transition-all duration-800 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
