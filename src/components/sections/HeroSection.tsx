@@ -12,7 +12,7 @@ function HeroSection() {
   return (
     <section className="relative">
       {/* Animated Category Marquee with 3D depth */}
-      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark via-superGray to-lightDark border-y border-superGray py-4 relative">
+      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark via-superGray to-lightDark border-b border-superGray py-2 relative">
         {/* Subtle gradient overlay for depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none"></div>
         
