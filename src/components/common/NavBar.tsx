@@ -50,13 +50,13 @@ function NavBar() {
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
-            <Link href="/" className="cursor-pointer flex items-center py-2">
+            <Link href="/home" className="cursor-pointer flex items-center py-2">
               <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4.5rem] object-contain" />
             </Link>
           </div>
           <div className="flex text-[16px] items-center select-none border border-superGray h-[3rem] rounded-t-[0.75rem] mt-[0.5rem]">
             <Link
-              href="/"
+              href="/home"
               className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
             >
               Home
@@ -118,7 +118,7 @@ function NavBar() {
               {!menu && (
                 <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
               )}
-              <Link href="/" className="cursor-pointer flex items-center py-2">
+              <Link href="/home" className="cursor-pointer flex items-center py-2">
                 <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[5.5rem] object-contain" />
               </Link>
             </div>
@@ -151,7 +151,7 @@ function NavBar() {
         {menu ? (
           <div className="my-8 select-none animate-in slide-in-from-right">
             <div className="flex flex-col gap-8 mt-8 mx-4">
-              <Link href="/" onClick={() => setMenu(false)} className="text-white cursor-pointer">
+              <Link href="/home" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Home
               </Link>
               <Link href="/about" onClick={() => setMenu(false)} className="text-white cursor-pointer">
