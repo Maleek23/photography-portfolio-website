@@ -18,7 +18,7 @@ export default function CollectionsPage() {
       slug: "graduation",
       description: "Documenting milestone moments and celebrating achievements",
       count: "18 Projects",
-      imageUrl: "/images/lady_2.png",
+      imageUrl: "/images/graduation-cover.jpg",
     },
     {
       id: 2,
