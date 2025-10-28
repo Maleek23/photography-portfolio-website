@@ -122,6 +122,28 @@ export default function LandingPage() {
               <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
             </svg>
           </a>
+          <a 
+            href="https://www.youtube.com/@Leekshotit" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a 
+            href="https://www.pinterest.com/leekshotit/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="12" y1="2" x2="12" y2="22"></line>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+            </svg>
+          </a>
         </div>
       </div>
     </main>
