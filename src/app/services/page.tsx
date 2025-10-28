@@ -2,10 +2,12 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<"grad" | "solo" | "events">("grad");
+  const [showCalendly, setShowCalendly] = useState(false);
+  const [selectedCalendlyUrl, setSelectedCalendlyUrl] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,6 +53,31 @@ export default function ServicesPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const openCalendly = (url: string) => {
+    if (url === "#") {
+      alert("This booking option is not yet set up. Please contact leekshotit@gmail.com to book.");
+      return;
+    }
+    setSelectedCalendlyUrl(url);
+    setShowCalendly(true);
+  };
+
+  const closeCalendly = () => {
+    setShowCalendly(false);
+    setSelectedCalendlyUrl("");
+  };
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   const gradPackages = [
     {
@@ -163,6 +190,25 @@ export default function ServicesPage() {
   return (
     <main className="bg-background">
       <NavBar />
+      
+      {/* Calendly Modal */}
+      {showCalendly && (
+        <div className="fixed inset-0 bg-black/80 z-[9999] flex items-center justify-center p-4" onClick={closeCalendly}>
+          <div className="bg-background border border-superGray rounded-lg w-full max-w-4xl max-h-[90vh] overflow-hidden" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between p-4 border-b border-superGray">
+              <h3 className="text-white text-[1.25rem] font-[600]">Book Your Session</h3>
+              <button onClick={closeCalendly} className="text-white hover:text-primary transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+              </button>
+            </div>
+            <div className="calendly-inline-widget" data-url={selectedCalendlyUrl} style={{ minWidth: '320px', height: '700px' }}></div>
+          </div>
+        </div>
+      )}
+
       <div className="pt-[10rem] lg:pt-0">
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
           {/* Header */}
@@ -262,19 +308,17 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  {/* Book Button - Calendly Link */}
-                  <a
-                    href={pkg.calendlyUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10"
+                  {/* Book Button - Opens Calendly Modal */}
+                  <button
+                    onClick={() => openCalendly(pkg.calendlyUrl)}
+                    className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10 cursor-pointer"
                     style={{ 
                       borderColor: pkg.accent,
                       color: pkg.accent,
                     }}
                   >
                     Book {pkg.name}
-                  </a>
+                  </button>
                 </div>
               </div>
             ))}
@@ -302,11 +346,16 @@ export default function ServicesPage() {
               </h3>
               <div className="text-customGrayAlt text-[0.875rem] space-y-3 leading-relaxed">
                 <p><strong className="text-white">Step 1:</strong> Create your free Calendly account at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a></p>
-                <p><strong className="text-white">Step 2:</strong> Set up different event types for each package (e.g., "Graduation - Bronze", "Solo - Silver", "Events - Hourly")</p>
+                <p><strong className="text-white">Step 2:</strong> Set up different event types for each package:</p>
+                <ul className="list-disc list-inside ml-4 space-y-1 text-customGrayAlt2">
+                  <li>Graduation - Bronze, Silver, Gold</li>
+                  <li>Solo - Bronze, Silver, Gold, Platinum</li>
+                  <li>Events - Hourly Rate</li>
+                </ul>
                 <p><strong className="text-white">Step 3:</strong> Copy each event type's booking link from Calendly</p>
-                <p><strong className="text-white">Step 4:</strong> Replace the "#" in each "Book" button above with your Calendly links</p>
+                <p><strong className="text-white">Step 4:</strong> Update the <code className="bg-background px-2 py-1 rounded text-primary">calendlyUrl</code> values in the code for each package</p>
                 <p className="text-customGrayAlt2 text-[0.75rem] mt-4 pt-4 border-t border-superGray">
-                  Example: Change <code className="bg-background px-2 py-1 rounded">href="#"</code> to <code className="bg-background px-2 py-1 rounded">href="https://calendly.com/yourname/graduation-bronze"</code>
+                  Currently setup: Graduation Bronze ✓ | Remaining: 7 packages to configure
                 </p>
               </div>
             </div>
