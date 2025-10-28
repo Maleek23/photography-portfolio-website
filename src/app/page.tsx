@@ -26,7 +26,7 @@ export default function LandingPage() {
         {/* Very light overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/20"></div>
 
-        {/* Center content - Improved Hologram button */}
+        {/* Center content - Button and signature */}
         <div className="relative z-10 text-center">
           <Link
             href="/home"
@@ -56,19 +56,21 @@ export default function LandingPage() {
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
           </Link>
+          
+          {/* Signature-style name - below button */}
+          <div className="mt-8">
+            <h1 className="text-white text-[1.25rem] md:text-[1.5rem] font-[600] uppercase leading-tight tracking-wide mb-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              ABDULMALIK AJISEGIRI
+            </h1>
+            <p className="text-white/80 text-[0.75rem] md:text-[0.875rem] font-[400] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+              Photographer • Videographer • Visual Artist
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Bottom left - Name and subtitle */}
+      {/* Bottom left - Social Icons only */}
       <div className="absolute bottom-8 left-8 z-10">
-        <h1 className="text-white text-[2rem] md:text-[2.5rem] font-[700] uppercase leading-tight tracking-tight mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-          ABDULMALIK AJISEGIRI
-        </h1>
-        <p className="text-white text-[0.875rem] md:text-[1rem] font-[400] mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-          Photographer • Videographer • Visual Artist
-        </p>
-        
-        {/* Social Icons */}
         <div className="flex gap-3 items-center">
           <a 
             href="https://instagram.com" 
