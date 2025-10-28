@@ -39,11 +39,11 @@ export default function CollectionsPage() {
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          <div className="mb-12">
-            <h1 className="text-white text-[3rem] md:text-[5rem] font-[700] uppercase mb-4">
+          <div className="mb-8 md:mb-12">
+            <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
               Collections
             </h1>
-            <p className="text-customGrayAlt text-[1.125rem] md:text-[1.25rem] max-w-3xl">
+            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
               Explore my work across different creative categories
             </p>
           </div>
@@ -61,11 +61,11 @@ export default function CollectionsPage() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-white text-[1.75rem] font-[600] mb-3 uppercase tracking-wide">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                    <h3 className="text-white text-[1.5rem] md:text-[1.75rem] font-[600] mb-2 md:mb-3 uppercase tracking-wide leading-tight">
                       {collection.title}
                     </h3>
-                    <p className="text-customGrayAlt2 text-[1rem] leading-relaxed">
+                    <p className="text-customGrayAlt2 text-[0.875rem] md:text-[1rem] leading-relaxed">
                       {collection.description}
                     </p>
                   </div>
