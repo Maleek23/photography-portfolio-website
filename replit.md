@@ -83,9 +83,9 @@ Preferred communication style: Simple, everyday language.
   - **Individual Category Pages** (`/collections/[category]`): Detailed photo galleries for each category (Portraits, Graduation, Creative Projects, Concerts/Events) with lightbox functionality
 - **Blog** (`/blog`): Blog listing page with photography tips and behind-the-scenes content
   - **Individual Blog Posts** (`/blog/[slug]`): Full article pages with related posts
-- **Services** (`/services`): Comprehensive pricing page with 3 session types and booking form
-- **Contact** (`/contact`): Contact form and photographer information
-- Navigation menu includes: Home (links to /home), About Me, Collections, Blog, Services, Contact Me (button)
+- **Booking & Services** (`/services`): Comprehensive pricing page with 3 session types and Calendly booking integration
+- **Contact** (`/contact`): Enhanced contact form for general inquiries, custom projects, and collaboration opportunities
+- Navigation menu includes: Home (links to /home), About Me, Collections, Blog, Booking, Contact Me (button)
 - User flow: Visitor lands on splash page (/) → clicks "Enter Portfolio" → enters full portfolio site (/home)
 
 ### Performance Optimizations
@@ -172,7 +172,7 @@ Preferred communication style: Simple, everyday language.
 - **Events/Concerts**: $100/hour
 - **Pricing Details**: 50% deposit required, 3-9 day delivery, $50 upcharge for 24hr rush delivery
 - **Color-Coded Tiers**: Bronze (#CD7F32), Silver (#C0C0C0), Gold (#FFD700), Platinum (#2563EB blue)
-- **Booking Form**: Comprehensive form on services page with session type, package tier, date picker, and details
+- **Booking Integration**: Calendly widget placeholder ready for photographer's scheduling account (free tier available)
 
 ### Blog Section
 - **Blog Listing Page** (`/blog`): Shows all blog posts in 2-column grid with featured images
@@ -180,7 +180,8 @@ Preferred communication style: Simple, everyday language.
 - **Individual Post Pages**: Full article layout with featured image, content, and related posts section
 - **Categories**: Photography Tips, Lighting, Session Planning, Behind the Scenes
 
-### Contact & Forms
-- **Contact Page**: General inquiry form with name, email, phone, message fields
-- **Services Booking Form**: Detailed booking form with session type, package selection, date picker
-- **Forms Status**: Both forms functional with API routes but email service integration pending
+### Contact & Booking
+- **Contact Page**: Enhanced contact form for general inquiries, custom projects, collaborations, and media inquiries
+- **Booking & Services Page**: Displays pricing tables and Calendly widget for session bookings (placeholder ready for embed code)
+- **Form Status**: Contact form functional with API route but email service integration pending
+- **Calendly Integration**: Free scheduling tool recommended - photographer needs to create account and paste embed code
