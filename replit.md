@@ -76,7 +76,8 @@ Preferred communication style: Simple, everyday language.
 ### Navigation & Routing
 
 **Multi-Page Application**: Full site structure with dedicated pages
-- **Home** (`/`): Hero section, collections preview, services overview
+- **Landing Page** (`/`): Splash screen with photographer name, brand, and "Enter Portfolio" button - serves as entry point to the full portfolio
+- **Home** (`/home`): Main portfolio page with Hero section, collections preview, services overview
 - **About** (`/about`): Photographer bio and story
 - **Collections** (`/collections`): Overview of all 4 photography categories
   - **Individual Category Pages** (`/collections/[category]`): Detailed photo galleries for each category (Portraits, Graduation, Creative Projects, Concerts/Events) with lightbox functionality
@@ -84,7 +85,8 @@ Preferred communication style: Simple, everyday language.
   - **Individual Blog Posts** (`/blog/[slug]`): Full article pages with related posts
 - **Services** (`/services`): Comprehensive pricing page with 3 session types and booking form
 - **Contact** (`/contact`): Contact form and photographer information
-- Navigation menu includes: Home, About Me, Collections, Blog, Services, Contact Me (button)
+- Navigation menu includes: Home (links to /home), About Me, Collections, Blog, Services, Contact Me (button)
+- User flow: Visitor lands on splash page (/) → clicks "Enter Portfolio" → enters full portfolio site (/home)
 
 ### Performance Optimizations
 
