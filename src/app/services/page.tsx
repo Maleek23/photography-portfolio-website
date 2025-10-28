@@ -160,7 +160,7 @@ export default function ServicesPage() {
           {/* Header */}
           <div className="mb-12">
             <h1 className="text-white text-[3rem] md:text-[4.5rem] font-[700] uppercase mb-4 tracking-tight">
-              Pricing
+              Booking & Services
             </h1>
             <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] max-w-2xl">
               Professional photography sessions with all images professionally edited and delivered digitally
@@ -279,160 +279,45 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* Booking Inquiry Form */}
+          {/* Calendly Booking Section */}
           <div className="mt-16 pt-16 border-t border-superGray">
-            <div className="mb-12">
+            <div className="mb-8">
               <h2 className="text-white text-[2.5rem] md:text-[3.5rem] font-[700] uppercase mb-4 tracking-tight">
                 Book A Session
               </h2>
               <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
-                Ready to schedule your shoot? Fill out the form below and I'll get back to you within 24 hours to confirm availability and details.
+                Choose your preferred time and date below. Select the session type that matches the package you want.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="max-w-3xl space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                    placeholder="Your name"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="phone" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Phone *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                    placeholder="(123) 456-7890"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="sessionType" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Session Type *
-                  </label>
-                  <select
-                    id="sessionType"
-                    name="sessionType"
-                    required
-                    value={formData.sessionType}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                  >
-                    <option value="grad">Graduation Session</option>
-                    <option value="solo">Solo Session</option>
-                    <option value="events">Event/Concert</option>
-                  </select>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="packageTier" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Package Tier *
-                  </label>
-                  <select
-                    id="packageTier"
-                    name="packageTier"
-                    required
-                    value={formData.packageTier}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                  >
-                    <option value="">Select a package</option>
-                    <option value="bronze">Bronze</option>
-                    <option value="silver">Silver</option>
-                    <option value="gold">Gold</option>
-                    {formData.sessionType === "solo" && <option value="platinum">Platinum</option>}
-                    {formData.sessionType === "events" && <option value="hourly">Hourly Rate</option>}
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="preferredDate" className="block text-white text-[0.875rem] font-[500] mb-2">
-                    Preferred Date *
-                  </label>
-                  <input
-                    type="date"
-                    id="preferredDate"
-                    name="preferredDate"
-                    required
-                    value={formData.preferredDate}
-                    onChange={handleChange}
-                    className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-white text-[0.875rem] font-[500] mb-2">
-                  Additional Details
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={4}
-                  className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
-                  placeholder="Tell me more about your vision, location preferences, specific shots you want, etc."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full md:w-auto bg-primary hover:bg-primary/80 text-white font-[600] px-12 py-4 rounded-lg uppercase text-[0.875rem] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {status === "sending" ? "Sending..." : "Submit Booking Request"}
-              </button>
-
-              {status === "success" && (
-                <p className="text-green-500 text-[0.875rem]">
-                  ✓ Booking request sent successfully! I'll get back to you within 24 hours.
+            {/* Calendly Embed - Placeholder */}
+            <div className="bg-lightDark border border-superGray rounded-lg p-8 md:p-12 text-center">
+              <div className="max-w-2xl mx-auto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mx-auto mb-6">
+                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
+                  <line x1="16" x2="16" y1="2" y2="6"/>
+                  <line x1="8" x2="8" y1="2" y2="6"/>
+                  <line x1="3" x2="21" y1="10" y2="10"/>
+                </svg>
+                <h3 className="text-white text-[1.5rem] font-[600] mb-4">
+                  Calendly Booking Widget
+                </h3>
+                <p className="text-customGrayAlt text-[1rem] mb-6 leading-relaxed">
+                  Once you create your free Calendly account, paste your embed code below to replace this placeholder. 
+                  Clients will be able to see your real-time availability and book sessions instantly.
                 </p>
-              )}
-              {status === "error" && (
-                <p className="text-red-500 text-[0.875rem]">
-                  ✗ Something went wrong. Please email me directly at leekshotit@gmail.com
+                <div className="bg-background border border-superGray rounded p-4 text-left">
+                  <p className="text-customGrayAlt2 text-[0.875rem] font-mono">
+                    {`<!-- Calendly inline widget begin -->`}<br/>
+                    {`<div class="calendly-inline-widget" ...>`}<br/>
+                    {`<!-- Calendly inline widget end -->`}
+                  </p>
+                </div>
+                <p className="text-customGrayAlt text-[0.875rem] mt-6">
+                  Get started at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a> - it's free!
                 </p>
-              )}
-            </form>
+              </div>
+            </div>
           </div>
         </div>
         <FooterSection />

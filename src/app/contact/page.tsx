@@ -52,7 +52,10 @@ export default function ContactPage() {
                 Get In Touch
               </h1>
               <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
-                Ready to book a session or have questions? Fill out the form below and I'll get back to you within 24 hours.
+                Have a question, custom project idea, or collaboration opportunity? Fill out the form below and I'll get back to you within 24 hours.
+              </p>
+              <p className="text-customGrayAlt2 text-[0.875rem] mt-3">
+                For session bookings, please visit the <a href="/services" className="text-primary hover:underline">Booking & Services</a> page.
               </p>
             </div>
 
@@ -109,7 +112,7 @@ export default function ContactPage() {
 
                   <div>
                     <label htmlFor="message" className="block text-white text-[0.875rem] font-[500] mb-2">
-                      Message *
+                      What can I help you with? *
                     </label>
                     <textarea
                       id="message"
@@ -119,7 +122,7 @@ export default function ContactPage() {
                       onChange={handleChange}
                       rows={6}
                       className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
-                      placeholder="Tell me about your photography needs..."
+                      placeholder="Examples: General questions about services, custom project inquiries, collaboration opportunities, media inquiries, pricing questions, etc."
                     />
                   </div>
 

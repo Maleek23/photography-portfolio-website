@@ -83,7 +83,7 @@ function NavBar() {
               href="/services"
               className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
             >
-              Services
+              Booking
             </Link>
           </div>
           <div className="flex items-center gap-[40px] select-none">
@@ -164,7 +164,7 @@ function NavBar() {
                 Blog
               </Link>
               <Link href="/services" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Services
+                Booking
               </Link>
               <div className="flex flex-col gap-[40px] select-none">
                 <Link href="/contact" onClick={() => setMenu(false)}>
