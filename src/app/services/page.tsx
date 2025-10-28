@@ -62,6 +62,7 @@ export default function ServicesPage() {
         "20 Edited Images",
       ],
       accent: "#CD7F32",
+      calendlyUrl: "https://calendly.com/leekshotit/30min",
     },
     {
       name: "Silver",
@@ -74,6 +75,7 @@ export default function ServicesPage() {
       ],
       popular: true,
       accent: "#C0C0C0",
+      calendlyUrl: "#",
     },
     {
       name: "Gold",
@@ -85,6 +87,7 @@ export default function ServicesPage() {
         "30-45 sec Cinematic Clip",
       ],
       accent: "#FFD700",
+      calendlyUrl: "#",
     },
   ];
 
@@ -98,6 +101,7 @@ export default function ServicesPage() {
         "20 Edited Images",
       ],
       accent: "#CD7F32",
+      calendlyUrl: "#",
     },
     {
       name: "Silver",
@@ -109,6 +113,7 @@ export default function ServicesPage() {
       ],
       popular: true,
       accent: "#C0C0C0",
+      calendlyUrl: "#",
     },
     {
       name: "Gold",
@@ -120,6 +125,7 @@ export default function ServicesPage() {
         "15 sec Cinematic Clip",
       ],
       accent: "#FFD700",
+      calendlyUrl: "#",
     },
     {
       name: "Platinum",
@@ -131,6 +137,7 @@ export default function ServicesPage() {
         "15-30 sec Cinematic Clip",
       ],
       accent: "#2563EB",
+      calendlyUrl: "#",
     },
   ];
 
@@ -147,6 +154,7 @@ export default function ServicesPage() {
       ],
       accent: "#2563EB",
       popular: true,
+      calendlyUrl: "#",
     },
   ];
 
@@ -256,7 +264,9 @@ export default function ServicesPage() {
 
                   {/* Book Button - Calendly Link */}
                   <a
-                    href="#"
+                    href={pkg.calendlyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10"
                     style={{ 
                       borderColor: pkg.accent,
