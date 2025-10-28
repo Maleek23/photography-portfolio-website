@@ -27,7 +27,7 @@ function PortfolioSection() {
       id: 3,
       title: "Concerts/Events",
       slug: "concerts-events",
-      imageUrl: "/images/hero.png",
+      imageUrl: "/images/concerts-events-cover.jpg",
     },
   ];
 
