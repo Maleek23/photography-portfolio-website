@@ -209,20 +209,20 @@ export default function ServicesPage() {
       <div className="pt-[10rem] lg:pt-0">
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
           {/* Header */}
-          <div className="mb-12">
-            <h1 className="text-white text-[3rem] md:text-[4.5rem] font-[700] uppercase mb-4 tracking-tight">
+          <div className="mb-8 md:mb-12">
+            <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
               Booking & Services
             </h1>
-            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] max-w-2xl">
+            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
               Professional photography sessions with all images professionally edited and delivered digitally
             </p>
           </div>
 
           {/* Tab Switcher - Minimal */}
-          <div className="flex gap-2 mb-12 border-b border-superGray">
+          <div className="flex gap-2 mb-8 md:mb-12 border-b border-superGray">
             <button
               onClick={() => setActiveTab("grad")}
-              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
                 activeTab === "grad"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -232,7 +232,7 @@ export default function ServicesPage() {
             </button>
             <button
               onClick={() => setActiveTab("solo")}
-              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
                 activeTab === "solo"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -242,7 +242,7 @@ export default function ServicesPage() {
             </button>
             <button
               onClick={() => setActiveTab("events")}
-              className={`pb-4 px-6 font-[500] uppercase text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
                 activeTab === "events"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -267,38 +267,38 @@ export default function ServicesPage() {
               >
                 {/* Popular Label - Minimal */}
                 {pkg.popular && (
-                  <div className="absolute top-4 right-4 text-primary text-[0.625rem] font-[600] uppercase tracking-widest">
+                  <div className="absolute top-3 md:top-4 right-3 md:right-4 text-primary text-[0.563rem] md:text-[0.625rem] font-[600] uppercase tracking-widest">
                     Most Popular
                   </div>
                 )}
 
-                <div className="p-8">
+                <div className="p-6 md:p-8">
                   {/* Package Name */}
                   <h3 
-                    className="text-[1rem] font-[500] uppercase tracking-wider mb-8"
+                    className="text-[0.875rem] md:text-[1rem] font-[500] uppercase tracking-wider mb-6 md:mb-8"
                     style={{ color: pkg.accent }}
                   >
                     {pkg.name}
                   </h3>
 
                   {/* Price */}
-                  <div className="mb-8">
+                  <div className="mb-6 md:mb-8">
                     <div className="flex items-start mb-2">
-                      <span className="text-white text-[0.875rem] mt-2">$</span>
-                      <span className="text-white text-[3.5rem] font-[300] leading-none tracking-tight">{pkg.price}</span>
+                      <span className="text-white text-[0.75rem] md:text-[0.875rem] mt-2">$</span>
+                      <span className="text-white text-[3rem] md:text-[3.5rem] font-[300] leading-none tracking-tight">{pkg.price}</span>
                     </div>
-                    <p className="text-customGrayAlt text-[0.875rem]">{pkg.duration}</p>
+                    <p className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">{pkg.duration}</p>
                   </div>
 
                   {/* Features */}
-                  <div className="space-y-3 mb-8 pt-6 border-t border-superGray">
+                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8 pt-5 md:pt-6 border-t border-superGray">
                     {pkg.features.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <div 
                           className="w-1 h-1 rounded-full mt-2 flex-shrink-0"
                           style={{ backgroundColor: pkg.accent }}
                         ></div>
-                        <p className="text-customGrayAlt2 text-[0.875rem] leading-relaxed">
+                        <p className="text-customGrayAlt2 text-[0.813rem] md:text-[0.875rem] leading-relaxed">
                           {feature}
                         </p>
                       </div>
@@ -322,8 +322,8 @@ export default function ServicesPage() {
           </div>
 
           {/* Additional Info - Subtle */}
-          <div className="mt-12 pt-8 border-t border-superGray">
-            <div className="flex flex-wrap gap-x-12 gap-y-3 text-[0.875rem] text-customGrayAlt">
+          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-superGray">
+            <div className="flex flex-wrap gap-x-8 md:gap-x-12 gap-y-2 md:gap-y-3 text-[0.813rem] md:text-[0.875rem] text-customGrayAlt">
               <p>50% deposit required for all bookings</p>
               <p>3-9 day delivery time</p>
               <p>$50 upcharge for 24-hour delivery</p>
@@ -331,17 +331,17 @@ export default function ServicesPage() {
           </div>
 
           {/* Setup Instructions */}
-          <div className="mt-16 pt-16 border-t border-superGray">
-            <div className="bg-lightDark border border-primary/20 rounded-lg p-8">
-              <h3 className="text-white text-[1.25rem] font-[600] mb-4 flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
+            <div className="bg-lightDark border border-primary/20 rounded-lg p-6 md:p-8">
+              <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] mb-3 md:mb-4 flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary md:w-6 md:h-6">
                   <circle cx="12" cy="12" r="10"/>
                   <path d="M12 16v-4"/>
                   <path d="M12 8h.01"/>
                 </svg>
                 Calendly Setup Instructions
               </h3>
-              <div className="text-customGrayAlt text-[0.875rem] space-y-3 leading-relaxed">
+              <div className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem] space-y-2 md:space-y-3 leading-relaxed">
                 <p><strong className="text-white">Step 1:</strong> Create your free Calendly account at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a></p>
                 <p><strong className="text-white">Step 2:</strong> Set up different event types for each package:</p>
                 <ul className="list-disc list-inside ml-4 space-y-1 text-customGrayAlt2">

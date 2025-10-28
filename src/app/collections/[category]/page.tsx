@@ -83,20 +83,20 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <div className="pt-[10rem] lg:pt-0">
         <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
           {/* Header */}
-          <div className="mb-12">
-            <Link href="/collections" className="text-primary text-[0.875rem] font-[500] hover:underline mb-4 inline-block">
+          <div className="mb-8 md:mb-12">
+            <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-3 md:mb-4 inline-block">
               ← Back to Collections
             </Link>
-            <h1 className="text-white text-[3rem] md:text-[4.5rem] font-[700] uppercase mb-4 tracking-tight">
+            <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
               {category.title}
             </h1>
-            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] max-w-2xl">
+            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
               {category.description}
             </p>
           </div>
 
           {/* Photo Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {category.images.map((image, index) => (
               <div
                 key={index}
@@ -114,11 +114,11 @@ export default function CategoryPage({ params }: { params: { category: string } 
           </div>
 
           {/* Call to Action */}
-          <div className="mt-16 pt-16 border-t border-superGray text-center">
-            <h2 className="text-white text-[2rem] md:text-[3rem] font-[600] uppercase mb-4">
+          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray text-center">
+            <h2 className="text-white text-[1.75rem] md:text-[3rem] font-[600] uppercase mb-3 md:mb-4 leading-tight">
               Like What You See?
             </h2>
-            <p className="text-customGrayAlt text-[1rem] mb-8 max-w-2xl mx-auto">
+            <p className="text-customGrayAlt text-[0.938rem] md:text-[1rem] mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
               Ready to book a session? Check out our pricing and availability.
             </p>
             <Link
