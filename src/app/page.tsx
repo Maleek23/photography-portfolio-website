@@ -3,15 +3,15 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - SUBTLE */}
+      {/* Logo top left - MUCH BIGGER */}
       <div className="absolute top-8 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[3rem] md:h-[3.5rem] object-contain opacity-80" />
+        <img src="/images/logo.png" alt="Logo" className="h-[6rem] md:h-[8rem] lg:h-[10rem] object-contain" />
       </div>
 
       {/* Main content */}
       <div className="min-h-screen flex items-center justify-center px-4 relative">
-        {/* Photo Grid Background - MORE VISIBLE */}
-        <div className="absolute inset-0 grid grid-cols-3 gap-2 p-4 opacity-50">
+        {/* Photo Grid Background - COMPLETELY VISIBLE */}
+        <div className="absolute inset-0 grid grid-cols-3 gap-2 p-4">
           <div className="relative overflow-hidden rounded-lg">
             <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="" />
           </div>
@@ -23,14 +23,17 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Dark overlay - LIGHTER */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/50"></div>
+        {/* Very light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/20"></div>
 
-        {/* Center content - Just button */}
+        {/* Center content - Hologram button */}
         <div className="relative z-10 text-center">
           <Link
             href="/home"
-            className="group inline-flex items-center gap-3 bg-primary hover:shadow-[0_0_30px_rgba(37,99,235,0.6)] text-white font-[600] px-10 py-5 rounded-lg uppercase text-[1rem] transition-all duration-300"
+            className="group inline-flex items-center gap-3 px-10 py-5 rounded-lg uppercase text-[1rem] font-[600] transition-all duration-300
+            bg-primary/10 backdrop-blur-md border-2 border-primary/50 text-white
+            hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_40px_rgba(37,99,235,0.8),inset_0_0_20px_rgba(37,99,235,0.3)]
+            shadow-[0_0_20px_rgba(37,99,235,0.5),inset_0_0_10px_rgba(37,99,235,0.2)]"
           >
             Enter Portfolio
             <svg
@@ -54,20 +57,20 @@ export default function LandingPage() {
 
       {/* Bottom left - Name and subtitle */}
       <div className="absolute bottom-8 left-8 z-10">
-        <h1 className="text-white text-[2rem] md:text-[2.5rem] font-[700] uppercase leading-tight tracking-tight mb-2">
+        <h1 className="text-white text-[2rem] md:text-[2.5rem] font-[700] uppercase leading-tight tracking-tight mb-2 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           ABDULMALIK AJISEGIRI
         </h1>
-        <p className="text-customGrayAlt text-[0.875rem] md:text-[1rem] font-[400] mb-4">
+        <p className="text-white text-[0.875rem] md:text-[1rem] font-[400] mb-4 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
           Photographer • Videographer • Visual Artist
         </p>
         
-        {/* Social Icons - SMALLER & MORE SUBTLE */}
+        {/* Social Icons */}
         <div className="flex gap-3 items-center">
           <a 
             href="https://instagram.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-customGrayAlt/60 hover:text-primary transition-colors"
+            className="text-white/70 hover:text-primary transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
@@ -79,7 +82,7 @@ export default function LandingPage() {
             href="https://tiktok.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-customGrayAlt/60 hover:text-primary transition-colors"
+            className="text-white/70 hover:text-primary transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
