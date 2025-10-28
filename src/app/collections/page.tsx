@@ -30,7 +30,7 @@ export default function CollectionsPage() {
       title: "Concerts/Events",
       slug: "concerts-events",
       description: "Live music, performances, and unforgettable experiences",
-      imageUrl: "/images/hero.png",
+      imageUrl: "/images/concerts-events-cover.jpg",
     },
   ];
 
