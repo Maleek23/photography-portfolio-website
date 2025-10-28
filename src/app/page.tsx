@@ -5,9 +5,23 @@ import { useEffect, useState } from "react";
 
 export default function LandingPage() {
   const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  const photos = [
+    "/images/creative-smoke.jpg",
+    "/images/back-portrait.png",
+    "/images/heart-portrait.jpg"
+  ];
 
   useEffect(() => {
     setLoaded(true);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % photos.length);
+    }, 3000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -23,23 +37,52 @@ export default function LandingPage() {
 
       {/* Main content */}
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
-        {/* Photo Grid Background - Fade in with scale */}
+        {/* Desktop: Photo Grid Background - Fade in with scale */}
         <div 
-          className={`absolute inset-0 grid grid-cols-3 gap-2 p-4 transition-all duration-800 ${
+          className={`hidden md:grid absolute inset-0 grid-cols-3 gap-2 p-4 transition-all duration-800 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
-          {/* 1st photo - creative smoke */}
-          <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover" alt="" />
-          </div>
-          {/* 2nd photo - back portrait */}
-          <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/back-portrait.png" className="w-full h-full object-cover" alt="" />
-          </div>
-          {/* 3rd photo - heart portrait */}
-          <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/heart-portrait.jpg" className="w-full h-full object-cover" alt="" />
+          {photos.map((photo, index) => (
+            <div key={index} className="relative overflow-hidden rounded-lg">
+              <img src={photo} className="w-full h-full object-cover" alt="" />
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile: Slideshow Background */}
+        <div 
+          className={`md:hidden absolute inset-0 p-4 transition-all duration-800 ${
+            loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <div className="relative h-full overflow-hidden rounded-lg">
+            {photos.map((photo, index) => (
+              <img 
+                key={index}
+                src={photo} 
+                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100' : 'opacity-0'
+                }`}
+                alt="" 
+              />
+            ))}
+            
+            {/* Slideshow indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {photos.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide 
+                      ? 'bg-white w-6' 
+                      : 'bg-white/50 hover:bg-white/75'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
