@@ -3,13 +3,13 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - MUCH BIGGER */}
+      {/* Logo top left - Subtle size */}
       <div className="absolute top-8 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[6rem] md:h-[8rem] lg:h-[10rem] object-contain" />
+        <img src="/images/logo.png" alt="Logo" className="h-[4rem] md:h-[4.5rem] object-contain" />
       </div>
 
       {/* Main content */}
-      <div className="min-h-screen flex items-center justify-center px-4 relative">
+      <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
         {/* Photo Grid Background - COMPLETELY VISIBLE */}
         <div className="absolute inset-0 grid grid-cols-3 gap-2 p-4">
           <div className="relative overflow-hidden rounded-lg">
