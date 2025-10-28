@@ -9,7 +9,7 @@ export default function CollectionsPage() {
       title: "Portraits",
       slug: "portraits",
       description: "Capturing personality, style, and the essence of individuals",
-      imageUrl: "/images/lady_1.png",
+      imageUrl: "/images/portraits-cover.jpg",
     },
     {
       id: 1,
