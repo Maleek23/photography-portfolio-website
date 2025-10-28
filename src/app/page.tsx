@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - Bigger */}
-      <div className="absolute top-8 left-8 z-10">
+      {/* Logo top left - Lower position */}
+      <div className="absolute top-12 left-8 z-10">
         <img src="/images/logo.png" alt="Logo" className="h-[6.5rem] md:h-[7.5rem] object-contain" />
       </div>
 
@@ -16,13 +16,13 @@ export default function LandingPage() {
           <div className="relative overflow-hidden rounded-lg">
             <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover" alt="" />
           </div>
-          {/* 2nd photo - new back portrait (middle) */}
+          {/* 2nd photo - back portrait (middle) */}
           <div className="relative overflow-hidden rounded-lg">
             <img src="/images/back-portrait.png" className="w-full h-full object-cover" alt="" />
           </div>
-          {/* 3rd photo - yellow portrait (right) */}
+          {/* 3rd photo - graduation guy (right) */}
           <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="" />
+            <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="" />
           </div>
         </div>
 
@@ -60,12 +60,12 @@ export default function LandingPage() {
             </svg>
           </Link>
           
-          {/* Signature-style name - below button */}
+          {/* Signature-style name - below button - SMALLER TEXT */}
           <div className="mt-8">
-            <h1 className="text-white text-[1.25rem] md:text-[1.5rem] font-[600] uppercase leading-tight tracking-wide mb-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            <h1 className="text-white text-[1rem] md:text-[1.125rem] font-[600] uppercase leading-tight tracking-wide mb-1 drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
               ABDULMALIK AJISEGIRI
             </h1>
-            <p className="text-white/80 text-[0.75rem] md:text-[0.875rem] font-[400] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            <p className="text-white/80 text-[0.625rem] md:text-[0.75rem] font-[400] drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
               Photographer • Videographer • Visual Artist
             </p>
           </div>
