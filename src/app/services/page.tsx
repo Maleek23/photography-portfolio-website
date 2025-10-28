@@ -254,16 +254,16 @@ export default function ServicesPage() {
                     ))}
                   </div>
 
-                  {/* Book Button - Minimal */}
+                  {/* Book Button - Calendly Link */}
                   <a
-                    href="mailto:leekshotit@gmail.com"
+                    href="#"
                     className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10"
                     style={{ 
                       borderColor: pkg.accent,
                       color: pkg.accent,
                     }}
                   >
-                    Book Session
+                    Book {pkg.name}
                   </a>
                 </div>
               </div>
@@ -279,42 +279,24 @@ export default function ServicesPage() {
             </div>
           </div>
 
-          {/* Calendly Booking Section */}
+          {/* Setup Instructions */}
           <div className="mt-16 pt-16 border-t border-superGray">
-            <div className="mb-8">
-              <h2 className="text-white text-[2.5rem] md:text-[3.5rem] font-[700] uppercase mb-4 tracking-tight">
-                Book A Session
-              </h2>
-              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
-                Choose your preferred time and date below. Select the session type that matches the package you want.
-              </p>
-            </div>
-
-            {/* Calendly Embed - Placeholder */}
-            <div className="bg-lightDark border border-superGray rounded-lg p-8 md:p-12 text-center">
-              <div className="max-w-2xl mx-auto">
-                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary mx-auto mb-6">
-                  <rect width="18" height="18" x="3" y="4" rx="2" ry="2"/>
-                  <line x1="16" x2="16" y1="2" y2="6"/>
-                  <line x1="8" x2="8" y1="2" y2="6"/>
-                  <line x1="3" x2="21" y1="10" y2="10"/>
+            <div className="bg-lightDark border border-primary/20 rounded-lg p-8">
+              <h3 className="text-white text-[1.25rem] font-[600] mb-4 flex items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4"/>
+                  <path d="M12 8h.01"/>
                 </svg>
-                <h3 className="text-white text-[1.5rem] font-[600] mb-4">
-                  Calendly Booking Widget
-                </h3>
-                <p className="text-customGrayAlt text-[1rem] mb-6 leading-relaxed">
-                  Once you create your free Calendly account, paste your embed code below to replace this placeholder. 
-                  Clients will be able to see your real-time availability and book sessions instantly.
-                </p>
-                <div className="bg-background border border-superGray rounded p-4 text-left">
-                  <p className="text-customGrayAlt2 text-[0.875rem] font-mono">
-                    {`<!-- Calendly inline widget begin -->`}<br/>
-                    {`<div class="calendly-inline-widget" ...>`}<br/>
-                    {`<!-- Calendly inline widget end -->`}
-                  </p>
-                </div>
-                <p className="text-customGrayAlt text-[0.875rem] mt-6">
-                  Get started at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a> - it's free!
+                Calendly Setup Instructions
+              </h3>
+              <div className="text-customGrayAlt text-[0.875rem] space-y-3 leading-relaxed">
+                <p><strong className="text-white">Step 1:</strong> Create your free Calendly account at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a></p>
+                <p><strong className="text-white">Step 2:</strong> Set up different event types for each package (e.g., "Graduation - Bronze", "Solo - Silver", "Events - Hourly")</p>
+                <p><strong className="text-white">Step 3:</strong> Copy each event type's booking link from Calendly</p>
+                <p><strong className="text-white">Step 4:</strong> Replace the "#" in each "Book" button above with your Calendly links</p>
+                <p className="text-customGrayAlt2 text-[0.75rem] mt-4 pt-4 border-t border-superGray">
+                  Example: Change <code className="bg-background px-2 py-1 rounded">href="#"</code> to <code className="bg-background px-2 py-1 rounded">href="https://calendly.com/yourname/graduation-bronze"</code>
                 </p>
               </div>
             </div>
