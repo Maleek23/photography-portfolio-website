@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - Bigger */}
+      {/* Logo top left - Much Bigger */}
       <div className="absolute top-12 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[7rem] md:h-[8rem] object-contain" />
+        <img src="/images/logo.png" alt="Logo" className="h-[9rem] md:h-[11rem] object-contain" />
       </div>
 
       {/* Main content */}
