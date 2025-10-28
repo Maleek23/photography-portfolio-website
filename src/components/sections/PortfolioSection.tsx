@@ -17,7 +17,7 @@ function PortfolioSection() {
       title: "Graduation",
       slug: "graduation",
       count: "18",
-      imageUrl: "/images/lady_2.png",
+      imageUrl: "/images/graduation-cover.jpg",
     },
     {
       id: 2,
