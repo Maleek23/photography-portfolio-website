@@ -7,25 +7,22 @@ import { SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant";
 function FooterSection() {
   return (
     <section id="footer" className="bg-background">
-      <div className="px-4 md:px-[6rem] py-6 md:py-10">
+      <div className="px-4 md:px-[6rem] py-4 md:py-10">
         {/* Logo */}
-        <Link href="/" className="inline-block mb-4 md:mb-6">
-          <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[2.5rem] md:h-[4rem] object-contain" />
+        <Link href="/" className="inline-block mb-3 md:mb-6">
+          <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[2.25rem] md:h-[4rem] object-contain" />
         </Link>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-6 md:mb-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-4 md:mb-8">
           {/* Contact */}
           <div className="col-span-2 md:col-span-1">
-            <p className="text-white text-[0.75rem] font-[600] uppercase mb-3">Contact</p>
-            <div className="space-y-2.5">
-              <a href="mailto:leekshotit@gmail.com" className="text-customGrayAlt text-[0.75rem] hover:text-primary transition-colors block">
-                leekshotit@gmail.com
-              </a>
+            <p className="text-white text-[0.75rem] font-[600] uppercase mb-2">Contact</p>
+            <div className="space-y-2">
               <p className="text-customGrayAlt text-[0.75rem]">Texas, USA</p>
               
-              {/* Social Icons */}
-              <div className="flex items-center gap-3 pt-1">
+              {/* Social Icons - All Same Size */}
+              <div className="flex items-center gap-2.5">
                 <a href="mailto:leekshotit@gmail.com" className="hover:opacity-80 transition-opacity">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <rect width="20" height="16" x="2" y="4" rx="2"/>
@@ -44,8 +41,8 @@ function FooterSection() {
 
           {/* Quick Links */}
           <div>
-            <p className="text-white text-[0.75rem] font-[600] uppercase mb-3">Quick Links</p>
-            <div className="flex flex-col gap-2">
+            <p className="text-white text-[0.75rem] font-[600] uppercase mb-2">Quick Links</p>
+            <div className="flex flex-col gap-1.5">
               <Link href="/" className="text-customGrayAlt text-[0.75rem] hover:text-primary transition-colors">Home</Link>
               <Link href="/about" className="text-customGrayAlt text-[0.75rem] hover:text-primary transition-colors">About Me</Link>
               <Link href="/collections" className="text-customGrayAlt text-[0.75rem] hover:text-primary transition-colors">Collections</Link>
@@ -55,8 +52,8 @@ function FooterSection() {
 
           {/* Collections */}
           <div>
-            <p className="text-white text-[0.75rem] font-[600] uppercase mb-3">Collections</p>
-            <div className="flex flex-col gap-2">
+            <p className="text-white text-[0.75rem] font-[600] uppercase mb-2">Collections</p>
+            <div className="flex flex-col gap-1.5">
               <p className="text-customGrayAlt text-[0.75rem]">Portraits</p>
               <p className="text-customGrayAlt text-[0.75rem]">Graduation</p>
               <p className="text-customGrayAlt text-[0.75rem]">Creative Projects</p>
@@ -66,7 +63,7 @@ function FooterSection() {
         </div>
 
         {/* Copyright */}
-        <div className="pt-4 md:pt-6">
+        <div className="pt-3 md:pt-6">
           <p className="text-customGrayAlt text-[0.688rem]">© 2024 Leekshotit Photography. All rights reserved.</p>
         </div>
       </div>
