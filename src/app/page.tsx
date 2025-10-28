@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - Subtle size */}
+      {/* Logo top left - Bigger */}
       <div className="absolute top-8 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[4rem] md:h-[4.5rem] object-contain" />
+        <img src="/images/logo.png" alt="Logo" className="h-[5.5rem] md:h-[6.5rem] object-contain" />
       </div>
 
       {/* Main content */}
@@ -26,27 +26,31 @@ export default function LandingPage() {
         {/* Very light overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/20"></div>
 
-        {/* Center content - Hologram button */}
+        {/* Center content - Improved Hologram button */}
         <div className="relative z-10 text-center">
           <Link
             href="/home"
-            className="group inline-flex items-center gap-3 px-10 py-5 rounded-lg uppercase text-[1rem] font-[600] transition-all duration-300
-            bg-primary/10 backdrop-blur-md border-2 border-primary/50 text-white
-            hover:bg-primary/20 hover:border-primary hover:shadow-[0_0_40px_rgba(37,99,235,0.8),inset_0_0_20px_rgba(37,99,235,0.3)]
-            shadow-[0_0_20px_rgba(37,99,235,0.5),inset_0_0_10px_rgba(37,99,235,0.2)]"
+            className="group relative inline-flex items-center gap-3 px-12 py-6 rounded-xl uppercase text-[1.125rem] font-[700] tracking-wide transition-all duration-500
+            bg-gradient-to-r from-primary/20 via-primary/10 to-primary/20 backdrop-blur-xl 
+            border-2 border-primary/60 text-white
+            hover:from-primary/30 hover:via-primary/20 hover:to-primary/30
+            hover:border-primary hover:scale-105
+            shadow-[0_0_30px_rgba(37,99,235,0.6),0_0_60px_rgba(37,99,235,0.3),inset_0_0_20px_rgba(37,99,235,0.1)]
+            hover:shadow-[0_0_50px_rgba(37,99,235,0.9),0_0_100px_rgba(37,99,235,0.5),inset_0_0_30px_rgba(37,99,235,0.2)]
+            before:absolute before:inset-0 before:rounded-xl before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-1000"
           >
-            Enter Portfolio
+            <span className="relative z-10">Enter Portfolio</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
+              width="22"
+              height="22"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="transition-transform group-hover:translate-x-1"
+              className="relative z-10 transition-transform duration-300 group-hover:translate-x-2"
             >
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
