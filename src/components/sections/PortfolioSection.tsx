@@ -9,7 +9,7 @@ function PortfolioSection() {
       id: 0,
       title: "Portraits",
       slug: "portraits",
-      imageUrl: "/images/lady_1.png",
+      imageUrl: "/images/portraits-cover.jpg",
     },
     {
       id: 1,
