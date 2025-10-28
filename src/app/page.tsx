@@ -20,9 +20,9 @@ export default function LandingPage() {
           <div className="relative overflow-hidden rounded-lg">
             <img src="/images/back-portrait.png" className="w-full h-full object-cover" alt="" />
           </div>
-          {/* 3rd photo - graduation guy (right) */}
+          {/* 3rd photo - heart portrait (right) */}
           <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="" />
+            <img src="/images/heart-portrait.jpg" className="w-full h-full object-cover" alt="" />
           </div>
         </div>
 
@@ -71,7 +71,7 @@ export default function LandingPage() {
       <div className="absolute bottom-8 left-8 z-10">
         <div className="flex gap-3 items-center">
           <a 
-            href="https://instagram.com" 
+            href="https://instagram.com/leekshotitt" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
@@ -83,7 +83,7 @@ export default function LandingPage() {
             </svg>
           </a>
           <a 
-            href="https://tiktok.com" 
+            href="https://tiktok.com/@leekshotit" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-colors drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
