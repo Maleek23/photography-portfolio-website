@@ -57,7 +57,7 @@ export default function CollectionsPage() {
               <Link
                 key={collection.id}
                 href={`/collections/${collection.slug}`}
-                className="group relative overflow-hidden rounded-lg cursor-pointer aspect-[4/3] bg-lightDark border border-superGray hover:border-primary transition-all duration-300"
+                className="group relative overflow-hidden rounded-lg cursor-pointer h-[480px] md:h-[560px] bg-lightDark border border-superGray hover:border-primary transition-all duration-300"
               >
                 <img
                   src={collection.imageUrl}
