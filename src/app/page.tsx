@@ -5,26 +5,29 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background relative overflow-hidden">
       {/* Logo top left - Bigger */}
       <div className="absolute top-8 left-8 z-10">
-        <img src="/images/logo.png" alt="Logo" className="h-[5.5rem] md:h-[6.5rem] object-contain" />
+        <img src="/images/logo.png" alt="Logo" className="h-[6.5rem] md:h-[7.5rem] object-contain" />
       </div>
 
       {/* Main content */}
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
-        {/* Photo Grid Background - COMPLETELY VISIBLE */}
+        {/* Photo Grid Background - FULL BRIGHTNESS, NO FADE */}
         <div className="absolute inset-0 grid grid-cols-3 gap-2 p-4">
-          <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="" />
-          </div>
-          <div className="relative overflow-hidden rounded-lg">
-            <img src="/images/graduation-nike.jpg" className="w-full h-full object-cover" alt="" />
-          </div>
+          {/* 1st photo - creative smoke (by logo) */}
           <div className="relative overflow-hidden rounded-lg">
             <img src="/images/creative-smoke.jpg" className="w-full h-full object-cover" alt="" />
           </div>
+          {/* 2nd photo - new back portrait (middle) */}
+          <div className="relative overflow-hidden rounded-lg">
+            <img src="/images/back-portrait.png" className="w-full h-full object-cover" alt="" />
+          </div>
+          {/* 3rd photo - yellow portrait (right) */}
+          <div className="relative overflow-hidden rounded-lg">
+            <img src="/images/portrait-yellow.jpg" className="w-full h-full object-cover" alt="" />
+          </div>
         </div>
 
-        {/* Very light overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/20"></div>
+        {/* Light overlay for text readability only */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/15"></div>
 
         {/* Center content - Button and signature */}
         <div className="relative z-10 text-center">
