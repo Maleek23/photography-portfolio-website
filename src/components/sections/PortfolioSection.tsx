@@ -63,7 +63,7 @@ function PortfolioSection() {
               <Link
                 key={item.id}
                 href={`/collections/${item.slug}`}
-                className="group relative overflow-hidden rounded-lg cursor-pointer w-[280px] md:w-[320px] aspect-[3/4] bg-lightDark flex-shrink-0 border border-transparent hover:border-primary transition-all duration-300"
+                className="group relative overflow-hidden rounded-lg cursor-pointer w-[280px] md:w-[320px] h-[480px] md:h-[560px] bg-lightDark flex-shrink-0 border border-transparent hover:border-primary transition-all duration-300"
               >
                 <img
                   src={item.imageUrl}
