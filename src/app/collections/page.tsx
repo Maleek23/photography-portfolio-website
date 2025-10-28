@@ -9,7 +9,6 @@ export default function CollectionsPage() {
       title: "Portraits",
       slug: "portraits",
       description: "Capturing personality, style, and the essence of individuals",
-      count: "24 Projects",
       imageUrl: "/images/lady_1.png",
     },
     {
@@ -17,7 +16,6 @@ export default function CollectionsPage() {
       title: "Graduation",
       slug: "graduation",
       description: "Documenting milestone moments and celebrating achievements",
-      count: "18 Projects",
       imageUrl: "/images/graduation-cover.jpg",
     },
     {
@@ -25,15 +23,13 @@ export default function CollectionsPage() {
       title: "Creative Projects",
       slug: "creative-projects",
       description: "Pushing boundaries through experimental and conceptual photography",
-      count: "32 Projects",
-      imageUrl: "/images/box.png",
+      imageUrl: "/images/creative-projects-cover.jpg",
     },
     {
       id: 3,
       title: "Concerts/Events",
       slug: "concerts-events",
       description: "Live music, performances, and unforgettable experiences",
-      count: "15 Projects",
       imageUrl: "/images/hero.png",
     },
   ];
@@ -66,9 +62,6 @@ export default function CollectionsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent">
                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <p className="text-primary text-[0.875rem] font-[600] mb-2 uppercase tracking-wider">
-                      {collection.count}
-                    </p>
                     <h3 className="text-white text-[1.75rem] font-[600] mb-3 uppercase tracking-wide">
                       {collection.title}
                     </h3>

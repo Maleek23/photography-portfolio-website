@@ -11,13 +11,12 @@ export default function Home() {
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 50);
-    return () => clearTimeout(timer);
+    setLoaded(true);
   }, []);
 
   return (
     <main className="bg-background">
-      <div className={`transition-opacity duration-500 ease-in ${loaded ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`transition-opacity duration-300 ease-out ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         <NavBar />
         <div className="pt-[10rem] lg:pt-0">
           <HeroSection />

@@ -9,28 +9,24 @@ function PortfolioSection() {
       id: 0,
       title: "Portraits",
       slug: "portraits",
-      count: "24",
       imageUrl: "/images/lady_1.png",
     },
     {
       id: 1,
       title: "Graduation",
       slug: "graduation",
-      count: "18",
       imageUrl: "/images/graduation-cover.jpg",
     },
     {
       id: 2,
       title: "Creative Projects",
       slug: "creative-projects",
-      count: "32",
-      imageUrl: "/images/box.png",
+      imageUrl: "/images/creative-projects-cover.jpg",
     },
     {
       id: 3,
       title: "Concerts/Events",
       slug: "concerts-events",
-      count: "15",
       imageUrl: "/images/hero.png",
     },
   ];
@@ -73,15 +69,7 @@ function PortfolioSection() {
                 {/* Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-primary text-[2rem] font-[700]">
-                        {item.count}
-                      </span>
-                      <span className="text-customGrayAlt text-[0.875rem] uppercase">
-                        Projects
-                      </span>
-                    </div>
-                    <h3 className="text-white text-[1.125rem] font-[600] uppercase tracking-wide leading-tight">
+                    <h3 className="text-white text-[1.5rem] font-[600] uppercase tracking-wide leading-tight">
                       {item.title}
                     </h3>
                   </div>
