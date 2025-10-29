@@ -235,7 +235,7 @@ export default function ServicesPage() {
           <div className="flex gap-2 mb-8 md:mb-12 border-b border-superGray">
             <button
               onClick={() => setActiveTab("grad")}
-              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] border-b-2 ${
                 activeTab === "grad"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -245,7 +245,7 @@ export default function ServicesPage() {
             </button>
             <button
               onClick={() => setActiveTab("solo")}
-              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] border-b-2 ${
                 activeTab === "solo"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -255,7 +255,7 @@ export default function ServicesPage() {
             </button>
             <button
               onClick={() => setActiveTab("events")}
-              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] transition-all border-b-2 ${
+              className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] border-b-2 ${
                 activeTab === "events"
                   ? "border-primary text-white"
                   : "border-transparent text-customGrayAlt hover:text-white"
@@ -340,34 +340,6 @@ export default function ServicesPage() {
               <p>50% deposit required for all bookings</p>
               <p>3-9 day delivery time</p>
               <p>$50 upcharge for 24-hour delivery</p>
-            </div>
-          </div>
-
-          {/* Setup Instructions */}
-          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
-            <div className="bg-lightDark border border-primary/20 rounded-lg p-6 md:p-8">
-              <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] mb-3 md:mb-4 flex items-center gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary md:w-6 md:h-6">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 16v-4"/>
-                  <path d="M12 8h.01"/>
-                </svg>
-                Calendly Setup Instructions
-              </h3>
-              <div className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem] space-y-2 md:space-y-3 leading-relaxed">
-                <p><strong className="text-white">Step 1:</strong> Create your free Calendly account at <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">calendly.com</a></p>
-                <p><strong className="text-white">Step 2:</strong> Set up different event types for each package:</p>
-                <ul className="list-disc list-inside ml-4 space-y-1 text-customGrayAlt2">
-                  <li>Graduation - Bronze, Silver, Gold</li>
-                  <li>Solo - Bronze, Silver, Gold, Platinum</li>
-                  <li>Events - Hourly Rate</li>
-                </ul>
-                <p><strong className="text-white">Step 3:</strong> Copy each event type's booking link from Calendly</p>
-                <p><strong className="text-white">Step 4:</strong> Update the <code className="bg-background px-2 py-1 rounded text-primary">calendlyUrl</code> values in the code for each package</p>
-                <p className="text-customGrayAlt2 text-[0.75rem] mt-4 pt-4 border-t border-superGray">
-                  Currently setup: Graduation Bronze ✓ | Remaining: 7 packages to configure
-                </p>
-              </div>
             </div>
           </div>
         </div>
