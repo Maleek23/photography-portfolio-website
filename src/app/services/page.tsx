@@ -231,8 +231,30 @@ export default function ServicesPage() {
             </p>
           </div>
 
+          {/* Quick Navigation */}
+          <div className="flex flex-wrap gap-3 mb-8 md:mb-10">
+            <a 
+              href="#pricing" 
+              className="px-4 py-2 border border-primary/50 text-primary text-[0.75rem] uppercase font-[500] rounded-lg hover:bg-primary/10 transition-all"
+            >
+              Pricing
+            </a>
+            <a 
+              href="#policy" 
+              className="px-4 py-2 border border-superGray text-customGrayAlt text-[0.75rem] uppercase font-[500] rounded-lg hover:border-primary/50 hover:text-primary transition-all"
+            >
+              Booking Policy
+            </a>
+            <a 
+              href="/contact" 
+              className="px-4 py-2 bg-primary text-background text-[0.75rem] uppercase font-[600] rounded-lg hover:shadow-lg transition-all"
+            >
+              Contact First
+            </a>
+          </div>
+
           {/* Tab Switcher - Minimal */}
-          <div className="flex gap-2 mb-8 md:mb-12 border-b border-superGray">
+          <div id="pricing" className="flex gap-2 mb-8 md:mb-12 border-b border-superGray">
             <button
               onClick={() => setActiveTab("grad")}
               className={`pb-3 md:pb-4 px-4 md:px-6 font-[500] uppercase text-[0.75rem] md:text-[0.875rem] border-b-2 ${
@@ -365,12 +387,66 @@ export default function ServicesPage() {
             ))}
           </div>
 
-          {/* Additional Info - Subtle */}
-          <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-superGray">
-            <div className="flex flex-wrap gap-x-8 md:gap-x-12 gap-y-2 md:gap-y-3 text-[0.813rem] md:text-[0.875rem] text-customGrayAlt">
-              <p>50% deposit required for all bookings</p>
-              <p>3-9 day delivery time</p>
-              <p>$50 upcharge for 24-hour delivery</p>
+          {/* Booking Policy Section */}
+          <div id="policy" className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
+            <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[700] uppercase mb-6 md:mb-8 tracking-tight">
+              Booking Policy
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+              {/* Important Notice */}
+              <div className="bg-primary/5 border border-primary/30 rounded-lg p-5 md:p-6">
+                <div className="flex items-start gap-3 mb-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 mt-0.5">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 16v-4"/>
+                    <path d="M12 8h.01"/>
+                  </svg>
+                  <h3 className="text-primary text-[0.938rem] md:text-[1rem] font-[600] uppercase">Required Before Booking</h3>
+                </div>
+                <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  <strong>Consultations are required before all bookings.</strong> Please fill out the contact form before proceeding with any booking.
+                </p>
+              </div>
+
+              {/* Payment Terms */}
+              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Payment Terms</h3>
+                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  <p>• 50% non-refundable deposit required to secure date</p>
+                  <p>• Final balance due at end of photoshoot</p>
+                  <p>• Payment via Zelle or Venmo</p>
+                  <p>• Proofs sent after full payment received</p>
+                </div>
+              </div>
+
+              {/* Timing & Delivery */}
+              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Timing & Delivery</h3>
+                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  <p>• Standard delivery: 10-14 business days</p>
+                  <p>• Rush delivery (24hr): +$50 upcharge</p>
+                  <p>• 15+ minutes late: +$20 fee</p>
+                  <p>• 20+ minutes late: session canceled, no refund</p>
+                </div>
+              </div>
+
+              {/* Rescheduling */}
+              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Rescheduling</h3>
+                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  <p>• Weather-related rescheduling allowed</p>
+                  <p>• Rain in forecast or temp below 65°F</p>
+                  <p>• Cancellations require new deposit to rebook</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Agreement Notice */}
+            <div className="mt-6 md:mt-8 p-4 md:p-5 bg-background border border-superGray rounded-lg">
+              <p className="text-customGrayAlt text-[0.75rem] md:text-[0.813rem] leading-relaxed">
+                By booking and paying the deposit, you acknowledge that you have read and agree to all of Leekshotit Photography's policies outlined above.
+              </p>
             </div>
           </div>
         </div>
