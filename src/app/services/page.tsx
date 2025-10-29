@@ -60,11 +60,15 @@ export default function ServicesPage() {
       return;
     }
     
+    console.log('Opening Calendly with URL:', url);
+    
     // Use Calendly's built-in popup
     if (typeof window !== 'undefined' && (window as any).Calendly) {
+      console.log('Calendly found, opening popup');
       (window as any).Calendly.initPopupWidget({ url });
     } else {
       console.error('Calendly not loaded yet');
+      alert('Calendly is loading, please try again in a moment or click OK to open in new tab.');
       // Fallback to direct link if script not loaded
       window.open(url, '_blank');
     }
@@ -76,6 +80,15 @@ export default function ServicesPage() {
   };
 
   useEffect(() => {
+    // Load Calendly CSS
+    const link = document.createElement('link');
+    link.href = 'https://assets.calendly.com/assets/external/widget.css';
+    link.rel = 'stylesheet';
+    
+    if (!document.querySelector('link[href="https://assets.calendly.com/assets/external/widget.css"]')) {
+      document.head.appendChild(link);
+    }
+    
     // Load Calendly popup widget script
     const script = document.createElement('script');
     script.src = 'https://assets.calendly.com/assets/external/widget.js';
