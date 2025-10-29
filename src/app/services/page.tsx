@@ -142,7 +142,7 @@ export default function ServicesPage() {
         "30-45 sec Cinematic Clip",
       ],
       accent: "#FFD700",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/graduation-gold-package-clone",
     },
   ];
 
