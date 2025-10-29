@@ -265,69 +265,100 @@ export default function ServicesPage() {
             </button>
           </div>
 
-          {/* Pricing Table - Clean */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Pricing Cards - Redesigned */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`relative bg-background border ${
-                  pkg.popular ? "border-primary" : "border-superGray"
-                } rounded-lg overflow-hidden transition-all duration-300`}
-                style={{
-                  borderTopColor: pkg.accent,
-                  borderTopWidth: '3px',
-                }}
+                className={`group relative bg-gradient-to-b from-lightDark to-background border rounded-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-200 ${
+                  pkg.popular ? "border-primary shadow-lg shadow-primary/20" : "border-superGray/50 hover:border-superGray"
+                }`}
               >
-                {/* Popular Label - Minimal */}
+                {/* Accent Bar */}
+                <div 
+                  className="h-1.5"
+                  style={{ backgroundColor: pkg.accent }}
+                />
+
+                {/* Popular Badge */}
                 {pkg.popular && (
-                  <div className="absolute top-3 md:top-4 right-3 md:right-4 text-primary text-[0.563rem] md:text-[0.625rem] font-[600] uppercase tracking-widest">
-                    Most Popular
+                  <div 
+                    className="absolute top-5 -right-8 rotate-45 w-32 text-center py-1 text-[0.625rem] font-[700] uppercase tracking-wide"
+                    style={{ backgroundColor: pkg.accent, color: '#000' }}
+                  >
+                    Popular
                   </div>
                 )}
 
-                <div className="p-6 md:p-8">
-                  {/* Package Name */}
-                  <h3 
-                    className="text-[0.875rem] md:text-[1rem] font-[500] uppercase tracking-wider mb-6 md:mb-8"
-                    style={{ color: pkg.accent }}
-                  >
-                    {pkg.name}
-                  </h3>
-
-                  {/* Price */}
-                  <div className="mb-6 md:mb-8">
-                    <div className="flex items-start mb-2">
-                      <span className="text-white text-[0.75rem] md:text-[0.875rem] mt-2">$</span>
-                      <span className="text-white text-[3rem] md:text-[3.5rem] font-[300] leading-none tracking-tight">{pkg.price}</span>
+                <div className="p-5 md:p-6">
+                  {/* Package Name with Icon */}
+                  <div className="flex items-center justify-between mb-5 md:mb-6">
+                    <h3 
+                      className="text-[1rem] md:text-[1.125rem] font-[600] uppercase tracking-wide"
+                      style={{ color: pkg.accent }}
+                    >
+                      {pkg.name}
+                    </h3>
+                    <div 
+                      className="w-10 h-10 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: `${pkg.accent}20` }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={pkg.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
+                        <circle cx="12" cy="13" r="3"/>
+                      </svg>
                     </div>
-                    <p className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">{pkg.duration}</p>
                   </div>
 
-                  {/* Features */}
-                  <div className="space-y-2 md:space-y-3 mb-6 md:mb-8 pt-5 md:pt-6 border-t border-superGray">
+                  {/* Price - Bigger & Bolder */}
+                  <div className="mb-5 md:mb-6">
+                    <div className="flex items-baseline gap-1">
+                      <span className="text-customGrayAlt text-[1rem] font-[400]">$</span>
+                      <span 
+                        className="text-[3.5rem] md:text-[4rem] font-[700] leading-none tracking-tighter"
+                        style={{ color: pkg.accent }}
+                      >
+                        {pkg.price}
+                      </span>
+                    </div>
+                    <p className="text-customGrayAlt text-[0.875rem] mt-1">{pkg.duration}</p>
+                  </div>
+
+                  {/* Features with Checkmarks */}
+                  <div className="space-y-3 mb-6 md:mb-7">
                     {pkg.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-3">
-                        <div 
-                          className="w-1 h-1 rounded-full mt-2 flex-shrink-0"
-                          style={{ backgroundColor: pkg.accent }}
-                        ></div>
-                        <p className="text-customGrayAlt2 text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                      <div key={i} className="flex items-start gap-2.5">
+                        <svg 
+                          xmlns="http://www.w3.org/2000/svg" 
+                          width="16" 
+                          height="16" 
+                          viewBox="0 0 24 24" 
+                          fill="none" 
+                          stroke={pkg.accent}
+                          strokeWidth="3" 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round"
+                          className="flex-shrink-0 mt-0.5"
+                        >
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                        <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
                           {feature}
                         </p>
                       </div>
                     ))}
                   </div>
 
-                  {/* Book Button - Opens Calendly Modal */}
+                  {/* Book Button - More Prominent */}
                   <button
                     onClick={() => openCalendly(pkg.calendlyUrl)}
-                    className="block w-full text-center border font-[500] py-3 rounded uppercase text-[0.75rem] tracking-widest transition-all hover:bg-opacity-10 cursor-pointer"
+                    className="block w-full text-center font-[600] py-3.5 rounded-lg uppercase text-[0.75rem] tracking-widest transition-all duration-200 hover:shadow-lg"
                     style={{ 
-                      borderColor: pkg.accent,
-                      color: pkg.accent,
+                      backgroundColor: pkg.accent,
+                      color: '#000',
                     }}
                   >
-                    Book {pkg.name}
+                    Book Now
                   </button>
                 </div>
               </div>
