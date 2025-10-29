@@ -130,7 +130,7 @@ export default function ServicesPage() {
       ],
       popular: true,
       accent: "#C0C0C0",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/graduation-silver-package",
     },
     {
       name: "Gold",
