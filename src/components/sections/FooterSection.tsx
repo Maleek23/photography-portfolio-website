@@ -12,7 +12,7 @@ function FooterSection() {
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12 mb-6">
           {/* Logo */}
           <Link href="/" className="inline-block">
-            <img src="/images/logo.png" alt="Leekshotit" className="h-[1.75rem] md:h-[2.5rem] object-contain" />
+            <img src="/images/logo.png" alt="Leekshotit" className="h-[2.75rem] md:h-[3.5rem] object-contain" />
           </Link>
 
           {/* Links Row */}
