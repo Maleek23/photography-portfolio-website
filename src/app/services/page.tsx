@@ -390,63 +390,72 @@ export default function ServicesPage() {
           {/* Booking Policy Section */}
           <div id="policy" className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
             <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[700] uppercase mb-6 md:mb-8 tracking-tight">
-              Booking Policy
+              More Info
             </h2>
 
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-              {/* Important Notice */}
-              <div className="bg-primary/5 border border-primary/30 rounded-lg p-5 md:p-6">
-                <div className="flex items-start gap-3 mb-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 mt-0.5">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 16v-4"/>
-                    <path d="M12 8h.01"/>
+            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+              {/* Deposit Required */}
+              <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/40 rounded-xl p-6 md:p-7 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <rect width="20" height="14" x="2" y="5" rx="2"/>
+                    <line x1="2" x2="22" y1="10" y2="10"/>
                   </svg>
-                  <h3 className="text-primary text-[0.938rem] md:text-[1rem] font-[600] uppercase">Required Before Booking</h3>
                 </div>
-                <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
-                  <strong>Consultations are required before all bookings.</strong> Please fill out the contact form before proceeding with any booking.
+                <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">50% Deposit</h3>
+                <p className="text-white text-[0.875rem] md:text-[0.938rem] leading-relaxed">
+                  Required for all bookings
                 </p>
               </div>
 
-              {/* Payment Terms */}
-              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Payment Terms</h3>
-                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
-                  <p>• 50% non-refundable deposit required to secure date</p>
-                  <p>• Final balance due at end of photoshoot</p>
-                  <p>• Payment via Zelle or Venmo</p>
-                  <p>• Proofs sent after full payment received</p>
+              {/* Delivery Time */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-6 md:p-7 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
                 </div>
+                <h3 className="text-white text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">3-9 Day Delivery</h3>
+                <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] leading-relaxed">
+                  Standard turnaround time
+                </p>
               </div>
 
-              {/* Timing & Delivery */}
-              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Timing & Delivery</h3>
-                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
-                  <p>• Standard delivery: 10-14 business days</p>
-                  <p>• Rush delivery (24hr): +$50 upcharge</p>
-                  <p>• 15+ minutes late: +$20 fee</p>
-                  <p>• 20+ minutes late: session canceled, no refund</p>
+              {/* Rush Delivery */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-6 md:p-7 text-center">
+                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
                 </div>
-              </div>
-
-              {/* Rescheduling */}
-              <div className="bg-lightDark border border-superGray rounded-lg p-5 md:p-6">
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Rescheduling</h3>
-                <div className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
-                  <p>• Weather-related rescheduling allowed</p>
-                  <p>• Rain in forecast or temp below 65°F</p>
-                  <p>• Cancellations require new deposit to rebook</p>
-                </div>
+                <h3 className="text-white text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">24 HR Rush</h3>
+                <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] leading-relaxed">
+                  $50 upcharge for 24 hour delivery
+                </p>
               </div>
             </div>
 
-            {/* Agreement Notice */}
-            <div className="mt-6 md:mt-8 p-4 md:p-5 bg-background border border-superGray rounded-lg">
-              <p className="text-customGrayAlt text-[0.75rem] md:text-[0.813rem] leading-relaxed">
-                By booking and paying the deposit, you acknowledge that you have read and agree to all of Leekshotit Photography's policies outlined above.
+            {/* Contact Info */}
+            <div className="mt-8 md:mt-10 text-center">
+              <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] mb-4">
+                For bookings & inquiries visit <span className="text-primary">leekshotit.com</span> or email <a href="mailto:leekshotit@gmail.com" className="text-primary hover:underline">leekshotit@gmail.com</a>
               </p>
+              <div className="flex items-center justify-center gap-4">
+                <a href="https://www.tiktok.com/@leekshotit" target="_blank" rel="noopener noreferrer" className="text-customGrayAlt hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                  </svg>
+                </a>
+                <a href="https://www.instagram.com/leekshotit/" target="_blank" rel="noopener noreferrer" className="text-customGrayAlt hover:text-primary transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+                  </svg>
+                </a>
+                <span className="text-white font-[500]">@leekshotit</span>
+              </div>
             </div>
           </div>
         </div>
