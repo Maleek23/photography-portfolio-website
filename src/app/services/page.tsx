@@ -423,7 +423,7 @@ export default function ServicesPage() {
                 <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
                   <li>• 50% non-refundable deposit to secure booking</li>
                   <li>• Final balance due at end of shoot</li>
-                  <li>• Payment via Cashapp, Cash, Apple Pay or Venmo</li>
+                  <li>• Payment via Cash, Zelle, Apple Pay, Venmo or Cashapp</li>
                   <li>• Proofs sent after full payment</li>
                 </ul>
               </div>
