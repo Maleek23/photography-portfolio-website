@@ -4,11 +4,11 @@
 
 @layer base {
   * {
-    cursor: url('/cursor-blue.svg') 12 12, auto;
+    cursor: url('/cursor.png') 12 12, auto;
   }
 
   a, button, select {
-    cursor: url('/cursor-blue.svg') 12 12, pointer;
+    cursor: url('/cursor.png') 12 12, pointer;
   }
 
   input, textarea {
