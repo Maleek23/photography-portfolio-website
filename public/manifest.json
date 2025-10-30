@@ -1,0 +1,16 @@
+{
+  "name": "Leekshotit Photography",
+  "short_name": "Leekshotit",
+  "description": "Professional HTX/DTX Photography Services",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#2563EB",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

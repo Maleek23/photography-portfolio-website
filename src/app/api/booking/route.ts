@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, phone, sessionType, packageTier, preferredDate, message } = body;
 
-    // TODO: Set up email service integration
-    // For now, we'll just log and return success
-    
     console.log("Booking request:", { 
       name, 
       email, 
@@ -18,22 +18,49 @@ export async function POST(request: Request) {
       message 
     });
 
-    // Placeholder - replace with actual email sending logic
-    // Example email template:
-    // await sendEmail({
-    //   to: 'leekshotit@gmail.com',
-    //   subject: `New Booking Request: ${sessionType} - ${packageTier}`,
-    //   html: `
-    //     <h2>New Photography Booking Request</h2>
-    //     <p><strong>Name:</strong> ${name}</p>
-    //     <p><strong>Email:</strong> ${email}</p>
-    //     <p><strong>Phone:</strong> ${phone}</p>
-    //     <p><strong>Session Type:</strong> ${sessionType}</p>
-    //     <p><strong>Package:</strong> ${packageTier}</p>
-    //     <p><strong>Preferred Date:</strong> ${preferredDate}</p>
-    //     <p><strong>Additional Details:</strong><br>${message || 'None provided'}</p>
-    //   `
-    // });
+    // Send email using Resend
+    if (process.env.RESEND_API_KEY) {
+      try {
+        await resend.emails.send({
+          from: 'Leekshotit Portfolio <onboarding@resend.dev>', // Update with your verified domain
+          to: ['leekshotit@gmail.com'],
+          replyTo: email,
+          subject: `New Booking Request: ${sessionType} - ${packageTier}`,
+          html: `
+            <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+              <h2 style="color: #2563EB; border-bottom: 3px solid #2563EB; padding-bottom: 10px;">
+                New Photography Booking Request
+              </h2>
+              <div style="margin: 20px 0; padding: 20px; background-color: #f5f5f5; border-radius: 8px;">
+                <p style="margin: 10px 0;"><strong>Name:</strong> ${name}</p>
+                <p style="margin: 10px 0;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+                <p style="margin: 10px 0;"><strong>Phone:</strong> ${phone}</p>
+              </div>
+              <div style="margin: 20px 0; padding: 20px; background-color: #e8f4ff; border-radius: 8px; border-left: 4px solid #2563EB;">
+                <h3 style="color: #2563EB; margin-top: 0;">Session Details</h3>
+                <p style="margin: 10px 0;"><strong>Session Type:</strong> ${sessionType}</p>
+                <p style="margin: 10px 0;"><strong>Package:</strong> ${packageTier}</p>
+                <p style="margin: 10px 0;"><strong>Preferred Date:</strong> ${preferredDate}</p>
+              </div>
+              ${message ? `
+              <div style="margin: 20px 0;">
+                <h3 style="color: #333;">Additional Details:</h3>
+                <p style="white-space: pre-wrap; line-height: 1.6;">${message}</p>
+              </div>
+              ` : ''}
+              <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 12px;">
+                <p>This email was sent from your Leekshotit Photography booking form.</p>
+              </div>
+            </div>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Resend email error:", emailError);
+        // Continue even if email fails - booking data is still logged
+      }
+    } else {
+      console.warn("RESEND_API_KEY not configured - email not sent");
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
