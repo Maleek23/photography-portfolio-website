@@ -312,48 +312,48 @@ export default function ServicesPage() {
                   </div>
                 )}
 
-                <div className="p-5 md:p-6">
+                <div className="p-4 md:p-6">
                   {/* Package Name with Icon */}
-                  <div className="flex items-center justify-between mb-5 md:mb-6">
+                  <div className="flex items-center justify-between mb-4 md:mb-5">
                     <h3 
-                      className="text-[1rem] md:text-[1.125rem] font-[600] uppercase tracking-wide"
+                      className="text-[0.938rem] md:text-[1.125rem] font-[600] uppercase tracking-wide"
                       style={{ color: pkg.accent }}
                     >
                       {pkg.name}
                     </h3>
                     <div 
-                      className="w-10 h-10 rounded-full flex items-center justify-center"
+                      className="w-9 h-9 md:w-10 md:h-10 rounded-full flex items-center justify-center"
                       style={{ backgroundColor: `${pkg.accent}20` }}
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={pkg.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={pkg.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
                         <circle cx="12" cy="13" r="3"/>
                       </svg>
                     </div>
                   </div>
 
-                  {/* Price - Bigger & Bolder */}
-                  <div className="mb-5 md:mb-6">
-                    <div className="flex items-baseline gap-1">
-                      <span className="text-customGrayAlt text-[1rem] font-[400]">$</span>
+                  {/* Price - Responsive Sizing */}
+                  <div className="mb-4 md:mb-5">
+                    <div className="flex items-baseline gap-0.5">
+                      <span className="text-customGrayAlt text-[0.875rem] md:text-[1rem] font-[400]">$</span>
                       <span 
-                        className="text-[3.5rem] md:text-[4rem] font-[700] leading-none tracking-tighter"
+                        className="text-[2.75rem] md:text-[3.5rem] font-[700] leading-none tracking-tighter"
                         style={{ color: pkg.accent }}
                       >
                         {pkg.price}
                       </span>
                     </div>
-                    <p className="text-customGrayAlt text-[0.875rem] mt-1">{pkg.duration}</p>
+                    <p className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem] mt-1">{pkg.duration}</p>
                   </div>
 
                   {/* Features with Checkmarks */}
-                  <div className="space-y-3 mb-6 md:mb-7">
+                  <div className="space-y-2.5 md:space-y-3 mb-5 md:mb-6">
                     {pkg.features.map((feature, i) => (
-                      <div key={i} className="flex items-start gap-2.5">
+                      <div key={i} className="flex items-start gap-2">
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
-                          width="16" 
-                          height="16" 
+                          width="14" 
+                          height="14" 
                           viewBox="0 0 24 24" 
                           fill="none" 
                           stroke={pkg.accent}
@@ -364,7 +364,7 @@ export default function ServicesPage() {
                         >
                           <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                        <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                        <p className="text-white text-[0.75rem] md:text-[0.813rem] leading-snug">
                           {feature}
                         </p>
                       </div>
@@ -374,7 +374,7 @@ export default function ServicesPage() {
                   {/* Book Button - More Prominent */}
                   <button
                     onClick={() => openCalendly(pkg.calendlyUrl)}
-                    className="block w-full text-center font-[600] py-3.5 rounded-lg uppercase text-[0.75rem] tracking-widest transition-all duration-200 hover:shadow-lg"
+                    className="block w-full text-center font-[600] py-3 md:py-3.5 rounded-lg uppercase text-[0.688rem] md:text-[0.75rem] tracking-widest transition-all duration-200 hover:shadow-lg"
                     style={{ 
                       backgroundColor: pkg.accent,
                       color: '#000',
