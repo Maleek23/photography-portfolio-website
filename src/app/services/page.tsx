@@ -393,45 +393,119 @@ export default function ServicesPage() {
               More Info
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-              {/* Deposit Required */}
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/40 rounded-xl p-6 md:p-7 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+            {/* Important Notice */}
+            <div className="bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-primary rounded-lg p-5 md:p-6 mb-8">
+              <div className="flex items-start gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 mt-1">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4"/>
+                  <path d="M12 8h.01"/>
+                </svg>
+                <div>
+                  <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">Consultation Required</h3>
+                  <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                    All bookings require a consultation beforehand. Please fill out the contact form before proceeding with any booking.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+              {/* Deposit & Payment */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <rect width="20" height="14" x="2" y="5" rx="2"/>
                     <line x1="2" x2="22" y1="10" y2="10"/>
                   </svg>
                 </div>
-                <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">50% Deposit</h3>
-                <p className="text-white text-[0.875rem] md:text-[0.938rem] leading-relaxed">
-                  Required for all bookings
-                </p>
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Deposit & Payment</h3>
+                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
+                  <li>• 50% non-refundable deposit to secure booking</li>
+                  <li>• Final balance due at end of shoot</li>
+                  <li>• Payment via Zelle or Venmo</li>
+                  <li>• Proofs sent after full payment</li>
+                </ul>
               </div>
 
-              {/* Delivery Time */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-6 md:p-7 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+              {/* Delivery Times */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <circle cx="12" cy="12" r="10"/>
                     <polyline points="12 6 12 12 16 14"/>
                   </svg>
                 </div>
-                <h3 className="text-white text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">3-9 Day Delivery</h3>
-                <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] leading-relaxed">
-                  Standard turnaround time
-                </p>
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Delivery Times</h3>
+                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
+                  <li>• Standard: 3-9 business days</li>
+                  <li>• 24-hour rush: +$50 upcharge</li>
+                  <li>• Turnaround starts after you make selects</li>
+                </ul>
               </div>
 
-              {/* Rush Delivery */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-6 md:p-7 text-center">
-                <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              {/* Late Policy */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <path d="M10 2h4"/>
+                    <path d="M12 14v-4"/>
+                    <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6"/>
+                    <path d="M9 17H4v5"/>
                   </svg>
                 </div>
-                <h3 className="text-white text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">24 HR Rush</h3>
-                <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] leading-relaxed">
-                  $50 upcharge for 24 hour delivery
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Late Policy</h3>
+                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
+                  <li>• 15+ mins late: +$20 fee</li>
+                  <li>• Overtime: $1.75 per minute</li>
+                  <li>• 20+ mins late: session canceled, no refund</li>
+                </ul>
+              </div>
+
+              {/* Rescheduling */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+                    <path d="M21 3v5h-5"/>
+                  </svg>
+                </div>
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Rescheduling</h3>
+                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
+                  <li>• Weather-related rescheduling allowed</li>
+                  <li>• Rain forecast or temp below 65°F</li>
+                  <li>• Cancellations require new deposit to rebook</li>
+                </ul>
+              </div>
+
+              {/* Guests & Sessions */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Session Details</h3>
+                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
+                  <li>• Maximum 2 guests allowed per session</li>
+                  <li>• All raw images provided without watermark</li>
+                  <li>• Professional editing on all delivered images</li>
+                </ul>
+              </div>
+
+              {/* Agreement */}
+              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <path d="M9 11 6 8 4 10l5 5L20 4l-2-2Z"/>
+                  </svg>
+                </div>
+                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Agreement</h3>
+                <p className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  Deposit payment confirms you have read and agree to all Leekshotit Photography policies.
                 </p>
               </div>
             </div>
