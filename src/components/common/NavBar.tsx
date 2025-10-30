@@ -74,12 +74,6 @@ function NavBar() {
               Collections
             </Link>
             <Link
-              href="/blog"
-              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
-            >
-              Blog
-            </Link>
-            <Link
               href="/services"
               className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
             >
@@ -159,9 +153,6 @@ function NavBar() {
               </Link>
               <Link href="/collections" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Collections
-              </Link>
-              <Link href="/blog" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Blog
               </Link>
               <Link href="/services" onClick={() => setMenu(false)} className="text-white cursor-pointer">
                 Booking
