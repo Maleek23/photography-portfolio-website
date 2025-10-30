@@ -121,11 +121,24 @@ Preferred communication style: Simple, everyday language.
 - `clsx`: Conditional class name construction
 - `class-variance-authority`: Type-safe component variants
 
+**Custom Cursor Design**:
+- Camera shutter cursor in brand blue (#2563EB) with 8 aperture blades
+- Applied to general UI elements (default cursor)
+- Pointer cursor variant for interactive elements (links, buttons, select)
+- Text cursor preserved for input/textarea fields for optimal UX
+- Implemented via inline SVG data URIs in `globals.css`
+
 ### Icons & Visual Elements
 
 **Lucide React**: Icon library for modern, customizable icons
 - Lightweight, tree-shakeable icon components
 - Used sparingly alongside custom image assets
+
+**Favicon & PWA Assets**:
+- SVG favicon (`/favicon.svg`) with camera shutter design matching brand
+- PWA manifest (`/manifest.json`) for progressive web app support
+- Theme color configured to brand blue (#2563EB)
+- Apple touch icon reference for iOS devices
 
 ### Development Tools
 
@@ -152,11 +165,24 @@ Preferred communication style: Simple, everyday language.
 - No user authentication or dynamic data fetching
 - Future enhancements could add a database for dynamic portfolio management or contact form submissions
 
-**API Routes**: Basic API routes for form submissions
-- Contact form API route (`/api/contact/route.ts`) - currently logging to console
-- Booking form API route (`/api/booking/route.ts`) - currently logging to console
-- Email service integration pending (Resend, SendGrid, or Replit Mail recommended)
-- Forms are functional but need email service setup to send actual emails
+**Email Integration with Resend**:
+- `resend`: Professional email service for transactional emails
+- Integrated in contact and booking API routes (`/api/contact/route.ts`, `/api/booking/route.ts`)
+- Professionally formatted HTML email templates with brand styling
+- Graceful fallback if `RESEND_API_KEY` not configured
+- Error handling to prevent form failures if email sending fails
+- Requires verified domain for production use (currently using onboarding domain)
+
+**Analytics & SEO**:
+- Google Analytics 4 integration for traffic tracking
+- Automatic page view tracking on route changes
+- Custom event tracking capability via `gtag` utility
+- Comprehensive SEO metadata in layout.tsx:
+  - Open Graph tags for social media sharing
+  - Twitter Card tags for Twitter/X
+  - Keywords, canonical URLs, author information
+  - Robots directives for search engine indexing
+  - Structured data for better search visibility
 
 ## Site Features
 
@@ -183,5 +209,32 @@ Preferred communication style: Simple, everyday language.
 ### Contact & Booking
 - **Contact Page**: Enhanced contact form for general inquiries, custom projects, collaborations, and media inquiries
 - **Booking & Services Page**: Displays pricing tables and Calendly widget for session bookings (placeholder ready for embed code)
-- **Form Status**: Contact form functional with API route but email service integration pending
+- **Form Status**: Contact form fully functional with Resend email integration (requires `RESEND_API_KEY` environment variable)
+- **Email Templates**: Professional HTML email templates with brand colors and formatting
 - **Calendly Integration**: Free scheduling tool recommended - photographer needs to create account and paste embed code
+
+## Deployment Readiness (October 30, 2025)
+
+### Required Environment Variables
+Create these in your deployment settings:
+
+1. **RESEND_API_KEY** (Required for email functionality)
+   - Get from: https://resend.com/api-keys
+   - Used for contact and booking form emails
+   - Free tier: 100 emails/day, 3,000/month
+
+2. **NEXT_PUBLIC_GA_ID** (Optional - for analytics)
+   - Get from: https://analytics.google.com/
+   - Format: G-XXXXXXXXXX
+   - Used for Google Analytics tracking
+
+### Pre-Launch Checklist
+- ✅ Custom camera shutter cursor implemented
+- ✅ Resend email integration complete with professional templates
+- ✅ Comprehensive SEO and meta tags configured
+- ✅ Google Analytics 4 integrated with route tracking
+- ✅ Favicon and PWA manifest created
+- ⚠️ Update Resend email "from" address with verified domain in production
+- ⚠️ Add Google verification code in layout.tsx metadata
+- ⚠️ Upload actual portfolio photos to replace placeholders
+- ⚠️ Add remaining Calendly scheduling URLs for all booking packages
