@@ -4,11 +4,11 @@
 
 @layer base {
   * {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L12 12L9.5 9.5L12 2Z" fill="%232563EB"/><path d="M22 12L14.5 14.5L12 12L14.5 9.5L22 12Z" fill="%232563EB"/><path d="M12 22L9.5 14.5L12 12L14.5 14.5L12 22Z" fill="%232563EB"/><path d="M2 12L9.5 9.5L12 12L9.5 14.5L2 12Z" fill="%232563EB"/><path d="M18.5 5.5L14.5 9.5L12 12L13.8 7.3L18.5 5.5Z" fill="%232563EB"/><path d="M18.5 18.5L14.5 14.5L12 12L13.8 16.7L18.5 18.5Z" fill="%232563EB"/><path d="M5.5 18.5L9.5 14.5L12 12L10.2 16.7L5.5 18.5Z" fill="%232563EB"/><path d="M5.5 5.5L9.5 9.5L12 12L10.2 7.3L5.5 5.5Z" fill="%232563EB"/><circle cx="12" cy="12" r="3" fill="%232563EB"/></svg>') 12 12, auto;
+    cursor: url('/cursor-blue.svg') 12 12, auto;
   }
 
   a, button, select {
-    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L14.5 9.5L12 12L9.5 9.5L12 2Z" fill="%232563EB"/><path d="M22 12L14.5 14.5L12 12L14.5 9.5L22 12Z" fill="%232563EB"/><path d="M12 22L9.5 14.5L12 12L14.5 14.5L12 22Z" fill="%232563EB"/><path d="M2 12L9.5 9.5L12 12L9.5 14.5L2 12Z" fill="%232563EB"/><path d="M18.5 5.5L14.5 9.5L12 12L13.8 7.3L18.5 5.5Z" fill="%232563EB"/><path d="M18.5 18.5L14.5 14.5L12 12L13.8 16.7L18.5 18.5Z" fill="%232563EB"/><path d="M5.5 18.5L9.5 14.5L12 12L10.2 16.7L5.5 18.5Z" fill="%232563EB"/><path d="M5.5 5.5L9.5 9.5L12 12L10.2 7.3L5.5 5.5Z" fill="%232563EB"/><circle cx="12" cy="12" r="2.5" fill="%232563EB"/></svg>') 12 12, pointer;
+    cursor: url('/cursor-blue.svg') 12 12, pointer;
   }
 
   input, textarea {
