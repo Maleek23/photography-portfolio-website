@@ -52,7 +52,7 @@ export default function ContactPage() {
                 Get In Touch
               </h1>
               <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] leading-relaxed">
-                Have a question, custom project idea, or collaboration opportunity? Fill out the form below and I'll get back to you within 24 hours.
+                Have a question, custom project idea, or collaboration opportunity? Fill out the form below and I&apos;ll get back to you within 24 hours.
               </p>
               <p className="text-customGrayAlt2 text-[0.813rem] md:text-[0.875rem] mt-2 md:mt-3">
                 For session bookings, please visit the <a href="/services" className="text-primary hover:underline">Booking & Services</a> page.
@@ -136,7 +136,7 @@ export default function ContactPage() {
 
                   {status === "success" && (
                     <p className="text-green-500 text-[0.875rem] text-center">
-                      ✓ Message sent successfully! I'll get back to you soon.
+                      ✓ Message sent successfully! I&apos;ll get back to you soon.
                     </p>
                   )}
                   {status === "error" && (
