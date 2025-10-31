@@ -38,18 +38,22 @@ export default function CollectionsPage() {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          <div className="mb-8 md:mb-12">
-            <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
-              Collections
-            </h1>
-            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
-              Explore my work across different creative categories
-            </p>
-          </div>
+        <div className="bg-gradient-to-b from-primary/5 via-background to-superGray/5">
+          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+            <div className="mb-8 md:mb-12">
+              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                Portfolio
+              </p>
+              <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
+                Collections
+              </h1>
+              <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
+                Explore my work across different creative categories
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {collections.map((collection) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {collections.map((collection) => (
               <Link
                 key={collection.id}
                 href={`/collections/${collection.slug}`}
@@ -72,6 +76,7 @@ export default function CollectionsPage() {
                 </div>
               </Link>
             ))}
+            </div>
           </div>
         </div>
         <FooterSection />
