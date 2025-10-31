@@ -59,7 +59,7 @@ function NavBar() {
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
             <Link href="/home" className="cursor-pointer flex items-center py-2">
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4.5rem] object-contain" />
+              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[6rem] object-contain" />
             </Link>
           </div>
           <div className="flex text-[16px] items-center select-none border border-superGray h-[3rem] rounded-t-[0.75rem] mt-[0.5rem]">
@@ -121,7 +121,7 @@ function NavBar() {
                 <div className="flex border-r border-r-superGray self-stretch h-[5rem]"></div>
               )}
               <Link href="/home" className="cursor-pointer flex items-center py-2">
-                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[5.5rem] object-contain" />
+                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[7rem] object-contain" />
               </Link>
             </div>
           </div>
