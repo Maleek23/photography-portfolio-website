@@ -21,9 +21,15 @@ export default function Home() {
         
         <div className="pt-[10rem] lg:pt-0">
           <HeroSection />
-          <div className="px-4 md:px-[6rem] flex flex-col gap-[3rem] md:gap-[5rem] mt-[3rem] md:mt-[5rem] mb-[5rem] md:mb-[8rem]">
-            <PortfolioSection />
-            <ServiceSection />
+          <div className="bg-gradient-to-b from-background via-primary/5 to-background">
+            <div className="px-4 md:px-[6rem] flex flex-col gap-[3rem] md:gap-[5rem] py-[3rem] md:py-[5rem]">
+              <PortfolioSection />
+            </div>
+          </div>
+          <div className="bg-gradient-to-b from-background via-superGray/10 to-background">
+            <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
+              <ServiceSection />
+            </div>
           </div>
 
           <FooterSection />

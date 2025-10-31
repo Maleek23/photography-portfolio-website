@@ -220,16 +220,20 @@ export default function ServicesPage() {
       <NavBar />
 
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          {/* Header */}
-          <div className="mb-8 md:mb-12">
-            <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
-              Booking & Services
-            </h1>
-            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
-              Professional photography sessions with all images professionally edited and delivered digitally
-            </p>
-          </div>
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+            {/* Header */}
+            <div className="mb-8 md:mb-12">
+              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                Pricing
+              </p>
+              <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
+                Booking & Services
+              </h1>
+              <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
+                Professional photography sessions with all images professionally edited and delivered digitally
+              </p>
+            </div>
 
           {/* Quick Navigation */}
           <div className="flex flex-wrap gap-3 mb-8 md:mb-10">
@@ -532,6 +536,7 @@ export default function ServicesPage() {
               </div>
             </div>
           </div>
+        </div>
         </div>
         <FooterSection />
       </div>

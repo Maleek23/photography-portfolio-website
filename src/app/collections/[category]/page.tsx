@@ -85,9 +85,10 @@ export default function CategoryPage({ params }: { params: { category: string } 
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          {/* Header */}
-          <div className="mb-8 md:mb-12">
+        <div className="bg-gradient-to-b from-background via-primary/3 to-background">
+          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+            {/* Header */}
+            <div className="mb-8 md:mb-12">
             <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-3 md:mb-4 inline-block">
               ← Back to Collections
             </Link>
@@ -127,20 +128,21 @@ export default function CategoryPage({ params }: { params: { category: string } 
             ))}
           </div>
 
-          {/* Call to Action */}
-          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray text-center">
-            <h2 className="text-white text-[1.75rem] md:text-[3rem] font-[600] uppercase mb-3 md:mb-4 leading-tight">
-              Like What You See?
-            </h2>
-            <p className="text-customGrayAlt text-[0.938rem] md:text-[1rem] mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-              Ready to book a session? Check out our pricing and availability.
-            </p>
-            <Link
-              href="/services"
-              className="inline-block bg-primary hover:bg-primary/80 text-white font-[600] px-8 py-4 rounded-lg uppercase text-[0.875rem] transition-all"
-            >
-              View Pricing & Book
-            </Link>
+            {/* Call to Action */}
+            <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray text-center">
+              <h2 className="text-white text-[1.75rem] md:text-[3rem] font-[600] uppercase mb-3 md:mb-4 leading-tight">
+                Like What You See?
+              </h2>
+              <p className="text-customGrayAlt text-[0.938rem] md:text-[1rem] mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
+                Ready to book a session? Check out our pricing and availability.
+              </p>
+              <Link
+                href="/services"
+                className="inline-block bg-primary hover:bg-primary/80 text-white font-[600] px-8 py-4 rounded-lg uppercase text-[0.875rem] transition-all shadow-lg hover:shadow-primary/50 hover:scale-105"
+              >
+                View Pricing & Book
+              </Link>
+            </div>
           </div>
         </div>
         <FooterSection />
