@@ -22,9 +22,9 @@ function FooterSection() {
               <p className="text-white text-[0.813rem] font-[600] uppercase tracking-wider mb-2">Quick Links</p>
               <div className="space-y-1.5">
                 <Link href="/" className="block text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Home</Link>
-                <Link href="/about" className="block text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">About</Link>
                 <Link href="/collections" className="block text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Collections</Link>
                 <Link href="/services" className="block text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">Booking</Link>
+                <Link href="/about" className="block text-customGrayAlt text-[0.875rem] hover:text-primary transition-colors">About</Link>
               </div>
             </div>
 
