@@ -6,10 +6,11 @@ import { notFound } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 
-const portfolioData: Record<string, { title: string; description: string; images: string[] }> = {
+const portfolioData: Record<string, { title: string; description: string; images: string[]; bookingType: string }> = {
   portraits: {
     title: "Portraits",
     description: "Capturing personality and emotion through creative portrait photography",
+    bookingType: "Solo Session",
     images: [
       "/images/portrait-yellow.jpg",
       "/images/portrait-yellow.jpg",
@@ -25,6 +26,7 @@ const portfolioData: Record<string, { title: string; description: string; images
   graduation: {
     title: "Graduation",
     description: "Celebrating your academic achievements with timeless graduation portraits",
+    bookingType: "Graduation Session",
     images: [
       "/images/graduation-nike.jpg",
       "/images/graduation-nike.jpg",
@@ -40,6 +42,7 @@ const portfolioData: Record<string, { title: string; description: string; images
   "creative-projects": {
     title: "Creative Projects",
     description: "Pushing boundaries with artistic and conceptual photography",
+    bookingType: "Solo Session",
     images: [
       "/images/creative-smoke.jpg",
       "/images/creative-smoke.jpg",
@@ -55,6 +58,7 @@ const portfolioData: Record<string, { title: string; description: string; images
   "concerts-events": {
     title: "Concerts/Events",
     description: "High-energy concert and event photography capturing unforgettable moments",
+    bookingType: "Event Coverage",
     images: [
       "/images/portrait-yellow.jpg",
       "/images/graduation-nike.jpg",
@@ -87,12 +91,22 @@ export default function CategoryPage({ params }: { params: { category: string } 
             <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-3 md:mb-4 inline-block">
               ← Back to Collections
             </Link>
-            <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
-              {category.title}
-            </h1>
-            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
-              {category.description}
-            </p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
+              <div className="flex-1">
+                <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
+                  {category.title}
+                </h1>
+                <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
+                  {category.description}
+                </p>
+              </div>
+              <Link
+                href="/services"
+                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-[600] px-6 md:px-8 py-3 md:py-4 rounded-lg uppercase text-[0.813rem] md:text-[0.875rem] transition-all whitespace-nowrap shadow-lg hover:shadow-primary/50"
+              >
+                Book {category.bookingType}
+              </Link>
+            </div>
           </div>
 
           {/* Photo Gallery Grid */}
