@@ -22,7 +22,7 @@ export default function LandingPage() {
       setCurrentSlide((prev) => (prev + 1) % photos.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [photos.length]);
 
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
