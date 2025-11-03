@@ -1,240 +1,33 @@
 # Leekshotit Photography Portfolio Website
 
 ## Overview
-
-This is a modern photography portfolio website showcasing the work of photographer Abdulmalik Ajisegiri (Leekshotit brand), a self-taught HTX/DTX photographer, videographer, and artist. Built with Next.js 14, the application features a clean, minimalist, professional dark-themed design with blue accents (#2563EB) that puts the photography work front and center. The site serves as a comprehensive online presence featuring four main photography categories: Portraits, Graduation, Creative Projects, and Concerts/Events.
+This project is a modern, professional, dark-themed photography portfolio website for Abdulmalik Ajisegiri (Leekshotit brand), a self-taught HTX/DTX photographer, videographer, and artist. Built with Next.js 14, the site showcases four main photography categories: Portraits, Graduation, Creative Projects, and Concerts/Events. Its purpose is to provide a comprehensive online presence, highlight the photographer's work with a clean, minimalist design, and facilitate client bookings. The business vision is to establish a strong online brand for Leekshotit, attract clients through a visually appealing portfolio, and streamline the booking process.
 
 ## User Preferences
-
 Preferred communication style: Simple, everyday language.
 
 ## System Architecture
 
-### Frontend Architecture
+### UI/UX Decisions
+The design emphasizes a clean, minimalist, professional dark theme with blue accents (#2563EB) to highlight photography. It features a mobile-first responsive approach, grid-based layouts, and an image-heavy presentation. Typography uses the Manrope font family from Google Fonts. Custom animations are used for accordion interactions and hover effects, alongside scroll-triggered fade-in animations for sections, respecting `prefers-reduced-motion`. A custom camera shutter cursor with 8 aperture blades in brand blue is applied to general UI elements. Pricing tiers are sophisticated and color-coded.
 
-**Framework**: Next.js 14 with App Router
-- Server-side rendering (SSR) enabled by default for optimal performance
-- TypeScript for type safety throughout the application
-- App Router structure (`src/app/`) for modern Next.js development patterns
+### Technical Implementations
+The frontend is built with Next.js 14's App Router, leveraging server-side rendering and TypeScript for type safety. A component-based architecture separates UI elements into common, card, and section components, with UI primitives from Shadcn UI. Styling is managed using Tailwind CSS with a custom color palette, supporting dark mode and responsive design. Image optimization is handled by the Next.js `Image` component for performance. Content is primarily hardcoded for simplicity, with blog content in dedicated data files. Navigation is multi-page, including a landing splash page, home, about, collections (with individual category pages and lightbox), blog (with individual posts), services, and contact pages. Performance is enhanced through image optimization, scroll-triggered animations using `IntersectionObserver`, and automatic code splitting.
 
-**UI Component Strategy**: Component-based architecture with clear separation of concerns
-- **Common Components** (`src/components/common/`): Reusable UI elements like Header, NavBar, MainButton, and Socials
-- **Card Components** (`src/components/cards/`): Specialized card layouts for About, Portfolio, Service, and Testimonial sections
-- **Section Components** (`src/components/sections/`): Full-page sections including Hero, About, Service, Portfolio, FAQ, Testimonial, Footer, and LargeText
-- **UI Primitives** (`src/components/ui/`): Shadcn-based components for Accordion, Button, and Separator
+### Feature Specifications
+The site features four main photography categories with individual gallery pages and a lightbox viewer. Pricing and services are detailed for Graduation, Solo, and Events/Concerts sessions, including deposit requirements and delivery times, with color-coded tiers. A blog section displays photography tips and behind-the-scenes content. An enhanced contact form and a booking page with Calendly integration are provided. A sticky "Book Session" CTA appears after scrolling to improve conversion.
 
-**Styling Approach**: Utility-first CSS with Tailwind CSS
-- Custom color palette defined in `tailwind.config.ts` featuring primary blue (#2563EB), dark backgrounds, and various gray tones
-- Tailwind CSS with custom theme extensions for brand-specific colors (Leekshotit blue)
-- Dark mode enabled via class-based strategy
-- Responsive design using Tailwind's responsive modifiers (md:, lg:, xl:)
-- Clean, minimalist, professional design with subtle sophisticated color accents
-- Custom animations for accordion interactions and hover effects
-
-**Typography**: Google Fonts integration
-- Manrope font family loaded with weights 400, 500, and 600
-- Font optimization through Next.js font loader
-
-**Design Philosophy**:
-- Mobile-first responsive design approach
-- Dark theme throughout with blue (#2563EB) accents
-- Clean, minimalist, professional design - photography-focused, not busy
-- Grid-based layouts that adapt from single column (mobile) to multi-column (desktop)
-- Image-heavy presentation suitable for portfolio showcase
-- Sophisticated color-coded pricing tiers (bronze/copper, silver/gray, gold, platinum/blue)
-
-### Component Design Patterns
-
-**State Management**: Client-side state using React hooks
-- Minimal state requirements (e.g., mobile menu toggle in NavBar)
-- No global state management library needed due to static nature of portfolio
-
-**Props-based Architecture**: Components receive data through TypeScript-typed props
-- Interface definitions for type safety (e.g., `IProps` interfaces in card components)
-- Flexible component composition with optional props
-
-**Icon Strategy**: Mix of image assets and Lucide React icons
-- Static images stored in `/public/images/` directory
-- Lucide React for common icons like ArrowRight, ChevronDown, X, and Loader2
-
-### Data Management
-
-**Content Strategy**: Hardcoded data within components and dedicated data files
-- Static portfolio items, service information defined in components
-- Blog content in dedicated data file (`src/lib/blogData.ts`) with 4 sample posts
-- Portfolio category data with photo arrays for each collection
-- Constants file (`src/lib/constant.ts`) for photographer information (Leekshotit brand)
-- No database or CMS integration in current implementation
-- All images served statically from public directory (currently placeholder images)
-
-**Rationale**: Chosen for simplicity as portfolio content changes infrequently. Future enhancement could add a headless CMS for easier content updates without code changes.
-
-**Alternatives Considered**: 
-- CMS integration (Contentful, Sanity) - Would add complexity for infrequent updates
-- Markdown-based content - Could be viable for blog-style updates but overkill for static portfolio
-
-### Navigation & Routing
-
-**Multi-Page Application**: Full site structure with dedicated pages
-- **Landing Page** (`/`): Splash screen with photographer name, brand, and "Enter Portfolio" button - serves as entry point to the full portfolio
-- **Home** (`/home`): Main portfolio page with Hero section, collections preview, services overview
-- **About** (`/about`): Photographer bio and story
-- **Collections** (`/collections`): Overview of all 4 photography categories
-  - **Individual Category Pages** (`/collections/[category]`): Detailed photo galleries for each category (Portraits, Graduation, Creative Projects, Concerts/Events) with lightbox functionality
-- **Blog** (`/blog`): Blog listing page with photography tips and behind-the-scenes content
-  - **Individual Blog Posts** (`/blog/[slug]`): Full article pages with related posts
-- **Booking & Services** (`/services`): Comprehensive pricing page with 3 session types and Calendly booking integration
-- **Contact** (`/contact`): Enhanced contact form for general inquiries, custom projects, and collaboration opportunities
-- Navigation menu includes: Home (links to /home), About Me, Collections, Blog, Booking, Contact Me (button)
-- User flow: Visitor lands on splash page (/) → clicks "Enter Portfolio" → enters full portfolio site (/home)
-
-### Performance Optimizations
-
-**Image Handling**: Next.js Image component NOT used; standard `<img>` tags throughout
-- ESLint rule disabled for img elements
-- Trade-off: Easier implementation vs. automatic optimization
-- Consider migrating to Next.js Image component for automatic optimization, lazy loading, and responsive images
-
-**Code Splitting**: Automatic through Next.js App Router
-- Each section component can be lazy-loaded if needed
-- Currently all components loaded together due to single-page nature
+### System Design Choices
+The project prioritizes a static site approach with no database integration for initial simplicity, with future consideration for CMS integration. The architecture is modular and scalable, with clear separation of concerns. Accessibility is considered with `prefers-reduced-motion` support and accessible Shadcn UI components. SEO is a core focus, including comprehensive metadata, Open Graph tags, Twitter Card tags, keywords, canonical URLs, and JSON-LD structured data for local SEO and business details.
 
 ## External Dependencies
 
-### UI Component Library
-
-**Shadcn UI**: Accessible component primitives built on Radix UI
-- `@radix-ui/react-accordion`: Collapsible FAQ sections
-- `@radix-ui/react-separator`: Visual dividers between sections
-- `@radix-ui/react-slot`: Component composition utility
-- Provides accessible, unstyled components that are styled with Tailwind
-
-### Styling & Utilities
-
-**Tailwind CSS Ecosystem**:
-- `tailwindcss`: Core utility-first CSS framework
-- `tailwind-merge`: Intelligent merging of Tailwind class names
-- `tailwindcss-animate`: Animation utilities for accordion and transitions
-- `autoprefixer` & `postcss`: CSS processing pipeline
-
-**Class Management**:
-- `clsx`: Conditional class name construction
-- `class-variance-authority`: Type-safe component variants
-
-**Custom Cursor Design**:
-- Camera shutter cursor in brand blue (#2563EB) with 8 aperture blades
-- Applied to general UI elements (default cursor)
-- Pointer cursor variant for interactive elements (links, buttons, select)
-- Text cursor preserved for input/textarea fields for optimal UX
-- Implemented via inline SVG data URIs in `globals.css`
-
-### Icons & Visual Elements
-
-**Lucide React**: Icon library for modern, customizable icons
-- Lightweight, tree-shakeable icon components
-- Used sparingly alongside custom image assets
-
-**Favicon & PWA Assets**:
-- SVG favicon (`/favicon.svg`) with camera shutter design matching brand
-- PWA manifest (`/manifest.json`) for progressive web app support
-- Theme color configured to brand blue (#2563EB)
-- Apple touch icon reference for iOS devices
-
-### Development Tools
-
-**TypeScript**: Full type safety across the application
-- Strict mode enabled for maximum type checking
-- Custom type definitions for component props
-
-**ESLint**: Code quality and consistency
-- Next.js recommended configuration (`next/core-web-vitals`)
-- Custom rule to allow standard img elements
-
-### Deployment Platform
-
-**Vercel**: Hosting and deployment
-- Optimized for Next.js applications
-- Automatic deployments from Git
-- Custom domain support
-- No additional configuration required due to Next.js convention
-
-### Notable Absence
-
-**No Database**: Application is entirely static with no backend data persistence
-- All content is frontend-only
-- No user authentication or dynamic data fetching
-- Future enhancements could add a database for dynamic portfolio management or contact form submissions
-
-**Email Integration with Resend**:
-- `resend`: Professional email service for transactional emails
-- Integrated in contact and booking API routes (`/api/contact/route.ts`, `/api/booking/route.ts`)
-- Professionally formatted HTML email templates with brand styling
-- Graceful fallback if `RESEND_API_KEY` not configured
-- Error handling to prevent form failures if email sending fails
-- Requires verified domain for production use (currently using onboarding domain)
-
-**Analytics & SEO**:
-- Google Analytics 4 integration for traffic tracking
-- Automatic page view tracking on route changes
-- Custom event tracking capability via `gtag` utility
-- Comprehensive SEO metadata in layout.tsx:
-  - Open Graph tags for social media sharing
-  - Twitter Card tags for Twitter/X
-  - Keywords, canonical URLs, author information
-  - Robots directives for search engine indexing
-  - Structured data for better search visibility
-
-## Site Features
-
-### Photography Collections
-- **4 Main Categories**: Portraits, Graduation, Creative Projects, Concerts/Events
-- **Individual Gallery Pages**: Each category has its own page with 9-12 photos in a responsive grid
-- **Lightbox Viewer**: Click any photo to view full-screen with overlay and close button
-- **Portfolio Navigation**: Clickable cards on homepage and collections page link to individual galleries
-
-### Pricing & Services
-- **Graduation Sessions**: Bronze ($220), Silver ($310), Gold ($400)
-- **Solo Sessions**: Bronze ($185), Silver ($220), Gold ($310), Platinum ($400)
-- **Events/Concerts**: $100/hour
-- **Pricing Details**: 50% deposit required, 3-9 day delivery, $50 upcharge for 24hr rush delivery
-- **Color-Coded Tiers**: Bronze (#CD7F32), Silver (#C0C0C0), Gold (#FFD700), Platinum (#2563EB blue)
-- **Booking Integration**: Calendly widget placeholder ready for photographer's scheduling account (free tier available)
-
-### Blog Section
-- **Blog Listing Page** (`/blog`): Shows all blog posts in 2-column grid with featured images
-- **Sample Content**: 4 blog posts covering photography tips, lighting techniques, graduation sessions, and creative projects
-- **Individual Post Pages**: Full article layout with featured image, content, and related posts section
-- **Categories**: Photography Tips, Lighting, Session Planning, Behind the Scenes
-
-### Contact & Booking
-- **Contact Page**: Enhanced contact form for general inquiries, custom projects, collaborations, and media inquiries
-- **Booking & Services Page**: Displays pricing tables and Calendly widget for session bookings (placeholder ready for embed code)
-- **Form Status**: Contact form fully functional with Resend email integration (requires `RESEND_API_KEY` environment variable)
-- **Email Templates**: Professional HTML email templates with brand colors and formatting
-- **Calendly Integration**: Free scheduling tool recommended - photographer needs to create account and paste embed code
-
-## Deployment Readiness (October 30, 2025)
-
-### Required Environment Variables
-Create these in your deployment settings:
-
-1. **RESEND_API_KEY** (Required for email functionality)
-   - Get from: https://resend.com/api-keys
-   - Used for contact and booking form emails
-   - Free tier: 100 emails/day, 3,000/month
-
-2. **NEXT_PUBLIC_GA_ID** (Optional - for analytics)
-   - Get from: https://analytics.google.com/
-   - Format: G-XXXXXXXXXX
-   - Used for Google Analytics tracking
-
-### Pre-Launch Checklist
-- ✅ Custom camera shutter cursor implemented
-- ✅ Resend email integration complete with professional templates
-- ✅ Comprehensive SEO and meta tags configured
-- ✅ Google Analytics 4 integrated with route tracking
-- ✅ Favicon and PWA manifest created
-- ⚠️ Update Resend email "from" address with verified domain in production
-- ⚠️ Add Google verification code in layout.tsx metadata
-- ⚠️ Upload actual portfolio photos to replace placeholders
-- ⚠️ Add remaining Calendly scheduling URLs for all booking packages
+*   **Shadcn UI**: Accessible component primitives built on Radix UI (`@radix-ui/react-accordion`, `@radix-ui/react-separator`, `@radix-ui/react-slot`).
+*   **Tailwind CSS Ecosystem**: `tailwindcss`, `tailwind-merge`, `tailwindcss-animate`, `autoprefixer`, `postcss` for utility-first styling.
+*   **Class Management**: `clsx` for conditional classes, `class-variance-authority` for type-safe component variants.
+*   **Lucide React**: Lightweight icon library.
+*   **Google Fonts**: Manrope font family.
+*   **Resend**: Professional email service for transactional emails (`RESEND_API_KEY` required).
+*   **Google Analytics 4**: For traffic tracking (`NEXT_PUBLIC_GA_ID` required).
+*   **Vercel**: Deployment platform optimized for Next.js.
+*   **Calendly**: External scheduling tool (placeholder integrated, requires embed code).
