@@ -72,6 +72,86 @@ export default function RootLayout({
       </head>
       <body className={manrope.className}>
         <GoogleAnalytics />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "@id": "https://leekshotit.com",
+              "name": "Leekshotit Photography",
+              "alternateName": "Abdulmalik Ajisegiri Photography",
+              "description": "Professional HTX/DTX photographer specializing in graduation sessions, portrait photography, creative projects, and concert/event coverage. Self-taught photographer, videographer, and artist.",
+              "url": "https://leekshotit.com",
+              "telephone": "+1-XXX-XXX-XXXX",
+              "image": "https://leekshotit.com/images/hero.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Houston",
+                "addressRegion": "TX",
+                "addressCountry": "US"
+              },
+              "areaServed": [
+                {
+                  "@type": "City",
+                  "name": "Houston",
+                  "sameAs": "https://en.wikipedia.org/wiki/Houston"
+                },
+                {
+                  "@type": "City",
+                  "name": "Dallas",
+                  "sameAs": "https://en.wikipedia.org/wiki/Dallas"
+                }
+              ],
+              "serviceType": ["Portrait Photography", "Graduation Photography", "Event Photography", "Concert Photography", "Creative Photography"],
+              "priceRange": "$100-$400",
+              "founder": {
+                "@type": "Person",
+                "name": "Abdulmalik Ajisegiri",
+                "jobTitle": "Photographer & Videographer",
+                "sameAs": [
+                  "https://instagram.com/leekshotit",
+                  "https://twitter.com/leekshotit"
+                ]
+              },
+              "offers": [
+                {
+                  "@type": "Offer",
+                  "name": "Graduation Photography Sessions",
+                  "description": "Bronze, Silver, and Gold packages for graduation photography",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "220",
+                    "maxPrice": "400",
+                    "priceCurrency": "USD"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Solo Portrait Sessions",
+                  "description": "Bronze, Silver, Gold, and Platinum packages for portrait photography",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "minPrice": "185",
+                    "maxPrice": "400",
+                    "priceCurrency": "USD"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "name": "Events & Concerts",
+                  "description": "Professional event and concert photography coverage",
+                  "priceSpecification": {
+                    "@type": "PriceSpecification",
+                    "price": "100",
+                    "priceCurrency": "USD",
+                    "unitText": "HOUR"
+                  }
+                }
+              ]
+            })
+          }}
+        />
         {children}
       </body>
     </html>
