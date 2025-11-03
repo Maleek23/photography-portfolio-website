@@ -5,6 +5,7 @@ import { X } from "lucide-react";
 import MainButton from "./MainButton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
@@ -59,7 +60,7 @@ function NavBar() {
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
             <Link href="/home" className="cursor-pointer flex items-center py-2">
-              <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[4.5rem] object-contain" />
+              <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] w-auto object-contain" priority />
             </Link>
           </div>
           <div className="flex text-[16px] items-center select-none border border-superGray h-[3rem] rounded-t-[0.75rem] mt-[0.5rem]">
@@ -121,7 +122,7 @@ function NavBar() {
                 <div className="flex border-r border-r-superGray self-stretch h-[4rem]"></div>
               )}
               <Link href="/home" className="cursor-pointer flex items-center py-2">
-                <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[5rem] object-contain" />
+                <Image src="/images/logo.png" width={200} height={80} alt="Leekshotit Logo" className="h-[5rem] w-auto object-contain" priority />
               </Link>
             </div>
           </div>
@@ -135,8 +136,10 @@ function NavBar() {
               <div className="flex items-center gap-[40px] select-none">
                 <div className="flex items-center">
                   <div className="text-2xl md:text-4xl font-extrabold uppercase mt-8 text-white outline outline-[1px] outline-superGray rounded-tl-[1.25rem]">
-                    <img
+                    <Image
                       src="/images/hamburger.png"
+                      width={40}
+                      height={40}
                       alt="menu"
                       className="cursor-pointer animate-in fade-in zoom-in"
                       onClick={toggleMenu}

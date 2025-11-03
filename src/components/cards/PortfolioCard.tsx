@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Separator } from "../ui/separator";
+import Image from "next/image";
 
 interface IProps {
   imageUrl: string;
@@ -13,8 +14,10 @@ function PortfolioCard({ imageUrl, title, date, link }: IProps) {
   return (
     <div>
       <div className="mb-[1.19rem]">
-        <img
+        <Image
           src={imageUrl}
+          width={500}
+          height={520}
           alt="portfolio image"
           className="rounded-[1.25rem] w-[31.18rem] h-[32.43rem] object-cover"
         />
