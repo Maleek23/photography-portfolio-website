@@ -34,14 +34,14 @@ export default function Home() {
           
           {/* Portfolio Section with Glassmorphism */}
           <ScrollReveal>
-            <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+            <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
               <PortfolioSection />
             </div>
           </ScrollReveal>
           
           {/* Services Section with Glassmorphism */}
           <ScrollReveal delay={200}>
-            <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+            <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
               <ServiceSection />
             </div>
           </ScrollReveal>
