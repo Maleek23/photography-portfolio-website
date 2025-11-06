@@ -239,19 +239,19 @@ export default function ServicesPage() {
           <div className="flex flex-wrap gap-3 mb-8 md:mb-10">
             <a 
               href="#pricing" 
-              className="px-4 py-2 border border-primary/50 text-primary text-[0.75rem] uppercase font-[500] rounded-lg hover:bg-primary/10 transition-all"
+              className="px-4 py-2 glass glass-hover glass-lift border border-primary/50 text-primary text-[0.75rem] uppercase font-[500] rounded-xl"
             >
               Pricing
             </a>
             <a 
               href="#policy" 
-              className="px-4 py-2 border border-superGray text-customGrayAlt text-[0.75rem] uppercase font-[500] rounded-lg hover:border-primary/50 hover:text-primary transition-all"
+              className="px-4 py-2 glass glass-hover glass-lift border border-white/10 text-customGrayAlt text-[0.75rem] uppercase font-[500] rounded-xl hover:text-primary"
             >
               Booking Policy
             </a>
             <a 
               href="/contact" 
-              className="px-4 py-2 bg-primary text-background text-[0.75rem] uppercase font-[600] rounded-lg hover:shadow-lg transition-all"
+              className="px-4 py-2 glass-thin glass-hover glass-lift bg-primary/80 text-white text-[0.75rem] uppercase font-[600] rounded-xl shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)]"
             >
               Contact First
             </a>
@@ -296,8 +296,8 @@ export default function ServicesPage() {
             {packages.map((pkg, index) => (
               <div
                 key={index}
-                className={`group relative bg-gradient-to-b from-lightDark to-background border rounded-xl overflow-hidden transform hover:scale-[1.02] transition-all duration-200 ${
-                  pkg.popular ? "border-primary shadow-lg shadow-primary/20" : "border-superGray/50 hover:border-superGray"
+                className={`group relative glass glass-lift backdrop-blur-2xl rounded-2xl overflow-hidden ${
+                  pkg.popular ? "border-primary shadow-lg shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40" : "border-white/10 hover:border-white/20"
                 }`}
               >
                 {/* Accent Bar */}
@@ -378,13 +378,14 @@ export default function ServicesPage() {
                   {/* Book Button - More Prominent */}
                   <button
                     onClick={() => openCalendly(pkg.calendlyUrl)}
-                    className="block w-full text-center font-[600] py-3 md:py-3.5 rounded-lg uppercase text-[0.688rem] md:text-[0.75rem] tracking-widest transition-all duration-200 hover:shadow-lg"
+                    className="relative block w-full text-center font-[600] py-3 md:py-3.5 rounded-xl uppercase text-[0.688rem] md:text-[0.75rem] tracking-widest transition-all duration-300 hover:scale-105 hover:shadow-2xl overflow-hidden"
                     style={{ 
                       backgroundColor: pkg.accent,
                       color: '#000',
                     }}
                   >
-                    Book Now
+                    <span className="relative z-10">Book Now</span>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </div>
               </div>
@@ -398,7 +399,7 @@ export default function ServicesPage() {
             </h2>
 
             {/* Important Notice */}
-            <div className="bg-gradient-to-r from-primary/10 to-primary/5 border-l-4 border-primary rounded-lg p-5 md:p-6 mb-8">
+            <div className="glass backdrop-blur-xl bg-primary/10 border-l-4 border-primary rounded-xl p-5 md:p-6 mb-8">
               <div className="flex items-start gap-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary flex-shrink-0 mt-1">
                   <circle cx="12" cy="12" r="10"/>
@@ -416,7 +417,7 @@ export default function ServicesPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
               {/* Deposit & Payment */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <rect width="20" height="14" x="2" y="5" rx="2"/>
@@ -433,7 +434,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Delivery Times */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <circle cx="12" cy="12" r="10"/>
@@ -449,7 +450,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Late Policy */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <path d="M10 2h4"/>
@@ -467,7 +468,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Rescheduling */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
@@ -483,7 +484,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Guests & Sessions */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
@@ -501,7 +502,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Agreement */}
-              <div className="bg-gradient-to-br from-lightDark to-background border border-superGray rounded-xl p-5 md:p-6">
+              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
                 <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <path d="M9 11 6 8 4 10l5 5L20 4l-2-2Z"/>

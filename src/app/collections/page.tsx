@@ -57,19 +57,21 @@ export default function CollectionsPage() {
               <Link
                 key={collection.id}
                 href={`/collections/${collection.slug}`}
-                className="group relative overflow-hidden rounded-lg cursor-pointer h-[480px] md:h-[560px] bg-lightDark border border-superGray hover:border-primary transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer h-[480px] md:h-[560px] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 <img
                   src={collection.imageUrl}
                   alt={collection.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <h3 className="text-white text-[1.5rem] md:text-[1.75rem] font-[600] mb-2 md:mb-3 uppercase tracking-wide leading-tight">
+                  {/* Glassmorphic bottom bar */}
+                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 backdrop-blur-xl bg-white/10 border-t border-white/20 group-hover:bg-white/15 transition-all duration-500">
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <h3 className="relative z-10 text-white text-[1.5rem] md:text-[1.75rem] font-[600] mb-2 md:mb-3 uppercase tracking-wide leading-tight">
                       {collection.title}
                     </h3>
-                    <p className="text-customGrayAlt2 text-[0.875rem] md:text-[1rem] leading-relaxed">
+                    <p className="relative z-10 text-customGrayAlt2 text-[0.875rem] md:text-[1rem] leading-relaxed">
                       {collection.description}
                     </p>
                   </div>
