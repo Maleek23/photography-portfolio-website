@@ -59,17 +59,17 @@ function PortfolioSection() {
               <Link
                 key={item.id}
                 href={`/collections/${item.slug}`}
-                className="group relative overflow-hidden rounded-lg cursor-pointer w-[280px] md:w-[320px] h-[480px] md:h-[560px] bg-lightDark flex-shrink-0 border border-transparent hover:border-primary transition-all duration-300"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer w-[280px] md:w-[320px] h-[480px] md:h-[560px] bg-lightDark flex-shrink-0 border border-white/10 hover:border-primary/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 <img
                   src={item.imageUrl}
                   alt={item.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                {/* Gradient Overlay */}
+                {/* Glassmorphism Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-white text-[1.5rem] font-[600] uppercase tracking-wide leading-tight">
+                  <div className="absolute bottom-0 left-0 right-0 p-6 backdrop-blur-sm bg-black/30 border-t border-white/10">
+                    <h3 className="text-white text-[1.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
                       {item.title}
                     </h3>
                   </div>

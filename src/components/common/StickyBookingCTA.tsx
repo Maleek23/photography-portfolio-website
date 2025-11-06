@@ -30,7 +30,7 @@ export default function StickyBookingCTA() {
     >
       <Link
         href="/services"
-        className="group relative flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105"
+        className="group relative flex items-center gap-3 bg-primary/80 backdrop-blur-xl hover:bg-primary/90 text-white px-6 py-4 rounded-full shadow-2xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105 border border-white/10"
       >
         <svg
           className="w-5 h-5"
