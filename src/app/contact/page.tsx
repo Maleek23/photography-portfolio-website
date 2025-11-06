@@ -78,7 +78,7 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
                       placeholder="Your name"
                     />
                   </div>
@@ -94,7 +94,7 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -109,7 +109,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors"
+                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
                       placeholder="(123) 456-7890"
                     />
                   </div>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full bg-lightDark border border-superGray rounded-lg px-4 py-3 text-white focus:border-primary focus:outline-none transition-colors resize-none"
+                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all resize-none"
                       placeholder="Examples: General questions about services, custom project inquiries, collaboration opportunities, media inquiries, pricing questions, etc."
                     />
                   </div>
@@ -133,9 +133,10 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "sending"}
-                    className="w-full bg-primary hover:bg-primary/80 text-white font-[600] py-4 rounded-lg uppercase text-[0.875rem] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="relative w-full glass-thin glass-hover glass-lift bg-primary/80 backdrop-blur-xl text-white font-[600] py-4 rounded-xl uppercase text-[0.875rem] disabled:opacity-50 disabled:cursor-not-allowed shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.7)] overflow-hidden"
                   >
-                    {status === "sending" ? "Sending..." : "Send Message"}
+                    <span className="relative z-10">{status === "sending" ? "Sending..." : "Send Message"}</span>
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50"></div>
                   </button>
 
                   {status === "success" && (

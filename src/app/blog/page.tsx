@@ -27,7 +27,7 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-lightDark rounded-lg overflow-hidden border border-superGray hover:border-primary transition-all duration-300"
+                className="group glass glass-hover glass-lift backdrop-blur-xl rounded-2xl overflow-hidden hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 {/* Image */}
                 <div className="aspect-[16/9] overflow-hidden bg-superGray">

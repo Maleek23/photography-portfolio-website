@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Apple Glassmorphism Utilities - Following iOS/visionOS specs */
+@layer utilities {
+  /* Thin Glass Material - for buttons, highlights */
+  .glass-thin {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Regular Glass Material - for cards, panels */
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Thick Glass Material - for prominent cards */
+  .glass-thick {
+    @apply bg-white/8 backdrop-blur-2xl border border-white/15;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Glass hover states - smooth transitions for all properties */
+  .glass-hover {
+    @apply hover:bg-white/15 hover:border-white/30 hover:shadow-2xl;
+    transition-property: transform, box-shadow, background-color, border-color;
+    transition-duration: 0.4s;
+    transition-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); /* Spring animation */
+  }
+  
+  /* Glass lift animation - combined with hover for smooth transitions */
+  .glass-lift {
+    @apply hover:-translate-y-2 hover:scale-[1.02];
+  }
+  
+  /* Vibrant shine overlay */
+  .glass-shine::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .glass-shine:hover::before {
+    @apply opacity-100;
+  }
+}
+
 @layer base {
   * {
     cursor: url('/cursor.svg') 12 12, auto;
