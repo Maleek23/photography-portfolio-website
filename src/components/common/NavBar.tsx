@@ -49,11 +49,11 @@ function NavBar() {
       <div className="md:sticky md:top-0 md:shadow-none z-[9999]">
         {/* DESKTOP */}
         <div 
-          className="hidden lg:block animate-in fade-in zoom-in bg-background p-4 pt-0 pb-0 border-b border-b-superGray"
+          className="hidden lg:block animate-in fade-in zoom-in p-4 pt-0 pb-0 border-b transition-all duration-300"
           style={{
-            backdropFilter: scrollY > 50 ? "blur(12px)" : "none",
-            backgroundColor: scrollY > 50 ? "rgba(0, 0, 0, 0.8)" : "rgb(0, 0, 0)",
-            transition: "all 0.3s ease",
+            backdropFilter: scrollY > 50 ? "blur(20px) saturate(180%)" : "none",
+            backgroundColor: scrollY > 50 ? "rgba(0, 0, 0, 0.7)" : "rgb(0, 0, 0)",
+            borderBottomColor: scrollY > 50 ? "rgba(255, 255, 255, 0.1)" : "rgba(148, 163, 184, 0.3)",
           }}
         >
         <div className="flex justify-between mx-[41px] gap-8 items-center">
@@ -63,28 +63,28 @@ function NavBar() {
               <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] w-auto object-contain" priority />
             </Link>
           </div>
-          <div className="flex text-[16px] items-center select-none border border-superGray h-[3rem] rounded-t-[0.75rem] mt-[0.5rem]">
+          <div className="flex text-[16px] items-center select-none border border-white/10 h-[3rem] rounded-t-xl mt-[0.5rem] bg-white/5 backdrop-blur-sm">
             <Link
               href="/home"
-              className="hover:text-white hover:rounded-tl-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:rounded-tl-xl hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
             >
               Home
             </Link>
             <Link
               href="/collections"
-              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
             >
               Collections
             </Link>
             <Link
               href="/services"
-              className="hover:text-white hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-superGray self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
             >
               Booking
             </Link>
             <Link
               href="/about"
-              className="hover:text-white hover:rounded-tr-[0.75rem] hover:bg-superGray cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2"
+              className="hover:text-white hover:rounded-tr-xl hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
             >
               About Me
             </Link>
@@ -107,8 +107,8 @@ function NavBar() {
 
       {/* MOBILE */}
       <div
-        className={`block lg:hidden shadow-sm fixed top-0 w-full z-[999] bg-background animate-in fade-in zoom-in border-b border-b-superGray ${
-          menu ? "bg-primary py-2" : ""
+        className={`block lg:hidden shadow-sm fixed top-0 w-full z-[999] animate-in fade-in zoom-in border-b transition-all duration-300 ${
+          menu ? "bg-primary/90 backdrop-blur-xl py-2 border-b-white/20" : "bg-background/80 backdrop-blur-md border-b-white/10"
         }`}
       >
         <div className="flex justify-between mx-[10px]">

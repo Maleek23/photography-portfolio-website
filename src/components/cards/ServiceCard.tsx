@@ -34,7 +34,7 @@ function ServiceCard() {
           {serviceHighlightData.map((highlight, index) => (
             <div
               key={index}
-              className="flex items-center gap-2 border border-lightDark p-[1.12rem] rounded-[0.75rem]"
+              className="flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-md p-[1.12rem] rounded-xl hover:border-primary/30 hover:bg-white/10 transition-all duration-300"
             >
               <img src="/images/legged_stars_gray.png" alt="gray star" />
               <p className="uppercase text-customGrayAlt2 text-[1.125rem]">
