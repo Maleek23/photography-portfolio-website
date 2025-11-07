@@ -2,6 +2,21 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import Link from "next/link";
 import { getAllBlogPosts } from "@/lib/blogData";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Photography Blog & Tips | Leekshotit Houston Photographer',
+  description: 'Learn photography tips, behind-the-scenes insights, and creative techniques from Houston photographer Leekshotit. Graduation photo ideas, portrait tips, and more.',
+  keywords: ['photography blog', 'photography tips Houston', 'graduation photo ideas', 'portrait photography tips', 'behind the scenes photography', 'Houston photographer blog', 'photography techniques Texas'],
+  openGraph: {
+    title: 'Photography Blog | Tips & Insights from Leekshotit',
+    description: 'Photography tips, creative insights, and behind-the-scenes stories from a Houston-based professional photographer.',
+    url: 'https://leekshotit.com/blog',
+  },
+  alternates: {
+    canonical: '/blog',
+  },
+};
 
 export default function BlogPage() {
   const posts = getAllBlogPosts();
