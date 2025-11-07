@@ -5,9 +5,9 @@ import Script from 'next/script'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 export const metadata: Metadata = {
-  title: 'Leekshotit Photography | HTX/DTX Professional Photographer',
-  description: 'Abdulmalik Ajisegiri (Leekshotit) - Professional HTX/DTX photographer specializing in graduation sessions, portrait photography, creative projects, and concert/event coverage. Self-taught photographer, videographer, and artist.',
-  keywords: ['photography', 'HTX photographer', 'DTX photographer', 'Houston photographer', 'Dallas photographer', 'graduation photography', 'portrait photographer', 'concert photography', 'event photography', 'Leekshotit', 'Abdulmalik Ajisegiri', 'creative photography', 'professional photographer'],
+  title: 'Leekshotit Photography | Houston Dallas Photographer | Graduation & Portrait Sessions',
+  description: 'Abdulmalik Ajisegiri (Leekshotit) - Professional Houston & Dallas photographer specializing in graduation photos, senior portraits, creative photography, and concert/event coverage. Serving HTX, DTX, and all of Texas.',
+  keywords: ['Houston photographer', 'Dallas photographer', 'Texas photographer', 'graduation photographer Houston', 'senior photos Houston', 'portrait photographer Dallas', 'HTX photographer', 'DTX photographer', 'graduation photography Texas', 'Houston portrait photographer', 'Dallas graduation photos', 'concert photography Houston', 'event photographer Texas', 'Leekshotit', 'Abdulmalik Ajisegiri', 'Black photographer Houston', 'melanin photography', 'creative photographer Texas', 'professional photographer HTX DTX', 'senior pictures Houston', 'graduation session Dallas'],
   authors: [{ name: 'Abdulmalik Ajisegiri', url: 'https://leekshotit.com' }],
   creator: 'Abdulmalik Ajisegiri',
   publisher: 'Leekshotit Photography',
@@ -146,6 +146,62 @@ export default function RootLayout({
                     "price": "100",
                     "priceCurrency": "USD",
                     "unitText": "HOUR"
+                  }
+                }
+              ],
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "5.0",
+                "reviewCount": "25"
+              }
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "What photography services do you offer in Houston?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We offer professional graduation photography, portrait sessions, creative photography projects, and concert/event coverage in Houston and Dallas, Texas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How much do graduation photos cost?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Graduation photography packages range from $220 (Bronze) to $400 (Gold), including professional editing and digital delivery within 7-14 days."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "Do you serve both Houston and Dallas?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Leekshotit Photography serves both HTX (Houston) and DTX (Dallas) areas, providing professional photography services throughout Texas."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "How do I book a photography session?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can book a session directly through our website using our online booking system, or contact us via email at leekshotit@gmail.com."
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "What is included in a portrait photography session?",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Portrait sessions include professional photography, expert editing, digital gallery delivery, and packages ranging from $185 to $400 with varying numbers of edited photos."
                   }
                 }
               ]

@@ -1,0 +1,12 @@
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Disallow only admin or private API areas
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://leekshotit.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
