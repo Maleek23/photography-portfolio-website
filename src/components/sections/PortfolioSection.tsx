@@ -1,9 +1,13 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import ImageSkeleton from "@/components/common/ImageSkeleton";
 
 function PortfolioSection() {
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
+  
   const portfolioData = [
     {
       id: 0,
@@ -61,10 +65,20 @@ function PortfolioSection() {
                 href={`/collections/${item.slug}`}
                 className="group relative overflow-hidden rounded-2xl cursor-pointer w-[260px] md:w-[300px] h-[420px] md:h-[500px] bg-lightDark flex-shrink-0 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2"
               >
-                <img
+                {!loadedImages[item.id] && (
+                  <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+                )}
+                <Image
                   src={item.imageUrl}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={`${item.title} photography collection`}
+                  fill
+                  sizes="(min-width: 768px) 300px, 260px"
+                  className={`object-cover transition-all duration-700 group-hover:scale-110 ${
+                    loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
+                  loading="lazy"
+                  quality={85}
                 />
                 {/* GLASSMORPHISM Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
