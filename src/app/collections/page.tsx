@@ -1,24 +1,14 @@
+"use client";
+
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import Link from "next/link";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: 'Photography Portfolio Collections | Leekshotit Houston Photographer',
-  description: 'Explore Leekshotit\'s photography portfolio featuring portraits, graduation sessions, creative projects, and concert/event coverage in Houston and Dallas, Texas.',
-  keywords: ['photography portfolio', 'Houston photographer portfolio', 'portrait gallery', 'graduation photos Houston', 'creative photography Texas', 'concert photographer Dallas', 'event photography HTX'],
-  openGraph: {
-    title: 'Photography Collections | Leekshotit Portfolio',
-    description: 'Browse stunning portrait, graduation, creative, and event photography by Houston-based photographer Leekshotit.',
-    url: 'https://leekshotit.com/collections',
-    images: ['/images/portraits-cover.jpg'],
-  },
-  alternates: {
-    canonical: '/collections',
-  },
-};
+import Image from "next/image";
+import ImageSkeleton from "@/components/common/ImageSkeleton";
+import { useState } from "react";
 
 export default function CollectionsPage() {
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const collections = [
     {
       id: 0,
@@ -75,10 +65,20 @@ export default function CollectionsPage() {
                 href={`/collections/${collection.slug}`}
                 className="group relative overflow-hidden rounded-2xl cursor-pointer h-[480px] md:h-[560px] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
-                <img
+                {!loadedImages[collection.id] && (
+                  <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+                )}
+                <Image
                   src={collection.imageUrl}
-                  alt={collection.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={`${collection.title} photography collection`}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className={`object-cover transition-all duration-700 group-hover:scale-110 ${
+                    loadedImages[collection.id] ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => setLoadedImages(prev => ({ ...prev, [collection.id]: true }))}
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent">
                   {/* Glassmorphic bottom bar */}
