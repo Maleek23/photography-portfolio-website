@@ -5,6 +5,8 @@ import FooterSection from "@/components/sections/FooterSection";
 import { notFound } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import ImageSkeleton from "@/components/common/ImageSkeleton";
 
 const portfolioData: Record<string, { title: string; description: string; images: string[]; bookingType: string }> = {
   portraits: {
@@ -75,6 +77,7 @@ const portfolioData: Record<string, { title: string; description: string; images
 
 export default function CategoryPage({ params }: { params: { category: string } }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const category = portfolioData[params.category];
 
   if (!category) {
@@ -118,10 +121,20 @@ export default function CategoryPage({ params }: { params: { category: string } 
                 className="relative aspect-[3/4] overflow-hidden rounded-lg bg-lightDark cursor-pointer group border border-superGray hover:border-primary transition-all duration-300"
                 onClick={() => setSelectedImage(image)}
               >
-                <img
+                {!loadedImages[index] && (
+                  <ImageSkeleton className="absolute inset-0" aspectRatio="3/4" />
+                )}
+                <Image
                   src={image}
-                  alt={`${category.title} ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  alt={`${category.title} photography ${index + 1}`}
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${
+                    loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
               </div>
@@ -156,19 +169,23 @@ export default function CategoryPage({ params }: { params: { category: string } 
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-8 right-8 text-white hover:text-primary transition-colors"
+            className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-[10000]"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
-          <img
-            src={selectedImage}
-            alt="Full size"
-            className="max-w-full max-h-[90vh] object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
+          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={selectedImage}
+              alt="Full size photography"
+              fill
+              className="object-contain"
+              quality={95}
+              priority
+            />
+          </div>
         </div>
       )}
     </main>
