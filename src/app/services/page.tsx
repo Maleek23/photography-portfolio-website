@@ -2,6 +2,12 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { useState, useEffect } from "react";
 
 export default function ServicesPage() {
@@ -457,7 +463,7 @@ export default function ServicesPage() {
               <div className="glass glass-mobile-optimized glass-hover p-6 md:p-8 rounded-2xl text-center">
                 <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[600] uppercase mb-3">What You'll Receive</h3>
                 <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed">
-                  All raw images provided without watermark + professionally edited high-resolution photos delivered via digital gallery. Cinematic video clips included in select packages.
+                  Professionally edited high-resolution photos delivered via digital gallery based on your package tier. Cinematic video clips included in Silver and Gold packages.
                 </p>
               </div>
             </div>
@@ -466,7 +472,7 @@ export default function ServicesPage() {
           {/* Booking Policy Section */}
           <div id="policy" className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
             <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[700] uppercase mb-6 md:mb-8 tracking-tight">
-              More Info
+              Booking Policies
             </h2>
 
             {/* Important Notice */}
@@ -479,116 +485,153 @@ export default function ServicesPage() {
                 </svg>
                 <div>
                   <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[700] uppercase mb-2">Consultation Required</h3>
-                  <p className="text-white text-[0.813rem] md:text-[0.875rem] leading-relaxed">
+                  <p className="text-white text-base leading-relaxed">
                     All bookings require a consultation beforehand. Please fill out the contact form before proceeding with any booking.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {/* Accordion for Policies */}
+            <Accordion type="multiple" defaultValue={["payment", "delivery", "late", "reschedule", "details", "agreement"]} className="w-full space-y-4">
               {/* Deposit & Payment */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <rect width="20" height="14" x="2" y="5" rx="2"/>
-                    <line x1="2" x2="22" y1="10" y2="10"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Deposit & Payment</h3>
-                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
-                  <li>• 50% non-refundable deposit to secure booking</li>
-                  <li>• Final balance due at end of shoot</li>
-                  <li>• Payment via Cash, Zelle, Apple Pay, Venmo or Cashapp</li>
-                  <li>• Proofs sent after full payment</li>
-                </ul>
-              </div>
+              <AccordionItem value="payment" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <rect width="20" height="14" x="2" y="5" rx="2"/>
+                        <line x1="2" x2="22" y1="10" y2="10"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Deposit & Payment</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <ul className="space-y-2 text-customGrayAlt text-base">
+                    <li>• 50% non-refundable deposit to secure booking</li>
+                    <li>• Final balance due at end of shoot</li>
+                    <li>• Payment via Cash, Zelle, Apple Pay, Venmo or Cashapp</li>
+                    <li>• Proofs sent after full payment</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
 
               {/* Delivery Times */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <circle cx="12" cy="12" r="10"/>
-                    <polyline points="12 6 12 12 16 14"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Delivery Times</h3>
-                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
-                  <li>• Standard: 3-9 business days</li>
-                  <li>• 24-hour rush: +$50 upcharge</li>
-                  <li>• Turnaround starts after you make selects</li>
-                </ul>
-              </div>
+              <AccordionItem value="delivery" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Delivery Times</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <ul className="space-y-2 text-customGrayAlt text-base">
+                    <li>• Standard: 3-9 business days</li>
+                    <li>• 24-hour rush: +$50 upcharge</li>
+                    <li>• Turnaround starts after you make selects</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
 
               {/* Late Policy */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M10 2h4"/>
-                    <path d="M12 14v-4"/>
-                    <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6"/>
-                    <path d="M9 17H4v5"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Late Policy</h3>
-                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
-                  <li>• 15+ mins late: +$20 fee</li>
-                  <li>• Overtime: $1.75 per minute</li>
-                  <li>• 20+ mins late: session canceled, no refund</li>
-                </ul>
-              </div>
+              <AccordionItem value="late" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <path d="M10 2h4"/>
+                        <path d="M12 14v-4"/>
+                        <path d="M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6"/>
+                        <path d="M9 17H4v5"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Late Policy</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <ul className="space-y-2 text-customGrayAlt text-base">
+                    <li>• 15+ mins late: +$20 fee</li>
+                    <li>• Overtime: $1.75 per minute</li>
+                    <li>• 20+ mins late: session canceled, no refund</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
 
               {/* Rescheduling */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
-                    <path d="M21 3v5h-5"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Rescheduling</h3>
-                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
-                  <li>• Weather-related rescheduling allowed</li>
-                  <li>• Rain forecast or temp below 65°F</li>
-                  <li>• Cancellations require new deposit to rebook</li>
-                </ul>
-              </div>
+              <AccordionItem value="reschedule" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/>
+                        <path d="M21 3v5h-5"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Rescheduling</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <ul className="space-y-2 text-customGrayAlt text-base">
+                    <li>• Weather-related rescheduling allowed</li>
+                    <li>• Rain forecast or temp below 65°F</li>
+                    <li>• Cancellations require new deposit to rebook</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
 
-              {/* Guests & Sessions */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-                    <circle cx="9" cy="7" r="4"/>
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Session Details</h3>
-                <ul className="space-y-2 text-customGrayAlt text-[0.813rem] md:text-[0.875rem]">
-                  <li>• Maximum 2 guests allowed per session</li>
-                  <li>• All raw images provided without watermark</li>
-                  <li>• Professional editing on all delivered images</li>
-                </ul>
-              </div>
+              {/* Session Details */}
+              <AccordionItem value="details" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Session Details</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <ul className="space-y-2 text-customGrayAlt text-base">
+                    <li>• Maximum 2 guests allowed per session</li>
+                    <li>• Photos edited and delivered based on your package tier</li>
+                    <li>• Professional editing on all delivered images</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
 
               {/* Agreement */}
-              <div className="glass glass-hover backdrop-blur-xl rounded-xl p-5 md:p-6">
-                <div className="w-10 h-10 mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <path d="M9 11 6 8 4 10l5 5L20 4l-2-2Z"/>
-                  </svg>
-                </div>
-                <h3 className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase mb-3">Agreement</h3>
-                <p className="text-customGrayAlt text-[0.813rem] md:text-[0.875rem] leading-relaxed">
-                  Deposit payment confirms you have read and agree to all Leekshotit Photography policies.
-                </p>
-              </div>
-            </div>
+              <AccordionItem value="agreement" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
+                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors [&>svg]:hidden">
+                  <div className="flex items-center gap-4 text-left w-full">
+                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                        <path d="M9 11 6 8 4 10l5 5L20 4l-2-2 Z"/>
+                      </svg>
+                    </div>
+                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Agreement</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-5">
+                  <p className="text-customGrayAlt text-base leading-relaxed">
+                    Deposit payment confirms you have read and agree to all Leekshotit Photography policies.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
 
             {/* Contact Info */}
             <div className="mt-8 md:mt-10 text-center">
-              <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] mb-4">
+              <p className="text-customGrayAlt text-base mb-4">
                 For bookings & inquiries visit <span className="text-primary">leekshotit.com</span> or email <a href="mailto:leekshotit@gmail.com" className="text-primary hover:underline">leekshotit@gmail.com</a>
               </p>
               <div className="flex items-center justify-center gap-4">
