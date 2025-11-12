@@ -112,7 +112,7 @@ export default function AboutPage() {
               {specialties.map((specialty, index) => (
                 <div
                   key={index}
-                  className="glass glass-hover glass-lift p-6 rounded-xl text-center group"
+                  className="glass glass-mobile-optimized glass-hover glass-lift p-6 rounded-xl text-center group"
                 >
                   <p className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors">
                     {specialty}
@@ -121,8 +121,8 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <div className="text-center glass glass-hover p-6 md:p-8 rounded-2xl">
-              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed">
+            <div className="text-center glass glass-mobile-optimized glass-hover p-6 md:p-8 rounded-2xl">
+              <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed">
                 I&apos;m also <span className="text-primary font-[600]">open to inquiries</span> for any creative projects, events, or <span className="text-white font-[500]">weddings</span>. Let&apos;s collaborate and bring your vision to life.
               </p>
             </div>

@@ -56,20 +56,15 @@ export default function ServicesPage() {
 
   const openCalendly = (url: string) => {
     if (url === "#") {
-      alert("This booking option is not yet set up. Please contact leekshotit@gmail.com to book.");
+      window.open(`mailto:leekshotit@gmail.com?subject=Session Booking Inquiry&body=Hi, I'm interested in booking a ${activeTab} session. Please contact me with available dates.`, '_blank');
       return;
     }
     
-    console.log('Opening Calendly with URL:', url);
-    
-    // Use Calendly's built-in popup
+    // Use Calendly's built-in popup if available, otherwise open in new tab
     if (typeof window !== 'undefined' && (window as any).Calendly) {
-      console.log('Calendly found, opening popup');
       (window as any).Calendly.initPopupWidget({ url });
     } else {
-      console.error('Calendly not loaded yet');
-      alert('Calendly is loading, please try again in a moment or click OK to open in new tab.');
-      // Fallback to direct link if script not loaded
+      // Smooth fallback - open directly in new tab without alert
       window.open(url, '_blank');
     }
   };
@@ -392,6 +387,82 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          {/* How It Works Section */}
+          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
+            <div className="text-center mb-10 md:mb-12">
+              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                The Process
+              </p>
+              <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase leading-tight">
+                How It Works
+              </h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
+              {/* Step 1 */}
+              <div className="relative text-center group">
+                <div className="glass glass-mobile-optimized glass-hover glass-lift rounded-2xl p-6 md:p-8 h-full">
+                  <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary text-[1.5rem] md:text-[1.75rem] font-[700]">1</span>
+                  </div>
+                  <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase mb-3">Book</h3>
+                  <p className="text-customGrayAlt text-base leading-relaxed">
+                    Choose your package and schedule your session via Calendly or contact form
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 2 */}
+              <div className="relative text-center group">
+                <div className="glass glass-mobile-optimized glass-hover glass-lift rounded-2xl p-6 md:p-8 h-full">
+                  <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary text-[1.5rem] md:text-[1.75rem] font-[700]">2</span>
+                  </div>
+                  <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase mb-3">Prep</h3>
+                  <p className="text-customGrayAlt text-base leading-relaxed">
+                    We'll discuss your vision, location preferences, and outfit ideas before the shoot
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="relative text-center group">
+                <div className="glass glass-mobile-optimized glass-hover glass-lift rounded-2xl p-6 md:p-8 h-full">
+                  <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary text-[1.5rem] md:text-[1.75rem] font-[700]">3</span>
+                  </div>
+                  <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase mb-3">Shoot</h3>
+                  <p className="text-customGrayAlt text-base leading-relaxed">
+                    Relax and be yourself while I capture your authentic moments and personality
+                  </p>
+                </div>
+              </div>
+
+              {/* Step 4 */}
+              <div className="relative text-center group">
+                <div className="glass glass-mobile-optimized glass-hover glass-lift rounded-2xl p-6 md:p-8 h-full">
+                  <div className="w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary group-hover:scale-110 transition-transform duration-300">
+                    <span className="text-primary text-[1.5rem] md:text-[1.75rem] font-[700]">4</span>
+                  </div>
+                  <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase mb-3">Delivery</h3>
+                  <p className="text-customGrayAlt text-base leading-relaxed">
+                    Receive your professionally edited images digitally within 3-9 business days
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Deliverables Info */}
+            <div className="mt-8 md:mt-10 max-w-3xl mx-auto">
+              <div className="glass glass-mobile-optimized glass-hover p-6 md:p-8 rounded-2xl text-center">
+                <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[600] uppercase mb-3">What You'll Receive</h3>
+                <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed">
+                  All raw images provided without watermark + professionally edited high-resolution photos delivered via digital gallery. Cinematic video clips included in select packages.
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* Booking Policy Section */}
           <div id="policy" className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
             <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[700] uppercase mb-6 md:mb-8 tracking-tight">
@@ -535,6 +606,45 @@ export default function ServicesPage() {
                 </a>
                 <span className="text-white font-[500]">@leekshotit</span>
               </div>
+            </div>
+          </div>
+
+          {/* Custom Projects & Weddings Section */}
+          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
+            <div className="max-w-4xl mx-auto text-center">
+              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                Beyond Packages
+              </p>
+              <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase leading-tight mb-6">
+                Custom Projects & Weddings
+              </h2>
+              
+              <div className="glass glass-mobile-optimized glass-hover p-6 md:p-10 rounded-2xl mb-8">
+                <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed mb-6">
+                  Looking for something unique? I specialize in <span className="text-white font-[600]">creative collaborations</span>, special events, and am now accepting inquiries for <span className="text-primary font-[600]">wedding photography</span>.
+                </p>
+                <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed mb-6">
+                  Whether it's an artistic project that pushes boundaries, corporate event coverage, or capturing your big day, I bring the same passion and attention to detail to every shoot.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a href="/contact">
+                    <button className="glass-thin glass-hover glass-lift bg-primary/80 text-white font-[600] px-8 py-4 rounded-xl uppercase text-[0.875rem] shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.7)] relative overflow-hidden">
+                      <span className="relative z-10">Request Custom Quote</span>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent opacity-50"></div>
+                    </button>
+                  </a>
+                  <a href="mailto:leekshotit@gmail.com">
+                    <button className="glass glass-hover glass-lift text-white font-[600] px-8 py-4 rounded-xl uppercase text-[0.875rem] overflow-hidden relative">
+                      <span className="relative z-10">Email Directly</span>
+                      <div className="absolute inset-0 bg-gradient-to-tr from-white/5 to-transparent opacity-50"></div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+
+              <p className="text-customGrayAlt text-base">
+                <span className="text-primary font-[600]">Pro tip:</span> Include details about your vision, timeline, and budget in your initial inquiry for the fastest response.
+              </p>
             </div>
           </div>
         </div>
