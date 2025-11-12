@@ -4,11 +4,13 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { PORTFOLIO_EMAIL, SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant";
 
 export default function AboutPage() {
   const [scrollY, setScrollY] = useState(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,10 +57,14 @@ export default function AboutPage() {
                 transform: `translateY(${scrollY * 0.05}px)`,
               }}
             >
-              <img 
-                src="/images/damien_alt.png" 
-                alt="Malik Ajisegiri" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              <Image
+                src="/images/about-profile.jpg" 
+                alt="Abdulmalik Ajisegiri - Houston Dallas Photographer" 
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                priority
+                quality={90}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -136,10 +142,17 @@ export default function AboutPage() {
                 onMouseEnter={() => setHoveredCard(index)}
                 onMouseLeave={() => setHoveredCard(null)}
               >
-                <img 
+                <Image
                   src={specialty.image} 
-                  alt={specialty.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  alt={`${specialty.title} photography specialty`}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                  className={`object-cover transition-all duration-700 group-hover:scale-110 ${
+                    loadedImages[index] ? 'opacity-100' : 'opacity-0'
+                  }`}
+                  onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
+                  loading="lazy"
+                  quality={85}
                 />
                 <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
                   hoveredCard === index 
