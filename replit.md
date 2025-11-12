@@ -5,6 +5,17 @@ This project is a modern, professional, dark-themed photography portfolio websit
 
 ## Recent Changes (November 2025)
 
+### UI/UX & Accessibility Improvements (Nov 12, 2025)
+- **Mobile Accessibility**: Added mobile-optimized glassmorphism with increased contrast (8% opacity vs 5%)
+- **Typography**: Ensured all body text meets 16px minimum on mobile for better readability
+- **Services Page Enhancements**:
+  - Added "How It Works" section with 4-step process (Book → Prep → Shoot → Delivery)
+  - Added "What You'll Receive" deliverables information
+  - Created "Custom Projects & Weddings" section with clear CTAs for future service expansion
+  - Improved Calendly loading with graceful mailto fallback (no jarring alerts)
+- **About Page**: Applied mobile-optimized glass classes to specialty cards for better contrast
+- All changes architect-reviewed and accessibility-validated
+
 ### Performance Optimization (Nov 12, 2025)
 - Converted all portfolio/collection images to Next.js Image component with automatic lazy loading
 - Implemented glassmorphism-styled skeleton loading screens for smooth UX
@@ -14,9 +25,11 @@ This project is a modern, professional, dark-themed photography portfolio websit
 - Expected improvements: 50-70% faster page loads, improved Core Web Vitals (LCP, CLS, FID)
 
 ### About Page Update (Nov 12, 2025)
-- Updated profile photo to black & white professional portrait
-- Optimized specialty card images with Next.js Image component
-- Maintained glassmorphism aesthetic with smooth image loading transitions
+- Updated profile photo to higher quality black & white professional portrait (no text overlay)
+- Removed image-based specialty cards, replaced with clean text-based glassmorphism cards
+- Removed stats section (100+ sessions, 4 categories, 100% passion)
+- Simplified "What I Do" section with text-only cards listing: Portraits, Graduation, Creative Projects, Concerts & Events
+- Added message about wedding and creative project inquiries
 
 ### SEO Optimization (Nov 2025)
 - Added comprehensive metadata with location-based keywords (Houston, Dallas, HTX, DTX)
