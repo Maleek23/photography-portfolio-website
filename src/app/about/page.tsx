@@ -9,8 +9,6 @@ import { PORTFOLIO_EMAIL, SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant
 
 export default function AboutPage() {
   const [scrollY, setScrollY] = useState(0);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,26 +19,10 @@ export default function AboutPage() {
   }, []);
 
   const specialties = [
-    { 
-      title: "Portraits", 
-      image: "/images/portrait-yellow.jpg",
-      description: "Capturing authentic personality and confidence"
-    },
-    { 
-      title: "Graduation", 
-      image: "/images/graduation-nike.jpg",
-      description: "Celebrating your milestone moments"
-    },
-    { 
-      title: "Creative", 
-      image: "/images/creative-smoke.jpg",
-      description: "Pushing artistic boundaries"
-    },
-    { 
-      title: "Events", 
-      image: "/images/portrait-yellow.jpg",
-      description: "High-energy live moments"
-    },
+    "Portraits",
+    "Graduation",
+    "Creative Projects",
+    "Concerts & Events",
   ];
 
   return (
@@ -64,17 +46,8 @@ export default function AboutPage() {
                 sizes="(min-width: 1024px) 50vw, 100vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
-                quality={90}
+                quality={95}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase leading-tight">
-                  Abdulmalik<br/>Ajisegiri
-                </p>
-                <p className="text-primary text-[1rem] md:text-[1.125rem] font-[500] mt-2">
-                  HTX/DTX Photographer
-                </p>
-              </div>
             </div>
 
             {/* Text Content */}
@@ -125,57 +98,34 @@ export default function AboutPage() {
 
         {/* What I Do Section */}
         <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem] bg-gradient-to-b from-background via-superGray/10 to-background">
-          <div className="text-center mb-12">
-            <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
-              Specialties
-            </p>
-            <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[700] uppercase leading-tight">
-              What I Do
-            </h2>
-          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                Specialties
+              </p>
+              <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[700] uppercase leading-tight mb-6">
+                What I Do
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {specialties.map((specialty, index) => (
-              <div
-                key={index}
-                className="group relative overflow-hidden rounded-2xl aspect-[3/4] cursor-pointer glass glass-hover glass-lift"
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
-              >
-                <Image
-                  src={specialty.image} 
-                  alt={`${specialty.title} photography specialty`}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className={`object-cover transition-all duration-700 group-hover:scale-110 ${
-                    loadedImages[index] ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
-                  loading="lazy"
-                  quality={85}
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t transition-all duration-500 ${
-                  hoveredCard === index 
-                    ? 'from-primary/90 via-primary/50 to-transparent' 
-                    : 'from-black/80 via-black/30 to-transparent'
-                }`}></div>
-                
-                {/* Glassmorphic bottom bar */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 backdrop-blur-xl bg-white/10 border-t border-white/20 group-hover:bg-white/15 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <p className={`relative z-10 text-white text-[1.5rem] font-[700] uppercase transition-all duration-300 ${
-                    hoveredCard === index ? 'translate-y-0 opacity-100' : 'translate-y-1'
-                  }`}>
-                    {specialty.title}
-                  </p>
-                  <p className={`relative z-10 text-white/90 text-[0.813rem] mt-1 transition-all duration-500 ${
-                    hoveredCard === index ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
-                  }`}>
-                    {specialty.description}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+              {specialties.map((specialty, index) => (
+                <div
+                  key={index}
+                  className="glass glass-hover glass-lift p-6 rounded-xl text-center group"
+                >
+                  <p className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors">
+                    {specialty}
                   </p>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
+            <div className="text-center glass glass-hover p-6 md:p-8 rounded-2xl">
+              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed">
+                I&apos;m also <span className="text-primary font-[600]">open to inquiries</span> for any creative projects, events, or <span className="text-white font-[500]">weddings</span>. Let&apos;s collaborate and bring your vision to life.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -189,30 +139,6 @@ export default function AboutPage() {
               <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
                 — Malik&apos;s Approach
               </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="text-center group">
-                <div className="text-primary text-[3rem] font-[700] mb-2 transition-transform duration-300 group-hover:scale-110">
-                  100+
-                </div>
-                <p className="text-white text-[1.125rem] font-[500]">Sessions</p>
-                <p className="text-customGrayAlt text-[0.875rem] mt-1">Completed</p>
-              </div>
-              <div className="text-center group">
-                <div className="text-primary text-[3rem] font-[700] mb-2 transition-transform duration-300 group-hover:scale-110">
-                  4
-                </div>
-                <p className="text-white text-[1.125rem] font-[500]">Categories</p>
-                <p className="text-customGrayAlt text-[0.875rem] mt-1">Of Expertise</p>
-              </div>
-              <div className="text-center group">
-                <div className="text-primary text-[3rem] font-[700] mb-2 transition-transform duration-300 group-hover:scale-110">
-                  100%
-                </div>
-                <p className="text-white text-[1.125rem] font-[500]">Passion</p>
-                <p className="text-customGrayAlt text-[0.875rem] mt-1">Every Shot</p>
-              </div>
             </div>
           </div>
         </div>
