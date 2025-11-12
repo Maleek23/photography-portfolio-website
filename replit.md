@@ -5,6 +5,15 @@ This project is a modern, professional, dark-themed photography portfolio websit
 
 ## Recent Changes (November 2025)
 
+### Services Page Optimization (Nov 12, 2025)
+- **Fixed Deliverables Misinformation**: Corrected "What You'll Receive" text to accurately state customers receive edited photos based on their package tier (NOT all raw images)
+- **Implemented Accordion Policies**: Converted 6-card policy section to collapsible accordions
+  - All policies visible by default (accessible, no hidden content)
+  - Users can collapse sections they've read (opt-in simplification)
+  - Reduces mobile scrolling while maintaining transparency
+  - Glassmorphism styling preserved with smooth interactions
+- Architect-approved for production
+
 ### UI/UX & Accessibility Improvements (Nov 12, 2025)
 - **Mobile Accessibility**: Added mobile-optimized glassmorphism with increased contrast (8% opacity vs 5%)
 - **Typography**: Ensured all body text meets 16px minimum on mobile for better readability
