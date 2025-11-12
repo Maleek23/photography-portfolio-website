@@ -33,7 +33,12 @@ This project is a modern, professional, dark-themed photography portfolio websit
 - Configured quality settings: 85 for galleries, 95 for lightbox modal
 - Expected improvements: 50-70% faster page loads, improved Core Web Vitals (LCP, CLS, FID)
 
-### About Page Update (Nov 12, 2025)
+### About Page Updates (Nov 12, 2025)
+- **Expanded Bio**: Rewrote personal bio from 3 paragraphs to 5 for deeper storytelling
+  - Added emphasis on "high personified art" and attention to detail
+  - Explained melanin-richness expertise (lighting techniques for deep skin tones)
+  - Highlighted intentionality and collaborative approach
+  - Strengthened closing statement about creating timeless art
 - Updated profile photo to higher quality black & white professional portrait (no text overlay)
 - Removed image-based specialty cards, replaced with clean text-based glassmorphism cards
 - Removed stats section (100+ sessions, 4 categories, 100% passion)
