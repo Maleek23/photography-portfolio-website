@@ -1,0 +1,117 @@
+Apollo.ioSkip to content
+Leekshotit's projects
+Leekshotit's projects
+
+Hobby
+
+photography-portfolio-website
+
+91vBDnymG
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Command "npm run build" exited with 1
+
+Created
+leekshotit-8823 Avatar
+leekshotit-8823
+8m ago
+Status
+Error
+Stale
+Duration
+18s
+7m ago
+Environment
+Production
+Domains
+photography-portfolio-website-git-main-leekshotits-projects.vercel.app
+photography-portfolio-website-5tgqnkegp-leekshotits-projects.vercel.app
+Source
+main
+1902c60
+Update booking links to use a single generic session for all packages
+
+Deployment Settings
+3 Recommendations
+Build Logs
+18s
+43 lines
+Find in logs
+⌘F
+02:20:11.125 
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+02:20:13.001 
+Browserslist: caniuse-lite is outdated. Please run:
+02:20:13.002 
+  npx browserslist@latest --update-db
+02:20:13.002 
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+02:20:13.626 
+ ✓ Compiled successfully
+02:20:13.627 
+   Linting and checking validity of types ...
+02:20:17.844 
+02:20:17.846 
+Failed to compile.
+02:20:17.847 
+02:20:17.847 
+./src/app/services/page.tsx
+02:20:17.847 
+429:23  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:20:17.847 
+464:111  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:20:17.847 
+670:29  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:20:17.848 
+02:20:17.848 
+./src/components/common/ScrollReveal.tsx
+02:20:17.848 
+51:32  Warning: The ref value 'ref.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'ref.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+02:20:17.848 
+02:20:17.848 
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+02:20:17.931 
+Error: Command "npm run build" exited with 1
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Guides
+Academy
+Help
+Contact
+All systems normal.
+
+Select a display theme:
+
+system
+
+light
+
+dark
+Speed Insights
+Monitor your website performance with Core Web Vitals and real user data
