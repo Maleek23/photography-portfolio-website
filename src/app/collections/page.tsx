@@ -45,15 +45,15 @@ export default function CollectionsPage() {
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         <div className="bg-gradient-to-b from-primary/5 via-background to-superGray/5">
-          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-            <div className="mb-8 md:mb-12">
-              <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+          <div className="px-4 md:px-[6rem] py-[3rem] md:py-[4rem]">
+            <div className="mb-6 md:mb-8">
+              <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-widest mb-2">
                 Portfolio
               </p>
-              <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
+              <h1 className="text-white text-[2rem] md:text-[2.75rem] font-[700] uppercase mb-2 leading-tight">
                 Collections
               </h1>
-              <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
+              <p className="text-customGrayAlt text-[0.875rem] md:text-[1rem] max-w-3xl leading-relaxed">
                 Explore my work across different creative categories
               </p>
             </div>
