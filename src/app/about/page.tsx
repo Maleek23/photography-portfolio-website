@@ -149,7 +149,7 @@ export default function AboutPage() {
         <div className="px-4 md:px-[6rem] py-[6rem] md:py-[8rem] bg-gradient-to-b from-background via-primary/5 to-background">
           <div className="max-w-4xl mx-auto text-center">
             <div className="relative">
-              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-primary/20 text-[6rem] font-serif leading-none">"</div>
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-primary/20 text-[6rem] font-serif leading-none">&ldquo;</div>
               <p className="text-white text-[1.75rem] md:text-[2.75rem] font-[600] leading-[1.3] mb-8 relative z-10">
                 Photography is more than taking pictures — it&apos;s freezing emotion, telling stories, and creating art that resonates.
               </p>
