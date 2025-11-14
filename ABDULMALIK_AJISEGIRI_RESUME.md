@@ -1,5 +1,5 @@
 # ABDULMALIK AJISEGIRI
-**Creative Artist & Director | Visual Storyteller**
+**Creative Director & Visual Artist**
 
 Houston & Dallas, TX | leekshotit@gmail.com | leekshotit.com
 
@@ -7,126 +7,139 @@ Houston & Dallas, TX | leekshotit@gmail.com | leekshotit.com
 
 ## PROFILE
 
-Self-taught visual artist specializing in photography, videography, and creative direction with a focus on capturing authentic emotion and melanin-richness. Known for transforming moments into high-end art through intentional framing and cinematic storytelling. Proven ability to collaborate with clients from concept to final delivery, creating work that resonates beyond the frame.
+Multi-disciplinary creative professional specializing in visual storytelling across photography, videography, and commercial content production. Self-taught artist with proven ability to conceptualize, direct, and execute projects from initial vision to final delivery. Known for transforming ideas into high-end visual art through intentional collaboration and cinematic execution. Experience spans portraits, events, brand campaigns, and creative content for diverse clients.
 
 ---
 
 ## CORE COMPETENCIES
 
-**Creative Direction**
-- Visual storytelling and concept development
+**Creative Direction & Strategy**
+- Concept development and visual storytelling
+- Brand identity and campaign strategy
+- Pre-production planning and creative execution
 - Client collaboration and vision alignment
-- Pre-production planning and location scouting
-- Art direction for portraits, events, and creative projects
+- Art direction across photography, video, and commercial projects
 
-**Technical Expertise**
-- Portrait Photography (Studio & Environmental)
-- Event & Concert Coverage
-- Graduation Sessions & Milestone Photography
-- Videography & Motion Content
+**Production & Technical Skills**
+- Photography (Portrait, Event, Commercial, Editorial)
+- Videography & Video Production
+- Motion Graphics & Short-Form Content
+- Lighting Design (Natural, Studio, Location)
 - Post-Production & Color Grading
-- Adobe Creative Suite (Photoshop, Lightroom, Premiere Pro)
+- Adobe Creative Suite (Photoshop, Lightroom, Premiere Pro, After Effects)
 
-**Business & Client Relations**
-- Package design and pricing strategy
-- Client consultation and expectation management
-- Timeline coordination and project delivery
-- Brand development and online presence management
+**Business & Project Management**
+- Full-cycle project management from concept to delivery
+- Client relations and expectation management
+- Budget planning and resource allocation
+- Timeline coordination and deadline adherence
+- Digital marketing and brand development
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
-### Founder & Creative Director | Leekshotit
+### Creative Director & Founder | Leekshotit
 **Houston & Dallas, TX** | 2020 – Present
 
-- Established and scaled photography brand serving clients across Houston and Dallas metropolitan areas
-- Direct all creative aspects of portrait sessions, graduation shoots, concerts, and custom projects
-- Manage end-to-end client experience from initial consultation through final delivery
-- Developed tiered service offerings (Starter, Plus, Pro) generating consistent bookings
-- Built comprehensive online portfolio showcasing 100+ completed projects across four specialties
+- Lead creative direction for photography, videography, and commercial content projects across Houston and Dallas markets
+- Manage full production cycle from client consultation and concept development through shooting, editing, and final delivery
+- Collaborate with individuals, brands, and organizations to create authentic visual content that resonates with target audiences
+- Develop and execute creative strategies for portraits, events, promotional campaigns, and artistic projects
+- Built scalable service model with tiered offerings for diverse client needs and budgets
 
 **Key Achievements:**
-- Created signature style emphasizing melanin-richness and cinematic quality
-- Delivered 200+ high-quality edited images for graduation sessions alone
-- Captured major concerts and events with quick turnaround times (48-hour delivery)
-- Maintained 100% client satisfaction through transparent communication and professional delivery
+- Produced 200+ visual projects spanning photography, video, and commercial content
+- Established signature style emphasizing cinematic quality, authentic emotion, and intentional framing
+- Delivered commercial content with 48-hour turnaround for time-sensitive campaigns
+- Built comprehensive digital presence (leekshotit.com) showcasing versatility across mediums
+- Maintained consistent client satisfaction through transparent communication and professional execution
 
 ---
 
-## SPECIALIZATIONS
+## PROJECT EXPERIENCE
 
-**Portrait Photography**
-Intimate, intentional sessions capturing individual personality and authentic moments through environmental and studio work.
+**Portrait & Editorial**
+Directed intimate sessions capturing personality and authentic moments through environmental and studio work. Experience with individual portraits, group sessions, and editorial-style creative shoots.
 
-**Graduation Photography**
-Milestone documentation blending traditional poses with creative, personalized shots that celebrate achievement.
+**Event & Concert Coverage**
+Provided high-energy coverage for live performances, corporate events, and special occasions. Expertise in fast-paced environments requiring quick decision-making and adaptability.
 
-**Creative Projects**
-Artistic collaborations pushing visual boundaries, from conceptual shoots to experimental storytelling that challenges conventional photography.
+**Commercial & Brand Content**
+Created promotional content for brands and artists, including product photography, lifestyle content, and social media campaigns. Skilled in translating brand vision into compelling visual narratives.
 
-**Concerts & Events**
-High-energy coverage capturing live performances and special moments with professional-grade quality and fast delivery.
+**Creative & Collaborative Projects**
+Directed artistic collaborations pushing creative boundaries, from conceptual shoots to experimental storytelling. Open to innovative projects that challenge conventional visual approaches.
+
+**Milestone Documentation**
+Specialized in capturing significant life moments (graduations, celebrations) blending traditional documentation with creative, personalized visual storytelling.
 
 ---
 
-## TECHNICAL SKILLS
+## TECHNICAL PROFICIENCIES
 
-- **Photography:** Canon/Sony Systems, Natural & Studio Lighting, Composition Theory
-- **Post-Production:** Adobe Lightroom, Photoshop, Capture One
-- **Videography:** Premiere Pro, Video Editing, Motion Graphics
-- **Digital:** SEO Optimization, Social Media Marketing, Web Design (Next.js, Vercel)
-- **Client Tools:** Calendly Scheduling, Professional Email Systems, Contract Management
+- **Photography:** Full-Frame Camera Systems, Natural & Studio Lighting, Composition & Framing
+- **Video Production:** Multi-Camera Setup, Audio Recording, Cinematic Videography
+- **Post-Production:** Adobe Lightroom, Photoshop, Premiere Pro, Capture One, DaVinci Resolve
+- **Content Creation:** Social Media Content, Short-Form Video, Promotional Materials
+- **Digital Tools:** Web Design (Next.js), SEO Optimization, Scheduling Systems, CRM
 
 ---
 
 ## CREATIVE PHILOSOPHY
 
-"Photography is more than taking pictures — it's freezing emotion, telling stories, and creating art that resonates."
+"Visual storytelling is more than capturing moments — it's freezing emotion, telling stories, and creating art that resonates."
 
-Every project begins with intentionality. I believe the best work comes from authentic collaboration where the subject's vision meets artistic execution. My approach prioritizes understanding the story behind each frame, ensuring every image serves a purpose and creates lasting impact.
-
----
-
-## EDUCATION & DEVELOPMENT
-
-**Self-Taught Artist** | Ongoing Professional Development
-- Continuous learning through workshops, online courses, and peer collaboration
-- Focus areas: Advanced lighting techniques, color theory, cinematic videography
-- Active member of Houston and Dallas creative communities
+Every project begins with intentionality. Whether directing a commercial campaign, documenting a milestone, or collaborating on an artistic vision, the approach remains consistent: understand the story, honor the subject's vision, and execute with precision. The best work emerges from authentic collaboration where creative expertise meets client goals.
 
 ---
 
-## PORTFOLIO & ONLINE PRESENCE
+## PORTFOLIO
 
-**Website:** leekshotit.com (Next.js portfolio with 4 gallery categories)
+**leekshotit.com** – Comprehensive portfolio showcasing range across photography, videography, and creative projects
+
 **Portfolio Highlights:**
-- Portraits: 30+ diverse sessions showcasing range and versatility
-- Graduation: 50+ milestone documentation projects
-- Creative Projects: 15+ artistic collaborations and conceptual shoots
-- Concerts & Events: 40+ live performance and event coverage
+- 30+ portrait and editorial sessions demonstrating versatility in style and approach
+- 50+ event and milestone documentation projects
+- 15+ creative collaborations and conceptual shoots
+- 40+ live performance and corporate event coverage
+- Commercial and promotional content for brands and artists
 
 ---
 
-## SERVICES OFFERED
+## SERVICES & CAPABILITIES
 
-**Portrait Sessions** – Solo shoots and group photography
-**Graduation Photography** – Milestone documentation with tiered packages
-**Event Coverage** – Concerts, corporate events, special occasions
-**Creative Direction** – Custom projects, artistic collaborations, visual campaigns
-**Videography** – Event videos, promotional content, short-form storytelling
-
----
-
-## AVAILABLE FOR
-
-- Creative direction and photography for brands and artists
-- Event and concert coverage (local and travel)
-- Collaborative artistic projects
-- Wedding photography and videography
-- Corporate and promotional content creation
-- Visual storytelling campaigns
+**Photography** – Portraits, events, commercial, editorial, product, lifestyle  
+**Videography** – Event coverage, promotional videos, short-form content, social media  
+**Creative Direction** – Brand campaigns, visual strategy, concept development  
+**Commercial Production** – Product photography, lifestyle content, brand storytelling  
+**Content Creation** – Social media assets, promotional materials, marketing content
 
 ---
 
-*References and full portfolio available upon request*
+## OPEN TO OPPORTUNITIES IN
+
+- Creative direction for brands, agencies, and artists
+- Commercial photography and videography projects
+- Brand campaigns and visual strategy consulting
+- Event coverage (corporate, concerts, private events, weddings)
+- Collaborative creative projects and artistic partnerships
+- Content creation for digital marketing and social media
+- Promotional and advertising campaigns
+- Editorial and lifestyle photography
+- Film and video production roles
+
+---
+
+## PROFESSIONAL DEVELOPMENT
+
+**Self-Directed Learning** | Ongoing
+- Advanced lighting techniques and color theory
+- Cinematic videography and motion graphics
+- Commercial production and brand strategy
+- Active participation in Houston and Dallas creative communities
+- Continuous skill development through workshops, courses, and peer collaboration
+
+---
+
+*Portfolio, references, and project samples available upon request*
