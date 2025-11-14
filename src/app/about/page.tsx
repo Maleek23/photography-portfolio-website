@@ -30,8 +30,8 @@ export default function AboutPage() {
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         {/* Hero Section */}
-        <div className="relative px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="relative px-4 md:px-[6rem] py-[4rem] md:py-[6rem]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
             {/* Image */}
             <div 
               className="relative overflow-hidden rounded-2xl aspect-[4/5] group"
@@ -52,21 +52,21 @@ export default function AboutPage() {
 
             {/* Text Content */}
             <div 
-              className="space-y-6"
+              className="space-y-8"
               style={{
                 transform: `translateY(${scrollY * -0.02}px)`,
               }}
             >
               <div>
-                <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+                <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-4">
                   About Me
                 </p>
-                <h1 className="text-white text-[2.5rem] md:text-[4rem] font-[700] uppercase leading-tight mb-6">
+                <h1 className="text-white text-[2.5rem] md:text-[4rem] font-[700] uppercase leading-tight mb-4">
                   Visual<br/>Storyteller
                 </h1>
               </div>
 
-              <div className="space-y-5 text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed">
+              <div className="space-y-6 text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-[1.8]">
                 <p>
                   I&apos;m <span className="text-white font-[600]">Malik</span> — a self-taught photographer, videographer, and visual artist based in Texas. What started as curiosity evolved into an obsession with freezing moments that matter.
                 </p>
@@ -79,12 +79,12 @@ export default function AboutPage() {
                 <p>
                   Beyond technical skill, I bring <span className="text-white font-[600]">intentionality</span> to every shoot. Whether it&apos;s a graduation milestone, a creative concept, or a concert moment, I&apos;m not just documenting — I&apos;m translating your story into visual art. The goal isn&apos;t perfection; it&apos;s authenticity with cinematic quality.
                 </p>
-                <p className="text-white font-[500] text-[1.125rem] md:text-[1.25rem]">
+                <p className="text-white font-[500] text-[1.125rem] md:text-[1.25rem] leading-[1.6] pt-2">
                   I don&apos;t just take pictures. I create art that resonates, tells stories, and stands the test of time.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-4 pt-4">
+              <div className="flex flex-wrap gap-4 pt-6">
                 <Link href="/services">
                   <button className="relative glass-thin glass-hover glass-lift bg-primary/80 text-white font-[600] px-8 py-4 rounded-xl uppercase text-[0.875rem] shadow-[0_0_30px_rgba(37,99,235,0.4)] hover:shadow-[0_0_50px_rgba(37,99,235,0.7)] overflow-hidden">
                     <span className="relative z-10">Book a Session</span>
@@ -103,9 +103,9 @@ export default function AboutPage() {
         </div>
 
         {/* What I Do Section */}
-        <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem] bg-gradient-to-b from-background via-superGray/10 to-background">
+        <div className="px-4 md:px-[6rem] py-[4rem] md:py-[6rem] bg-gradient-to-b from-background via-superGray/10 to-background">
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-12">
+            <div className="text-center mb-10 md:mb-14">
               <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
                 Specialties
               </p>
@@ -114,11 +114,11 @@ export default function AboutPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5 mb-10">
               {specialties.map((specialty, index) => (
                 <div
                   key={index}
-                  className="glass glass-mobile-optimized glass-hover glass-lift p-6 rounded-xl text-center group"
+                  className="glass glass-mobile-optimized glass-hover glass-lift p-7 md:p-6 rounded-xl text-center group"
                 >
                   <p className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors">
                     {specialty}
@@ -127,8 +127,8 @@ export default function AboutPage() {
               ))}
             </div>
 
-            <div className="text-center glass glass-mobile-optimized glass-hover p-6 md:p-8 rounded-2xl">
-              <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed">
+            <div className="text-center glass glass-mobile-optimized glass-hover p-7 md:p-8 rounded-2xl">
+              <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-[1.7]">
                 I&apos;m also <span className="text-primary font-[600]">open to inquiries</span> for any creative projects, events, or <span className="text-white font-[500]">weddings</span>. Let&apos;s collaborate and bring your vision to life.
               </p>
             </div>
@@ -136,13 +136,13 @@ export default function AboutPage() {
         </div>
 
         {/* Philosophy Section */}
-        <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
+        <div className="px-4 md:px-[6rem] py-[4rem] md:py-[6rem]">
           <div className="max-w-4xl mx-auto">
-            <div className="border-l-4 border-primary pl-6 md:pl-8 py-4">
-              <p className="text-white text-[1.5rem] md:text-[2.5rem] font-[600] leading-relaxed mb-4">
+            <div className="border-l-4 border-primary pl-8 md:pl-10 py-6 md:py-8">
+              <p className="text-white text-[1.5rem] md:text-[2.5rem] font-[600] leading-[1.4] mb-6">
                 &ldquo;Photography is more than taking pictures — it&apos;s freezing emotion, telling stories, and creating art that resonates.&rdquo;
               </p>
-              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem]">
+              <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] font-[500]">
                 — Malik&apos;s Approach
               </p>
             </div>
@@ -150,19 +150,19 @@ export default function AboutPage() {
         </div>
 
         {/* Connect Section */}
-        <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem] bg-gradient-to-b from-background via-primary/5 to-background">
+        <div className="px-4 md:px-[6rem] py-[4rem] md:py-[6rem] bg-gradient-to-b from-background via-primary/5 to-background">
           <div className="max-w-3xl mx-auto text-center">
-            <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
+            <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-4">
               Let&apos;s Create Together
             </p>
-            <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[700] uppercase leading-tight mb-6">
+            <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[700] uppercase leading-tight mb-8">
               Ready to Work?
             </h2>
-            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed mb-8">
+            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-[1.7] mb-10">
               Whether you need portraits, event coverage, or want to collaborate on a creative project, I&apos;d love to hear from you.
             </p>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-10">
               <a href={`mailto:${PORTFOLIO_EMAIL}`} className="flex items-center gap-3 text-white hover:text-primary transition-colors">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect width="20" height="16" x="2" y="4" rx="2"/>
