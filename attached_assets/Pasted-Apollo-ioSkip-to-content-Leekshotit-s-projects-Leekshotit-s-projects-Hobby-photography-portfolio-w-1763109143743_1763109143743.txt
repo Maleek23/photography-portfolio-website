@@ -1,0 +1,115 @@
+Apollo.ioSkip to content
+Leekshotit's projects
+Leekshotit's projects
+
+Hobby
+
+photography-portfolio-website
+
+3DWbbnKGd
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Command "npm run build" exited with 1
+
+Created
+leekshotit-8823 Avatar
+leekshotit-8823
+46s ago
+Status
+Error
+Latest
+Duration
+31s
+Just now
+Environment
+Production
+Domains
+photography-portfolio-website-git-main-leekshotits-projects.vercel.app
+photography-portfolio-website-lgeh9w3c0-leekshotits-projects.vercel.app
+Source
+main
+1902c60
+Update booking links to use a single generic session for all packages
+
+Deployment Settings
+3 Recommendations
+Build Logs
+31s
+48 lines
+Find in logs
+⌘F
+02:32:01.383 
+Browserslist: caniuse-lite is outdated. Please run:
+02:32:01.384 
+  npx browserslist@latest --update-db
+02:32:01.384 
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+02:32:02.377 
+ ✓ Compiled successfully
+02:32:02.378 
+   Linting and checking validity of types ...
+02:32:06.415 
+02:32:06.415 
+Failed to compile.
+02:32:06.416 
+02:32:06.416 
+./src/app/services/page.tsx
+02:32:06.416 
+429:23  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:32:06.416 
+464:111  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:32:06.416 
+670:29  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+02:32:06.416 
+02:32:06.417 
+./src/components/common/ScrollReveal.tsx
+02:32:06.417 
+51:32  Warning: The ref value 'ref.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'ref.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+02:32:06.417 
+02:32:06.418 
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+02:32:06.548 
+Error: Command "npm run build" exited with 1
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Guides
+Academy
+Help
+Contact
+All systems normal.
+
+Select a display theme:
+
+system
+
+light
+
+dark
+Speed Insights
+Monitor your website performance with Core Web Vitals and real user data
