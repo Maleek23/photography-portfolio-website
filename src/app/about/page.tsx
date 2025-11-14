@@ -66,17 +66,20 @@ export default function AboutPage() {
                 </h1>
               </div>
 
-              <div className="space-y-6 text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-[1.8]">
+              <div className="space-y-8 text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-[1.8]">
                 <p>
                   I&apos;m <span className="text-white font-[600]">Malik</span>, a self-taught photographer, videographer, and visual artist based in Texas. What started as curiosity evolved into an obsession with capturing moments that matter.
                 </p>
+                
                 <p>
                   My work celebrates <span className="text-primary font-[600]">intentionality in every frame</span> and <span className="text-white font-[600]">authentic collaboration</span> in every session.
                 </p>
+                
                 <p>
                   I specialize in capturing <span className="text-white font-[600]">high-end art</span> in its truest form. Beyond technical skill, I bring intentionality to every shoot. Whether it&apos;s a graduation milestone, a creative concept, or a concert moment, I&apos;m not just documenting — I&apos;m translating your story into visual art. The goal isn&apos;t perfection; it&apos;s authenticity with cinematic quality.
                 </p>
-                <p className="text-white font-[500] text-[1.125rem] md:text-[1.25rem] leading-[1.6] pt-2">
+                
+                <p className="text-white font-[500] text-[1.125rem] md:text-[1.25rem] leading-[1.6]">
                   I don&apos;t just take pictures and videos. I create art that resonates, tells stories, and stands the test of time.
                 </p>
               </div>
