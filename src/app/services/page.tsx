@@ -426,7 +426,7 @@ export default function ServicesPage() {
                   </div>
                   <h3 className="text-white text-[1.125rem] md:text-[1.25rem] font-[600] uppercase mb-3">Prep</h3>
                   <p className="text-customGrayAlt text-base leading-relaxed">
-                    We'll discuss your vision, location preferences, and outfit ideas before the shoot
+                    We&apos;ll discuss your vision, location preferences, and outfit ideas before the shoot
                   </p>
                 </div>
               </div>
@@ -461,7 +461,7 @@ export default function ServicesPage() {
             {/* Deliverables Info */}
             <div className="mt-8 md:mt-10 max-w-3xl mx-auto">
               <div className="glass glass-mobile-optimized glass-hover p-6 md:p-8 rounded-2xl text-center">
-                <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[600] uppercase mb-3">What You'll Receive</h3>
+                <h3 className="text-primary text-[1rem] md:text-[1.125rem] font-[600] uppercase mb-3">What You&apos;ll Receive</h3>
                 <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed">
                   Professionally edited high-resolution photos delivered via digital gallery based on your package tier. Cinematic video clips included in Silver and Gold packages.
                 </p>
@@ -667,7 +667,7 @@ export default function ServicesPage() {
                   Looking for something unique? I specialize in <span className="text-white font-[600]">creative collaborations</span>, special events, and am now accepting inquiries for <span className="text-primary font-[600]">wedding photography</span>.
                 </p>
                 <p className="text-customGrayAlt text-base md:text-[1.125rem] leading-relaxed mb-6">
-                  Whether it's an artistic project that pushes boundaries, corporate event coverage, or capturing your big day, I bring the same passion and attention to detail to every shoot.
+                  Whether it&apos;s an artistic project that pushes boundaries, corporate event coverage, or capturing your big day, I bring the same passion and attention to detail to every shoot.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a href="/contact">
