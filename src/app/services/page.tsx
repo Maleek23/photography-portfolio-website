@@ -118,7 +118,7 @@ export default function ServicesPage() {
         "20 Edited Images",
       ],
       accent: "#CD7F32",
-      calendlyUrl: "https://calendly.com/leekshotit/60min",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
     {
       name: "Silver",
@@ -131,7 +131,7 @@ export default function ServicesPage() {
       ],
       popular: true,
       accent: "#C0C0C0",
-      calendlyUrl: "https://calendly.com/leekshotit/graduation-silver-package",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
     {
       name: "Gold",
@@ -143,7 +143,7 @@ export default function ServicesPage() {
         "30-45 sec Cinematic Clip",
       ],
       accent: "#FFD700",
-      calendlyUrl: "https://calendly.com/leekshotit/graduation-gold-package-clone",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
   ];
 
@@ -157,7 +157,7 @@ export default function ServicesPage() {
         "20 Edited Images",
       ],
       accent: "#CD7F32",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
     {
       name: "Silver",
@@ -169,7 +169,7 @@ export default function ServicesPage() {
       ],
       popular: true,
       accent: "#C0C0C0",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
     {
       name: "Gold",
@@ -181,7 +181,7 @@ export default function ServicesPage() {
         "15 sec Cinematic Clip",
       ],
       accent: "#FFD700",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
     {
       name: "Platinum",
@@ -193,7 +193,7 @@ export default function ServicesPage() {
         "15-30 sec Cinematic Clip",
       ],
       accent: "#2563EB",
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
   ];
 
@@ -210,7 +210,7 @@ export default function ServicesPage() {
       ],
       accent: "#2563EB",
       popular: true,
-      calendlyUrl: "#",
+      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
     },
   ];
 
