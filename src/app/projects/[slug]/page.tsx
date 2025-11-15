@@ -24,12 +24,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          {/* Back Link */}
-          <Link 
-            href="/projects" 
-            className="inline-flex items-center gap-2 text-primary text-[0.875rem] font-[600] hover:gap-3 transition-all mb-8 uppercase tracking-wide"
-          >
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
+            {/* Back Link */}
+            <Link 
+              href="/projects" 
+              className="inline-flex items-center gap-2 text-primary text-[0.875rem] font-[600] hover:gap-3 transition-all mb-6 uppercase tracking-wide"
+            >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -48,7 +49,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </Link>
 
           {/* Project Header */}
-          <div className="mb-12 md:mb-16">
+          <div className="mb-8 md:mb-12">
             <div className="flex items-center gap-3 mb-4">
               <span className="glass backdrop-blur-xl px-4 py-2 rounded-lg">
                 <span className="text-primary text-[0.75rem] font-[600] uppercase tracking-wider">
@@ -71,7 +72,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* Hero Video or Cover Image */}
           {project.videoUrl ? (
-            <div className="mb-12 md:mb-16 glass glass-mobile-optimized rounded-2xl overflow-hidden">
+            <div className="mb-8 md:mb-12 glass glass-mobile-optimized rounded-2xl overflow-hidden">
               <div className="aspect-video">
                 <iframe
                   src={project.videoUrl}
@@ -83,7 +84,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           ) : (
-            <div className="mb-12 md:mb-16 glass glass-mobile-optimized rounded-2xl overflow-hidden">
+            <div className="mb-8 md:mb-12 glass glass-mobile-optimized rounded-2xl overflow-hidden">
               <div className="aspect-[21/9] relative">
                 <Image
                   src={project.coverImage}
@@ -98,7 +99,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           )}
 
           {/* Project Story */}
-          <div className="max-w-4xl mx-auto mb-16 md:mb-20">
+          <div className="max-w-4xl mx-auto mb-8 md:mb-12">
             <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
               The Story
             </h2>
@@ -115,7 +116,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
 
           {/* Image Gallery */}
-          <div className="mb-16 md:mb-20">
+          <div className="mb-8 md:mb-12">
             <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
               Gallery
             </h2>
@@ -146,7 +147,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* Technical Details */}
           {project.technicalDetails && (
-            <div className="max-w-4xl mx-auto mb-16 md:mb-20">
+            <div className="max-w-4xl mx-auto mb-8 md:mb-12">
               <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
                 Technical Details
               </h2>
@@ -203,7 +204,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
                 More Projects
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {otherProjects.map((otherProject) => (
                   <Link
                     key={otherProject.slug}
@@ -233,6 +234,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </div>
           )}
+          </div>
         </div>
 
         <FooterSection />

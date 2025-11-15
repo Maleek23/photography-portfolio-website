@@ -46,10 +46,11 @@ export default function ServicesPage() {
       <NavBar />
 
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[6rem] md:py-[8rem]">
-          
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16">
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
+            
+            {/* Hero */}
+            <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Pricing
             </p>
@@ -62,7 +63,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Tab Switcher */}
-          <div className="flex justify-center gap-3 mb-12 md:mb-14">
+          <div className="flex justify-center gap-3 mb-8 md:mb-10">
             <button
               onClick={() => setActiveTab("grad")}
               className={`px-6 md:px-8 py-3 rounded-xl font-[600] uppercase text-[0.813rem] tracking-wide transition-all ${
@@ -96,7 +97,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-16 md:mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8 md:mb-12">
             {packages.map((pkg, index) => (
               <div
                 key={index}
@@ -247,20 +248,43 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            {/* Full Policy Link */}
-            <div className="text-center glass glass-mobile-optimized rounded-xl p-6">
-              <p className="text-customGrayAlt text-[0.875rem] mb-4">
-                <span className="text-primary font-[600]">Important:</span> All bookings require a consultation first. Please contact me before booking.
-              </p>
-              <a 
-                href="/contact"
-                className="inline-block glass glass-hover glass-lift bg-primary/20 text-primary font-[600] py-3 px-8 rounded-xl uppercase text-[0.813rem] border border-primary/50 hover:bg-primary/30 transition-all"
-              >
-                Contact Me First
-              </a>
+            {/* Policy Acceptance Notice */}
+            <div className="glass glass-mobile-optimized rounded-xl p-6 md:p-8 border-2 border-primary/30">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" x2="12" y1="8" y2="12"/>
+                    <line x1="12" x2="12.01" y1="16" y2="16"/>
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-white text-[1rem] md:text-[1.125rem] font-[600] mb-2">
+                    Before You Book
+                  </h3>
+                  <p className="text-customGrayAlt text-[0.875rem] md:text-[0.938rem] leading-relaxed mb-4">
+                    By booking a session, you agree to our booking policies including deposit requirements, delivery timelines, cancellation terms, and usage rights.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a 
+                      href="/policies"
+                      className="inline-block text-center glass glass-hover glass-lift bg-primary/20 text-primary font-[600] py-3 px-6 rounded-xl uppercase text-[0.75rem] border border-primary/50 hover:bg-primary/30 transition-all"
+                    >
+                      Read Full Policies
+                    </a>
+                    <a 
+                      href="/contact"
+                      className="inline-block text-center glass glass-hover glass-lift bg-white/5 text-white font-[600] py-3 px-6 rounded-xl uppercase text-[0.75rem] border border-white/10 hover:bg-white/10 transition-all"
+                    >
+                      Contact Me First
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
+          </div>
         </div>
         <FooterSection />
       </div>

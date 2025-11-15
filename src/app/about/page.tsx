@@ -29,11 +29,12 @@ export default function AboutPage() {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        
-        {/* Hero Section - Full Width with Centered Content */}
-        <div className="relative flex items-center justify-center px-4 md:px-[6rem] py-[3rem] md:py-[4rem] bg-gradient-to-b from-primary/10 via-background to-background">
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          
+          {/* Hero Section - Full Width with Centered Content */}
+          <div className="relative flex items-center justify-center px-4 md:px-[6rem] py-12 md:py-16">
           <div className="max-w-7xl mx-auto w-full">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
               
               {/* Profile Image - Larger, More Prominent */}
               <div 
@@ -108,11 +109,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* What I Do Section - Cleaner Grid */}
-        <div className="px-4 md:px-[6rem] py-[6rem] md:py-[8rem]">
+          {/* What I Do Section - Cleaner Grid */}
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
           <div className="max-w-6xl mx-auto">
             
-            <div className="text-center mb-16">
+            <div className="text-center mb-8 md:mb-12">
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Specialties
               </p>
@@ -145,8 +146,8 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Philosophy Quote - Centered, Bold */}
-        <div className="px-4 md:px-[6rem] py-[6rem] md:py-[8rem] bg-gradient-to-b from-background via-primary/5 to-background">
+          {/* Philosophy Quote - Centered, Bold */}
+          <div className="px-4 md:px-[6rem] py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
           <div className="max-w-4xl mx-auto text-center">
             <div className="relative">
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-primary/20 text-[6rem] font-serif leading-none">&ldquo;</div>
@@ -158,10 +159,10 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+          </div>
 
-        {/* Connect Section - Modern CTA */}
-        <div className="px-4 md:px-[6rem] py-[6rem] md:py-[8rem]">
+          {/* Connect Section - Modern CTA */}
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
           <div className="max-w-4xl mx-auto">
             
             <div className="text-center mb-12">
@@ -234,6 +235,7 @@ export default function AboutPage() {
                 </button>
               </Link>
             </div>
+          </div>
           </div>
         </div>
 

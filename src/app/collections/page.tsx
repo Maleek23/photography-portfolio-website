@@ -44,9 +44,9 @@ export default function CollectionsPage() {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-superGray/5">
-          <div className="px-4 md:px-[6rem] py-[3rem] md:py-[4rem]">
-            <div className="mb-6 md:mb-8">
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
+            <div className="mb-8 md:mb-10">
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-widest mb-2">
                 Portfolio
               </p>

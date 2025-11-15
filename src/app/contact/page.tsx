@@ -44,7 +44,7 @@ export default function ContactPage() {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-superGray/10 via-primary/5 to-background">
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
           <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
             <div className="max-w-4xl mx-auto">
               {/* Header */}
@@ -226,7 +226,6 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
         </div>
         <FooterSection />
       </div>

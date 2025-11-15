@@ -30,21 +30,23 @@ export default function Home() {
         <NavBar />
         
         <div className="pt-[10rem] lg:pt-0">
-          <HeroSection />
-          
-          {/* Portfolio Section with Glassmorphism */}
-          <ScrollReveal>
-            <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
-              <PortfolioSection />
-            </div>
-          </ScrollReveal>
-          
-          {/* Services Section with Glassmorphism */}
-          <ScrollReveal delay={200}>
-            <div className="px-4 md:px-[6rem] py-[3rem] md:py-[5rem]">
-              <ServiceSection />
-            </div>
-          </ScrollReveal>
+          <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+            <HeroSection />
+            
+            {/* Portfolio Section with Glassmorphism */}
+            <ScrollReveal>
+              <div className="px-4 md:px-[6rem] py-12 md:py-16">
+                <PortfolioSection />
+              </div>
+            </ScrollReveal>
+            
+            {/* Services Section with Glassmorphism */}
+            <ScrollReveal delay={200}>
+              <div className="px-4 md:px-[6rem] py-12 md:py-16">
+                <ServiceSection />
+              </div>
+            </ScrollReveal>
+          </div>
 
           <FooterSection />
         </div>

@@ -15,9 +15,10 @@ export default function ProjectsPage() {
     <main className="bg-background">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
-          {/* Header */}
-          <div className="mb-12 md:mb-16 text-center">
+        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
+            {/* Header */}
+            <div className="mb-8 md:mb-12 text-center">
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Case Studies
             </p>
@@ -30,7 +31,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <Link
                 key={project.slug}
@@ -102,7 +103,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* CTA Section */}
-          <div className="mt-16 md:mt-20 text-center glass glass-mobile-optimized rounded-3xl p-8 md:p-12 max-w-3xl mx-auto">
+          <div className="mt-8 md:mt-12 text-center glass glass-mobile-optimized rounded-3xl p-8 md:p-12 max-w-3xl mx-auto">
             <h3 className="text-white text-[1.5rem] md:text-[2.25rem] font-[700] leading-tight mb-4">
               Want to Work Together?
             </h3>
@@ -124,6 +125,7 @@ export default function ProjectsPage() {
               </Link>
             </div>
           </div>
+        </div>
         </div>
         <FooterSection />
       </div>
