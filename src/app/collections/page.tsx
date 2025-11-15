@@ -58,15 +58,15 @@ export default function CollectionsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
               {collections.map((collection) => (
               <Link
                 key={collection.id}
                 href={`/collections/${collection.slug}`}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[3/4] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[4/5] max-h-[420px] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 {!loadedImages[collection.id] && (
-                  <ImageSkeleton className="absolute inset-0" aspectRatio="3/4" />
+                  <ImageSkeleton className="absolute inset-0" aspectRatio="4/5" />
                 )}
                 <Image
                   src={collection.imageUrl}
