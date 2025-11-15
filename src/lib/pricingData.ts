@@ -40,6 +40,7 @@ export const pricingData: Record<string, PricingService> = {
         ],
         accent: "#C0C0C0",
         calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
+        popular: true,
       },
       {
         name: "Gold",
@@ -80,6 +81,7 @@ export const pricingData: Record<string, PricingService> = {
         ],
         accent: "#8B5CF6",
         calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
+        popular: true,
       },
       {
         name: "Pro",
@@ -122,6 +124,7 @@ export const pricingData: Record<string, PricingService> = {
         ],
         accent: "#F59E0B",
         calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
+        popular: true,
       },
       {
         name: "Premium",

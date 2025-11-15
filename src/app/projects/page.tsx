@@ -21,7 +21,7 @@ export default function ProjectsPage() {
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Case Studies
             </p>
-            <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-6 leading-tight">
+            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-6">
               Featured Projects
             </h1>
             <p className="text-customGrayAlt text-[1rem] md:text-[1.25rem] max-w-3xl mx-auto leading-relaxed">
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
                     </span>
                   </div>
 
-                  <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase mb-3 group-hover:text-primary transition-colors leading-tight">
+                  <h2 className="text-white text-[1.25rem] md:text-[1.5rem] font-[700] leading-tight mb-3 group-hover:text-primary transition-colors">
                     {project.title}
                   </h2>
 
@@ -103,7 +103,7 @@ export default function ProjectsPage() {
 
           {/* CTA Section */}
           <div className="mt-16 md:mt-20 text-center glass glass-mobile-optimized rounded-3xl p-8 md:p-12 max-w-3xl mx-auto">
-            <h3 className="text-white text-[1.75rem] md:text-[2.5rem] font-[700] uppercase mb-4">
+            <h3 className="text-white text-[1.5rem] md:text-[2.25rem] font-[700] leading-tight mb-4">
               Want to Work Together?
             </h3>
             <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed mb-6">

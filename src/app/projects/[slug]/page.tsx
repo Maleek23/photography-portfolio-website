@@ -60,7 +60,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <span className="text-customGrayAlt text-[0.875rem]">{project.client}</span>
             </div>
 
-            <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase leading-tight mb-4">
+            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-4">
               {project.title}
             </h1>
 
@@ -99,7 +99,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* Project Story */}
           <div className="max-w-4xl mx-auto mb-16 md:mb-20">
-            <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase mb-8 text-center">
+            <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
               The Story
             </h2>
             <div className="space-y-6">
@@ -116,7 +116,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
           {/* Image Gallery */}
           <div className="mb-16 md:mb-20">
-            <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase mb-8 text-center">
+            <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
               Gallery
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
@@ -147,7 +147,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           {/* Technical Details */}
           {project.technicalDetails && (
             <div className="max-w-4xl mx-auto mb-16 md:mb-20">
-              <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase mb-8 text-center">
+              <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
                 Technical Details
               </h2>
               <div className="glass glass-mobile-optimized rounded-2xl p-8 md:p-12">
@@ -200,7 +200,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           {/* Other Projects */}
           {otherProjects.length > 0 && (
             <div>
-              <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase mb-8 text-center">
+              <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
                 More Projects
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -221,7 +221,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="text-white text-[1.25rem] font-[700] uppercase mb-2 group-hover:text-primary transition-colors">
+                      <h3 className="text-white text-[1.25rem] font-[700] leading-tight mb-2 group-hover:text-primary transition-colors">
                         {otherProject.title}
                       </h3>
                       <p className="text-customGrayAlt text-[0.875rem]">
