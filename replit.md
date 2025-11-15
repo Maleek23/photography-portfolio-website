@@ -5,6 +5,29 @@ This project is a modern, professional, dark-themed photography portfolio websit
 
 ## Recent Changes (November 2025)
 
+### NavBar Marquee Fix (Nov 15, 2025)
+- **Fixed Header Text Overflow**: Category marquee displaying cleanly without text overflow
+  - Reduced font sizes and letter spacing for better fit
+  - Added flex-shrink-0 to prevent text wrapping
+  - Improved vertical alignment with items-center
+  - Added performance optimization with willChange transform
+- Architect-approved, production-ready
+
+### Services Page Complete Redesign (Nov 15, 2025)
+- **Massive Simplification**: Reduced from 626 lines to 267 lines (57% reduction)
+  - Removed comparison chart, "How It Works", Before/After slider, extra CTAs
+  - Streamlined to hero + 3 packages + policy summary only
+- **Typography Standardization**: Applied Apple-like modular scale site-wide
+  - H1: 3rem desktop / 2.125rem mobile
+  - H2: 2.25rem / 1.75rem
+  - H3: 1.5rem / 1.25rem
+  - Removed excessive uppercase for professional look
+- **Popular Badge Implementation**: Added to middle-tier packages (Silver/Plus/Standard)
+  - Diagonal ribbon badge with proper overflow handling
+  - Color-coded to match package accent colors
+- Clean, centered layout following Steve Jobs minimalism philosophy
+- Architect-approved, ready for deployment
+
 ### Projects Feature Complete (Nov 15, 2025)
 - **New Projects Section**: Created comprehensive case study system separate from Collections
   - `/projects` landing page with 3 featured project cards in responsive grid

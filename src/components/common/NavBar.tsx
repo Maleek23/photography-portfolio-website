@@ -194,19 +194,19 @@ function NavBar() {
       </div>
 
       {/* Category Marquee - Right Under Header */}
-      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark via-superGray to-lightDark border-b border-b-superGray py-2 relative">
+      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark via-superGray to-lightDark border-b border-b-superGray py-3 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none"></div>
         <div 
-          className="flex animate-marquee whitespace-nowrap"
-          style={{ transform: "translateZ(0)", backfaceVisibility: "hidden" }}
+          className="flex animate-marquee whitespace-nowrap items-center"
+          style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
         >
           {[...categories, ...categories, ...categories].map((category, index) => (
             <div 
               key={index} 
-              className="flex items-center mx-6 transition-transform duration-300 hover:scale-110 hover:text-primary"
+              className="flex items-center flex-shrink-0 mx-6 transition-transform duration-300 hover:scale-110 hover:text-primary"
             >
-              <span className="text-primary text-[1rem] mr-3 drop-shadow-[0_0_10px_rgba(37,99,235,0.5)]">★</span>
-              <span className="text-white uppercase text-[0.875rem] md:text-[1rem] font-[600] tracking-widest drop-shadow-lg">
+              <span className="text-primary text-[0.875rem] md:text-[1rem] mr-3 drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] flex-shrink-0">★</span>
+              <span className="text-white uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-wide drop-shadow-lg flex-shrink-0">
                 {category}
               </span>
             </div>
