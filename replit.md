@@ -5,6 +5,29 @@ This project is a modern, professional, dark-themed photography portfolio websit
 
 ## Recent Changes (November 2025)
 
+### Projects Feature Complete (Nov 15, 2025)
+- **New Projects Section**: Created comprehensive case study system separate from Collections
+  - `/projects` landing page with 3 featured project cards in responsive grid
+  - Individual project pages (`/projects/[slug]`) with full galleries (10-15 images each)
+  - YouTube/Vimeo video embed support with graceful fallback to hero images
+  - Project storytelling with multi-paragraph narratives
+  - Technical details section (camera, lenses, lighting, color grading)
+  - Related projects recommendations
+  - Lightbox modal for gallery images with high-quality previews
+- **Navigation Updates**: Added "Projects" link to NavBar (desktop + mobile) between Collections and Booking
+- **Data Architecture**: Centralized project data in `src/lib/projectData.ts` with TypeScript interfaces
+- **Image Optimization**: Lazy loading with opacity transitions, responsive sizing, quality presets
+- **Distinction**: Collections = mixed photos by type; Projects = complete case studies from single shoots
+- **Current Projects**: Downtown Editorial Shoot, Graduation Milestone Session, Live Concert Coverage
+- Architect-approved, ready for content population
+
+### Site Enhancements (Nov 15, 2025)
+- **Custom 404 Page**: Glassmorphism-styled error page with navigation links
+- **Pricing Comparison Chart**: Desktop table + mobile accordion showing package differences side-by-side
+- **Before/After Slider**: Interactive component for showcasing editing capabilities and LUT presets
+- **Sitemap Fix**: Updated with correct blog URLs and current dates for SEO
+- **Deployment Checklist**: Comprehensive guide (DEPLOYMENT_CHECKLIST.md) covering all pre-launch tasks
+
 ### Services Page Optimization (Nov 12, 2025)
 - **Fixed Deliverables Misinformation**: Corrected "What You'll Receive" text to accurately state customers receive edited photos based on their package tier (NOT all raw images)
 - **Implemented Accordion Policies**: Converted 6-card policy section to collapsible accordions
@@ -80,10 +103,10 @@ The frontend is built with Next.js 14's App Router, leveraging server-side rende
 - Custom glassmorphism skeleton loader (`ImageSkeleton` component)
 - Shimmer animation during load states
 
-Content is primarily hardcoded for simplicity, with blog content in dedicated data files. Navigation is multi-page, including a landing splash page, home, about, collections (with individual category pages and lightbox), blog (with individual posts), services, and contact pages. Performance is enhanced through scroll-triggered animations using `IntersectionObserver`, and automatic code splitting.
+Content is primarily hardcoded for simplicity, with blog and project content in dedicated data files (`src/lib/blogData.ts`, `src/lib/projectData.ts`). Navigation is multi-page, including a landing splash page, home, about, collections (with individual category pages and lightbox), projects (with featured landing page and individual case study pages), blog (with individual posts), services (with pricing comparison and before/after slider), and contact pages. Performance is enhanced through scroll-triggered animations using `IntersectionObserver`, and automatic code splitting.
 
 ### Feature Specifications
-The site features four main photography categories with individual gallery pages and a lightbox viewer. Pricing and services are detailed for Graduation, Solo, and Events/Concerts sessions, including deposit requirements and delivery times, with color-coded tiers. A blog section displays photography tips and behind-the-scenes content. An enhanced contact form and a booking page with Calendly integration are provided. A sticky "Book Session" CTA appears after scrolling to improve conversion.
+The site features four main photography categories with individual gallery pages and a lightbox viewer. A dedicated Projects section showcases complete case studies with 10-15 image galleries, project stories, technical details, and optional video embeds. Pricing and services are detailed for Graduation, Solo, and Events/Concerts sessions, with a comparison chart showing package differences, before/after editing slider, and color-coded tiers including deposit requirements and delivery times. A blog section displays photography tips and behind-the-scenes content. An enhanced contact form and a booking page with Calendly integration are provided. A sticky "Book Session" CTA appears after scrolling to improve conversion. Custom 404 page maintains brand consistency.
 
 ### System Design Choices
 The project prioritizes a static site approach with no database integration for initial simplicity, with future consideration for CMS integration. The architecture is modular and scalable, with clear separation of concerns. Accessibility is considered with `prefers-reduced-motion` support and accessible Shadcn UI components. SEO is a core focus, including comprehensive metadata, Open Graph tags, Twitter Card tags, keywords, canonical URLs, and JSON-LD structured data for local SEO and business details.
