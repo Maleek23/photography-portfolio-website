@@ -9,6 +9,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useState, useEffect } from "react";
+import { pricingData } from "@/lib/pricingData";
+import PricingComparison from "@/components/sections/PricingComparison";
+import BeforeAfterSlider from "@/components/common/BeforeAfterSlider";
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<"grad" | "solo" | "events">("grad");
@@ -108,113 +111,7 @@ export default function ServicesPage() {
     };
   }, []);
 
-  const gradPackages = [
-    {
-      name: "Bronze",
-      price: 220,
-      duration: "1 Hour",
-      features: [
-        "1 Outfit & 2 Locations",
-        "20 Edited Images",
-      ],
-      accent: "#CD7F32",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-    {
-      name: "Silver",
-      price: 310,
-      duration: "2 Hours",
-      features: [
-        "2 Outfits & 2-3 Locations",
-        "30 Edited Images",
-        "15 sec Cinematic Clip",
-      ],
-      popular: true,
-      accent: "#C0C0C0",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-    {
-      name: "Gold",
-      price: 400,
-      duration: "3 Hours",
-      features: [
-        "3-4 Outfits & 3 Locations",
-        "35+ Edited Images",
-        "30-45 sec Cinematic Clip",
-      ],
-      accent: "#FFD700",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-  ];
-
-  const soloPackages = [
-    {
-      name: "Bronze",
-      price: 185,
-      duration: "30 Minutes",
-      features: [
-        "1 Outfit & Location",
-        "20 Edited Images",
-      ],
-      accent: "#CD7F32",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-    {
-      name: "Silver",
-      price: 220,
-      duration: "1 Hour",
-      features: [
-        "1-2 Outfits & Locations",
-        "30 Edited Images",
-      ],
-      popular: true,
-      accent: "#C0C0C0",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-    {
-      name: "Gold",
-      price: 310,
-      duration: "2 Hours",
-      features: [
-        "3 Outfits & Locations",
-        "35+ Edited Images",
-        "15 sec Cinematic Clip",
-      ],
-      accent: "#FFD700",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-    {
-      name: "Platinum",
-      price: 400,
-      duration: "3 Hours",
-      features: [
-        "4 Outfits & Locations",
-        "40+ Edited Images",
-        "15-30 sec Cinematic Clip",
-      ],
-      accent: "#2563EB",
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-  ];
-
-  const eventsPackages = [
-    {
-      name: "Hourly Rate",
-      price: 100,
-      duration: "Per Hour",
-      features: [
-        "Professional Event Coverage",
-        "All Edited Images Included",
-        "Candid & Posed Shots",
-        "Quick Turnaround",
-      ],
-      accent: "#2563EB",
-      popular: true,
-      calendlyUrl: "https://calendly.com/leekshotit/bookingsession",
-    },
-  ];
-
-  const packages = activeTab === "grad" ? gradPackages : activeTab === "solo" ? soloPackages : eventsPackages;
+  const packages = pricingData[activeTab].packages;
 
   return (
     <main className="bg-background">
@@ -393,6 +290,9 @@ export default function ServicesPage() {
             ))}
           </div>
 
+          {/* Pricing Comparison */}
+          <PricingComparison serviceType={activeTab} />
+
           {/* How It Works Section */}
           <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray">
             <div className="text-center mb-10 md:mb-12">
@@ -466,6 +366,33 @@ export default function ServicesPage() {
                   Professionally edited high-resolution photos delivered via digital gallery based on your package tier. Cinematic video clips included in Silver and Gold packages.
                 </p>
               </div>
+            </div>
+          </div>
+
+          {/* Editing & Retouching Showcase */}
+          <div className="glass glass-mobile-optimized rounded-3xl p-8 md:p-10 mb-8">
+            <h3 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase mb-4 text-center">
+              Professional Editing & Color Grading
+            </h3>
+            <p className="text-customGrayAlt text-[0.875rem] md:text-[1rem] text-center mb-8 max-w-2xl mx-auto leading-relaxed">
+              Every image is professionally edited with custom color grading using my signature LUT presets. See the difference professional retouching makes.
+            </p>
+            <BeforeAfterSlider
+              beforeImage="/images/before-example.jpg"
+              afterImage="/images/after-example.jpg"
+              beforeLabel="RAW"
+              afterLabel="EDITED"
+            />
+            <div className="text-center mt-6">
+              <p className="text-customGrayAlt2 text-[0.813rem] mb-4">
+                Interested in my custom LUT presets for your own editing workflow?
+              </p>
+              <a
+                href="/contact"
+                className="inline-block glass glass-hover glass-lift bg-primary/20 text-primary font-[600] py-3 px-8 rounded-xl uppercase text-[0.875rem] border border-primary/50 hover:bg-primary/30 transition-all"
+              >
+                Learn More About LUTs
+              </a>
             </div>
           </div>
 
