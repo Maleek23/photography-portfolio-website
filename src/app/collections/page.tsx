@@ -29,7 +29,7 @@ export default function CollectionsPage() {
       title: "Creative Projects",
       slug: "creative-projects",
       description: "Pushing boundaries through experimental and conceptual photography",
-      imageUrl: "/images/creative-projects-cover.jpg",
+      imageUrl: "/images/creative-projects.jpg",
     },
     {
       id: 3,
@@ -63,10 +63,10 @@ export default function CollectionsPage() {
               <Link
                 key={collection.id}
                 href={`/collections/${collection.slug}`}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer h-[480px] md:h-[560px] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer aspect-[3/4] glass glass-lift glass-hover hover:border-primary transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 {!loadedImages[collection.id] && (
-                  <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+                  <ImageSkeleton className="absolute inset-0" aspectRatio="3/4" />
                 )}
                 <Image
                   src={collection.imageUrl}
