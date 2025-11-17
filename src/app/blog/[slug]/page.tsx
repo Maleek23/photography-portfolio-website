@@ -19,7 +19,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         <div className="bg-gradient-to-b from-primary/5 via-background to-background">
-          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
             {/* Back Link */}
             <Link href="/blog" className="text-primary text-[0.875rem] font-[500] hover:underline mb-6 inline-block">
             ← Back to Blog

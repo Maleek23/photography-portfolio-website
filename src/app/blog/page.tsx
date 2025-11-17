@@ -26,7 +26,7 @@ export default function BlogPage() {
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         <div className="bg-gradient-to-b from-primary/5 via-background to-background">
-          <div className="px-4 md:px-[6rem] py-[5rem] md:py-[8rem]">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16">
             {/* Header */}
             <div className="mb-8 md:mb-12">
             <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
@@ -38,7 +38,7 @@ export default function BlogPage() {
           </div>
 
           {/* Blog Posts Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {posts.map((post) => (
               <Link
                 key={post.slug}

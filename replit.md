@@ -5,6 +5,24 @@ This project is a modern, professional, dark-themed photography portfolio websit
 
 ## Recent Changes (November 2025)
 
+### Site-Wide Visual Optimization (Nov 17, 2025)
+- **Gradient Backgrounds**: Added `bg-gradient-to-b from-primary/5 via-background to-background` to ALL 11 pages
+  - Home, About, Services, Collections (index + detail), Projects (index + detail), Policies, Blog (index + detail), Contact
+  - Subtle blue-tinted gradient provides visual cohesion and premium feel
+  - Gradients span full content height (Footer outside wrapper for consistency)
+- **Spacing Reduction (33-40%)**:  
+  - Main padding: `py-[6rem] md:py-[8rem]` → `py-12 md:py-16`
+  - Section gaps: `mb-16 md:mb-20` → `mb-8 md:mb-12`
+  - Grid gaps: `gap-8` → `gap-6`
+  - Result: 30-40% more content visible above the fold
+- **Collection Card Optimization**:
+  - Reduced to 3-column responsive grid
+  - 4:5 aspect ratio for more vertical cards
+  - Max-height 420px for consistent sizing
+  - Updated Creative Projects with new user-provided image
+- **Typography Consistency**: Maintained Apple-like modular scale across all pages
+- Architect-approved, production-ready
+
 ### NavBar Marquee Fix (Nov 15, 2025)
 - **Fixed Header Text Overflow**: Category marquee displaying cleanly without text overflow
   - Reduced font sizes and letter spacing for better fit
