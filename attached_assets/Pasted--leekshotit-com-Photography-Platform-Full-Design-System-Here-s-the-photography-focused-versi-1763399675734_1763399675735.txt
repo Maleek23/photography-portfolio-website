@@ -1,0 +1,347 @@
+# leekshotit.com Photography Platform (Full Design System)
+
+Here's the **photography-focused** version. Aura.build prompt optimized for 2025-2026 aesthetics:
+
+---
+
+**Prompt:**
+
+Build complete **leekshotit.com photography platform** (portfolios, client galleries, booking, prints) using **lumina-skin.aura.build** style but **darker cinematic aesthetic** with **neon green accents**. Single file, 10 pages.
+
+---
+
+## **Design System Foundation**
+
+**Colors:**
+```css
+--bg-primary: #0a0a0a; /* Pure black */
+--bg-secondary: #111111; /* Elevated black */
+--accent-leek: #4ade80; /* Neon green (brand) */
+--accent-leek-glow: #86efac; /* Hover glow */
+--accent-cyan: #22d3ee; /* Info/accent */
+--text-primary: #f0fdf4; /* Near-white */
+--text-secondary: rgba(240,253,244,0.7); /* Muted */
+--danger: #f87171; /* Errors */
+--warning: #fbbf24; /* Pending states */
+```
+
+**Typography:** 
+- **Display:** Poppins (700, 900) for headings
+- **Body:** Inter (400, 500, 600) for UI
+- **Captions:** JetBrains Mono (400) for metadata
+
+**Animations:**
+```css
+/* Cinematic fade */
+@keyframes reveal { from { opacity: 0; transform: translateY(40px) } to { opacity: 1; transform: translateY(0) } }
+
+/* Shutter effect */
+@keyframes shutter { 0% { transform: scale(1.1); opacity: 0 } 50% { transform: scale(0.98); opacity: 0.5 } 100% { transform: scale(1); opacity: 1 } }
+
+/* Leek pulse */
+@keyframes leek-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7) } 50% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0) } }
+
+/* Ken Burns (for images) */
+@keyframes ken-burns { 0% { transform: scale(1) translate(0, 0) } 100% { transform: scale(1.1) translate(-5%, -5%) } }
+
+/* Glitch (for logo) */
+@keyframes glitch { 2%,64% { transform: translate(2px,0) skew(0deg) } 4%,60% { transform: translate(-2px,0) skew(0deg) } 62% { transform: translate(0,0) skew(5deg) } }
+```
+
+**Icon Library:** Iconify Solar (duotone) + Iconify MingCute (social). Photography-specific: `solar:camera-bold`, `solar:gallery-bold`, `solar:picture-frame-bold`.
+
+---
+
+## **Page 1: Landing Page**
+
+**Sections:**
+1. **Hero (full-screen)** - **Background:** Ken Burns slideshow of stunning photos. **Heading:** `leek<span class="glitch">shot</span>it` with leek green accent. **Subheading:** "Deliver cinematic client galleries. Book shoots. Sell prints. One platform."
+2. **Portfolio Preview** - Masonry grid of featured work (hover: reveals camera settings overlay: f/1.8, ISO 400, 35mm)
+3. **Services Carousel** - Horizontal scroll: Weddings, Portraits, Events, Commercial
+4. **Stats (animated counters)** - 500+ Photographers, 2M+ Photos Delivered, 98% Client Satisfaction
+5. **How It Works (3-step cinematic timeline)** - 1. Upload → 2. Share Gallery → 3. Get Paid (with connecting lines)
+6. **Testimonials** - Client video testimonials (auto-play on hover, muted)
+7. **CTA** - "Start Free Trial" / "Book a Demo"
+8. **Footer** - Minimal: © 2025 leekshotit.com
+
+---
+
+## **Page 2: Photographer Portfolio (Public)**
+
+**Layout:**
+- **Brand Header** - Photographer name, avatar, location, Instagram handle, category badges
+- **Hero Gallery** - Featured carousel (full-width, auto-advance)
+- **Filter Tabs** - All, Weddings, Portraits, etc. (smooth fade transition)
+- **Masonry Grid** - High-res images (lazy load, blur-up), click → lightbox
+- **Lightbox** - Full-screen, arrow keys nav, EXIF data panel, download button (if enabled)
+- **About Section** - Bio, gear list (camera icons), pricing packages
+- **Contact Form** - Book shoot: Name, email, event date, message
+- **Reviews** - Client reviews with star ratings
+
+**Micro-interactions:**
+- Image hover: Ken Burns + leek green top border slide-in
+- Lightbox: Shutter animation on open
+- Filter: Active tab gets leek glow underline
+
+---
+
+## **Page 3: Client Gallery (Password-protected)**
+
+**Features:**
+1. **Access Screen** - Password input (if protected), photographer branding
+2. **Gallery Grid** - Client photos, face detection auto-crop thumbnails
+3. **Lightbox** - **Proofing mode:** Client can heart favorites, add comments. **Download mode:** If enabled by photographer
+4. **Favorites Panel** - Slide-out sidebar with selected photos, download as ZIP, share favorites link
+5. **Watermark** - Subtle photographer logo (toggleable by photographer)
+6. **Mobile swipe** - Swipe left/right in lightbox
+7. **Share** - Copy gallery link (expires in 30 days)
+8. **Footer** - Photographer contact, print purchase link
+
+**States:** Loading (skeleton images), Empty (no photos yet), Password error (shake).
+
+---
+
+## **Page 4: Photographer Dashboard (Backend)**
+
+**Layout:**
+- **Topbar:** Logo, Quick Upload, Notifications (new bookings), Earnings, Avatar
+- **Sidebar:** Dashboard, Galleries, Bookings, Prints, Clients, Settings
+
+**Main widgets:**
+1. **Upcoming Shoots** - Calendar view, click to see details
+2. **Recent Galleries** - Thumbnail grid of latest client galleries, status badges (Draft, Shared, Delivered)
+3. **Booking Requests** - Pending bookings: Accept/Decline buttons
+4. **Earnings Chart** - This month vs last month (bar chart with leek green bars)
+5. **Storage Used** - Progress bar, upgrade CTA at 90%
+6. **Quick Actions** - Create Gallery, Send Invoice, Upload Photos
+
+**Empty states:** "No shoots this week" with illustration.
+
+---
+
+## **Page 5: Gallery Manager**
+
+**Features:**
+- **Create Gallery** - Modal: Name, client email, event date, password (optional), enable downloads
+- **Upload** - Drag & drop zone with progress bars, supports RAW (shows processing state)
+- **Organize** - Drag to reorder, multi-select delete, bulk actions
+- **Settings** - Gallery privacy, watermark toggle, download settings, expiry date
+- **Share** - Generate link, email client, QR code
+- **Analytics** - Views, downloads, favorites count per photo
+- **Client Actions** - See client's favorited photos, comments
+
+**Upload states:** Queued → Uploading → Processing → Done (with thumbnail preview).
+
+---
+
+## **Page 6: Booking System**
+
+**Calendar view:**
+- **Month/Week/Day toggle** - Clean grid with event dots
+- **Event cards** - Client name, shoot type, time, package, status (Confirmed, Pending, Completed)
+- **Create Booking** - Modal: Client (search/select existing or new), date/time, package, location, notes, deposit amount
+- **Package selector** - Pre-defined packages (Wedding Full Day, Portrait Session, etc.) with pricing
+- **Contract** - Auto-generate contract, send for e-signature (signature pad)
+- **Invoice** - Generate PDF, send via email, mark as paid
+- **Automations** - Reminder emails (24hr before), gallery delivery (auto-send 7 days after shoot)
+
+**Status flow:** Inquiry → Quoted → Booked → Shot → Gallery Delivered → Completed.
+
+---
+
+## **Page 7: Print Store**
+
+**For photographers to sell prints:**
+
+1. **Product Setup** - Add print types: 4x6, 8x10, Canvas, Metal. Set prices, margin
+2. **Gallery Integration** - Enable "Buy Prints" on client galleries, select which photos available
+3. **Orders Dashboard** - Table: Order #, Client, Items, Total, Status (Pending, Processing, Shipped)
+4. **Fulfillment** - Partner lab integration (automated) or manual fulfillment
+5. **Client View** - Shopping cart, checkout (card, PayPal), shipping address
+6. **Earnings** - Print revenue separate from shoot fees, payout schedule
+
+**Auto-generate:** Product mockups (canvas on wall) for photographer's store.
+
+---
+
+## **Page 8: Client CRM**
+
+**Features:**
+- **Client List** - Table: Name, email, phone, total spent, last shoot date, status (Active, Inactive)
+- **Client Profile** - Contact info, shoot history, invoices, galleries, notes (private)
+- **Communication** - Email integration: send newsletters, shoot reminders, gallery links
+- **Tags** - Tag clients: "Wedding", "VIP", "Referral"
+- **Reviews** - Request review after gallery delivery, show average rating
+- **Referrals** - Track referred clients, offer discounts
+
+**Import:** CSV upload from other CRMs.
+
+---
+
+## **Page 9: Settings & Branding**
+
+**Tabs:**
+1. **Profile** - Photographer name, bio, location, profile photo, cover photo
+2. **Branding** - Custom domain (CNAME), logo upload, brand colors, watermark design
+3. **Packages** - Create/edit packages: name, description, duration, price, includes (shoot, edits, gallery)
+4. **Preferences** - Currency (₦, $, £), date format, timezone, language
+5. **Notifications** - Email/SMS for bookings, payments, gallery views
+6. **Privacy** - Portfolio visibility, client gallery defaults, data export
+7. **Billing** - Stripe/PayPal connection, tax settings, invoice template
+
+**Live preview:** See changes on portfolio instantly.
+
+---
+
+## **Page 10: Help & Resources**
+
+**For photographers:**
+- **Tutorials** - "Getting started", "Building your brand", "Pricing your work"
+- **Community** - Discord/Slack integration, photographer directory, meetups
+- **Blog** - SEO articles: "How to deliver client galleries", "Wedding photography tips"
+- **Support** - Chat widget, email ticket, knowledge base
+- **Feature requests** - Vote on roadmap
+- **Affiliate program** - Share link, earn 20% commission
+
+**Client help:** Separate view with "How to download photos", "How to order prints".
+
+---
+
+## **Component Library**
+
+**Buttons**
+```html
+<!-- Primary (leek) -->
+<button class="btn-leek">Upload Photos</button>
+
+<!-- Secondary (ghost) -->
+<button class="btn-ghost">Cancel Shoot</button>
+
+<!-- Icon -->
+<button class="btn-icon"> <iconify-icon icon="solar:camera-bold"></iconify-icon> </button>
+
+<!-- Loading -->
+<button class="btn-leek loading"><span class="spinner-leek"></span> Processing...</button>
+
+<!-- Floating Action -->
+<button class="fab-leek">+</button>
+```
+
+**Cards**
+```html
+<!-- Glass gallery card -->
+<div class="card-gallery">
+  <img src="photo.jpg" class="card-image">
+  <div class="card-overlay">
+    <h3>Client Gallery</h3>
+    <p>24 photos</p>
+  </div>
+</div>
+
+<!-- Package card -->
+<div class="card-package">
+  <h4>Wedding Full Day</h4>
+  <span class="price">₦350,000</span>
+  <ul><li>10 hours</li><li>500+ photos</li></ul>
+  <button class="btn-leek">Book Now</button>
+</div>
+```
+
+**Form Elements**
+```html
+<!-- Floating label input -->
+<div class="input-lk">
+  <input placeholder=" " id="client-email">
+  <label>Client Email</label>
+  <span class="focus-border"></span>
+</div>
+
+<!-- Date picker -->
+<div class="date-picker-lk">
+  <input type="date">
+  <iconify-icon icon="solar:calendar-bold"></iconify-icon>
+</div>
+
+<!-- Time slot selector -->
+<div class="time-slots-lk">
+  <button class="slot">9:00 AM</button>
+  <button class="slot selected">10:00 AM</button>
+  <button class="slot disabled">11:00 AM</button>
+</div>
+```
+
+**Modals**
+```html
+<!-- Fullscreen lightbox -->
+<div class="lightbox-lk">
+  <button class="close-btn">×</button>
+  <img src="full-photo.jpg" class="lightbox-image">
+  <div class="lightbox-info">
+    <div class="exif">f/1.8 • ISO 400 • 35mm</div>
+    <div class="actions">
+      <button>Download</button>
+      <button>Favorite</button>
+      <button>Share</button>
+    </div>
+  </div>
+</div>
+
+<!-- Booking modal -->
+<div class="modal-lk">
+  <div class="modal-glass">
+    <header>Book Shoot <button class="close-lk">×</button></header>
+    <main>Form fields</main>
+    <footer><button class="btn-leek">Confirm Booking</button></footer>
+  </div>
+</div>
+```
+
+**Loaders**
+```html
+<!-- Leek spinner -->
+<div class="spinner-leek"><div></div><div></div><div></div></div>
+
+<!-- Image skeleton -->
+<div class="skeleton-gallery"><div class="skeleton-img"></div></div>
+
+<!-- Upload progress -->
+<div class="upload-progress">
+  <div class="bar" style="width: 65%"></div>
+  <span>Uploading 3 of 24...</span>
+</div>
+```
+
+**Badges & Status**
+```html
+<span class="badge-confirmed">Confirmed</span>
+<span class="badge-pending">Pending</span>
+<span class="badge-delivered">Delivered</span>
+<span class="badge-pro">Pro</span>
+<span class="badge-leek">New</span>
+```
+
+**Navigation**
+```html
+<!-- Mobile bottom nav -->
+<nav class="mobile-nav-lk">
+  <a class="active"><iconify-icon icon="solar:home-bold"></iconify-icon></a>
+  <a><iconify-icon icon="solar:gallery-bold"></iconify-icon></a>
+  <a><iconify-icon icon="solar:calendar-bold"></iconify-icon></a>
+  <a><iconify-icon icon="solar:settings-bold"></iconify-icon></a>
+</nav>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb-lk">
+  <a>Galleries</a> <span>/</span> <a>John & Sarah Wedding</a>
+</div>
+```
+
+---
+
+## **Aura.build One-Liner**
+
+"Create full leekshotit.com photography platform (portfolio, client galleries, booking, prints) using lumina-skin.aura.build style, dark cinematic aesthetic, neon green accents, glassmorphism, iconify solar, Ken Burns photo animations, all states, single file, mobile nav."
+
+---
+
+**Deploy-ready.** Every photographer workflow covered. No external deps except Iconify CDN.
