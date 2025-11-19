@@ -3,6 +3,7 @@ import './globals.css'
 import { Manrope } from "next/font/google"
 import Script from 'next/script'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { ThemeProvider } from '@/contexts/ThemeContext'
 
 export const metadata: Metadata = {
   title: 'Leekshotit Photography | Houston Dallas Photographer | Graduation & Portrait Sessions',
@@ -77,11 +78,12 @@ export default function RootLayout({
         <meta name="theme-color" content="#2563EB" />
       </head>
       <body className={manrope.className}>
-        <GoogleAnalytics />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+        <ThemeProvider>
+          <GoogleAnalytics />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "ProfessionalService",
               "@id": "https://leekshotit.com",
@@ -215,6 +217,7 @@ export default function RootLayout({
           }}
         />
         {children}
+        </ThemeProvider>
       </body>
     </html>
   )

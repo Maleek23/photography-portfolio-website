@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --background: #070708;
+    --foreground: #ffffff;
+    --primary: #2563EB;
+  }
+
+  .light {
+    --background: #ffffff;
+    --foreground: #070708;
+    --primary: #2563EB;
+  }
+
+  body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
 /* Apple Glassmorphism Utilities - Following iOS/visionOS specs */
 @layer utilities {
   /* Thin Glass Material - for buttons, highlights */

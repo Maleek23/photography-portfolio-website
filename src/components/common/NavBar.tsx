@@ -1,16 +1,18 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import { X, Sun, Moon } from "lucide-react";
 import MainButton from "./MainButton";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { useTheme } from "@/contexts/ThemeContext";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
   const [scrollY, setScrollY] = useState(0);
+  const { theme, toggleTheme } = useTheme();
 
   const categories = [
     "PORTRAITS",
@@ -97,6 +99,13 @@ function NavBar() {
           </div>
           <div className="flex items-center gap-[40px] select-none">
             <div className="flex gap-[2.5rem] items-center">
+              <button
+                onClick={toggleTheme}
+                className="p-2 rounded-lg hover:bg-white/10 transition-all duration-300 text-customGrayAlt2 hover:text-white"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
               <div className="text-2xl md:text-4xl font-extrabold uppercase text-white">
                 <Link href="/contact">
                   <MainButton 
@@ -139,7 +148,14 @@ function NavBar() {
                 onClick={toggleMenu}
               />
             ) : (
-              <div className="flex items-center gap-[40px] select-none">
+              <div className="flex items-center gap-3 select-none">
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 rounded-lg hover:bg-white/10 transition-all duration-300 text-white mt-8"
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+                </button>
                 <div className="flex items-center">
                   <div className="text-2xl md:text-4xl font-extrabold uppercase mt-8 text-white outline outline-[1px] outline-superGray rounded-tl-[1.25rem]">
                     <Image
