@@ -9,7 +9,16 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### UI/UX Decisions
-The design emphasizes a clean, minimalist, professional dark theme with blue accents (#2563EB), a mobile-first responsive approach, grid-based layouts, and an image-heavy presentation. Typography uses the Manrope font family with a balanced, consistent scale across all pages. Custom animations are used for accordion interactions, hover effects, and scroll-triggered fade-in animations, respecting `prefers-reduced-motion`. A custom camera shutter cursor is applied to general UI elements. Pricing tiers are sophisticated and color-coded. The portfolio gallery uses a CSS column masonry layout with native `<img>` tags to preserve exact original aspect ratios, featuring an edge-to-edge design.
+The design emphasizes a clean, minimalist, professional theme with blue accents (#2563EB), a mobile-first responsive approach, grid-based layouts, and an image-heavy presentation. Typography uses the Manrope font family with a balanced, consistent scale across all pages. Custom animations are used for accordion interactions, hover effects, and scroll-triggered fade-in animations, respecting `prefers-reduced-motion`. A custom camera shutter cursor is applied to general UI elements. Pricing tiers are sophisticated and color-coded. The portfolio gallery uses a CSS column masonry layout with native `<img>` tags to preserve exact original aspect ratios, featuring an edge-to-edge design.
+
+**Dark/Light Mode (Nov 19, 2025):**
+- Fully functional theme toggle with sun/moon icons in navigation
+- Theme preference persists via localStorage
+- Custom Tailwind variant (`light:`) for light mode styling
+- Dark mode is default; light mode features white backgrounds, dark text, and adjusted glassmorphism
+- Theme context provider (`src/contexts/ThemeContext.tsx`) manages state
+- Smooth transitions between themes
+- Mobile-responsive theme toggle button
 
 **Typography Scale (Nov 19, 2025):**
 - **H1 Hero** (landing pages): `text-[2.25rem] md:text-[3.5rem]` (36px → 56px)
@@ -21,7 +30,7 @@ The design emphasizes a clean, minimalist, professional dark theme with blue acc
 - **Small Text**: `text-[0.813rem] md:text-[0.875rem]` (13px → 14px)
 
 ### Technical Implementations
-The frontend is built with Next.js 14's App Router, leveraging server-side rendering and TypeScript. A component-based architecture separates UI elements, with UI primitives from Shadcn UI. Styling uses Tailwind CSS with a custom color palette, supporting dark mode and responsive design. Content is primarily hardcoded in dedicated data files. Navigation includes a landing splash page, home, about, collections (with individual category pages and lightbox), projects (with featured landing page and individual case study pages), blog (with individual posts), services (with pricing comparison and before/after slider), and contact pages. Performance is enhanced through scroll-triggered animations and automatic code splitting.
+The frontend is built with Next.js 14's App Router, leveraging server-side rendering and TypeScript. A component-based architecture separates UI elements, with UI primitives from Shadcn UI. Styling uses Tailwind CSS with a custom color palette and custom `light:` variant plugin for dual theme support. Content is primarily hardcoded in dedicated data files. Navigation includes a landing splash page, home, about, collections (with individual category pages and lightbox), projects (with featured landing page and individual case study pages), blog (with individual posts), services (with pricing comparison and before/after slider), and contact pages. Performance is enhanced through scroll-triggered animations and automatic code splitting.
 
 **Image Optimization**: All images use Next.js `Image` component with:
 - Lazy loading for below-the-fold content
