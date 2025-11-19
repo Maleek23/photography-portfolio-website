@@ -133,7 +133,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
                     loadedImages[index] ? 'opacity-100' : 'opacity-0'
                   }`}
                   onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
-                  loading="lazy"
+                  priority={index < 3}
+                  loading={index < 3 ? undefined : "lazy"}
                   quality={85}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
