@@ -9,7 +9,16 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### UI/UX Decisions
-The design emphasizes a clean, minimalist, professional dark theme with blue accents (#2563EB), a mobile-first responsive approach, grid-based layouts, and an image-heavy presentation. Typography uses the Manrope font family. Custom animations are used for accordion interactions, hover effects, and scroll-triggered fade-in animations, respecting `prefers-reduced-motion`. A custom camera shutter cursor is applied to general UI elements. Pricing tiers are sophisticated and color-coded. The portfolio gallery uses a CSS column masonry layout with native `<img>` tags to preserve exact original aspect ratios, featuring an edge-to-edge design.
+The design emphasizes a clean, minimalist, professional dark theme with blue accents (#2563EB), a mobile-first responsive approach, grid-based layouts, and an image-heavy presentation. Typography uses the Manrope font family with a balanced, consistent scale across all pages. Custom animations are used for accordion interactions, hover effects, and scroll-triggered fade-in animations, respecting `prefers-reduced-motion`. A custom camera shutter cursor is applied to general UI elements. Pricing tiers are sophisticated and color-coded. The portfolio gallery uses a CSS column masonry layout with native `<img>` tags to preserve exact original aspect ratios, featuring an edge-to-edge design.
+
+**Typography Scale (Nov 19, 2025):**
+- **H1 Hero** (landing pages): `text-[2.25rem] md:text-[3.5rem]` (36px → 56px)
+- **H1 Page Headers**: `text-[2rem] md:text-[2.75rem]` (32px → 44px)
+- **H2 Section Headings**: `text-[1.5rem] md:text-[2rem]` (24px → 32px)
+- **H3 Subsections**: `text-[1.25rem] md:text-[1.5rem]` (20px → 24px)
+- **Body Large**: `text-[1rem] md:text-[1.125rem]` (16px → 18px)
+- **Body Regular**: `text-[0.938rem] md:text-[1rem]` (15px → 16px)
+- **Small Text**: `text-[0.813rem] md:text-[0.875rem]` (13px → 14px)
 
 ### Technical Implementations
 The frontend is built with Next.js 14's App Router, leveraging server-side rendering and TypeScript. A component-based architecture separates UI elements, with UI primitives from Shadcn UI. Styling uses Tailwind CSS with a custom color palette, supporting dark mode and responsive design. Content is primarily hardcoded in dedicated data files. Navigation includes a landing splash page, home, about, collections (with individual category pages and lightbox), projects (with featured landing page and individual case study pages), blog (with individual posts), services (with pricing comparison and before/after slider), and contact pages. Performance is enhanced through scroll-triggered animations and automatic code splitting.
