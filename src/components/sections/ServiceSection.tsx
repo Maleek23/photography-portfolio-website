@@ -53,10 +53,10 @@ function ServiceSection() {
     <section className="" id="services">
       {/* Header */}
       <div className="mb-6">
-        <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[600] uppercase mb-1">
+        <h2 className="text-white light:text-gray-900 text-[1.75rem] md:text-[2.5rem] font-[600] uppercase mb-1">
           Services
         </h2>
-        <p className="text-customGrayAlt text-[0.813rem] md:text-[0.938rem]">
+        <p className="text-customGrayAlt light:text-gray-600 text-[0.813rem] md:text-[0.938rem]">
           Professional photography packages for every moment
         </p>
       </div>
@@ -66,7 +66,7 @@ function ServiceSection() {
         {services.map((service, index) => (
           <div
             key={index}
-            className={`group relative bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/20 transition-all duration-500 ${service.borderGlow} overflow-hidden hover:-translate-y-2 hover:shadow-2xl`}
+            className={`group relative bg-white/5 light:bg-gray-100/50 backdrop-blur-2xl border border-white/10 light:border-gray-200 rounded-2xl p-6 hover:bg-white/10 light:hover:bg-gray-100/70 hover:border-white/20 light:hover:border-gray-300 transition-all duration-500 ${service.borderGlow} overflow-hidden hover:-translate-y-2 hover:shadow-2xl`}
           >
             {/* Animated glass shine effect */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -78,12 +78,12 @@ function ServiceSection() {
             </div>
 
             {/* Title */}
-            <h3 className="text-white text-[1.5rem] md:text-[1.75rem] font-[600] uppercase mb-2 leading-tight relative z-10">
+            <h3 className="text-white light:text-gray-900 text-[1.5rem] md:text-[1.75rem] font-[600] uppercase mb-2 leading-tight relative z-10">
               {service.title}
             </h3>
 
             {/* Description */}
-            <p className="text-customGrayAlt2 text-[0.875rem] mb-4 leading-relaxed relative z-10">
+            <p className="text-customGrayAlt2 light:text-gray-500 text-[0.875rem] mb-4 leading-relaxed relative z-10">
               {service.description}
             </p>
             
@@ -99,7 +99,7 @@ function ServiceSection() {
               {service.features.map((feature, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <span className={`${service.accentColor} text-[0.875rem] mt-0.5 flex-shrink-0`}>✓</span>
-                  <p className="text-customGrayAlt text-[0.813rem] leading-relaxed">{feature}</p>
+                  <p className="text-customGrayAlt light:text-gray-600 text-[0.813rem] leading-relaxed">{feature}</p>
                 </div>
               ))}
             </div>

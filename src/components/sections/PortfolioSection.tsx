@@ -40,10 +40,10 @@ function PortfolioSection() {
       {/* Header with View All */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-baseline gap-3">
-          <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[600] uppercase">
+          <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[600] uppercase">
             Collections
           </h2>
-          <p className="text-customGrayAlt text-[0.813rem] md:text-[0.938rem]">
+          <p className="text-customGrayAlt light:text-gray-600 text-[0.813rem] md:text-[0.938rem]">
             Browse by category
           </p>
         </div>
@@ -63,7 +63,7 @@ function PortfolioSection() {
               <Link
                 key={item.id}
                 href={`/collections/${item.slug}`}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer w-[260px] md:w-[300px] h-[420px] md:h-[500px] bg-lightDark flex-shrink-0 border border-white/10 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2"
+                className="group relative overflow-hidden rounded-2xl cursor-pointer w-[260px] md:w-[300px] h-[420px] md:h-[500px] bg-lightDark light:bg-gray-50 flex-shrink-0 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2"
               >
                 {!loadedImages[item.id] && (
                   <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
@@ -81,11 +81,11 @@ function PortfolioSection() {
                   quality={85}
                 />
                 {/* GLASSMORPHISM Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 light:from-white/90 via-black/30 light:via-white/30 to-transparent">
                   {/* Frosted Glass Bottom Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 backdrop-blur-xl bg-white/10 border-t border-white/20 group-hover:bg-white/15 transition-all duration-500">
+                  <div className="absolute bottom-0 left-0 right-0 p-5 backdrop-blur-xl bg-white/10 light:bg-gray-100/80 border-t border-white/20 light:border-gray-200 group-hover:bg-white/15 light:group-hover:bg-gray-100/90 transition-all duration-500">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-                    <h3 className="relative z-10 text-white text-[1.25rem] md:text-[1.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
+                    <h3 className="relative z-10 text-white light:text-gray-900 text-[1.25rem] md:text-[1.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
                       {item.title}
                     </h3>
                   </div>
@@ -96,7 +96,7 @@ function PortfolioSection() {
         </div>
         
         {/* Scroll Hint */}
-        <div className="absolute right-0 top-0 bottom-4 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none md:hidden"></div>
+        <div className="absolute right-0 top-0 bottom-4 w-20 bg-gradient-to-l from-background light:from-white to-transparent pointer-events-none md:hidden"></div>
       </div>
 
       <style jsx>{`

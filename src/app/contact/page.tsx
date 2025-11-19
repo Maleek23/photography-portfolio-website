@@ -41,10 +41,10 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-background">
+    <main className="bg-background light:bg-white">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             <div className="max-w-4xl mx-auto">
               {/* Header */}
@@ -52,13 +52,13 @@ export default function ContactPage() {
                 <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
                   Contact
                 </p>
-                <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
+                <h1 className="text-white light:text-gray-900 text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
                   Get In Touch
                 </h1>
-                <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] leading-relaxed">
+                <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1.125rem] leading-relaxed">
                   Have a question, custom project idea, or collaboration opportunity? Fill out the form below and I&apos;ll get back to you within 24 hours.
                 </p>
-                <p className="text-customGrayAlt2 text-[0.813rem] md:text-[0.875rem] mt-2 md:mt-3">
+                <p className="text-customGrayAlt2 light:text-gray-500 text-[0.813rem] md:text-[0.875rem] mt-2 md:mt-3">
                   For session bookings, please visit the <a href="/services" className="text-primary hover:underline">Booking & Services</a> page.
                 </p>
               </div>
@@ -68,7 +68,7 @@ export default function ContactPage() {
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-white text-[0.875rem] font-[500] mb-2">
+                    <label htmlFor="name" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       Name *
                     </label>
                     <input
@@ -78,13 +78,13 @@ export default function ContactPage() {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
+                      className="w-full glass light:bg-gray-50 backdrop-blur-xl border border-white/10 light:border-gray-200 rounded-xl px-4 py-3 text-white light:text-gray-900 focus:border-primary focus:bg-white/10 light:focus:bg-gray-100 focus:outline-none transition-all"
                       placeholder="Your name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-white text-[0.875rem] font-[500] mb-2">
+                    <label htmlFor="email" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       Email *
                     </label>
                     <input
@@ -94,13 +94,13 @@ export default function ContactPage() {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
+                      className="w-full glass light:bg-gray-50 backdrop-blur-xl border border-white/10 light:border-gray-200 rounded-xl px-4 py-3 text-white light:text-gray-900 focus:border-primary focus:bg-white/10 light:focus:bg-gray-100 focus:outline-none transition-all"
                       placeholder="your@email.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-white text-[0.875rem] font-[500] mb-2">
+                    <label htmlFor="phone" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       Phone (Optional)
                     </label>
                     <input
@@ -109,13 +109,13 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all"
+                      className="w-full glass light:bg-gray-50 backdrop-blur-xl border border-white/10 light:border-gray-200 rounded-xl px-4 py-3 text-white light:text-gray-900 focus:border-primary focus:bg-white/10 light:focus:bg-gray-100 focus:outline-none transition-all"
                       placeholder="(123) 456-7890"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-white text-[0.875rem] font-[500] mb-2">
+                    <label htmlFor="message" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       What can I help you with? *
                     </label>
                     <textarea
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       value={formData.message}
                       onChange={handleChange}
                       rows={6}
-                      className="w-full glass backdrop-blur-xl border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary focus:bg-white/10 focus:outline-none transition-all resize-none"
+                      className="w-full glass light:bg-gray-50 backdrop-blur-xl border border-white/10 light:border-gray-200 rounded-xl px-4 py-3 text-white light:text-gray-900 focus:border-primary focus:bg-white/10 light:focus:bg-gray-100 focus:outline-none transition-all resize-none"
                       placeholder="Examples: General questions about services, custom project inquiries, collaboration opportunities, media inquiries, pricing questions, etc."
                     />
                   </div>

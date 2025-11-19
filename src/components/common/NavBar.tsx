@@ -60,39 +60,39 @@ function NavBar() {
         >
         <div className="flex justify-between mx-[41px] gap-8 items-center">
           <div className="flex gap-[2.5rem] items-center">
-            <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
+            <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem]"></div>
             <Link href="/home" className="cursor-pointer flex items-center py-2">
               <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] w-auto object-contain" priority />
             </Link>
           </div>
-          <div className="flex text-[16px] items-center select-none border border-white/10 h-[3rem] rounded-t-xl mt-[0.5rem] bg-white/5 backdrop-blur-sm">
+          <div className="flex text-[16px] items-center select-none border border-white/10 light:border-gray-200 h-[3rem] rounded-t-xl mt-[0.5rem] bg-white/5 light:bg-gray-100 backdrop-blur-sm">
             <Link
               href="/home"
-              className="hover:text-white hover:rounded-tl-xl hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
+              className="hover:text-white light:hover:text-gray-900 hover:rounded-tl-xl hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
             >
               Home
             </Link>
             <Link
               href="/collections"
-              className="hover:text-white hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
+              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
             >
               Collections
             </Link>
             <Link
               href="/projects"
-              className="hover:text-white hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
+              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
             >
               Projects
             </Link>
             <Link
               href="/services"
-              className="hover:text-white hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
+              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
             >
               Booking
             </Link>
             <Link
               href="/about"
-              className="hover:text-white hover:rounded-tr-xl hover:bg-white/10 cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2 transition-all duration-200"
+              className="hover:text-white light:hover:text-gray-900 hover:rounded-tr-xl hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
             >
               About Me
             </Link>
@@ -101,12 +101,12 @@ function NavBar() {
             <div className="flex gap-[2.5rem] items-center">
               <button
                 onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-white/10 transition-all duration-300 text-customGrayAlt2 hover:text-white"
+                className="p-2 rounded-lg hover:bg-white/10 light:hover:bg-gray-200 transition-all duration-300 text-customGrayAlt2 light:text-gray-600 hover:text-white light:hover:text-gray-900"
                 aria-label="Toggle theme"
               >
                 {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-              <div className="text-2xl md:text-4xl font-extrabold uppercase text-white">
+              <div className="text-2xl md:text-4xl font-extrabold uppercase text-white light:text-gray-900">
                 <Link href="/contact">
                   <MainButton 
                     text="Contact Me" 
@@ -114,7 +114,7 @@ function NavBar() {
                   />
                 </Link>
               </div>
-              <div className="flex border-r border-r-superGray self-stretch h-[3.5rem]"></div>
+              <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem]"></div>
             </div>
           </div>
         </div>
@@ -123,7 +123,7 @@ function NavBar() {
       {/* MOBILE */}
       <div
         className={`block lg:hidden shadow-sm fixed top-0 w-full z-[999] animate-in fade-in zoom-in border-b transition-all duration-300 ${
-          menu ? "bg-primary/90 backdrop-blur-xl py-2 border-b-white/20" : "bg-background/80 backdrop-blur-md border-b-white/10"
+          menu ? "bg-primary/90 backdrop-blur-xl py-2 border-b-white/20" : "bg-background/80 light:bg-white/80 backdrop-blur-md border-b-white/10 light:border-b-gray-200"
         }`}
       >
         <div className="flex justify-between mx-[10px]">
@@ -134,7 +134,7 @@ function NavBar() {
           >
             <div className="flex gap-4 items-center">
               {!menu && (
-                <div className="flex border-r border-r-superGray self-stretch h-[4rem]"></div>
+                <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[4rem]"></div>
               )}
               <Link href="/home" className="cursor-pointer flex items-center py-2">
                 <Image src="/images/logo.png" width={200} height={80} alt="Leekshotit Logo" className="h-[5rem] w-auto object-contain" priority />
@@ -151,13 +151,13 @@ function NavBar() {
               <div className="flex items-center gap-3 select-none">
                 <button
                   onClick={toggleTheme}
-                  className="p-2 rounded-lg hover:bg-white/10 transition-all duration-300 text-white mt-8"
+                  className="p-2 rounded-lg hover:bg-white/10 light:hover:bg-gray-200 transition-all duration-300 text-white light:text-gray-900 mt-8"
                   aria-label="Toggle theme"
                 >
                   {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
                 </button>
                 <div className="flex items-center">
-                  <div className="text-2xl md:text-4xl font-extrabold uppercase mt-8 text-white outline outline-[1px] outline-superGray rounded-tl-[1.25rem]">
+                  <div className="text-2xl md:text-4xl font-extrabold uppercase mt-8 text-white light:text-gray-900 outline outline-[1px] outline-superGray light:outline-gray-200 rounded-tl-[1.25rem]">
                     <Image
                       src="/images/hamburger.png"
                       width={40}
@@ -168,7 +168,7 @@ function NavBar() {
                     />
                   </div>
                   {!menu && (
-                    <div className="flex border-r border-r-superGray self-stretch h-[3.5rem] mr-3"></div>
+                    <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem] mr-3"></div>
                   )}
                 </div>
               </div>
@@ -210,8 +210,8 @@ function NavBar() {
       </div>
 
       {/* Category Marquee - Right Under Header */}
-      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark via-superGray to-lightDark border-b border-b-superGray py-3 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-black/40 pointer-events-none"></div>
+      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark light:from-gray-50 via-superGray light:via-gray-100 to-lightDark light:to-gray-50 border-b border-b-superGray light:border-b-gray-200 py-3 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 light:from-white/40 via-transparent to-black/40 light:to-white/40 pointer-events-none"></div>
         <div 
           className="flex animate-marquee whitespace-nowrap items-center"
           style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
@@ -222,7 +222,7 @@ function NavBar() {
               className="flex items-center flex-shrink-0 mx-6 transition-transform duration-300 hover:scale-110 hover:text-primary"
             >
               <span className="text-primary text-[0.875rem] md:text-[1rem] mr-3 drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] flex-shrink-0">★</span>
-              <span className="text-white uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-wide drop-shadow-lg flex-shrink-0">
+              <span className="text-white light:text-gray-900 uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-wide drop-shadow-lg flex-shrink-0">
                 {category}
               </span>
             </div>

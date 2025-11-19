@@ -17,12 +17,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative bg-background">
+    <main className="relative bg-background light:bg-white">
       {/* Smooth Background Gradients */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/[0.08] rounded-full blur-[150px] opacity-40"></div>
-        <div className="absolute bottom-1/3 left-0 w-[600px] h-[600px] bg-primary/[0.06] rounded-full blur-[120px] opacity-50"></div>
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-superGray/[0.05] rounded-full blur-[100px] opacity-40"></div>
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/[0.08] light:bg-primary/[0.03] rounded-full blur-[150px] opacity-40"></div>
+        <div className="absolute bottom-1/3 left-0 w-[600px] h-[600px] bg-primary/[0.06] light:bg-primary/[0.02] rounded-full blur-[120px] opacity-50"></div>
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-superGray/[0.05] light:bg-gray-200/30 rounded-full blur-[100px] opacity-40"></div>
       </div>
 
       <StickyBookingCTA />
@@ -30,7 +30,7 @@ export default function Home() {
         <NavBar />
         
         <div className="pt-[10rem] lg:pt-0">
-          <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+          <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
             <HeroSection />
             
             {/* Portfolio Section with Glassmorphism */}

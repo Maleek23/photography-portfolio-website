@@ -26,10 +26,10 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="bg-background">
+    <main className="bg-background light:bg-white">
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           
           {/* Hero Section - Full Width with Centered Content */}
           <div className="relative flex items-center justify-center px-4 md:px-[6rem] py-12 md:py-16">
@@ -54,7 +54,7 @@ export default function AboutPage() {
                     quality={95}
                   />
                   {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 light:from-white/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
               </div>
 
@@ -69,24 +69,24 @@ export default function AboutPage() {
                   About Me
                 </p>
                 
-                <h1 className="text-white text-[2rem] md:text-[2.75rem] font-[700] uppercase leading-tight mb-6">
+                <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] uppercase leading-tight mb-6">
                   Visual<br/>Storyteller
                 </h1>
 
-                <div className="space-y-6 text-customGrayAlt text-[1.063rem] md:text-[1.125rem] leading-[1.75] max-w-xl mx-auto lg:mx-0">
+                <div className="space-y-6 text-customGrayAlt light:text-gray-600 text-[1.063rem] md:text-[1.125rem] leading-[1.75] max-w-xl mx-auto lg:mx-0">
                   <p>
-                    I&apos;m <span className="text-white font-[600]">Malik</span>, a self-taught photographer, videographer, and visual artist based in Texas. What started as curiosity evolved into an obsession with capturing moments that matter.
+                    I&apos;m <span className="text-white light:text-gray-900 font-[600]">Malik</span>, a self-taught photographer, videographer, and visual artist based in Texas. What started as curiosity evolved into an obsession with capturing moments that matter.
                   </p>
                   
                   <p>
-                    My work celebrates <span className="text-primary font-[600]">intentionality in every frame</span> and <span className="text-white font-[600]">authentic collaboration</span> in every session.
+                    My work celebrates <span className="text-primary font-[600]">intentionality in every frame</span> and <span className="text-white light:text-gray-900 font-[600]">authentic collaboration</span> in every session.
                   </p>
                   
                   <p>
-                    I specialize in capturing <span className="text-white font-[600]">high-end art</span> in its truest form. Beyond technical skill, I bring intentionality to every shoot. Whether it&apos;s a graduation milestone, a creative concept, or a concert moment, I&apos;m not just documenting — I&apos;m translating your story into visual art.
+                    I specialize in capturing <span className="text-white light:text-gray-900 font-[600]">high-end art</span> in its truest form. Beyond technical skill, I bring intentionality to every shoot. Whether it&apos;s a graduation milestone, a creative concept, or a concert moment, I&apos;m not just documenting — I&apos;m translating your story into visual art.
                   </p>
                   
-                  <p className="text-white font-[600] text-[1.188rem] md:text-[1.313rem] pt-4">
+                  <p className="text-white light:text-gray-900 font-[600] text-[1.188rem] md:text-[1.313rem] pt-4">
                     I don&apos;t just take pictures and videos. I create art that resonates, tells stories, and stands the test of time.
                   </p>
                 </div>
@@ -99,7 +99,7 @@ export default function AboutPage() {
                     </button>
                   </Link>
                   <Link href="/collections">
-                    <button className="glass glass-hover glass-lift text-white font-[600] px-10 py-4 rounded-2xl uppercase text-[0.875rem] tracking-wider overflow-hidden relative border border-white/10">
+                    <button className="glass glass-hover glass-lift text-white light:text-gray-900 font-[600] px-10 py-4 rounded-2xl uppercase text-[0.875rem] tracking-wider overflow-hidden relative border border-white/10 light:border-gray-200">
                       <span className="relative z-10">View Work</span>
                     </button>
                   </Link>
@@ -117,7 +117,7 @@ export default function AboutPage() {
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Specialties
               </p>
-              <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight">
+              <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight">
                 What I Do
               </h2>
             </div>
@@ -126,32 +126,32 @@ export default function AboutPage() {
               {specialties.map((specialty, index) => (
                 <div
                   key={index}
-                  className="glass glass-mobile-optimized glass-hover glass-lift p-10 rounded-2xl text-center group transition-all duration-300 hover:scale-105"
+                  className="glass glass-mobile-optimized glass-hover glass-lift p-10 rounded-2xl text-center group transition-all duration-300 hover:scale-105 light:bg-gray-100/50"
                 >
-                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary group-hover:bg-primary/20 transition-all duration-300">
+                  <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-primary/10 light:bg-primary/20 flex items-center justify-center border-2 border-primary/30 group-hover:border-primary group-hover:bg-primary/20 transition-all duration-300">
                     <span className="text-primary text-[1.5rem] font-[700]">{index + 1}</span>
                   </div>
-                  <p className="text-white text-[1.125rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors">
+                  <p className="text-white light:text-gray-900 text-[1.125rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors">
                     {specialty}
                   </p>
                 </div>
               ))}
             </div>
 
-            <div className="text-center glass glass-mobile-optimized glass-hover p-8 md:p-10 rounded-3xl max-w-3xl mx-auto border border-white/5">
-              <p className="text-customGrayAlt text-[1.063rem] md:text-[1.125rem] leading-[1.7]">
-                I&apos;m also <span className="text-primary font-[600]">open to inquiries</span> for any creative projects, events, or <span className="text-white font-[600]">weddings</span>. Let&apos;s collaborate and bring your vision to life.
+            <div className="text-center glass glass-mobile-optimized glass-hover p-8 md:p-10 rounded-3xl max-w-3xl mx-auto border border-white/5 light:border-gray-200 light:bg-gray-100/50">
+              <p className="text-customGrayAlt light:text-gray-600 text-[1.063rem] md:text-[1.125rem] leading-[1.7]">
+                I&apos;m also <span className="text-primary font-[600]">open to inquiries</span> for any creative projects, events, or <span className="text-white light:text-gray-900 font-[600]">weddings</span>. Let&apos;s collaborate and bring your vision to life.
               </p>
             </div>
           </div>
         </div>
 
           {/* Philosophy Quote - Centered, Bold */}
-          <div className="px-4 md:px-[6rem] py-12 md:py-16 bg-gradient-to-b from-background via-primary/5 to-background">
+          <div className="px-4 md:px-[6rem] py-12 md:py-16 bg-gradient-to-b from-background light:from-white via-primary/5 light:via-primary/2 to-background light:to-white">
           <div className="max-w-4xl mx-auto text-center">
             <div className="relative">
               <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-primary/20 text-[6rem] font-serif leading-none">&ldquo;</div>
-              <p className="text-white text-[1.75rem] md:text-[2.75rem] font-[600] leading-[1.3] mb-8 relative z-10">
+              <p className="text-white light:text-gray-900 text-[1.75rem] md:text-[2.75rem] font-[600] leading-[1.3] mb-8 relative z-10">
                 Photography is more than taking pictures — it&apos;s freezing emotion, telling stories, and creating art that resonates.
               </p>
               <p className="text-primary text-[1.063rem] md:text-[1.125rem] font-[600] uppercase tracking-widest">
@@ -169,10 +169,10 @@ export default function AboutPage() {
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Let&apos;s Create Together
               </p>
-              <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight mb-6">
+              <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight mb-6">
                 Ready to Work?
               </h2>
-              <p className="text-customGrayAlt text-[1.063rem] md:text-[1.125rem] leading-[1.7] max-w-2xl mx-auto">
+              <p className="text-customGrayAlt light:text-gray-600 text-[1.063rem] md:text-[1.125rem] leading-[1.7] max-w-2xl mx-auto">
                 Whether you need portraits, event coverage, or want to collaborate on a creative project, I&apos;d love to hear from you.
               </p>
             </div>
@@ -182,32 +182,32 @@ export default function AboutPage() {
               {/* Email Card */}
               <a 
                 href={`mailto:${PORTFOLIO_EMAIL}`}
-                className="glass glass-mobile-optimized glass-hover glass-lift p-8 rounded-2xl group transition-all duration-300 hover:scale-105"
+                className="glass glass-mobile-optimized glass-hover glass-lift p-8 rounded-2xl group transition-all duration-300 hover:scale-105 light:bg-gray-100/50"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/50 group-hover:bg-primary/30 transition-colors">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 light:bg-primary/30 flex items-center justify-center border-2 border-primary/50 group-hover:bg-primary/30 light:group-hover:bg-primary/40 transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                       <rect width="20" height="16" x="2" y="4" rx="2"/>
                       <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                     </svg>
                   </div>
                   <div className="text-left">
-                    <p className="text-customGrayAlt text-[0.875rem] uppercase tracking-wider mb-1">Email</p>
-                    <p className="text-white text-[1.063rem] font-[500] group-hover:text-primary transition-colors">{PORTFOLIO_EMAIL}</p>
+                    <p className="text-customGrayAlt light:text-gray-500 text-[0.875rem] uppercase tracking-wider mb-1">Email</p>
+                    <p className="text-white light:text-gray-900 text-[1.063rem] font-[500] group-hover:text-primary transition-colors">{PORTFOLIO_EMAIL}</p>
                   </div>
                 </div>
               </a>
 
               {/* Social Card */}
-              <div className="glass glass-mobile-optimized glass-hover glass-lift p-8 rounded-2xl">
+              <div className="glass glass-mobile-optimized glass-hover glass-lift p-8 rounded-2xl light:bg-gray-100/50">
                 <div className="flex items-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-primary/20 flex items-center justify-center border-2 border-primary/50">
+                  <div className="w-14 h-14 rounded-full bg-primary/20 light:bg-primary/30 flex items-center justify-center border-2 border-primary/50">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                       <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                     </svg>
                   </div>
                   <div className="text-left flex-1">
-                    <p className="text-customGrayAlt text-[0.875rem] uppercase tracking-wider mb-2">Follow Me</p>
+                    <p className="text-customGrayAlt light:text-gray-500 text-[0.875rem] uppercase tracking-wider mb-2">Follow Me</p>
                     <div className="flex items-center gap-3">
                       <a href={SOCIAL_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
                         <img src="/images/instagram_icon.png" alt="Instagram" className="w-7 h-7" />

@@ -42,11 +42,11 @@ export default function ServicesPage() {
   const packages = pricingData[activeTab].packages.slice(0, 3);
 
   return (
-    <main className="bg-background">
+    <main className="bg-background light:bg-white">
       <NavBar />
 
       <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             
             {/* Hero */}
@@ -54,10 +54,10 @@ export default function ServicesPage() {
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Pricing
             </p>
-            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-4">
+            <h1 className="text-white light:text-gray-900 text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-4">
               Book a Session
             </h1>
-            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed max-w-2xl mx-auto">
+            <p className="text-customGrayAlt light:text-gray-600 text-[1rem] md:text-[1.125rem] leading-relaxed max-w-2xl mx-auto">
               Professional photography with cinematic editing and digital delivery
             </p>
           </div>
@@ -68,8 +68,8 @@ export default function ServicesPage() {
               onClick={() => setActiveTab("grad")}
               className={`px-6 md:px-8 py-3 rounded-xl font-[600] uppercase text-[0.813rem] tracking-wide transition-all ${
                 activeTab === "grad"
-                  ? "glass bg-primary/20 text-primary border border-primary/50"
-                  : "glass text-customGrayAlt hover:text-white border border-white/10 hover:border-white/20"
+                  ? "glass bg-primary/20 light:bg-primary/30 text-primary border border-primary/50"
+                  : "glass light:bg-gray-100/50 text-customGrayAlt light:text-gray-600 hover:text-white light:hover:text-gray-900 border border-white/10 light:border-gray-200 hover:border-white/20 light:hover:border-gray-300"
               }`}
             >
               Graduation
@@ -78,8 +78,8 @@ export default function ServicesPage() {
               onClick={() => setActiveTab("solo")}
               className={`px-6 md:px-8 py-3 rounded-xl font-[600] uppercase text-[0.813rem] tracking-wide transition-all ${
                 activeTab === "solo"
-                  ? "glass bg-primary/20 text-primary border border-primary/50"
-                  : "glass text-customGrayAlt hover:text-white border border-white/10 hover:border-white/20"
+                  ? "glass bg-primary/20 light:bg-primary/30 text-primary border border-primary/50"
+                  : "glass light:bg-gray-100/50 text-customGrayAlt light:text-gray-600 hover:text-white light:hover:text-gray-900 border border-white/10 light:border-gray-200 hover:border-white/20 light:hover:border-gray-300"
               }`}
             >
               Solo
@@ -88,8 +88,8 @@ export default function ServicesPage() {
               onClick={() => setActiveTab("events")}
               className={`px-6 md:px-8 py-3 rounded-xl font-[600] uppercase text-[0.813rem] tracking-wide transition-all ${
                 activeTab === "events"
-                  ? "glass bg-primary/20 text-primary border border-primary/50"
-                  : "glass text-customGrayAlt hover:text-white border border-white/10 hover:border-white/20"
+                  ? "glass bg-primary/20 light:bg-primary/30 text-primary border border-primary/50"
+                  : "glass light:bg-gray-100/50 text-customGrayAlt light:text-gray-600 hover:text-white light:hover:text-gray-900 border border-white/10 light:border-gray-200 hover:border-white/20 light:hover:border-gray-300"
               }`}
             >
               Events
@@ -175,7 +175,7 @@ export default function ServicesPage() {
                         >
                           <polyline points="20 6 9 17 4 12"/>
                         </svg>
-                        <p className="text-white text-[0.875rem] leading-snug">
+                        <p className="text-white light:text-gray-900 text-[0.875rem] leading-snug">
                           {feature}
                         </p>
                       </div>
