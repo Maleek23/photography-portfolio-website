@@ -54,7 +54,13 @@ export const metadata: Metadata = {
   },
 }
 
-const manrope = Manrope({ subsets: ['latin'], weight: ["400", "500", "600"] })
+const manrope = Manrope({ 
+  subsets: ['latin'], 
+  weight: ["400", "500", "600"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', '-apple-system', 'sans-serif']
+})
 
 export default function RootLayout({
   children,
