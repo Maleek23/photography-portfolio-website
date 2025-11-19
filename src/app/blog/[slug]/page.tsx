@@ -36,7 +36,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 <span className="text-customGrayAlt text-[0.875rem]">{post.date}</span>
               </div>
 
-              <h1 className="text-white text-[2.5rem] md:text-[4rem] font-[700] leading-tight mb-6">
+              <h1 className="text-white text-[2rem] md:text-[2.75rem] font-[700] leading-tight mb-6">
                 {post.title}
               </h1>
 

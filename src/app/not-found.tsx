@@ -12,14 +12,14 @@ export default function NotFound() {
       <div className="relative z-10 max-w-2xl mx-auto text-center">
         {/* 404 Number */}
         <div className="mb-8">
-          <h1 className="text-primary text-[8rem] md:text-[12rem] font-[700] leading-none tracking-tight">
+          <h1 className="text-primary text-[6rem] md:text-[8rem] font-[700] leading-none tracking-tight">
             404
           </h1>
         </div>
 
         {/* Glass card with message */}
         <div className="glass glass-mobile-optimized glass-hover rounded-3xl p-8 md:p-12 mb-8">
-          <h2 className="text-white text-[2rem] md:text-[3rem] font-[700] uppercase mb-4 leading-tight">
+          <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase mb-4 leading-tight">
             Page Not Found
           </h2>
           <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed mb-6">

@@ -53,7 +53,7 @@ export default function FilmPage() {
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Film & Videography
               </p>
-              <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase leading-tight mb-6">
+              <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase leading-tight mb-6">
                 Cinematic Storytelling
               </h1>
               <p className="text-customGrayAlt text-[1rem] md:text-[1.25rem] leading-relaxed max-w-3xl mx-auto">
@@ -122,7 +122,7 @@ export default function FilmPage() {
 
             {/* CTA Section */}
             <div className="glass glass-mobile-optimized p-8 md:p-12 rounded-3xl text-center max-w-4xl mx-auto">
-              <h2 className="text-white text-[1.75rem] md:text-[2.25rem] font-[600] mb-4">
+              <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[600] mb-4">
                 Want a Cinematic Film?
               </h2>
               <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed mb-6">

@@ -40,7 +40,7 @@ function PortfolioSection() {
       {/* Header with View All */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-baseline gap-3">
-          <h2 className="text-white text-[1.75rem] md:text-[2.5rem] font-[600] uppercase">
+          <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[600] uppercase">
             Collections
           </h2>
           <p className="text-customGrayAlt text-[0.813rem] md:text-[0.938rem]">

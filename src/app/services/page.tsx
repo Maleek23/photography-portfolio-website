@@ -54,7 +54,7 @@ export default function ServicesPage() {
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Pricing
             </p>
-            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-4">
+            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-4">
               Book a Session
             </h1>
             <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed max-w-2xl mx-auto">

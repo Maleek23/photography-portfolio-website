@@ -107,7 +107,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
             ← Collections
           </Link>
           
-          <h1 className="text-white text-[3rem] md:text-[5rem] lg:text-[7rem] font-[700] uppercase mb-4 tracking-tight leading-[0.9]">
+          <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-4 tracking-tight leading-[0.9]">
             {category.title}
           </h1>
           
@@ -157,7 +157,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
 
       {/* Bottom CTA - Full Width */}
       <div className="w-full bg-gradient-to-b from-background to-black py-24 px-4 text-center">
-        <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[600] uppercase mb-6 leading-tight">
+        <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[600] uppercase mb-6 leading-tight">
           Ready to Work Together?
         </h2>
         <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] mb-10 max-w-2xl mx-auto leading-relaxed">

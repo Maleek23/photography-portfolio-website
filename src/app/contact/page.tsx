@@ -52,7 +52,7 @@ export default function ContactPage() {
                 <p className="text-primary text-[0.875rem] font-[600] uppercase tracking-widest mb-3">
                   Contact
                 </p>
-                <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
+                <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
                   Get In Touch
                 </h1>
                 <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] leading-relaxed">

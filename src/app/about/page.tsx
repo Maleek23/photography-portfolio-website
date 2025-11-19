@@ -117,7 +117,7 @@ export default function AboutPage() {
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Specialties
               </p>
-              <h2 className="text-white text-[2.5rem] md:text-[4rem] font-[700] uppercase leading-tight">
+              <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight">
                 What I Do
               </h2>
             </div>
@@ -169,7 +169,7 @@ export default function AboutPage() {
               <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
                 Let&apos;s Create Together
               </p>
-              <h2 className="text-white text-[2.5rem] md:text-[4rem] font-[700] uppercase leading-tight mb-6">
+              <h2 className="text-white text-[1.5rem] md:text-[2rem] font-[700] uppercase leading-tight mb-6">
                 Ready to Work?
               </h2>
               <p className="text-customGrayAlt text-[1.063rem] md:text-[1.125rem] leading-[1.7] max-w-2xl mx-auto">

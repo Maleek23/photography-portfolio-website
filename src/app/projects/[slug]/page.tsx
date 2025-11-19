@@ -61,7 +61,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <span className="text-customGrayAlt text-[0.875rem]">{project.client}</span>
             </div>
 
-            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-4">
+            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-4">
               {project.title}
             </h1>
 

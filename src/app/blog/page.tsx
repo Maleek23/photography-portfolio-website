@@ -29,7 +29,7 @@ export default function BlogPage() {
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             {/* Header */}
             <div className="mb-8 md:mb-12">
-            <h1 className="text-white text-[2.5rem] md:text-[5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
+            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
               Blog
             </h1>
             <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">

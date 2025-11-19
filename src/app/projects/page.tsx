@@ -22,7 +22,7 @@ export default function ProjectsPage() {
             <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
               Case Studies
             </p>
-            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-6">
+            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-6">
               Featured Projects
             </h1>
             <p className="text-customGrayAlt text-[1rem] md:text-[1.25rem] max-w-3xl mx-auto leading-relaxed">
