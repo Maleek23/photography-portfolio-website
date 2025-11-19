@@ -6,7 +6,6 @@ import { notFound } from "next/navigation";
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ImageSkeleton from "@/components/common/ImageSkeleton";
 
 const portfolioData: Record<string, { title: string; description: string; images: string[]; bookingType: string }> = {
   portraits: {
@@ -77,7 +76,6 @@ const portfolioData: Record<string, { title: string; description: string; images
 
 export default function CategoryPage({ params }: { params: { category: string } }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
   const category = portfolioData[params.category];
 
   if (!category) {
@@ -85,106 +83,117 @@ export default function CategoryPage({ params }: { params: { category: string } 
   }
 
   return (
-    <main className="bg-background">
+    <main className="bg-background min-h-screen">
       <NavBar />
-      <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
-          <div className="px-4 md:px-[6rem] py-12 md:py-16">
-            {/* Header */}
-            <div className="mb-8 md:mb-12">
-            <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-3 md:mb-4 inline-block">
-              ← Back to Collections
-            </Link>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-6">
-              <div className="flex-1">
-                <h1 className="text-white text-[2.5rem] md:text-[4.5rem] font-[700] uppercase mb-3 md:mb-4 tracking-tight leading-tight">
-                  {category.title}
-                </h1>
-                <p className="text-customGrayAlt text-[0.938rem] md:text-[1.125rem] max-w-2xl leading-relaxed">
-                  {category.description}
-                </p>
-              </div>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-[600] px-6 md:px-8 py-3 md:py-4 rounded-lg uppercase text-[0.813rem] md:text-[0.875rem] transition-all whitespace-nowrap shadow-lg hover:shadow-primary/50"
-              >
-                Book {category.bookingType}
-              </Link>
-            </div>
-          </div>
-
-          {/* Photo Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-            {category.images.map((image, index) => (
-              <div
-                key={index}
-                className="relative aspect-[3/4] overflow-hidden rounded-lg bg-lightDark cursor-pointer group border border-superGray hover:border-primary transition-all duration-300"
-                onClick={() => setSelectedImage(image)}
-              >
-                {!loadedImages[index] && (
-                  <ImageSkeleton className="absolute inset-0" aspectRatio="3/4" />
-                )}
-                <Image
-                  src={image}
-                  alt={`${category.title} photography ${index + 1}`}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  className={`object-cover transition-all duration-500 group-hover:scale-110 ${
-                    loadedImages[index] ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
-                  priority={index < 3}
-                  loading={index < 3 ? undefined : "lazy"}
-                  quality={85}
-                />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300"></div>
-              </div>
-            ))}
-          </div>
-
-            {/* Call to Action */}
-            <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray text-center">
-              <h2 className="text-white text-[1.75rem] md:text-[3rem] font-[600] uppercase mb-3 md:mb-4 leading-tight">
-                Like What You See?
-              </h2>
-              <p className="text-customGrayAlt text-[0.938rem] md:text-[1rem] mb-6 md:mb-8 max-w-2xl mx-auto leading-relaxed">
-                Ready to book a session? Check out our pricing and availability.
-              </p>
-              <Link
-                href="/services"
-                className="inline-block bg-primary hover:bg-primary/80 text-white font-[600] px-8 py-4 rounded-lg uppercase text-[0.875rem] transition-all shadow-lg hover:shadow-primary/50 hover:scale-105"
-              >
-                View Pricing & Book
-              </Link>
-            </div>
-          </div>
+      
+      {/* Full-Bleed Hero Section */}
+      <div className="relative w-full h-[85vh] min-h-[600px] lg:h-screen overflow-hidden">
+        <Image
+          src={category.images[0]}
+          alt={`${category.title} hero`}
+          fill
+          className="object-cover"
+          priority
+          quality={95}
+          sizes="100vw"
+        />
+        
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        
+        {/* Hero Content */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 z-10">
+          <Link href="/collections" className="text-white/80 hover:text-white text-[0.813rem] font-[500] mb-6 tracking-wide uppercase transition-colors">
+            ← Collections
+          </Link>
+          
+          <h1 className="text-white text-[3rem] md:text-[5rem] lg:text-[7rem] font-[700] uppercase mb-4 tracking-tight leading-[0.9]">
+            {category.title}
+          </h1>
+          
+          <p className="text-white/90 text-[1rem] md:text-[1.25rem] max-w-2xl mb-10 leading-relaxed">
+            {category.description}
+          </p>
+          
+          <Link
+            href="/services"
+            className="bg-white hover:bg-white/90 text-background font-[600] px-10 py-5 text-[0.875rem] uppercase tracking-wider transition-all hover:scale-105 shadow-2xl"
+          >
+            Book {category.bookingType}
+          </Link>
         </div>
-        <FooterSection />
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/60 animate-bounce">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <polyline points="19 12 12 19 5 12"></polyline>
+          </svg>
+        </div>
       </div>
+
+      {/* Masonry Gallery - Unsplash Style */}
+      <div className="columns-1 md:columns-2 xl:columns-3 gap-[2px]">
+        {category.images.slice(1).map((image, index) => (
+          <div
+            key={index}
+            className="break-inside-avoid mb-[2px] cursor-pointer group"
+            onClick={() => setSelectedImage(image)}
+          >
+            <div className="relative w-full overflow-hidden">
+              <img
+                src={image}
+                alt={`${category.title} ${index + 2}`}
+                className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                loading={index < 3 ? "eager" : "lazy"}
+              />
+              
+              {/* Subtle Hover Overlay */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bottom CTA - Full Width */}
+      <div className="w-full bg-gradient-to-b from-background to-black py-24 px-4 text-center">
+        <h2 className="text-white text-[2rem] md:text-[3.5rem] font-[600] uppercase mb-6 leading-tight">
+          Ready to Work Together?
+        </h2>
+        <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] mb-10 max-w-2xl mx-auto leading-relaxed">
+          Let's create something extraordinary. View packages and book your session.
+        </p>
+        <Link
+          href="/services"
+          className="inline-block bg-primary hover:bg-primary/90 text-white font-[600] px-12 py-5 text-[0.875rem] uppercase tracking-wider transition-all hover:scale-105 shadow-2xl"
+        >
+          View Pricing & Book
+        </Link>
+      </div>
+
+      <FooterSection />
 
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/95 z-[9999] flex items-center justify-center p-4"
+          className="fixed inset-0 bg-black/98 z-[9999] flex items-center justify-center p-0 md:p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-8 right-8 text-white hover:text-primary transition-colors z-[10000]"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/80 hover:text-white transition-colors z-[10000] text-[2rem] w-12 h-12 flex items-center justify-center"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            ×
           </button>
-          <div className="relative w-full h-full flex items-center justify-center p-4" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
             <Image
               src={selectedImage}
               alt="Full size photography"
               fill
               className="object-contain"
-              quality={95}
+              quality={100}
               priority
+              sizes="100vw"
             />
           </div>
         </div>
