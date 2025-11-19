@@ -137,21 +137,22 @@ export default function CategoryPage({ params }: { params: { category: string } 
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
-          className="fixed inset-0 bg-black/98 z-[9999] flex items-center justify-center p-0 md:p-4"
+          className="fixed inset-0 bg-black/85 backdrop-blur-2xl z-[9999] flex items-center justify-center p-0 md:p-4 animate-in fade-in duration-300"
           onClick={() => setSelectedImage(null)}
         >
           <button
             onClick={() => setSelectedImage(null)}
-            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/80 hover:text-white transition-colors z-[10000] text-[2rem] w-12 h-12 flex items-center justify-center"
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white/80 hover:text-white transition-colors z-[10000] text-[2rem] w-12 h-12 flex items-center justify-center hover:scale-110"
+            aria-label="Close lightbox"
           >
             ×
           </button>
-          <div className="relative w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+          <div className="relative w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
             <Image
               src={selectedImage}
               alt="Full size photography"
               fill
-              className="object-contain"
+              className="object-contain drop-shadow-2xl"
               quality={100}
               priority
               sizes="100vw"
