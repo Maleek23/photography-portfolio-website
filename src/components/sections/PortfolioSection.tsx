@@ -56,41 +56,36 @@ function PortfolioSection() {
       </div>
 
       {/* 2x2 Grid with Horizontal Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {portfolioData.map((item) => (
           <Link
             key={item.id}
             href={`/collections/${item.slug}`}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full h-[250px] md:h-[320px] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+            className="group cursor-pointer"
           >
-            {!loadedImages[item.id] && (
-              <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
-            )}
-            <Image
-              src={item.imageUrl}
-              alt={`${item.title} photography collection`}
-              fill
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className={`object-cover transition-all duration-700 group-hover:scale-105 ${
-                loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
-              }`}
-              onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
-              quality={90}
-              priority={item.id === 0}
-              loading={item.id === 0 ? undefined : "lazy"}
-            />
-            {/* Subtle Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent light:from-black/70 light:via-black/10">
-              {/* Title Area */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h3 className="text-white text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
-                  {item.title}
-                </h3>
-                <p className="text-white/70 text-[0.875rem] md:text-[1rem] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  View collection →
-                </p>
-              </div>
+            {/* Image Container */}
+            <div className="relative overflow-hidden rounded-2xl w-full h-[280px] md:h-[380px] lg:h-[420px] bg-lightDark light:bg-gray-100">
+              {!loadedImages[item.id] && (
+                <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+              )}
+              <Image
+                src={item.imageUrl}
+                alt={`${item.title} photography collection`}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className={`object-cover transition-all duration-700 group-hover:scale-105 ${
+                  loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
+                }`}
+                onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
+                quality={90}
+                priority={item.id === 0}
+                loading={item.id === 0 ? undefined : "lazy"}
+              />
             </div>
+            {/* Title Below Image */}
+            <h3 className="text-white light:text-gray-900 text-[1.25rem] md:text-[1.5rem] font-[600] uppercase tracking-wide mt-4 group-hover:text-primary transition-colors duration-300">
+              {item.title}
+            </h3>
           </Link>
         ))}
       </div>
