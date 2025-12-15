@@ -55,59 +55,45 @@ function PortfolioSection() {
         </Link>
       </div>
 
-      {/* Enhanced Horizontal Scroll */}
-      <div className="relative">
-        <div className="overflow-x-auto overflow-y-hidden pb-4 -mx-4 px-4 scrollbar-hide">
-          <div className="flex gap-4 w-max">
-            {portfolioData.map((item) => (
-              <Link
-                key={item.id}
-                href={`/collections/${item.slug}`}
-                className="group relative overflow-hidden rounded-2xl cursor-pointer w-[260px] md:w-[300px] h-[420px] md:h-[500px] bg-lightDark light:bg-gray-50 flex-shrink-0 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/30 hover:-translate-y-2"
-              >
-                {!loadedImages[item.id] && (
-                  <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
-                )}
-                <Image
-                  src={item.imageUrl}
-                  alt={`${item.title} photography collection`}
-                  fill
-                  sizes="(min-width: 768px) 300px, 260px"
-                  className={`object-cover transition-all duration-700 group-hover:scale-110 ${
-                    loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
-                  }`}
-                  onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
-                  loading="lazy"
-                  quality={85}
-                />
-                {/* GLASSMORPHISM Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 light:from-white/90 via-black/30 light:via-white/30 to-transparent">
-                  {/* Frosted Glass Bottom Bar */}
-                  <div className="absolute bottom-0 left-0 right-0 p-5 backdrop-blur-xl bg-white/10 light:bg-gray-100/80 border-t border-white/20 light:border-gray-200 group-hover:bg-white/15 light:group-hover:bg-gray-100/90 transition-all duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent"></div>
-                    <h3 className="relative z-10 text-white light:text-gray-900 text-[1.25rem] md:text-[1.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
-                      {item.title}
-                    </h3>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-        
-        {/* Scroll Hint */}
-        <div className="absolute right-0 top-0 bottom-4 w-20 bg-gradient-to-l from-background light:from-white to-transparent pointer-events-none md:hidden"></div>
+      {/* Stacked Vertical Layout */}
+      <div className="flex flex-col gap-6">
+        {portfolioData.map((item) => (
+          <Link
+            key={item.id}
+            href={`/collections/${item.slug}`}
+            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full h-[280px] md:h-[400px] lg:h-[500px] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+          >
+            {!loadedImages[item.id] && (
+              <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+            )}
+            <Image
+              src={item.imageUrl}
+              alt={`${item.title} photography collection`}
+              fill
+              sizes="100vw"
+              className={`object-cover transition-all duration-700 group-hover:scale-105 ${
+                loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
+              }`}
+              onLoad={() => setLoadedImages(prev => ({ ...prev, [item.id]: true }))}
+              quality={90}
+              priority={item.id === 0}
+              loading={item.id === 0 ? undefined : "lazy"}
+            />
+            {/* Subtle Gradient Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent light:from-black/70 light:via-black/10">
+              {/* Title Area */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                <h3 className="text-white text-[1.5rem] md:text-[2rem] lg:text-[2.5rem] font-[600] uppercase tracking-wide leading-tight drop-shadow-lg">
+                  {item.title}
+                </h3>
+                <p className="text-white/70 text-[0.875rem] md:text-[1rem] mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  View collection →
+                </p>
+              </div>
+            </div>
+          </Link>
+        ))}
       </div>
-
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   );
 }
