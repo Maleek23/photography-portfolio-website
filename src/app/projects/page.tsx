@@ -42,7 +42,7 @@ export default function ProjectsPage() {
                   className="group block glass glass-hover glass-lift light:bg-gray-50 light:border-gray-200 backdrop-blur-xl rounded-2xl overflow-hidden hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300"
                 >
                   {/* Cover Image */}
-                  <div className="aspect-[4/3] overflow-hidden bg-superGray light:bg-gray-100 relative">
+                  <div className="aspect-[3/4] overflow-hidden bg-superGray light:bg-gray-100 relative">
                     <Image
                       src={project.coverImage}
                       alt={project.title}

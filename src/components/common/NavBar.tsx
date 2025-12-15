@@ -62,7 +62,7 @@ function NavBar() {
           <div className="flex gap-[2.5rem] items-center">
             <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem]"></div>
             <Link href="/home" className="cursor-pointer flex items-center py-2">
-              <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] w-auto object-contain" priority />
+              <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] object-contain" style={{ width: 'auto' }} priority />
             </Link>
           </div>
           <div className="flex text-[16px] items-center select-none border border-white/10 light:border-gray-200 h-[3rem] rounded-t-xl mt-[0.5rem] bg-white/5 light:bg-gray-100 backdrop-blur-sm">
@@ -137,7 +137,7 @@ function NavBar() {
                 <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[4rem]"></div>
               )}
               <Link href="/home" className="cursor-pointer flex items-center py-2">
-                <Image src="/images/logo.png" width={200} height={80} alt="Leekshotit Logo" className="h-[5rem] w-auto object-contain" priority />
+                <Image src="/images/logo.png" width={200} height={80} alt="Leekshotit Logo" className="h-[5rem] object-contain" style={{ width: 'auto' }} priority />
               </Link>
             </div>
           </div>
