@@ -55,13 +55,13 @@ function PortfolioSection() {
         </Link>
       </div>
 
-      {/* Stacked Vertical Layout */}
-      <div className="flex flex-col gap-6">
+      {/* 2x2 Grid with Horizontal Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {portfolioData.map((item) => (
           <Link
             key={item.id}
             href={`/collections/${item.slug}`}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full h-[280px] md:h-[400px] lg:h-[500px] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full aspect-[16/9] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
           >
             {!loadedImages[item.id] && (
               <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
