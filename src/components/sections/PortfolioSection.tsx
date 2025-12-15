@@ -61,7 +61,7 @@ function PortfolioSection() {
           <Link
             key={item.id}
             href={`/collections/${item.slug}`}
-            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full aspect-[16/9] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+            className="group relative overflow-hidden rounded-2xl cursor-pointer w-full h-[250px] md:h-[320px] bg-lightDark light:bg-gray-50 border border-white/10 light:border-gray-200 hover:border-primary/50 transition-all duration-500 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
           >
             {!loadedImages[item.id] && (
               <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
@@ -70,7 +70,7 @@ function PortfolioSection() {
               src={item.imageUrl}
               alt={`${item.title} photography collection`}
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, 50vw"
               className={`object-cover transition-all duration-700 group-hover:scale-105 ${
                 loadedImages[item.id] ? 'opacity-100' : 'opacity-0'
               }`}
