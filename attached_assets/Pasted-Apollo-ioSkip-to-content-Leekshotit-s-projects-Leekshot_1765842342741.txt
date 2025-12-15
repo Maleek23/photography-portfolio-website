@@ -1,0 +1,118 @@
+Apollo.ioSkip to content
+Leekshotit's projects
+Leekshotit's projects
+
+Hobby
+
+photography-portfolio-website
+
+CntCoGjte
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Command "npm run build" exited with 1
+
+Created
+leekshotit-8823 Avatar
+leekshotit-8823
+59m ago
+Status
+Error
+Latest
+Duration
+22s
+58m ago
+Environment
+Production
+Domains
+photography-portfolio-website-git-main-leekshotits-projects.vercel.app
+photography-portfolio-website-ptvblak17-leekshotits-projects.vercel.app
+Source
+main
+b79baf1
+Saved progress at the end of the loop
+
+Deployment Settings
+3 Recommendations
+Build Logs
+22s
+41 lines
+Find in logs
+⌘F
+16:47:15.308 
+Browserslist: caniuse-lite is outdated. Please run:
+16:47:15.309 
+  npx update-browserslist-db@latest
+16:47:15.309 
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+16:47:17.980 
+Browserslist: caniuse-lite is outdated. Please run:
+16:47:17.980 
+  npx browserslist@latest --update-db
+16:47:17.980 
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+16:47:19.041 
+ ✓ Compiled successfully
+16:47:19.042 
+   Linting and checking validity of types ...
+16:47:23.296 
+16:47:23.296 
+Failed to compile.
+16:47:23.297 
+16:47:23.297 
+./src/app/collections/[category]/page.tsx
+16:47:23.297 
+123:20  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:47:23.297 
+16:47:23.297 
+./src/components/common/ScrollReveal.tsx
+16:47:23.297 
+51:32  Warning: The ref value 'ref.current' will likely have changed by the time this effect cleanup function runs. If this ref points to a node rendered by React, copy 'ref.current' to a variable inside the effect, and use that variable in the cleanup function.  react-hooks/exhaustive-deps
+16:47:23.298 
+16:47:23.298 
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+16:47:23.371 
+Error: Command "npm run build" exited with 1
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Knowledge Base
+Academy
+Help
+Contact
+Loading status…
+
+Select a display theme:
+
+system
+
+light
+
+dark
+photography-portfolio-website – Deployment Overview – Vercel
+Enable Push Notifications
+Receive instant updates with alerts on desktop or mobile.
