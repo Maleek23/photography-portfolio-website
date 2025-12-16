@@ -30,14 +30,14 @@ function NavBar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-[9999]">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
-        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
+        <div className="flex items-center justify-between h-24 sm:h-28 md:h-32 lg:h-36">
           
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <img 
               src="/images/logo.png" 
               alt="Leekshotit" 
-              className="h-14 sm:h-16 md:h-20 object-contain" 
+              className="h-20 sm:h-24 md:h-28 lg:h-32 object-contain" 
             />
           </Link>
 
@@ -100,7 +100,7 @@ function NavBar() {
 
       {/* Mobile Menu */}
       {menu && (
-        <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-black/95 backdrop-blur-xl z-[9998] animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className="lg:hidden fixed inset-0 top-24 sm:top-28 bg-black/95 backdrop-blur-xl z-[9998] animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col px-6 sm:px-8 py-8 gap-5">
             {navLinks.map((link) => (
               <Link
