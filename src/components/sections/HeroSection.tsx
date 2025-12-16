@@ -6,7 +6,7 @@ function HeroSection() {
   return (
     <section className="relative">
       {/* Hero Images */}
-      <section className="flex w-full md:px-[6rem] mt-[1rem] md:mt-[5rem]">
+      <section className="flex w-full md:px-[6rem] mt-[1rem] md:mt-[7rem]">
         <Image
           src="/images/hero.png"
           width={1920}
