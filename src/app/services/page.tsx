@@ -45,9 +45,8 @@ export default function ServicesPage() {
     <main className="bg-background light:bg-white">
       <NavBar />
 
-      <div className="pt-32 md:pt-40 lg:pt-44">
-        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
-          <div className="px-4 md:px-[6rem] py-12 md:py-16">
+      <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
+          <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
             
             {/* Hero */}
             <div className="max-w-4xl mx-auto text-center mb-8 md:mb-12">
@@ -287,7 +286,6 @@ export default function ServicesPage() {
           </div>
         </div>
         <FooterSection />
-      </div>
     </main>
   );
 }
