@@ -15,8 +15,20 @@
     --primary: #2563EB;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: #070708;
+  }
+
   body {
     transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .light body,
+  body.light {
+    background-color: #ffffff;
   }
 }
 
