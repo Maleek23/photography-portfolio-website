@@ -29,7 +29,7 @@ export default function Home() {
         <NavBar />
         
         <div className="pt-[10rem] lg:pt-0">
-          <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
+          <div>
             <HeroSection />
             
             {/* Portfolio Section with Glassmorphism */}
