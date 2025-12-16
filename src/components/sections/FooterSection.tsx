@@ -4,7 +4,7 @@ import { Instagram } from "lucide-react";
 
 function FooterSection() {
   return (
-    <footer className="bg-background light:bg-gray-50 border-t border-white/10 light:border-gray-200">
+    <footer className="bg-background light:bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
         
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -65,7 +65,7 @@ function FooterSection() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-6 pt-4 border-t border-white/5 light:border-gray-100">
+        <div className="mt-6">
           <p className="text-white/30 light:text-gray-400 text-xs text-center md:text-left">
             © 2024 Leekshotit Photography
           </p>
