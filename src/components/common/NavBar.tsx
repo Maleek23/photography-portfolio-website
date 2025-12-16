@@ -1,235 +1,134 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { X, Sun, Moon } from "lucide-react";
-import MainButton from "./MainButton";
+import { useState } from "react";
+import { X, Menu, Instagram, Sun, Moon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 import { useTheme } from "@/contexts/ThemeContext";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
   const pathname = usePathname();
-  const [scrollY, setScrollY] = useState(0);
   const { theme, toggleTheme } = useTheme();
 
-  const categories = [
-    "PORTRAITS",
-    "GRADUATION", 
-    "CREATIVE PROJECTS",
-    "CONCERTS/EVENTS",
+  const navLinks = [
+    { href: "/home", label: "Home" },
+    { href: "/collections", label: "Photography" },
+    { href: "/projects", label: "Projects" },
+    { href: "/services", label: "Booking" },
+    { href: "/contact", label: "Inquire" },
+    { href: "/about", label: "About" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
-  const toggleMenu = () => {
-    setMenu(!menu);
-  };
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-      setMenu(false);
+  const isActive = (href: string) => {
+    if (href === "/home") {
+      return pathname === "/home" || pathname === "/";
     }
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-    setMenu(false);
+    return pathname.startsWith(href);
   };
 
   return (
-    <>
-      <div className="md:sticky md:top-0 md:shadow-none z-[9999]">
-        {/* DESKTOP */}
-        <div 
-          className="hidden lg:block animate-in fade-in zoom-in p-4 pt-0 pb-0 border-b transition-all duration-300"
-          style={{
-            backdropFilter: scrollY > 50 ? "blur(20px) saturate(180%)" : "none",
-            backgroundColor: scrollY > 50 ? "rgba(0, 0, 0, 0.7)" : "rgb(0, 0, 0)",
-            borderBottomColor: scrollY > 50 ? "rgba(255, 255, 255, 0.1)" : "rgba(148, 163, 184, 0.3)",
-          }}
-        >
-        <div className="flex justify-between mx-[41px] gap-8 items-center">
-          <div className="flex gap-[2.5rem] items-center">
-            <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem]"></div>
-            <Link href="/home" className="cursor-pointer flex items-center py-2">
-              <Image src="/images/logo.png" width={200} height={72} alt="Leekshotit Logo" className="h-[4.5rem] object-contain" style={{ width: 'auto' }} priority />
-            </Link>
-          </div>
-          <div className="flex text-[16px] items-center select-none border border-white/10 light:border-gray-200 h-[3rem] rounded-t-xl mt-[0.5rem] bg-white/5 light:bg-gray-100 backdrop-blur-sm">
-            <Link
-              href="/home"
-              className="hover:text-white light:hover:text-gray-900 hover:rounded-tl-xl hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
-            >
-              Home
-            </Link>
-            <Link
-              href="/collections"
-              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
-            >
-              Collections
-            </Link>
-            <Link
-              href="/projects"
-              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
-            >
-              Projects
-            </Link>
-            <Link
-              href="/services"
-              className="hover:text-white light:hover:text-gray-900 hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 border-r border-r-white/10 light:border-r-gray-200 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
-            >
-              Booking
-            </Link>
-            <Link
-              href="/about"
-              className="hover:text-white light:hover:text-gray-900 hover:rounded-tr-xl hover:bg-white/10 light:hover:bg-gray-200 cursor-pointer flex items-center px-[2.5rem] gap-2 self-stretch font-[500] text-customGrayAlt2 light:text-gray-600 transition-all duration-200"
-            >
-              About Me
-            </Link>
-          </div>
-          <div className="flex items-center gap-[40px] select-none">
-            <div className="flex gap-[2.5rem] items-center">
-              <button
-                onClick={toggleTheme}
-                className="p-2 rounded-lg hover:bg-white/10 light:hover:bg-gray-200 transition-all duration-300 text-customGrayAlt2 light:text-gray-600 hover:text-white light:hover:text-gray-900"
-                aria-label="Toggle theme"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-              <div className="text-2xl md:text-4xl font-extrabold uppercase text-white light:text-gray-900">
-                <Link href="/contact">
-                  <MainButton 
-                    text="Contact Me" 
-                    compact={true}
-                  />
-                </Link>
-              </div>
-              <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem]"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* MOBILE */}
-      <div
-        className={`block lg:hidden shadow-sm fixed top-0 w-full z-[999] animate-in fade-in zoom-in border-b transition-all duration-300 ${
-          menu ? "bg-primary/90 backdrop-blur-xl py-2 border-b-white/20" : "bg-background/80 light:bg-white/80 backdrop-blur-md border-b-white/10 light:border-b-gray-200"
-        }`}
-      >
-        <div className="flex justify-between mx-[10px]">
-          <div
-            className={`flex gap-[50px] text-[16px] items-center select-none ${
-              !menu ? "ml-[1rem]" : ""
-            }`}
+    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-transparent">
+      <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
+        <div className="flex items-center justify-between h-20 md:h-24">
+          
+          {/* Logo - Simple Text */}
+          <Link 
+            href="/home" 
+            className="text-3xl md:text-4xl font-bold text-black light:text-black dark:text-white tracking-tight select-none"
           >
-            <div className="flex gap-4 items-center">
-              {!menu && (
-                <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[4rem]"></div>
-              )}
-              <Link href="/home" className="cursor-pointer flex items-center py-2">
-                <Image src="/images/logo.png" width={200} height={80} alt="Leekshotit Logo" className="h-[5rem] object-contain" style={{ width: 'auto' }} priority />
+            L
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[15px] font-medium transition-all duration-200 ${
+                  isActive(link.href)
+                    ? "text-black dark:text-white underline underline-offset-4"
+                    : "text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
+                }`}
+              >
+                {link.label}
               </Link>
-            </div>
+            ))}
+            
+            {/* Instagram */}
+            <a
+              href="https://instagram.com/leekshotit"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} strokeWidth={1.5} />
+            </a>
+
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleTheme}
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 p-1"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
           </div>
-          <div className="flex items-center gap-[40px]">
-            {menu ? (
-              <X
-                className="cursor-pointer animate-in fade-in zoom-in text-white"
-                onClick={toggleMenu}
-              />
-            ) : (
-              <div className="flex items-center gap-3 select-none">
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 rounded-lg hover:bg-white/10 light:hover:bg-gray-200 transition-all duration-300 text-white light:text-gray-900 mt-8"
-                  aria-label="Toggle theme"
-                >
-                  {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-                </button>
-                <div className="flex items-center">
-                  <div className="text-2xl md:text-4xl font-extrabold uppercase mt-8 text-white light:text-gray-900 outline outline-[1px] outline-superGray light:outline-gray-200 rounded-tl-[1.25rem]">
-                    <Image
-                      src="/images/hamburger.png"
-                      width={40}
-                      height={40}
-                      alt="menu"
-                      className="cursor-pointer animate-in fade-in zoom-in"
-                      onClick={toggleMenu}
-                    />
-                  </div>
-                  {!menu && (
-                    <div className="flex border-r border-r-superGray light:border-r-gray-200 self-stretch h-[3.5rem] mr-3"></div>
-                  )}
-                </div>
-              </div>
-            )}
+
+          {/* Mobile Menu Button */}
+          <div className="flex lg:hidden items-center gap-4">
+            <button
+              onClick={toggleTheme}
+              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 p-2"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
+            <button
+              onClick={() => setMenu(!menu)}
+              className="text-black dark:text-white p-2"
+              aria-label="Toggle menu"
+            >
+              {menu ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
         </div>
-        {menu ? (
-          <div className="my-8 select-none animate-in slide-in-from-right">
-            <div className="flex flex-col gap-8 mt-8 mx-4">
-              <Link href="/home" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Home
-              </Link>
-              <Link href="/collections" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Collections
-              </Link>
-              <Link href="/projects" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Projects
-              </Link>
-              <Link href="/services" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                Booking
-              </Link>
-              <Link href="/about" onClick={() => setMenu(false)} className="text-white cursor-pointer">
-                About Me
-              </Link>
-              <div className="flex flex-col gap-[40px] select-none">
-                <Link href="/contact" onClick={() => setMenu(false)}>
-                  <MainButton 
-                    text="Contact Me" 
-                    classes="hover:bg-background"
-                  />
-                </Link>
-              </div>
-            </div>
-          </div>
-        ) : (
-          <div></div>
-        )}
-      </div>
       </div>
 
-      {/* Category Marquee - Right Under Header */}
-      <section className="w-full overflow-hidden bg-gradient-to-r from-lightDark light:from-gray-50 via-superGray light:via-gray-100 to-lightDark light:to-gray-50 border-b border-b-superGray light:border-b-gray-200 py-3 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 light:from-white/40 via-transparent to-black/40 light:to-white/40 pointer-events-none"></div>
-        <div 
-          className="flex animate-marquee whitespace-nowrap items-center"
-          style={{ transform: "translateZ(0)", backfaceVisibility: "hidden", willChange: "transform" }}
-        >
-          {[...categories, ...categories, ...categories].map((category, index) => (
-            <div 
-              key={index} 
-              className="flex items-center flex-shrink-0 mx-6 transition-transform duration-300 hover:scale-110 hover:text-primary"
+      {/* Mobile Menu */}
+      {menu && (
+        <div className="lg:hidden fixed inset-0 top-20 bg-white dark:bg-black z-[9998] animate-in fade-in duration-200">
+          <div className="flex flex-col px-8 py-8 gap-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setMenu(false)}
+                className={`text-2xl font-medium transition-colors duration-200 ${
+                  isActive(link.href)
+                    ? "text-black dark:text-white"
+                    : "text-gray-500 dark:text-gray-400"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+            <a
+              href="https://instagram.com/leekshotit"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenu(false)}
+              className="flex items-center gap-3 text-2xl font-medium text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
             >
-              <span className="text-primary text-[0.875rem] md:text-[1rem] mr-3 drop-shadow-[0_0_10px_rgba(37,99,235,0.5)] flex-shrink-0">★</span>
-              <span className="text-white light:text-gray-900 uppercase text-[0.75rem] md:text-[0.875rem] font-[600] tracking-wide drop-shadow-lg flex-shrink-0">
-                {category}
-              </span>
-            </div>
-          ))}
+              <Instagram size={24} strokeWidth={1.5} />
+              Instagram
+            </a>
+          </div>
         </div>
-      </section>
-    </>
+      )}
+    </nav>
   );
 }
 
