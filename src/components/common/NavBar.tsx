@@ -28,14 +28,14 @@ function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/70 via-black/30 to-transparent dark:from-black/80 dark:via-black/40">
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-20 md:h-24">
           
           {/* Logo - Simple Text */}
           <Link 
             href="/home" 
-            className="text-3xl md:text-4xl font-bold text-black light:text-black dark:text-white tracking-tight select-none"
+            className="text-3xl md:text-4xl font-bold text-white tracking-tight select-none"
           >
             L
           </Link>
@@ -48,8 +48,8 @@ function NavBar() {
                 href={link.href}
                 className={`text-[15px] font-medium transition-all duration-200 ${
                   isActive(link.href)
-                    ? "text-black dark:text-white underline underline-offset-4"
-                    : "text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white"
+                    ? "text-white underline underline-offset-4"
+                    : "text-white/70 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -61,7 +61,7 @@ function NavBar() {
               href="https://instagram.com/leekshotit"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+              className="text-white/70 hover:text-white transition-colors duration-200"
               aria-label="Instagram"
             >
               <Instagram size={20} strokeWidth={1.5} />
@@ -70,7 +70,7 @@ function NavBar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 p-1"
+              className="text-white/70 hover:text-white transition-colors duration-200 p-1"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
