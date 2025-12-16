@@ -33,7 +33,7 @@ export const pricingData: Record<string, PricingService> = {
       {
         name: "Silver",
         price: 310,
-        duration: "1.5 Hours",
+        duration: "2 Hours",
         features: [
           "2 Outfits & 3 Locations",
           "40 Edited Images",
@@ -74,7 +74,7 @@ export const pricingData: Record<string, PricingService> = {
       {
         name: "Plus",
         price: 280,
-        duration: "1.5 Hours",
+        duration: "2 Hours",
         features: [
           "2 Outfits & 2 Locations",
           "30 Edited Images",
@@ -86,7 +86,7 @@ export const pricingData: Record<string, PricingService> = {
       {
         name: "Pro",
         price: 380,
-        duration: "2+ Hours",
+        duration: "3 Hours",
         features: [
           "3+ Outfits & 3+ Locations",
           "50 Edited Images",
