@@ -1,73 +1,117 @@
 import React from "react";
-import { Separator } from "../ui/separator";
-import Socials from "../common/Socials";
 import Link from "next/link";
-import { SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant";
-import Image from "next/image";
+import { Instagram } from "lucide-react";
 
 function FooterSection() {
   return (
-    <section id="footer" className="bg-background light:bg-white border-t border-superGray/30 light:border-gray-200">
-      <div className="px-4 md:px-[6rem] py-6 md:py-8">
-        {/* Top Row: Logo + Links */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 md:gap-12 mb-6">
-          {/* Logo */}
-          <Link href="/" className="inline-block">
-            <Image src="/images/logo.png" width={150} height={56} alt="Leekshotit" className="h-[2.75rem] md:h-[3.5rem] object-contain" style={{ width: 'auto' }} />
-          </Link>
+    <footer className="bg-background light:bg-gray-50 border-t border-white/10 light:border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-12 md:py-16">
+        
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8">
+          
+          {/* Brand */}
+          <div className="md:col-span-1">
+            <Link href="/" className="inline-block mb-4">
+              <img 
+                src="/images/logo.png" 
+                alt="Leekshotit" 
+                className="h-10 md:h-12 w-auto object-contain" 
+              />
+            </Link>
+            <p className="text-white/60 light:text-gray-500 text-sm leading-relaxed">
+              Houston & Dallas based photographer specializing in portraits, graduation, and events.
+            </p>
+          </div>
 
-          {/* Links Row */}
-          <div className="flex flex-wrap gap-x-8 gap-y-4 md:gap-12">
-            {/* Quick Links */}
-            <div>
-              <p className="text-white light:text-gray-900 text-[0.813rem] font-[600] uppercase tracking-wider mb-2">Quick Links</p>
-              <div className="space-y-1.5">
-                <Link href="/" className="block text-customGrayAlt light:text-gray-600 text-[0.875rem] hover:text-primary transition-colors">Home</Link>
-                <Link href="/collections" className="block text-customGrayAlt light:text-gray-600 text-[0.875rem] hover:text-primary transition-colors">Collections</Link>
-                <Link href="/services" className="block text-customGrayAlt light:text-gray-600 text-[0.875rem] hover:text-primary transition-colors">Booking</Link>
-                <Link href="/about" className="block text-customGrayAlt light:text-gray-600 text-[0.875rem] hover:text-primary transition-colors">About</Link>
-              </div>
+          {/* Navigation */}
+          <div>
+            <h4 className="text-white light:text-gray-900 text-sm font-semibold uppercase tracking-wider mb-4">
+              Navigate
+            </h4>
+            <div className="space-y-3">
+              <Link href="/" className="block text-white/60 light:text-gray-500 text-sm hover:text-white light:hover:text-gray-900 transition-colors">
+                Home
+              </Link>
+              <Link href="/collections" className="block text-white/60 light:text-gray-500 text-sm hover:text-white light:hover:text-gray-900 transition-colors">
+                Photography
+              </Link>
+              <Link href="/services" className="block text-white/60 light:text-gray-500 text-sm hover:text-white light:hover:text-gray-900 transition-colors">
+                Booking
+              </Link>
+              <Link href="/about" className="block text-white/60 light:text-gray-500 text-sm hover:text-white light:hover:text-gray-900 transition-colors">
+                About
+              </Link>
             </div>
+          </div>
 
-            {/* Collections */}
-            <div>
-              <p className="text-white light:text-gray-900 text-[0.813rem] font-[600] uppercase tracking-wider mb-2">Portfolio</p>
-              <div className="space-y-1.5">
-                <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem]">Portraits</p>
-                <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem]">Graduation</p>
-                <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem]">Creative</p>
-                <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem]">Events</p>
-              </div>
+          {/* Services */}
+          <div>
+            <h4 className="text-white light:text-gray-900 text-sm font-semibold uppercase tracking-wider mb-4">
+              Services
+            </h4>
+            <div className="space-y-3">
+              <p className="text-white/60 light:text-gray-500 text-sm">Graduation Sessions</p>
+              <p className="text-white/60 light:text-gray-500 text-sm">Solo Portraits</p>
+              <p className="text-white/60 light:text-gray-500 text-sm">Events & Concerts</p>
+              <p className="text-white/60 light:text-gray-500 text-sm">Creative Projects</p>
             </div>
+          </div>
 
-            {/* Contact */}
-            <div>
-              <p className="text-white light:text-gray-900 text-[0.813rem] font-[600] uppercase tracking-wider mb-2">Connect</p>
-              <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem] mb-2">Texas, USA</p>
-              <div className="flex items-center gap-2.5">
-                <a href="mailto:leekshotit@gmail.com" className="hover:opacity-70 transition-opacity">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                    <rect width="20" height="16" x="2" y="4" rx="2"/>
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          {/* Contact */}
+          <div>
+            <h4 className="text-white light:text-gray-900 text-sm font-semibold uppercase tracking-wider mb-4">
+              Connect
+            </h4>
+            <div className="space-y-3">
+              <p className="text-white/60 light:text-gray-500 text-sm">Houston & Dallas, TX</p>
+              <a 
+                href="mailto:leekshotit@gmail.com" 
+                className="block text-white/60 light:text-gray-500 text-sm hover:text-primary transition-colors"
+              >
+                leekshotit@gmail.com
+              </a>
+              <div className="flex items-center gap-4 pt-2">
+                <a 
+                  href="https://instagram.com/leekshotit" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/60 light:text-gray-500 hover:text-primary transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://tiktok.com/@leekshotit" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white/60 light:text-gray-500 hover:text-primary transition-colors"
+                  aria-label="TikTok"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                   </svg>
-                </a>
-                <a href={SOCIAL_INSTAGRAM} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                  <Image src="/images/instagram_icon.png" width={15} height={15} alt="Instagram" className="w-[0.938rem] h-[0.938rem]" />
-                </a>
-                <a href={SOCIAL_TIKTOK} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
-                  <Image src="/images/x_icon.png" width={15} height={15} alt="TikTok" className="w-[0.938rem] h-[0.938rem]" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Row: Copyright */}
-        <div className="pt-4 border-t border-superGray/20 light:border-gray-200">
-          <p className="text-customGrayAlt light:text-gray-500 text-[0.563rem]">© 2024 Leekshotit Photography</p>
+        {/* Bottom */}
+        <div className="mt-12 pt-8 border-t border-white/10 light:border-gray-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/40 light:text-gray-400 text-xs">
+            © 2024 Leekshotit Photography. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/contact" className="text-white/40 light:text-gray-400 text-xs hover:text-white light:hover:text-gray-600 transition-colors">
+              Contact
+            </Link>
+            <Link href="/policies" className="text-white/40 light:text-gray-400 text-xs hover:text-white light:hover:text-gray-600 transition-colors">
+              Policies
+            </Link>
+          </div>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }
 
