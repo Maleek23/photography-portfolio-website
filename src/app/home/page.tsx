@@ -4,7 +4,6 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
-import ServiceSection from "@/components/sections/ServiceSection";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import StickyBookingCTA from "@/components/common/StickyBookingCTA";
 import { useEffect, useState } from "react";
@@ -37,13 +36,6 @@ export default function Home() {
             <ScrollReveal>
               <div className="px-4 md:px-[6rem] py-12 md:py-16">
                 <PortfolioSection />
-              </div>
-            </ScrollReveal>
-            
-            {/* Services Section with Glassmorphism */}
-            <ScrollReveal delay={200}>
-              <div className="px-4 md:px-[6rem] py-12 md:py-16">
-                <ServiceSection />
               </div>
             </ScrollReveal>
           </div>
