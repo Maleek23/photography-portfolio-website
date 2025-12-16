@@ -28,7 +28,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/60 to-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-[9999]">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           
@@ -47,10 +47,10 @@ function NavBar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[14px] xl:text-[15px] font-medium transition-all duration-200 ${
+                className={`text-[14px] xl:text-[15px] font-medium transition-all duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)] ${
                   isActive(link.href)
                     ? "text-white underline underline-offset-4"
-                    : "text-white/70 hover:text-white"
+                    : "text-white/90 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -62,7 +62,7 @@ function NavBar() {
               href="https://instagram.com/leekshotit"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white transition-colors duration-200"
+              className="text-white/90 hover:text-white transition-colors duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
               aria-label="Instagram"
             >
               <Instagram size={20} strokeWidth={1.5} />
@@ -71,7 +71,7 @@ function NavBar() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="text-white/70 hover:text-white transition-colors duration-200 p-1"
+              className="text-white/90 hover:text-white transition-colors duration-200 p-1 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
