@@ -57,16 +57,18 @@ function NavBar() {
               </Link>
             ))}
             
-            {/* Instagram */}
-            <a
-              href="https://instagram.com/leekshotit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white/90 hover:text-white transition-colors duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
-              aria-label="Instagram"
-            >
-              <Instagram size={20} strokeWidth={1.5} />
-            </a>
+            {/* Instagram - hidden on landing page */}
+            {pathname !== "/" && (
+              <a
+                href="https://instagram.com/leekshotit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-white transition-colors duration-200 drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} strokeWidth={1.5} />
+              </a>
+            )}
 
             {/* Theme Toggle */}
             <button
@@ -116,16 +118,18 @@ function NavBar() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href="https://instagram.com/leekshotit"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenu(false)}
-              className="flex items-center gap-3 text-xl sm:text-2xl font-medium text-white/60 hover:text-white transition-colors duration-200 pt-4 border-t border-white/10"
-            >
-              <Instagram size={22} strokeWidth={1.5} />
-              Instagram
-            </a>
+            {pathname !== "/" && (
+              <a
+                href="https://instagram.com/leekshotit"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenu(false)}
+                className="flex items-center gap-3 text-xl sm:text-2xl font-medium text-white/60 hover:text-white transition-colors duration-200 pt-4 border-t border-white/10"
+              >
+                <Instagram size={22} strokeWidth={1.5} />
+                Instagram
+              </a>
+            )}
           </div>
         </div>
       )}
