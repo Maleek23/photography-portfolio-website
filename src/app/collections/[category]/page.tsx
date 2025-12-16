@@ -120,7 +120,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
                 Ready to Work Together?
               </h2>
               <p className="text-customGrayAlt text-[0.938rem] md:text-[1rem] mb-8 max-w-2xl mx-auto leading-relaxed">
-                Let's create something extraordinary. View packages and book your session.
+                Let&apos;s create something extraordinary. View packages and book your session.
               </p>
               <Link
                 href="/services"
