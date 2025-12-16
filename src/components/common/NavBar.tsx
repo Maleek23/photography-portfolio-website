@@ -12,7 +12,7 @@ function NavBar() {
   const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
-    { href: "/home", label: "Home" },
+    { href: "/", label: "Home" },
     { href: "/collections", label: "Photography" },
     { href: "/projects", label: "Projects" },
     { href: "/services", label: "Booking" },
@@ -21,8 +21,8 @@ function NavBar() {
   ];
 
   const isActive = (href: string) => {
-    if (href === "/home") {
-      return pathname === "/home" || pathname === "/";
+    if (href === "/") {
+      return pathname === "/" || pathname === "/home";
     }
     return pathname.startsWith(href);
   };

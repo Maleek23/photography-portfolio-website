@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import NavBar from "@/components/common/NavBar";
 
 export default function LandingPage() {
   const [loaded, setLoaded] = useState(false);
@@ -26,14 +27,7 @@ export default function LandingPage() {
 
   return (
     <main className="min-h-screen bg-background relative overflow-hidden">
-      {/* Logo top left - Fade in from top */}
-      <div 
-        className={`absolute top-12 left-8 z-10 transition-all duration-700 ${
-          loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-        }`}
-      >
-        <img src="/images/logo.png" alt="Logo" className="h-[9rem] md:h-[11rem] object-contain" />
-      </div>
+      <NavBar />
 
       {/* Main content */}
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
