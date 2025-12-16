@@ -39,7 +39,7 @@ export default function ServicesPage() {
     }
   }, []);
 
-  const packages = pricingData[activeTab].packages.slice(0, 3);
+  const packages = pricingData[activeTab].packages;
 
   return (
     <main className="bg-background light:bg-white">
@@ -96,7 +96,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Pricing Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8 md:mb-12">
+          <div className={`grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto mb-8 md:mb-12 ${packages.length === 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-3'}`}>
             {packages.map((pkg, index) => (
               <div
                 key={index}
