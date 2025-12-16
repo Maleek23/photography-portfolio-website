@@ -2,6 +2,7 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -27,6 +28,7 @@ export default function AboutPage() {
 
   return (
     <main className="bg-background light:bg-white">
+      <GrainOverlay />
       <NavBar />
       <div className="pt-[10rem] lg:pt-0">
         <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">

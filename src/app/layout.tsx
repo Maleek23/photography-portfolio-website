@@ -79,7 +79,6 @@ export default function RootLayout({
       </head>
       <body className={manrope.className}>
         <ThemeProvider>
-          <div className="grain-overlay" aria-hidden="true" />
           <GoogleAnalytics />
           <script
             type="application/ld+json"

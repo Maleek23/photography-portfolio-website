@@ -2,6 +2,7 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import { useState, useEffect } from "react";
 import { pricingData } from "@/lib/pricingData";
 
@@ -43,6 +44,7 @@ export default function ServicesPage() {
 
   return (
     <main className="bg-background light:bg-white">
+      <GrainOverlay />
       <NavBar />
 
       <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">

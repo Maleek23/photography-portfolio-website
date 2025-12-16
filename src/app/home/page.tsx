@@ -6,6 +6,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import StickyBookingCTA from "@/components/common/StickyBookingCTA";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
 
   return (
     <main className="relative bg-background light:bg-white">
+      <GrainOverlay />
       {/* Smooth Background Gradients */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/[0.08] light:bg-primary/[0.03] rounded-full blur-[150px] opacity-40"></div>
