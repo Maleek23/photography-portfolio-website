@@ -28,7 +28,7 @@ function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/80 via-black/40 to-transparent">
+    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/60 to-transparent">
       <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           
