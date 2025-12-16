@@ -32,12 +32,9 @@ function NavBar() {
       <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
         <div className="flex items-center justify-between h-20 md:h-24">
           
-          {/* Logo - Simple Text */}
-          <Link 
-            href="/home" 
-            className="text-3xl md:text-4xl font-bold text-white tracking-tight select-none"
-          >
-            L
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <img src="/images/logo.png" alt="Leekshotit" className="h-12 md:h-14 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -29,15 +29,6 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background relative overflow-hidden">
       <NavBar />
 
-      {/* Logo top left */}
-      <div 
-        className={`absolute top-24 left-8 z-10 transition-all duration-700 ${
-          loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-8'
-        }`}
-      >
-        <img src="/images/logo.png" alt="Leekshotit Logo" className="h-[7rem] md:h-[9rem] object-contain" />
-      </div>
-
       {/* Main content */}
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
         {/* Desktop: Photo Grid Background - Fade in with scale */}
