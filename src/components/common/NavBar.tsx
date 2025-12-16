@@ -28,22 +28,26 @@ function NavBar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/70 via-black/30 to-transparent dark:from-black/80 dark:via-black/40">
-      <div className="max-w-[1800px] mx-auto px-6 md:px-12 lg:px-16">
-        <div className="flex items-center justify-between h-20 md:h-24">
+    <nav className="fixed top-0 left-0 right-0 z-[9999] bg-gradient-to-b from-black/80 via-black/40 to-transparent">
+      <div className="max-w-[1800px] mx-auto px-4 sm:px-6 md:px-12 lg:px-16">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <img src="/images/logo.png" alt="Leekshotit" className="h-12 md:h-14 object-contain" />
+            <img 
+              src="/images/logo.png" 
+              alt="Leekshotit" 
+              className="h-14 sm:h-16 md:h-20 object-contain" 
+            />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8 xl:gap-10">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[15px] font-medium transition-all duration-200 ${
+                className={`text-[14px] xl:text-[15px] font-medium transition-all duration-200 ${
                   isActive(link.href)
                     ? "text-white underline underline-offset-4"
                     : "text-white/70 hover:text-white"
@@ -75,17 +79,17 @@ function NavBar() {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="flex lg:hidden items-center gap-4">
+          <div className="flex lg:hidden items-center gap-2 sm:gap-4">
             <button
               onClick={toggleTheme}
-              className="text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200 p-2"
+              className="text-white/70 hover:text-white transition-colors duration-200 p-2"
               aria-label="Toggle theme"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <button
               onClick={() => setMenu(!menu)}
-              className="text-black dark:text-white p-2"
+              className="text-white p-2"
               aria-label="Toggle menu"
             >
               {menu ? <X size={24} /> : <Menu size={24} />}
@@ -96,17 +100,17 @@ function NavBar() {
 
       {/* Mobile Menu */}
       {menu && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white dark:bg-black z-[9998] animate-in fade-in duration-200">
-          <div className="flex flex-col px-8 py-8 gap-6">
+        <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-black/95 backdrop-blur-xl z-[9998] animate-in fade-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col px-6 sm:px-8 py-8 gap-5">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMenu(false)}
-                className={`text-2xl font-medium transition-colors duration-200 ${
+                className={`text-xl sm:text-2xl font-medium transition-colors duration-200 ${
                   isActive(link.href)
-                    ? "text-black dark:text-white"
-                    : "text-gray-500 dark:text-gray-400"
+                    ? "text-white"
+                    : "text-white/60 hover:text-white"
                 }`}
               >
                 {link.label}
@@ -117,9 +121,9 @@ function NavBar() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenu(false)}
-              className="flex items-center gap-3 text-2xl font-medium text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-200"
+              className="flex items-center gap-3 text-xl sm:text-2xl font-medium text-white/60 hover:text-white transition-colors duration-200 pt-4 border-t border-white/10"
             >
-              <Instagram size={24} strokeWidth={1.5} />
+              <Instagram size={22} strokeWidth={1.5} />
               Instagram
             </a>
           </div>
