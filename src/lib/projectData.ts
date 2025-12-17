@@ -34,7 +34,6 @@ export const projects: Project[] = [
       "Every frame tells a story of community, identity, and artistic expression.",
     ],
     images: [
-      "/images/projects/houston-afro-plex/afroplex-1.jpg",
       "/images/projects/houston-afro-plex/Afroplex-PG.1.jpg",
       "/images/projects/houston-afro-plex/Afroplex-PG.2.jpg",
       "/images/projects/houston-afro-plex/Afroplex-PG.3.jpg",
