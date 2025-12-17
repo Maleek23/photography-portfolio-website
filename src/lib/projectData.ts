@@ -26,14 +26,14 @@ export const projects: Project[] = [
     client: "Private Client",
     date: "2024",
     category: "Creative Projects",
-    coverImage: "/images/creative/creative-1.jpg",
+    coverImage: "/images/projects/houston-afro-plex/afroplex-1.jpg",
     videoUrl: "",
     description: "A vibrant celebration of culture, community, and creativity in Houston.",
     story: [
       "This project captures the energy and spirit of Houston's diverse cultural scene.",
       "Every frame tells a story of community, identity, and artistic expression.",
     ],
-    images: [],
+    images: ["/images/projects/houston-afro-plex/afroplex-1.jpg"],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "35mm f/1.8, 85mm f/1.8",
