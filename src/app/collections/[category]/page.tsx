@@ -29,7 +29,13 @@ const portfolioData: Record<string, { title: string; description: string; images
     description: "Celebrating your academic achievements with timeless graduation portraits",
     bookingType: "Graduation Session",
     images: [
-      "/images/graduation-nike.jpg",
+      "/images/graduation/graduation-1.jpg",
+      "/images/graduation/graduation-2.jpg",
+      "/images/graduation/graduation-3.jpg",
+      "/images/graduation/graduation-4.jpg",
+      "/images/graduation/graduation-5.jpg",
+      "/images/graduation/graduation-6.jpg",
+      "/images/graduation/graduation-7.jpg",
     ],
   },
   "creative-projects": {
