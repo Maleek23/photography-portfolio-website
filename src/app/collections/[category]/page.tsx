@@ -142,24 +142,21 @@ export default function CategoryPage({ params }: { params: { category: string } 
           </div>
         </div>
 
-        {/* Masonry Gallery - All Photos */}
-        <div className="columns-1 md:columns-2 xl:columns-3 gap-[2px]">
+        {/* Masonry Gallery - Unsplash Style */}
+        <div className="columns-1 md:columns-2 xl:columns-3 gap-3">
           {category.images.map((image, index) => (
             <div
               key={index}
-              className="break-inside-avoid mb-[2px] cursor-pointer group"
+              className="break-inside-avoid mb-3 cursor-pointer group"
               onClick={() => setSelectedImage(image)}
             >
-              <div className="relative w-full overflow-hidden">
+              <div className="relative w-full overflow-hidden rounded-sm bg-superGray/30 light:bg-gray-100">
                 <img
                   src={image}
                   alt={`${category.title} ${index + 1}`}
-                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
-                  loading={index < 3 ? "eager" : "lazy"}
+                  className="w-full h-auto block transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-95"
+                  loading={index < 6 ? "eager" : "lazy"}
                 />
-                
-                {/* Subtle Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none"></div>
               </div>
             </div>
           ))}
