@@ -19,7 +19,7 @@ function FooterSection() {
               />
             </Link>
             <span className="text-white/40 light:text-gray-400 text-sm hidden sm:inline">
-              Houston & Dallas Photographer
+              Dallas, Austin & Houston Photographer
             </span>
           </div>
 

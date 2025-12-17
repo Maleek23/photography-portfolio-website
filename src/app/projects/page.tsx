@@ -3,6 +3,7 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import Link from "next/link";
 import { getAllProjects } from "@/lib/projectData";
 import Image from "next/image";
@@ -13,28 +14,27 @@ export default function ProjectsPage() {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
 
   return (
-    <main className="bg-background light:bg-white">
+    <main className="bg-background light:bg-white min-h-screen">
+      <GrainOverlay />
       <NavBar />
-      <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
-          <div className="px-4 md:px-[6rem] py-12 md:py-16">
-            {/* Header */}
-            <ScrollReveal>
-              <div className="mb-8 md:mb-12 text-center">
-                <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
-                  Case Studies
-                </p>
-                <h1 className="text-white light:text-gray-900 text-[2.25rem] md:text-[3.5rem] font-[700] leading-tight mb-6">
-                  Featured Projects
-                </h1>
-                <p className="text-customGrayAlt light:text-gray-600 text-[1rem] md:text-[1.25rem] max-w-3xl mx-auto leading-relaxed">
-                  Complete photography projects from concept to final delivery. Each project includes the full story, technical details, and complete gallery.
-                </p>
-              </div>
-            </ScrollReveal>
+      <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
+        {/* Header */}
+        <ScrollReveal>
+          <div className="mb-8 md:mb-12 text-center">
+            <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4">
+              Case Studies
+            </p>
+            <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] leading-tight mb-6 uppercase">
+              Featured Projects
+            </h1>
+            <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] max-w-3xl mx-auto leading-relaxed">
+              Complete photography projects from concept to final delivery. Each project includes the full story, technical details, and complete gallery.
+            </p>
+          </div>
+        </ScrollReveal>
 
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {projects.map((project, index) => (
               <ScrollReveal key={project.slug} delay={index * 100}>
                 <Link
@@ -130,11 +130,9 @@ export default function ProjectsPage() {
                 </Link>
               </div>
             </div>
-          </ScrollReveal>
-        </div>
-        </div>
-        <FooterSection />
+        </ScrollReveal>
       </div>
+      <FooterSection />
     </main>
   );
 }
