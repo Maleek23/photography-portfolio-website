@@ -40,6 +40,6 @@ next-env.d.ts
 *.MOV
 *.M4V
 *.m4v
-public/videos/cinematic.mp4
-attached_assets/cinematic_1765943258812.mov
-attached_assets/Sequernce_GIF_1765939781717.M4V
+public/videos/*.mp4
+attached_assets/*.mov
+attached_assets/*.M4V
