@@ -4,8 +4,24 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
 import Link from "next/link";
+import { useRef } from "react";
 
 export default function VideoPage() {
+  const videoRef1 = useRef<HTMLVideoElement>(null);
+  const videoRef2 = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = (videoRef: React.RefObject<HTMLVideoElement>) => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = (videoRef: React.RefObject<HTMLVideoElement>) => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+    }
+  };
+
   return (
     <main className="bg-background light:bg-white min-h-screen">
       <GrainOverlay />
@@ -26,25 +42,53 @@ export default function VideoPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-16 items-start">
-          <div className="relative aspect-video bg-black overflow-hidden">
+          <div 
+            className="relative aspect-video bg-black overflow-hidden cursor-pointer group"
+            onMouseEnter={() => handleMouseEnter(videoRef1)}
+            onMouseLeave={() => handleMouseLeave(videoRef1)}
+          >
             <video
-              controls
+              ref={videoRef1}
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
               preload="metadata"
             >
               <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:opacity-0 transition-opacity">
+                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
           </div>
-          <div className="relative aspect-[9/16] max-w-[280px] mx-auto bg-black overflow-hidden">
+          <div 
+            className="relative aspect-[9/16] max-w-[280px] mx-auto bg-black overflow-hidden cursor-pointer group"
+            onMouseEnter={() => handleMouseEnter(videoRef2)}
+            onMouseLeave={() => handleMouseLeave(videoRef2)}
+          >
             <video
-              controls
+              ref={videoRef2}
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
               preload="metadata"
             >
               <source src="/videos/showreel.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:opacity-0 transition-opacity">
+                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
           </div>
         </div>
 
