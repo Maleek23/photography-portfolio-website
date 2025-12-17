@@ -49,13 +49,13 @@ export default function CollectionsPage() {
         <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             <div className="mb-8 md:mb-10">
-              <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-widest mb-2">
+              <p className="text-primary text-xs font-medium uppercase tracking-widest mb-2">
                 Portfolio
               </p>
-              <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] uppercase mb-2 leading-tight">
+              <h1 className="text-white light:text-gray-900 text-2xl md:text-3xl font-medium mb-2">
                 Collections
               </h1>
-              <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem] md:text-[1rem] max-w-3xl leading-relaxed">
+              <p className="text-white/50 light:text-gray-500 text-sm max-w-2xl">
                 Explore my work across different creative categories
               </p>
             </div>
@@ -86,10 +86,10 @@ export default function CollectionsPage() {
                   {/* Glassmorphic bottom bar */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 backdrop-blur-xl bg-white/10 light:bg-gray-100/80 border-t border-white/20 light:border-gray-200 group-hover:bg-white/15 light:group-hover:bg-gray-100/90 transition-all duration-500">
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <h3 className="relative z-10 text-white light:text-gray-900 text-[1.5rem] md:text-[1.75rem] font-[600] mb-2 md:mb-3 uppercase tracking-wide leading-tight">
+                    <h3 className="relative z-10 text-white light:text-gray-900 text-lg font-medium mb-1">
                       {collection.title}
                     </h3>
-                    <p className="relative z-10 text-customGrayAlt2 light:text-gray-600 text-[0.875rem] md:text-[1rem] leading-relaxed">
+                    <p className="relative z-10 text-white/60 light:text-gray-500 text-sm">
                       {collection.description}
                     </p>
                   </div>
