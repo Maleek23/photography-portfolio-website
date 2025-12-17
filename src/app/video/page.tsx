@@ -4,7 +4,6 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
 import Link from "next/link";
-import { Play } from "lucide-react";
 
 export default function VideoPage() {
   return (
@@ -26,15 +25,16 @@ export default function VideoPage() {
           </p>
         </div>
 
-        <div className="relative aspect-video max-w-5xl bg-superGray light:bg-gray-100 mb-12 md:mb-16 overflow-hidden group cursor-pointer">
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-20 h-20 md:w-24 md:h-24 bg-primary/90 flex items-center justify-center group-hover:bg-primary transition-colors">
-              <Play className="w-8 h-8 md:w-10 md:h-10 text-white ml-1" fill="white" />
-            </div>
-          </div>
-          <p className="absolute bottom-6 left-6 text-white/60 light:text-gray-500 text-sm">
-            Showreel coming soon
-          </p>
+        <div className="relative aspect-video max-w-5xl bg-black mb-12 md:mb-16 overflow-hidden">
+          <video
+            controls
+            className="w-full h-full object-contain"
+            poster="/images/creative/creative-1.jpg"
+            preload="metadata"
+          >
+            <source src="/videos/showreel.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16">
