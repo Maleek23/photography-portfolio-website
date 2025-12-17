@@ -28,6 +28,7 @@ const portfolioData: Record<string, { title: string; description: string; images
       "/images/portraits/portrait-13.jpg",
       "/images/portraits/portrait-14.jpg",
       "/images/portraits/portrait-15.jpg",
+      "/images/portraits/portrait-16.jpg",
     ],
   },
   graduation: {
@@ -42,6 +43,8 @@ const portfolioData: Record<string, { title: string; description: string; images
       "/images/graduation/graduation-5.jpg",
       "/images/graduation/graduation-6.jpg",
       "/images/graduation/graduation-7.jpg",
+      "/images/graduation/graduation-8.jpg",
+      "/images/graduation/graduation-9.jpg",
     ],
   },
   "creative-projects": {
