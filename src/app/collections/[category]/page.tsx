@@ -112,73 +112,71 @@ export default function CategoryPage({ params }: { params: { category: string } 
       <GrainOverlay />
       <NavBar />
       
-      <div className="pt-[8rem] md:pt-[10rem] lg:pt-[8rem]">
-        <div className="px-4 md:px-[6rem] py-12 md:py-16">
-          
-          {/* Simple Page Header */}
-          <div className="mb-10 md:mb-12">
-            <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-4 inline-block">
-              ← Back to Collections
-            </Link>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-              <div className="flex-1">
-                <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] uppercase mb-3 tracking-tight leading-tight">
-                  {category.title}
-                </h1>
-                <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] max-w-2xl leading-relaxed">
-                  {category.description}
-                </p>
-              </div>
-              <Link
-                href="/services"
-                className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-[600] px-6 md:px-8 py-3 md:py-4 uppercase text-[0.813rem] md:text-[0.875rem] transition-all whitespace-nowrap"
-              >
-                Book {category.bookingType}
-              </Link>
+      <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
+        
+        {/* Simple Page Header */}
+        <div className="mb-10 md:mb-12">
+          <Link href="/collections" className="text-primary text-[0.813rem] md:text-[0.875rem] font-[500] hover:underline mb-4 inline-block">
+            ← Back to Collections
+          </Link>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+            <div className="flex-1">
+              <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] uppercase mb-3 tracking-tight leading-tight">
+                {category.title}
+              </h1>
+              <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] max-w-2xl leading-relaxed">
+                {category.description}
+              </p>
             </div>
-          </div>
-
-          {/* Masonry Gallery - All Photos */}
-          <div className="columns-1 md:columns-2 xl:columns-3 gap-[2px]">
-            {category.images.map((image, index) => (
-              <div
-                key={index}
-                className="break-inside-avoid mb-[2px] cursor-pointer group"
-                onClick={() => setSelectedImage(image)}
-              >
-                <div className="relative w-full overflow-hidden">
-                  <img
-                    src={image}
-                    alt={`${category.title} ${index + 1}`}
-                    className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
-                    loading={index < 3 ? "eager" : "lazy"}
-                  />
-                  
-                  {/* Subtle Hover Overlay */}
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none"></div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom CTA */}
-          <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray light:border-gray-200 text-center">
-            <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[600] uppercase mb-4 leading-tight">
-              Ready to Work Together?
-            </h2>
-            <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] mb-8 max-w-2xl mx-auto leading-relaxed">
-              Let&apos;s create something extraordinary. View packages and book your session.
-            </p>
             <Link
               href="/services"
-              className="inline-block bg-primary hover:bg-primary/90 text-white font-[600] px-10 py-4 uppercase text-[0.875rem] transition-all hover:scale-105"
+              className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-[600] px-6 md:px-8 py-3 md:py-4 uppercase text-[0.813rem] md:text-[0.875rem] transition-all whitespace-nowrap"
             >
-              View Pricing & Book
+              Book {category.bookingType}
             </Link>
           </div>
         </div>
-        <FooterSection />
+
+        {/* Masonry Gallery - All Photos */}
+        <div className="columns-1 md:columns-2 xl:columns-3 gap-[2px]">
+          {category.images.map((image, index) => (
+            <div
+              key={index}
+              className="break-inside-avoid mb-[2px] cursor-pointer group"
+              onClick={() => setSelectedImage(image)}
+            >
+              <div className="relative w-full overflow-hidden">
+                <img
+                  src={image}
+                  alt={`${category.title} ${index + 1}`}
+                  className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
+                  loading={index < 3 ? "eager" : "lazy"}
+                />
+                
+                {/* Subtle Hover Overlay */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300 pointer-events-none"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-12 md:mt-16 pt-12 md:pt-16 border-t border-superGray light:border-gray-200 text-center">
+          <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[600] uppercase mb-4 leading-tight">
+            Ready to Work Together?
+          </h2>
+          <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] mb-8 max-w-2xl mx-auto leading-relaxed">
+            Let&apos;s create something extraordinary. View packages and book your session.
+          </p>
+          <Link
+            href="/services"
+            className="inline-block bg-primary hover:bg-primary/90 text-white font-[600] px-10 py-4 uppercase text-[0.875rem] transition-all hover:scale-105"
+          >
+            View Pricing & Book
+          </Link>
+        </div>
       </div>
+      <FooterSection />
 
       {/* Lightbox Modal */}
       {selectedImage && (
