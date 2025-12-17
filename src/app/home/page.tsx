@@ -4,6 +4,8 @@ import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import HeroSection from "@/components/sections/HeroSection";
 import PortfolioSection from "@/components/sections/PortfolioSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import VideographySection from "@/components/sections/VideographySection";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import StickyBookingCTA from "@/components/common/StickyBookingCTA";
 import GrainOverlay from "@/components/common/GrainOverlay";
@@ -38,6 +40,20 @@ export default function Home() {
             <ScrollReveal>
               <div className="px-4 md:px-[6rem] py-12 md:py-16">
                 <PortfolioSection />
+              </div>
+            </ScrollReveal>
+
+            {/* Projects Section */}
+            <ScrollReveal>
+              <div className="px-4 md:px-[6rem]">
+                <ProjectsSection />
+              </div>
+            </ScrollReveal>
+
+            {/* Videography Section */}
+            <ScrollReveal>
+              <div className="px-4 md:px-[6rem]">
+                <VideographySection />
               </div>
             </ScrollReveal>
           </div>
