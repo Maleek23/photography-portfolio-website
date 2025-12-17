@@ -7,7 +7,6 @@ import Link from "next/link";
 import Image from "next/image";
 import ImageSkeleton from "@/components/common/ImageSkeleton";
 import { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
 
 export default function CollectionsPage() {
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
@@ -52,7 +51,7 @@ export default function CollectionsPage() {
           </h1>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="grid grid-cols-2 gap-4 md:gap-6">
           {collections.map((collection) => (
             <Link
               key={collection.id}
@@ -67,7 +66,7 @@ export default function CollectionsPage() {
                   src={collection.imageUrl}
                   alt={`${collection.title} photography collection`}
                   fill
-                  sizes="(max-width: 768px) 50vw, 25vw"
+                  sizes="(max-width: 768px) 50vw, 50vw"
                   className={`object-cover transition-all duration-500 group-hover:scale-105 ${
                     loadedImages[collection.id] ? 'opacity-100' : 'opacity-0'
                   }`}
@@ -76,23 +75,13 @@ export default function CollectionsPage() {
                   priority={collection.id < 2}
                 />
                 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                 
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-white text-sm md:text-base font-medium">
-                      {collection.title}
-                    </h3>
-                    <ArrowUpRight className="w-4 h-4 text-white" />
-                  </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <h3 className="text-white text-base md:text-lg font-medium">
+                    {collection.title}
+                  </h3>
                 </div>
-              </div>
-              
-              <div className="mt-3 flex items-center justify-between group-hover:opacity-0 transition-opacity duration-300">
-                <h3 className="text-white light:text-gray-900 text-sm font-medium">
-                  {collection.title}
-                </h3>
-                <ArrowUpRight className="w-4 h-4 text-white/40 light:text-gray-400 group-hover:text-primary transition-colors" />
               </div>
             </Link>
           ))}
