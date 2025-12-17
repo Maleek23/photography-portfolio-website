@@ -39,6 +39,13 @@ function PortfolioSection() {
       slug: "concerts-events",
       imageUrl: "/images/concerts-events-cover.jpg",
     },
+    {
+      id: 4,
+      title: "Videography",
+      subtitle: "Cinematic Motion",
+      slug: "videography",
+      imageUrl: "/images/videography-cover.jpg",
+    },
   ];
 
   const totalItems = portfolioData.length;
