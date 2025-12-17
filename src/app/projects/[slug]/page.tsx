@@ -102,11 +102,11 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               <h2 className="text-white light:text-gray-900 text-[1.75rem] md:text-[2.25rem] font-[700] leading-tight mb-8 text-center">
                 Gallery
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 {project.images.map((image, index) => (
                   <div
                     key={index}
-                    className="relative aspect-[3/4] overflow-hidden rounded-xl bg-superGray light:bg-gray-100 cursor-pointer group border border-white/10 light:border-gray-200 hover:border-primary transition-all duration-300"
+                    className="relative aspect-[4/5] overflow-hidden rounded-xl bg-superGray light:bg-gray-100 cursor-pointer group border border-white/10 light:border-gray-200 hover:border-primary transition-all duration-300"
                     onClick={() => setSelectedImage(image)}
                     style={{
                       animationDelay: `${index * 50}ms`,
