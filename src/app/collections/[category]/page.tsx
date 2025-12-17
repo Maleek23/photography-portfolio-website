@@ -37,7 +37,11 @@ const portfolioData: Record<string, { title: string; description: string; images
     description: "Pushing boundaries with artistic and conceptual photography",
     bookingType: "Solo Session",
     images: [
-      "/images/creative-smoke.jpg",
+      "/images/creative/creative-1.jpg",
+      "/images/creative/creative-2.jpg",
+      "/images/creative/creative-3.jpg",
+      "/images/creative/creative-4.jpg",
+      "/images/creative/creative-5.jpg",
     ],
   },
   "concerts-events": {
