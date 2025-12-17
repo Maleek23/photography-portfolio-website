@@ -20,28 +20,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "highstatus",
-    title: "HIGHSTATUS",
-    subtitle: "Clothing brand campaign",
-    client: "HIGHSTATUS",
-    date: "2024",
-    category: "Creative Projects",
-    coverImage: "/images/creative/creative-1.jpg",
-    videoUrl: "",
-    description: "A bold fashion campaign for HIGHSTATUS clothing brand.",
-    story: [
-      "This campaign captured the essence of the HIGHSTATUS brand through striking visuals and bold styling.",
-      "Every shot was crafted to showcase the brand's unique aesthetic and streetwear influence.",
-    ],
-    images: [],
-    technicalDetails: {
-      camera: "Sony A7III",
-      lenses: "35mm f/1.8, 85mm f/1.8",
-      lighting: "Studio lighting",
-      lut: "Custom preset",
-    },
-  },
-  {
     slug: "houston-afro-plex",
     title: "Houston Afro-Plex",
     subtitle: "Celebrating culture and identity",
@@ -145,6 +123,28 @@ export const projects: Project[] = [
       lenses: "16-35mm f/2.8, 50mm f/1.4",
       lighting: "Natural light",
       lut: "Travel tones preset",
+    },
+  },
+  {
+    slug: "highstatus",
+    title: "HIGHSTATUS",
+    subtitle: "Clothing brand campaign",
+    client: "HIGHSTATUS",
+    date: "2024",
+    category: "Creative Projects",
+    coverImage: "/images/creative/creative-1.jpg",
+    videoUrl: "",
+    description: "A bold fashion campaign for HIGHSTATUS clothing brand.",
+    story: [
+      "This campaign captured the essence of the HIGHSTATUS brand through striking visuals and bold styling.",
+      "Every shot was crafted to showcase the brand's unique aesthetic and streetwear influence.",
+    ],
+    images: [],
+    technicalDetails: {
+      camera: "Sony A7III",
+      lenses: "35mm f/1.8, 85mm f/1.8",
+      lighting: "Studio lighting",
+      lut: "Custom preset",
     },
   },
 ];
