@@ -55,6 +55,7 @@ const portfolioData: Record<string, { title: string; description: string; images
     bookingType: "Graduation Session",
     images: [
       "/images/graduation/MEE01153.png",
+      "/images/graduation/MEE00672.png",
       "/images/graduation/MEE01157.png",
       "/images/graduation/MEE01179.png",
       "/images/graduation/graduation-1.jpg",
