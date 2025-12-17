@@ -28,9 +28,9 @@ export const projects: Project[] = [
     category: "Creative Projects",
     coverImage: "/images/projects/houston-afro-plex/afroplex-1.jpg",
     videoUrl: "",
-    description: "A vibrant headshot and classroom-style photoshoot celebrating culture and community in Houston.",
+    description: "A vibrant portrait series celebrating culture and community in Houston.",
     story: [
-      "This classroom-style headshot session captured the energy and spirit of Houston's diverse cultural scene.",
+      "This studio portrait session captured the energy and spirit of Houston's diverse cultural scene.",
       "Every frame tells a story of community, identity, and artistic expression.",
     ],
     images: ["/images/projects/houston-afro-plex/afroplex-1.jpg"],
