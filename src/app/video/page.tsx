@@ -54,7 +54,8 @@ export default function VideoPage() {
               muted
               playsInline
               className="w-full h-full object-cover"
-              preload="metadata"
+              preload="auto"
+              poster="/videos/showreel-horizontal-poster.jpg"
             >
               <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -78,7 +79,8 @@ export default function VideoPage() {
               muted
               playsInline
               className="w-full h-full object-cover"
-              preload="metadata"
+              preload="auto"
+              poster="/videos/showreel-poster.jpg"
             >
               <source src="/videos/showreel.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -105,7 +107,8 @@ export default function VideoPage() {
               muted
               playsInline
               className="w-full h-full object-cover"
-              preload="metadata"
+              preload="auto"
+              poster="/videos/cinematic-poster.jpg"
             >
               <source src="/videos/cinematic.mp4" type="video/mp4" />
               Your browser does not support the video tag.
