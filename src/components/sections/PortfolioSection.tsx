@@ -111,13 +111,13 @@ function PortfolioSection() {
 
       {/* 3D Book/Card Stack */}
       <div className="relative w-full" style={{ perspective: "1200px" }}>
-        <div className="relative h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+        <div className="relative h-[500px] md:h-[650px] lg:h-[750px] flex items-center justify-center overflow-hidden">
           {portfolioData.map((item, index) => {
             const style = getCardStyle(index);
             return (
               <div
                 key={item.id}
-                className="absolute w-[75%] md:w-[55%] lg:w-[40%] h-full cursor-pointer transition-all duration-500 ease-out"
+                className="absolute w-[85%] md:w-[65%] lg:w-[50%] h-full cursor-pointer transition-all duration-500 ease-out"
                 style={{
                   transform: style.transform,
                   zIndex: style.zIndex,
