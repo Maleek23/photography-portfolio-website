@@ -25,16 +25,27 @@ export default function VideoPage() {
           </p>
         </div>
 
-        <div className="relative aspect-[9/16] max-w-md mx-auto bg-black mb-12 md:mb-16 overflow-hidden">
-          <video
-            controls
-            className="w-full h-full object-cover"
-            poster="/images/creative/creative-1.jpg"
-            preload="metadata"
-          >
-            <source src="/videos/showreel.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-16 items-start">
+          <div className="relative aspect-video bg-black overflow-hidden">
+            <video
+              controls
+              className="w-full h-full object-cover"
+              preload="metadata"
+            >
+              <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="relative aspect-[9/16] max-w-[280px] mx-auto bg-black overflow-hidden">
+            <video
+              controls
+              className="w-full h-full object-cover"
+              preload="metadata"
+            >
+              <source src="/videos/showreel.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16">
