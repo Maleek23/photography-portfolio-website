@@ -6,10 +6,10 @@ export interface Project {
   date: string;
   category: string;
   coverImage: string;
-  videoUrl?: string; // YouTube or Vimeo embed URL
+  videoUrl?: string;
   description: string;
-  story: string[]; // Array of paragraphs
-  images: string[]; // 10-15 images from this specific shoot
+  story: string[];
+  images: string[];
   technicalDetails?: {
     camera?: string;
     lenses?: string;
@@ -20,111 +20,91 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "downtown-editorial-shoot",
-    title: "Downtown Editorial Shoot",
-    subtitle: "Urban fashion photography in the heart of Houston",
+    slug: "houston-afro-plex",
+    title: "Houston Afro-Plex",
+    subtitle: "Celebrating culture and community",
     client: "Private Client",
-    date: "October 2024",
+    date: "2024",
     category: "Creative Projects",
-    coverImage: "/images/creative-smoke.jpg",
-    videoUrl: "", // Add YouTube/Vimeo embed URL when available
-    description: "A cinematic editorial shoot capturing urban fashion and architecture in Downtown Houston's most iconic locations.",
+    coverImage: "/images/creative/creative-1.jpg",
+    videoUrl: "",
+    description: "A vibrant celebration of culture, community, and creativity in Houston.",
     story: [
-      "This editorial shoot was all about blending high fashion with Houston's urban landscape. We spent an afternoon exploring downtown, using the city's architecture as our canvas.",
-      "The goal was to create a series of images that felt both editorial and authentic - polished enough for a magazine spread, but real enough to connect with viewers. We focused on intentional poses against geometric backgrounds, letting the city's lines and textures become part of the story.",
-      "Shot during golden hour, we maximized natural light while adding subtle fill to maintain consistency. The result is a collection that showcases both the subject's style and Houston's architectural beauty."
+      "This project captures the energy and spirit of Houston's diverse cultural scene.",
+      "Every frame tells a story of community, identity, and artistic expression.",
     ],
-    images: [
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-    ],
+    images: [],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "35mm f/1.8, 85mm f/1.8",
-      lighting: "Natural light + reflector",
-      lut: "Urban Teal preset",
+      lighting: "Natural light",
+      lut: "Custom preset",
     },
   },
   {
-    slug: "graduation-milestone-session",
-    title: "Graduation Milestone Session",
-    subtitle: "Celebrating academic achievement with style",
+    slug: "man-of-the-year",
+    title: "Man of the Year",
+    subtitle: "Bold portraits celebrating individuality",
     client: "Private Client",
-    date: "May 2024",
-    category: "Graduation",
-    coverImage: "/images/graduation-nike.jpg",
-    videoUrl: "", // Add YouTube/Vimeo embed URL when available
-    description: "A vibrant graduation session blending traditional cap-and-gown portraits with creative, personalized shots that celebrate individuality.",
+    date: "2024",
+    category: "Portraits",
+    coverImage: "/images/portraits/portrait-1.jpg",
+    videoUrl: "",
+    description: "A portrait series capturing confidence, style, and personal expression.",
     story: [
-      "Graduation sessions are more than just cap-and-gown photos - they're about capturing a milestone while showcasing personality. This session was designed to balance classic graduation portraits with creative, fashion-forward imagery.",
-      "We chose multiple locations around campus and nearby urban spots, creating variety in the final gallery. From traditional poses at iconic campus buildings to candid moments that showed genuine joy and excitement, every image tells part of the story.",
-      "The key was making the graduate feel comfortable and confident. By mixing structured poses with natural movement and authentic reactions, we created a collection that feels both professional and personal - images they'll be proud to share and frame."
+      "This series is about showcasing personality and confidence through powerful imagery.",
+      "Each shot was carefully crafted to highlight the subject's unique presence and style.",
     ],
-    images: [
-      "/images/graduation-nike.jpg",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/graduation-nike.jpg",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-      "/images/graduation-nike.jpg",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/graduation-nike.jpg",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-    ],
+    images: [],
     technicalDetails: {
       camera: "Sony A7III",
-      lenses: "24-70mm f/2.8, 50mm f/1.4",
-      lighting: "Natural afternoon light",
-      lut: "Warm Golden preset",
+      lenses: "50mm f/1.4, 85mm f/1.8",
+      lighting: "Studio + natural light",
+      lut: "Custom preset",
     },
   },
   {
-    slug: "concert-energy-capture",
-    title: "Live Concert Coverage",
-    subtitle: "Capturing high-energy performances and crowd moments",
-    client: "Event Organizer",
-    date: "September 2024",
-    category: "Concerts & Events",
-    coverImage: "/images/hero.png",
-    videoUrl: "", // Add YouTube/Vimeo embed URL when available
-    description: "Fast-paced concert photography capturing the raw energy of live performances, dramatic stage lighting, and unforgettable crowd moments.",
+    slug: "lottery-kid",
+    title: "Lottery Kid",
+    subtitle: "Dreams and determination",
+    client: "Private Client",
+    date: "2024",
+    category: "Creative Projects",
+    coverImage: "/images/creative/creative-2.jpg",
+    videoUrl: "",
+    description: "A creative project exploring themes of ambition, dreams, and the journey to success.",
     story: [
-      "Concert photography is all about anticipation and reaction. With constantly changing lighting and fast-moving performers, every moment requires quick decisions and precise timing.",
-      "I positioned myself in the photo pit for the first three songs, capturing close-ups of the performers, crowd interactions, and those split-second moments that define live music - the guitar solo, the crowd sing-along, the dramatic stage lighting.",
-      "The challenge was balancing technical settings with creative vision. Shooting in low light with dramatic colored gels meant embracing the mood rather than fighting it. The result is a collection that doesn't just document the concert - it makes you feel like you were there."
+      "This project tells a visual story of chasing dreams and beating the odds.",
+      "Through creative direction and intentional framing, we captured the essence of perseverance.",
     ],
-    images: [
-      "/images/hero.png",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/hero.png",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-      "/images/hero.png",
-      "/images/creative-smoke.jpg",
-      "/images/portrait-yellow.jpg",
-      "/images/hero.png",
-      "/images/back-portrait.png",
-      "/images/heart-portrait.jpg",
-    ],
+    images: [],
     technicalDetails: {
       camera: "Sony A7III",
-      lenses: "24mm f/1.4, 70-200mm f/2.8",
-      lighting: "Stage lighting only",
-      lut: "Concert Vibrance preset",
+      lenses: "24mm f/1.4, 35mm f/1.8",
+      lighting: "Mixed lighting",
+      lut: "Cinematic preset",
+    },
+  },
+  {
+    slug: "where-to-next",
+    title: "Where to Next?",
+    subtitle: "Journey and exploration",
+    client: "Private Client",
+    date: "2024",
+    category: "Creative Projects",
+    coverImage: "/images/creative/creative-3.jpg",
+    videoUrl: "",
+    description: "A visual exploration of movement, travel, and the excitement of new beginnings.",
+    story: [
+      "This project captures the anticipation and energy of embarking on new adventures.",
+      "Every image invites viewers to imagine their own journey and possibilities ahead.",
+    ],
+    images: [],
+    technicalDetails: {
+      camera: "Sony A7III",
+      lenses: "16-35mm f/2.8, 50mm f/1.4",
+      lighting: "Natural light",
+      lut: "Travel tones preset",
     },
   },
 ];
