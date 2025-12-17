@@ -110,7 +110,7 @@ export default function CategoryPage({ params }: { params: { category: string } 
     <main className="bg-background min-h-screen">
       <NavBar />
       
-      <div className="pt-[10rem] lg:pt-0">
+      <div className="pt-[8rem] md:pt-[10rem] lg:pt-[8rem]">
         <div className="bg-gradient-to-b from-primary/5 via-background to-background">
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             
