@@ -9,6 +9,7 @@ import { useRef } from "react";
 export default function VideoPage() {
   const videoRef1 = useRef<HTMLVideoElement>(null);
   const videoRef2 = useRef<HTMLVideoElement>(null);
+  const videoRef3 = useRef<HTMLVideoElement>(null);
 
   const handleMouseEnter = (videoRef: React.RefObject<HTMLVideoElement>) => {
     if (videoRef.current) {
@@ -41,7 +42,7 @@ export default function VideoPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 md:mb-16 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 items-start">
           <div 
             className="relative aspect-video bg-black overflow-hidden cursor-pointer group"
             onMouseEnter={() => handleMouseEnter(videoRef1)}
@@ -90,6 +91,34 @@ export default function VideoPage() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mb-12 md:mb-16">
+          <div 
+            className="relative aspect-video bg-black overflow-hidden cursor-pointer group max-w-4xl mx-auto"
+            onMouseEnter={() => handleMouseEnter(videoRef3)}
+            onMouseLeave={() => handleMouseLeave(videoRef3)}
+          >
+            <video
+              ref={videoRef3}
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+              preload="metadata"
+            >
+              <source src="/videos/cinematic.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
+              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:opacity-0 transition-opacity">
+                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Cinematic Reel</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16">
