@@ -14,6 +14,7 @@ const portfolioData: Record<string, { title: string; description: string; images
     description: "Capturing personality and emotion through creative portrait photography",
     bookingType: "Solo Session",
     images: [
+      "/images/collections/portraits/MEE04209_1765943518202.jpg",
       "/images/collections/portraits/MEE03964_1765942955810.jpg",
       "/images/collections/portraits/MEE03950_1765942982111.jpg",
       "/images/portraits/portrait-1.jpg",
