@@ -25,10 +25,10 @@ export default function VideoPage() {
           </p>
         </div>
 
-        <div className="relative aspect-video max-w-5xl bg-black mb-12 md:mb-16 overflow-hidden">
+        <div className="relative aspect-[9/16] max-w-md mx-auto bg-black mb-12 md:mb-16 overflow-hidden">
           <video
             controls
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover"
             poster="/images/creative/creative-1.jpg"
             preload="metadata"
           >
