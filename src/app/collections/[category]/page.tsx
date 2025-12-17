@@ -45,9 +45,13 @@ const portfolioData: Record<string, { title: string; description: string; images
     description: "High-energy concert and event photography capturing unforgettable moments",
     bookingType: "Event Coverage",
     images: [
-      "/images/portrait-yellow.jpg",
-      "/images/graduation-nike.jpg",
-      "/images/creative-smoke.jpg",
+      "/images/concerts/concert-1.jpg",
+      "/images/concerts/concert-2.jpg",
+      "/images/concerts/concert-3.jpg",
+      "/images/concerts/concert-4.jpg",
+      "/images/concerts/concert-5.jpg",
+      "/images/concerts/concert-6.jpg",
+      "/images/concerts/concert-7.jpg",
     ],
   },
 };
