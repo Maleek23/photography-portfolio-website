@@ -1,0 +1,118 @@
+Apollo.ioSkip to content
+Leekshotit's projects
+Leekshotit's projects
+
+Hobby
+
+photography-portfolio-website
+
+FrYXVoP2f
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Command "npm run build" exited with 1
+
+Created
+github/Maleek23
+Maleek23
+1h ago
+Status
+Error
+Latest
+Duration
+1m 3s
+1h ago
+Environment
+Production
+Domains
+photography-portfolio-website-git-main-leekshotits-projects.vercel.app
+photography-portfolio-website-71umk9j8b-leekshotits-projects.vercel.app
+Source
+main
+8ba6b26
+Compress large video files to allow for easier project uploads
+
+Deployment Settings
+3 Recommendations
+Build Logs
+1m 3s
+39 lines
+Find in logs
+⌘F
+10:40:48.736 
+10:40:48.736 
+   Creating an optimized production build ...
+10:40:58.440 
+Browserslist: caniuse-lite is outdated. Please run:
+10:40:58.441 
+  npx update-browserslist-db@latest
+10:40:58.441 
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+10:41:00.631 
+Browserslist: caniuse-lite is outdated. Please run:
+10:41:00.632 
+  npx browserslist@latest --update-db
+10:41:00.632 
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+10:41:01.303 
+ ✓ Compiled successfully
+10:41:01.310 
+   Linting and checking validity of types ...
+10:41:05.916 
+10:41:05.916 
+Failed to compile.
+10:41:05.917 
+10:41:05.918 
+./src/app/video/page.tsx
+10:41:05.918 
+158:16  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+10:41:05.918 
+161:46  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+10:41:05.918 
+10:41:05.918 
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+10:41:05.985 
+Error: Command "npm run build" exited with 1
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Knowledge Base
+Academy
+Help
+Contact
+Loading status…
+
+Select a display theme:
+
+system
+
+light
+
+dark
+photography-portfolio-website – Deployment Overview – Vercel
+Quick Navigation
+Press F to find anything in the dashboard.

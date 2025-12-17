@@ -185,10 +185,10 @@ export default function VideoPage() {
 
         <div className="pt-12 md:pt-16 border-t border-superGray light:border-gray-200 text-center">
           <h2 className="text-white light:text-gray-900 text-[1.5rem] md:text-[2rem] font-[600] uppercase mb-4 leading-tight">
-            Let's Create Something
+            Let&apos;s Create Something
           </h2>
           <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] max-w-xl mx-auto mb-8">
-            Have a video project in mind? Let's discuss your vision.
+            Have a video project in mind? Let&apos;s discuss your vision.
           </p>
           <Link
             href="/contact"
