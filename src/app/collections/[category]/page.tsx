@@ -26,6 +26,8 @@ const portfolioData: Record<string, { title: string; description: string; images
       "/images/portraits/portrait-11.jpg",
       "/images/portraits/portrait-12.jpg",
       "/images/portraits/portrait-13.jpg",
+      "/images/portraits/portrait-14.jpg",
+      "/images/portraits/portrait-15.jpg",
     ],
   },
   graduation: {
