@@ -35,11 +35,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Large video files (exceed GitHub 100MB limit)
+# Large source video files (keep only compressed mp4s)
 *.mov
 *.MOV
 *.M4V
 *.m4v
-public/videos/*.mp4
 attached_assets/*.mov
 attached_assets/*.M4V
