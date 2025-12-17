@@ -1,24 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { X, Menu, Instagram, Sun, Moon } from "lucide-react";
+import { X, Menu, Instagram, Sun, Moon, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/contexts/ThemeContext";
 
 function NavBar() {
   const [menu, setMenu] = useState(false);
+  const [portfolioOpen, setPortfolioOpen] = useState(false);
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
   const navLinks = [
     { href: "/home", label: "Home" },
-    { href: "/collections", label: "Photography" },
-    { href: "/video", label: "Video" },
     { href: "/projects", label: "Projects" },
     { href: "/services", label: "Booking" },
     { href: "/contact", label: "Inquire" },
     { href: "/about", label: "About" },
+  ];
+
+  const portfolioLinks = [
+    { href: "/collections", label: "Photography" },
+    { href: "/video", label: "Video" },
   ];
 
   const isActive = (href: string) => {
@@ -26,6 +30,10 @@ function NavBar() {
       return pathname === "/home";
     }
     return pathname.startsWith(href);
+  };
+
+  const isPortfolioActive = () => {
+    return pathname.startsWith("/collections") || pathname.startsWith("/video");
   };
 
   return (
@@ -44,7 +52,58 @@ function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-10">
-            {navLinks.map((link) => (
+            {/* Home */}
+            <Link
+              href="/home"
+              className={`text-[14px] xl:text-[15px] font-medium transition-all duration-200 ${
+                isActive("/home")
+                  ? "text-white light:text-gray-900 underline underline-offset-4"
+                  : "text-white/80 light:text-gray-600 hover:text-white light:hover:text-gray-900"
+              }`}
+            >
+              Home
+            </Link>
+
+            {/* Portfolio Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setPortfolioOpen(true)}
+              onMouseLeave={() => setPortfolioOpen(false)}
+            >
+              <button
+                className={`flex items-center gap-1 text-[14px] xl:text-[15px] font-medium transition-all duration-200 ${
+                  isPortfolioActive()
+                    ? "text-white light:text-gray-900 underline underline-offset-4"
+                    : "text-white/80 light:text-gray-600 hover:text-white light:hover:text-gray-900"
+                }`}
+              >
+                Portfolio
+                <ChevronDown size={14} className={`transition-transform ${portfolioOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {portfolioOpen && (
+                <div className="absolute top-full left-0 pt-2">
+                  <div className="bg-background/95 light:bg-white/95 backdrop-blur-xl border border-white/10 light:border-gray-200 py-2 min-w-[160px]">
+                    {portfolioLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className={`block px-4 py-2 text-[14px] font-medium transition-all duration-200 ${
+                          isActive(link.href)
+                            ? "text-primary bg-white/5 light:bg-gray-100"
+                            : "text-white/80 light:text-gray-600 hover:text-white light:hover:text-gray-900 hover:bg-white/5 light:hover:bg-gray-50"
+                        }`}
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Other Links */}
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -105,7 +164,42 @@ function NavBar() {
       {menu && (
         <div className="lg:hidden fixed inset-0 top-16 sm:top-20 bg-background/98 backdrop-blur-xl z-[9998] animate-in fade-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col px-6 sm:px-8 py-8 gap-5">
-            {navLinks.map((link) => (
+            <Link
+              href="/home"
+              onClick={() => setMenu(false)}
+              className={`text-xl sm:text-2xl font-medium transition-colors duration-200 ${
+                isActive("/home")
+                  ? "text-white light:text-gray-900"
+                  : "text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900"
+              }`}
+            >
+              Home
+            </Link>
+            
+            {/* Portfolio Section */}
+            <div className="space-y-3">
+              <span className="text-xl sm:text-2xl font-medium text-white/40 light:text-gray-400">
+                Portfolio
+              </span>
+              <div className="pl-4 space-y-3 border-l border-white/10 light:border-gray-200">
+                {portfolioLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMenu(false)}
+                    className={`block text-lg sm:text-xl font-medium transition-colors duration-200 ${
+                      isActive(link.href)
+                        ? "text-primary"
+                        : "text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {navLinks.slice(1).map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
