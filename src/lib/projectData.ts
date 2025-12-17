@@ -94,7 +94,15 @@ export const projects: Project[] = [
       "This project tells a visual story of chasing dreams and beating the odds.",
       "Through creative direction and intentional framing, we captured the essence of perseverance.",
     ],
-    images: [],
+    images: [
+      "/images/projects/lottery-kid/MEE07008.jpg",
+      "/images/projects/lottery-kid/MEE06873.jpg",
+      "/images/projects/lottery-kid/MEE07029.jpg",
+      "/images/projects/lottery-kid/MEE07018.jpg",
+      "/images/projects/lottery-kid/MEE07001.jpg",
+      "/images/projects/lottery-kid/MEE06963.jpg",
+      "/images/projects/lottery-kid/MEE06961.jpg",
+    ],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "24mm f/1.4, 35mm f/1.8",
