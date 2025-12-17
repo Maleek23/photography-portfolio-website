@@ -30,7 +30,7 @@ export default function AboutPage() {
     <main className="bg-background light:bg-white">
       <GrainOverlay />
       <NavBar />
-      <div className="pt-[10rem] lg:pt-0">
+      <div className="pt-32 md:pt-40 lg:pt-44">
         <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           
           {/* Hero Section - Full Width with Centered Content */}

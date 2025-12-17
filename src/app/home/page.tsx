@@ -32,7 +32,7 @@ export default function Home() {
       <div className={`relative z-10 transition-opacity duration-300 ease-out ${loaded ? 'opacity-100' : 'opacity-0'}`}>
         <NavBar />
         
-        <div className="pt-[10rem] lg:pt-0">
+        <div className="pt-32 md:pt-40 lg:pt-44">
           <div>
             <HeroSection />
             
