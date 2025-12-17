@@ -36,23 +36,23 @@ export default function Home() {
           <div>
             <HeroSection />
             
-            {/* Portfolio Section with Glassmorphism */}
+            {/* Portfolio Section */}
             <ScrollReveal>
-              <div className="px-4 md:px-[6rem] py-12 md:py-16">
+              <div className="px-4 md:px-[6rem] py-8 md:py-12">
                 <PortfolioSection />
               </div>
             </ScrollReveal>
 
             {/* Projects Section */}
             <ScrollReveal>
-              <div className="px-4 md:px-[6rem]">
+              <div className="px-4 md:px-[6rem] py-8 md:py-12">
                 <ProjectsSection />
               </div>
             </ScrollReveal>
 
             {/* Videography Section */}
             <ScrollReveal>
-              <div className="px-4 md:px-[6rem]">
+              <div className="px-4 md:px-[6rem] py-8 md:py-12">
                 <VideographySection />
               </div>
             </ScrollReveal>

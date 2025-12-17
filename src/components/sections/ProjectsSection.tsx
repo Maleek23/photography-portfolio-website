@@ -9,8 +9,8 @@ export default function ProjectsSection() {
   const featuredProjects = projects.slice(0, 3);
 
   return (
-    <section className="py-16 md:py-24">
-      <div className="flex items-center justify-between mb-12">
+    <section>
+      <div className="flex items-center justify-between mb-8">
         <div>
           <p className="text-primary text-sm tracking-[0.2em] uppercase mb-2">Case Studies</p>
           <h2 className="text-[1.5rem] md:text-[2rem] font-medium text-white light:text-gray-900">
