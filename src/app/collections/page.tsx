@@ -16,25 +16,25 @@ export default function CollectionsPage() {
       id: 0,
       title: "Portraits",
       slug: "portraits",
-      imageUrl: "/images/portraits/mariam.png",
+      imageUrl: "/images/portraits-cover.jpg",
     },
     {
       id: 1,
       title: "Graduation",
       slug: "graduation",
-      imageUrl: "/images/graduation/MEE01153.png",
+      imageUrl: "/images/graduation-cover.jpg",
     },
     {
       id: 2,
       title: "Creative",
       slug: "creative-projects",
-      imageUrl: "/images/creative/creative-1.jpg",
+      imageUrl: "/images/creative-projects.jpg",
     },
     {
       id: 3,
       title: "Events",
       slug: "concerts-events",
-      imageUrl: "/images/concerts/MEE04552.jpg",
+      imageUrl: "/images/concerts-events-cover.jpg",
     },
   ];
 

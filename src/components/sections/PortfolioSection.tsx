@@ -16,28 +16,28 @@ function PortfolioSection() {
       title: "Portraits",
       subtitle: "Studio & Natural Light",
       slug: "portraits",
-      imageUrl: "/images/portraits/mariam.png",
+      imageUrl: "/images/portraits-cover.jpg",
     },
     {
       id: 1,
       title: "Graduation",
       subtitle: "Celebrate Your Milestone",
       slug: "graduation",
-      imageUrl: "/images/graduation/MEE01153.png",
+      imageUrl: "/images/graduation-cover.jpg",
     },
     {
       id: 2,
       title: "Creative",
       subtitle: "Artistic Vision",
       slug: "creative-projects",
-      imageUrl: "/images/creative/creative-1.jpg",
+      imageUrl: "/images/creative-projects.jpg",
     },
     {
       id: 3,
       title: "Events",
       subtitle: "Concerts & Live Moments",
       slug: "concerts-events",
-      imageUrl: "/images/concerts/MEE04552.jpg",
+      imageUrl: "/images/concerts-events-cover.jpg",
     },
   ];
 
