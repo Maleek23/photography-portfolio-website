@@ -45,24 +45,17 @@ export default function ProjectsSection() {
           {/* Subtle Bottom Gradient */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
           
-          {/* Project Number */}
-          <div className="absolute top-6 left-6">
-            <span className="text-white/15 text-8xl font-bold">01</span>
-          </div>
-          
           {/* Content */}
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-primary text-xs tracking-widest uppercase">{featuredProjects[0]?.category}</span>
-              <span className="w-8 h-[1px] bg-white/20"></span>
-              <span className="text-white/60 text-xs">{featuredProjects[0]?.date}</span>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="text-white/50 text-xs">{featuredProjects[0]?.date}</span>
             </div>
-            <h3 className="text-white text-2xl md:text-3xl font-medium mb-2 group-hover:text-primary transition-colors">
+            <h3 className="text-white text-xl md:text-2xl font-medium mb-1 group-hover:text-primary transition-colors">
               {featuredProjects[0]?.title}
             </h3>
-            <p className="text-white/70 text-sm md:text-base max-w-md">{featuredProjects[0]?.subtitle}</p>
+            <p className="text-white/60 text-sm max-w-md">{featuredProjects[0]?.subtitle}</p>
             
-            <div className="flex items-center gap-2 mt-4 text-white/70 group-hover:text-primary transition-colors">
+            <div className="flex items-center gap-2 mt-3 text-white/60 group-hover:text-primary transition-colors">
               <span className="text-sm">View Project</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
             </div>
@@ -88,20 +81,13 @@ export default function ProjectsSection() {
               {/* Subtle Bottom Gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/35 via-transparent to-transparent" />
               
-              {/* Project Number */}
-              <div className="absolute top-4 right-4">
-                <span className="text-white/10 text-5xl font-bold">0{index + 2}</span>
-              </div>
-              
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="text-primary text-xs tracking-widest uppercase">{project.category}</span>
-                  <span className="text-white/50 text-xs">•</span>
+                <div className="flex items-center gap-2 mb-1">
                   <span className="text-white/50 text-xs">{project.date}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <h3 className="text-white text-lg md:text-xl font-medium group-hover:text-primary transition-colors">
+                  <h3 className="text-white text-base md:text-lg font-medium group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
                   <ArrowUpRight className="w-5 h-5 text-white/50 group-hover:text-primary group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
