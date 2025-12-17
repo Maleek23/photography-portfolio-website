@@ -27,7 +27,7 @@ export default function CollectionsPage() {
     },
     {
       id: 2,
-      title: "Creative Projects",
+      title: "Creative",
       slug: "creative-projects",
       description: "Pushing boundaries through experimental and conceptual photography",
       imageUrl: "/images/creative-projects.jpg",
