@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ImageSkeleton from "@/components/common/ImageSkeleton";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 function PortfolioSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({});
-  const scrollRef = useRef<HTMLDivElement>(null);
   
   const portfolioData = [
     {
@@ -41,13 +41,56 @@ function PortfolioSection() {
     },
   ];
 
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 400;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth'
-      });
+  const totalItems = portfolioData.length;
+
+  const goToPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? totalItems - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === totalItems - 1 ? 0 : prev + 1));
+  };
+
+  const getCardStyle = (index: number) => {
+    const diff = index - currentIndex;
+    const normalizedDiff = ((diff % totalItems) + totalItems) % totalItems;
+    const adjustedDiff = normalizedDiff > totalItems / 2 ? normalizedDiff - totalItems : normalizedDiff;
+    
+    if (adjustedDiff === 0) {
+      return {
+        transform: "translateX(0) scale(1) rotateY(0deg)",
+        zIndex: 50,
+        opacity: 1,
+        filter: "brightness(1)",
+      };
+    } else if (adjustedDiff === 1) {
+      return {
+        transform: "translateX(60%) scale(0.88) rotateY(-6deg)",
+        zIndex: 40,
+        opacity: 0.8,
+        filter: "brightness(0.7)",
+      };
+    } else if (adjustedDiff === -1) {
+      return {
+        transform: "translateX(-60%) scale(0.88) rotateY(6deg)",
+        zIndex: 40,
+        opacity: 0.8,
+        filter: "brightness(0.7)",
+      };
+    } else if (adjustedDiff === 2 || adjustedDiff === -2) {
+      return {
+        transform: `translateX(${adjustedDiff > 0 ? '100%' : '-100%'}) scale(0.75) rotateY(${adjustedDiff > 0 ? '-10' : '10'}deg)`,
+        zIndex: 30,
+        opacity: 0.5,
+        filter: "brightness(0.5)",
+      };
+    } else {
+      return {
+        transform: "translateX(0) scale(0.6)",
+        zIndex: 0,
+        opacity: 0,
+        filter: "brightness(0.3)",
+      };
     }
   };
 
@@ -58,80 +101,110 @@ function PortfolioSection() {
         <h2 className="text-white light:text-gray-900 text-[1.25rem] md:text-[1.5rem] font-[500] uppercase tracking-wider">
           Collections
         </h2>
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-2">
-            <button 
-              onClick={() => scroll('left')}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-all"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button 
-              onClick={() => scroll('right')}
-              className="p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white transition-all"
-              aria-label="Scroll right"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
-          <Link 
-            href="/collections"
-            className="text-white/50 light:text-gray-500 text-[0.813rem] font-[400] hover:text-white light:hover:text-gray-900 transition-colors"
-          >
-            View All →
-          </Link>
-        </div>
+        <Link 
+          href="/collections"
+          className="text-white/50 light:text-gray-500 text-[0.813rem] font-[400] hover:text-white light:hover:text-gray-900 transition-colors"
+        >
+          View All →
+        </Link>
       </div>
 
-      {/* Horizontal Scroll Container */}
-      <div 
-        ref={scrollRef}
-        className="flex gap-4 md:gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-      >
-        {portfolioData.map((item, index) => (
-          <Link
-            key={item.id}
-            href={`/collections/${item.slug}`}
-            className="group cursor-pointer flex-shrink-0 snap-start"
-          >
-            <div className="relative overflow-hidden rounded-2xl w-[280px] md:w-[350px] lg:w-[400px] aspect-[3/4] bg-lightDark light:bg-gray-100">
-              {!loadedImages[index] && (
-                <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
-              )}
-              <Image
-                src={item.imageUrl}
-                alt={`${item.title} photography collection`}
-                fill
-                sizes="(max-width: 768px) 280px, (max-width: 1024px) 350px, 400px"
-                className={`object-cover transition-all duration-700 group-hover:scale-110 ${
-                  loadedImages[index] ? 'opacity-100' : 'opacity-0'
-                }`}
-                onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
-                quality={90}
-                priority={index < 2}
-                loading={index < 2 ? "eager" : "lazy"}
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-              
-              {/* Content */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <p className="text-white/60 text-[0.75rem] md:text-[0.813rem] uppercase tracking-widest mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  {item.subtitle}
-                </p>
-                <h3 className="text-white text-[1.5rem] md:text-[2rem] font-[600] uppercase tracking-wide group-hover:text-primary transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <div className="mt-4 flex items-center gap-2 text-white/60 group-hover:text-white transition-colors">
-                  <span className="text-[0.813rem]">Explore</span>
-                  <ChevronRight size={16} className="transform group-hover:translate-x-1 transition-transform" />
+      {/* 3D Book/Card Stack */}
+      <div className="relative w-full" style={{ perspective: "1200px" }}>
+        <div className="relative h-[450px] md:h-[550px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+          {portfolioData.map((item, index) => {
+            const style = getCardStyle(index);
+            return (
+              <div
+                key={item.id}
+                className="absolute w-[75%] md:w-[55%] lg:w-[40%] h-full cursor-pointer transition-all duration-500 ease-out"
+                style={{
+                  transform: style.transform,
+                  zIndex: style.zIndex,
+                  opacity: style.opacity,
+                  filter: style.filter,
+                  transformStyle: "preserve-3d",
+                }}
+                onClick={() => {
+                  if (index === currentIndex) {
+                    window.location.href = `/collections/${item.slug}`;
+                  } else {
+                    setCurrentIndex(index);
+                  }
+                }}
+              >
+                <div className="relative w-full h-full shadow-2xl shadow-black/60 overflow-hidden group">
+                  {!loadedImages[index] && (
+                    <ImageSkeleton className="absolute inset-0" aspectRatio="auto" />
+                  )}
+                  <Image
+                    src={item.imageUrl}
+                    alt={`${item.title} photography collection`}
+                    fill
+                    sizes="(max-width: 768px) 75vw, (max-width: 1024px) 55vw, 40vw"
+                    className={`object-cover transition-all duration-700 ${
+                      index === currentIndex ? 'group-hover:scale-105' : ''
+                    } ${loadedImages[index] ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setLoadedImages(prev => ({ ...prev, [index]: true }))}
+                    quality={90}
+                    priority={index < 2}
+                  />
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent opacity-80" />
+                  
+                  {/* Content - only show on active card */}
+                  {index === currentIndex && (
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                      <p className="text-white/60 text-[0.75rem] md:text-[0.813rem] uppercase tracking-widest mb-2">
+                        {item.subtitle}
+                      </p>
+                      <h3 className="text-white text-[1.5rem] md:text-[2rem] font-[600] uppercase tracking-wide">
+                        {item.title}
+                      </h3>
+                      <div className="mt-4 flex items-center gap-2 text-white/60 group-hover:text-white transition-colors">
+                        <span className="text-[0.813rem]">View Collection</span>
+                        <ChevronRight size={16} />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            );
+          })}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={goToPrev}
+          className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 md:w-14 md:h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all text-white"
+          aria-label="Previous collection"
+        >
+          <ChevronLeft className="w-6 h-6 md:w-8 md:h-8" />
+        </button>
+        <button
+          onClick={goToNext}
+          className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 z-[60] w-12 h-12 md:w-14 md:h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all text-white"
+          aria-label="Next collection"
+        >
+          <ChevronRight className="w-6 h-6 md:w-8 md:h-8" />
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-[60] flex gap-2">
+          {portfolioData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 transition-all ${
+                index === currentIndex 
+                  ? "bg-primary w-6" 
+                  : "bg-white/30 hover:bg-white/50"
+              }`}
+              aria-label={`Go to collection ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
