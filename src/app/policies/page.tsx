@@ -2,6 +2,7 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import {
   Accordion,
   AccordionContent,
@@ -11,39 +12,38 @@ import {
 
 export default function PoliciesPage() {
   return (
-    <main className="bg-background">
+    <main className="bg-background light:bg-white min-h-screen">
+      <GrainOverlay />
       <NavBar />
-      <div className="pt-[10rem] lg:pt-0">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
-          <div className="px-4 md:px-[6rem] py-12 md:py-16">
-            <div className="max-w-4xl mx-auto">
-            <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4 text-center">
-              Terms & Conditions
-            </p>
-            <h1 className="text-white text-[2.125rem] md:text-[3rem] font-[700] leading-tight mb-4 text-center">
-              Booking Policies
-            </h1>
-            <p className="text-customGrayAlt text-[1rem] md:text-[1.125rem] leading-relaxed max-w-2xl mx-auto text-center mb-8">
-              Please review these policies carefully before booking your session
-            </p>
+      <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-[0.2em] mb-4 text-center">
+            Terms & Conditions
+          </p>
+          <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] leading-tight mb-4 text-center uppercase">
+            Booking Policies
+          </h1>
+          <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1rem] leading-relaxed max-w-2xl mx-auto text-center mb-8">
+            Please review these policies carefully before booking your session
+          </p>
 
-            <Accordion type="multiple" defaultValue={["payment", "delivery", "rescheduling", "details", "usage", "agreement"]} className="space-y-4">
-              
-              {/* Payment & Deposit */}
-              <AccordionItem value="payment" className="glass backdrop-blur-xl rounded-xl overflow-hidden border-none">
-                <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 transition-colors">
-                  <div className="flex items-center gap-4 text-left w-full">
-                    <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                        <rect width="20" height="14" x="2" y="5" rx="2"/>
-                        <line x1="2" x2="22" y1="10" y2="10"/>
-                      </svg>
-                    </div>
-                    <span className="text-white text-[0.938rem] md:text-[1rem] font-[600] uppercase">Payment & Deposit</span>
+          <Accordion type="multiple" defaultValue={["payment", "delivery", "rescheduling", "details", "usage", "agreement"]} className="space-y-4">
+            
+            {/* Payment & Deposit */}
+            <AccordionItem value="payment" className="bg-superGray/50 light:bg-gray-50 border border-white/5 light:border-gray-200 overflow-hidden">
+              <AccordionTrigger className="px-6 py-5 hover:no-underline hover:bg-white/5 light:hover:bg-gray-100 transition-colors">
+                <div className="flex items-center gap-4 text-left w-full">
+                  <div className="w-10 h-10 bg-primary/20 flex items-center justify-center flex-shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                      <rect width="20" height="14" x="2" y="5" rx="2"/>
+                      <line x1="2" x2="22" y1="10" y2="10"/>
+                    </svg>
                   </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-5">
-                  <ul className="space-y-2 text-customGrayAlt text-[0.938rem] leading-relaxed">
+                  <span className="text-white light:text-gray-900 text-[0.938rem] md:text-[1rem] font-[600] uppercase">Payment & Deposit</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-5">
+                <ul className="space-y-2 text-customGrayAlt light:text-gray-600 text-[0.938rem] leading-relaxed">
                     <li>• 50% non-refundable deposit required to secure your session date</li>
                     <li>• Remaining balance due on the day of the shoot</li>
                     <li>• Accepted payment methods: Cash, Zelle, CashApp, Venmo</li>
@@ -178,25 +178,23 @@ export default function PoliciesPage() {
                 </AccordionContent>
               </AccordionItem>
 
-            </Accordion>
+          </Accordion>
 
-            <div className="mt-8 text-center glass glass-mobile-optimized rounded-xl p-6 md:p-8">
-              <p className="text-customGrayAlt text-[0.938rem] leading-relaxed mb-6">
-                Have questions about these policies? Contact me before booking your session.
-              </p>
-              <a 
-                href="/contact"
-                className="inline-block glass glass-hover glass-lift bg-primary/20 text-primary font-[600] py-3 px-8 rounded-xl uppercase text-[0.813rem] border border-primary/50 hover:bg-primary/30 transition-all"
-              >
-                Contact Me
-              </a>
-            </div>
-
+          <div className="mt-8 text-center bg-superGray/50 light:bg-gray-50 p-6 md:p-8 border border-white/5 light:border-gray-200">
+            <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] leading-relaxed mb-6">
+              Have questions about these policies? Contact me before booking your session.
+            </p>
+            <a 
+              href="/contact"
+              className="inline-block bg-primary hover:bg-primary/90 text-white font-[600] py-3 px-8 uppercase text-[0.813rem] transition-all"
+            >
+              Contact Me
+            </a>
           </div>
+
         </div>
-        </div>
-        <FooterSection />
       </div>
+      <FooterSection />
     </main>
   );
 }

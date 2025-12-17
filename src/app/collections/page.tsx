@@ -39,13 +39,6 @@ export default function CollectionsPage() {
       description: "Live music, performances, and unforgettable experiences",
       imageUrl: "/images/concerts-events-cover.jpg",
     },
-    {
-      id: 4,
-      title: "Videography",
-      slug: "videography",
-      description: "Cinematic video production bringing your vision to life",
-      imageUrl: "/images/videography-cover.jpg",
-    },
   ];
 
   return (

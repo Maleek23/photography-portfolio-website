@@ -97,12 +97,6 @@ const portfolioData: Record<string, { title: string; description: string; images
       "/images/concerts/concert-16.jpg",
     ],
   },
-  videography: {
-    title: "Videography",
-    description: "Cinematic video production bringing your vision to life through motion",
-    bookingType: "Video Session",
-    images: [],
-  },
 };
 
 export default function CategoryPage({ params }: { params: { category: string } }) {

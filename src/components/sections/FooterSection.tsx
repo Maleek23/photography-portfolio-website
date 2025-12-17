@@ -28,14 +28,17 @@ function FooterSection() {
             <Link href="/collections" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
               Photography
             </Link>
+            <Link href="/video" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
+              Video
+            </Link>
             <Link href="/services" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
               Booking
             </Link>
             <Link href="/contact" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
               Contact
             </Link>
-            <Link href="/about" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
-              About
+            <Link href="/policies" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
+              Policies
             </Link>
           </div>
 
