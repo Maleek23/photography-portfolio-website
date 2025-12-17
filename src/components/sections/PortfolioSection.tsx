@@ -30,7 +30,7 @@ function PortfolioSection() {
       title: "Creative",
       subtitle: "Artistic Vision",
       slug: "creative-projects",
-      imageUrl: "/images/creative-projects-cover.jpg",
+      imageUrl: "/images/creative-projects.jpg",
     },
     {
       id: 3,
