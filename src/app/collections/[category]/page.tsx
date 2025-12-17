@@ -42,6 +42,11 @@ const portfolioData: Record<string, { title: string; description: string; images
       "/images/creative/creative-3.jpg",
       "/images/creative/creative-4.jpg",
       "/images/creative/creative-5.jpg",
+      "/images/creative/creative-6.jpg",
+      "/images/creative/creative-7.jpg",
+      "/images/creative/creative-8.jpg",
+      "/images/creative/creative-9.jpg",
+      "/images/creative/creative-10.jpg",
     ],
   },
   "concerts-events": {
