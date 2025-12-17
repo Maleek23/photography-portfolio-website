@@ -41,8 +41,6 @@ export default function ProjectsSection() {
             sizes="(max-width: 1024px) 100vw, 50vw"
             priority
           />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
           
           {/* Project Number */}
           <div className="absolute top-6 left-6">
@@ -83,8 +81,6 @@ export default function ProjectsSection() {
                 className="object-cover transition-all duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
               
               {/* Project Number */}
               <div className="absolute top-4 right-4">
