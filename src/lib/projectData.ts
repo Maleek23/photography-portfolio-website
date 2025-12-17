@@ -87,7 +87,7 @@ export const projects: Project[] = [
     client: "Private Client",
     date: "2024",
     category: "Creative Projects",
-    coverImage: "/images/creative/creative-2.jpg",
+    coverImage: "/images/projects/lottery-kid-cover.png",
     videoUrl: "",
     description: "A creative project exploring themes of ambition, dreams, and the journey to success.",
     story: [
