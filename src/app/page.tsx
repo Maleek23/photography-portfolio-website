@@ -1,17 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import NavBar from "@/components/common/NavBar";
 
 export default function LandingPage() {
   const [loaded, setLoaded] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   const photos = [
-    "/images/creative-smoke.jpg",
-    "/images/back-portrait.png",
-    "/images/heart-portrait.jpg"
+    { src: "/images/creative-smoke.jpg", alt: "Creative smoke portrait photography by Leekshotit" },
+    { src: "/images/back-portrait.png", alt: "Artistic back portrait photography session" },
+    { src: "/images/heart-portrait.jpg", alt: "Heart portrait creative photography by Leekshotit" },
   ];
 
   useEffect(() => {
@@ -32,48 +33,62 @@ export default function LandingPage() {
       {/* Main content */}
       <div className="min-h-screen flex items-end justify-center px-4 relative pb-[20vh]">
         {/* Desktop: Photo Grid Background - Fade in with scale */}
-        <div 
+        <div
           className={`hidden md:grid absolute inset-0 grid-cols-3 gap-2 p-4 transition-all duration-800 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
           {photos.map((photo, index) => (
             <div key={index} className="relative overflow-hidden rounded-lg">
-              <img src={photo} className="w-full h-full object-cover" alt="" />
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className="object-cover"
+                priority={index === 0}
+                sizes="33vw"
+                quality={85}
+              />
             </div>
           ))}
         </div>
 
         {/* Mobile: Slideshow Background */}
-        <div 
+        <div
           className={`md:hidden absolute inset-0 p-2 transition-all duration-800 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
         >
           <div className="relative h-full overflow-hidden rounded-lg">
             {photos.map((photo, index) => (
-              <img 
+              <Image
                 key={index}
-                src={photo} 
-                className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                className={`object-cover transition-opacity duration-1000 ${
                   index === currentSlide ? 'opacity-100' : 'opacity-0'
                 }`}
-                alt="" 
+                priority={index === 0}
+                sizes="100vw"
+                quality={85}
               />
             ))}
-            
+
             {/* Slideshow indicators */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
               {photos.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentSlide 
-                      ? 'bg-white w-6' 
-                      : 'bg-white/50 hover:bg-white/75'
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    index === currentSlide
+                      ? 'bg-white w-6'
+                      : 'bg-white/50 hover:bg-white/75 w-2'
                   }`}
+                  style={{ minWidth: index === currentSlide ? '24px' : '8px', minHeight: '8px', padding: '8px 0', backgroundClip: 'content-box' }}
                   aria-label={`Go to slide ${index + 1}`}
+                  aria-current={index === currentSlide ? "true" : undefined}
                 />
               ))}
             </div>
@@ -84,7 +99,7 @@ export default function LandingPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-black/20 to-black/15"></div>
 
         {/* Center content - Button fades in from center */}
-        <div 
+        <div
           className={`relative z-10 text-center transition-all duration-700 delay-200 ${
             loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
           }`}
@@ -117,7 +132,7 @@ export default function LandingPage() {
       </div>
 
       {/* Bottom right - Signature fades in from right */}
-      <div 
+      <div
         className={`absolute bottom-8 right-8 z-10 text-right transition-all duration-700 delay-300 ${
           loaded ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'
         }`}
@@ -131,15 +146,15 @@ export default function LandingPage() {
       </div>
 
       {/* Bottom left - Social Icons fade in from left */}
-      <div 
+      <div
         className={`absolute bottom-8 left-8 z-10 transition-all duration-700 delay-300 ${
           loaded ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
         }`}
       >
         <div className="flex gap-3 items-center">
-          <a 
-            href="https://instagram.com/leekshotitt" 
-            target="_blank" 
+          <a
+            href="https://instagram.com/leekshotitt"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
@@ -149,9 +164,9 @@ export default function LandingPage() {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           </a>
-          <a 
-            href="https://tiktok.com/@leekshotit" 
-            target="_blank" 
+          <a
+            href="https://tiktok.com/@leekshotit"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
@@ -159,9 +174,9 @@ export default function LandingPage() {
               <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
             </svg>
           </a>
-          <a 
-            href="https://www.youtube.com/@Leekshotit" 
-            target="_blank" 
+          <a
+            href="https://www.youtube.com/@Leekshotit"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >
@@ -170,9 +185,9 @@ export default function LandingPage() {
               <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
             </svg>
           </a>
-          <a 
-            href="https://www.pinterest.com/leekshotit/" 
-            target="_blank" 
+          <a
+            href="https://www.pinterest.com/leekshotit/"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-white/70 hover:text-primary transition-all duration-300 hover:scale-110 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
           >

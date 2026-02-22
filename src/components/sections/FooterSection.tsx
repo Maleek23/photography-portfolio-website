@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
@@ -45,7 +47,7 @@ function FooterSection() {
           {/* Right: Socials */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://instagram.com/leekshotit" 
+              href="https://instagram.com/leekshotitt"
               target="_blank" 
               rel="noopener noreferrer"
               className="text-white/60 light:text-gray-500 hover:text-primary transition-colors"
@@ -70,7 +72,7 @@ function FooterSection() {
         {/* Copyright */}
         <div className="mt-6">
           <p className="text-white/30 light:text-gray-400 text-xs text-center md:text-left">
-            © 2024 Leekshotit Photography
+            © {new Date().getFullYear()} Leekshotit Photography
           </p>
         </div>
       </div>

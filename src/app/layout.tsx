@@ -50,9 +50,10 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code-here',
-  },
+  // TODO: Add real Google Search Console verification code
+  // verification: {
+  //   google: 'your-google-verification-code-here',
+  // },
 }
 
 const manrope = Manrope({ 
@@ -91,7 +92,7 @@ export default function RootLayout({
               "alternateName": "Abdulmalik Ajisegiri Photography",
               "description": "Professional HTX/DTX photographer specializing in graduation sessions, portrait photography, creative projects, and concert/event coverage. Self-taught photographer, videographer, and artist.",
               "url": "https://leekshotit.com",
-              "telephone": "+1-XXX-XXX-XXXX",
+              "telephone": "+1-346-297-8021",
               "image": "https://leekshotit.com/images/hero.png",
               "address": {
                 "@type": "PostalAddress",
@@ -118,7 +119,7 @@ export default function RootLayout({
                 "name": "Abdulmalik Ajisegiri",
                 "jobTitle": "Photographer & Videographer",
                 "sameAs": [
-                  "https://instagram.com/leekshotit",
+                  "https://instagram.com/leekshotitt",
                   "https://twitter.com/leekshotit"
                 ]
               },

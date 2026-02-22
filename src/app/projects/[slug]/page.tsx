@@ -237,17 +237,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       {/* Lightbox Modal with Blur */}
       {selectedImage && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fadeIn"
           onClick={() => setSelectedImage(null)}
+          onKeyDown={(e) => { if (e.key === "Escape") setSelectedImage(null); }}
         >
           {/* Blurred backdrop */}
           <div className="absolute inset-0 backdrop-blur-2xl bg-black/60" />
-          
+
           {/* Close button */}
           <button
             onClick={() => setSelectedImage(null)}
             className="absolute top-6 right-6 text-white hover:text-primary transition-colors z-20 bg-black/50 rounded-full p-2"
             aria-label="Close lightbox"
+            autoFocus
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

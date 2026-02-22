@@ -3,8 +3,13 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
-import { useState, useEffect } from "react";
+import Script from "next/script";
+import { useState } from "react";
 import { pricingData } from "@/lib/pricingData";
+
+interface CalendlyGlobal {
+  initPopupWidget: (config: { url: string }) => void;
+}
 
 export default function ServicesPage() {
   const [activeTab, setActiveTab] = useState<"grad" | "solo" | "events">("grad");
@@ -14,31 +19,14 @@ export default function ServicesPage() {
       window.open(`mailto:leekshotit@gmail.com?subject=Session Booking Inquiry&body=Hi, I'm interested in booking a ${activeTab} session. Please contact me with available dates.`, '_blank');
       return;
     }
-    
-    if (typeof window !== 'undefined' && (window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({ url });
+
+    const calendly = (window as Window & { Calendly?: CalendlyGlobal }).Calendly;
+    if (calendly) {
+      calendly.initPopupWidget({ url });
     } else {
       window.open(url, '_blank');
     }
   };
-
-  useEffect(() => {
-    const link = document.createElement('link');
-    link.href = 'https://assets.calendly.com/assets/external/widget.css';
-    link.rel = 'stylesheet';
-    
-    if (!document.querySelector('link[href="https://assets.calendly.com/assets/external/widget.css"]')) {
-      document.head.appendChild(link);
-    }
-    
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    
-    if (!document.querySelector('script[src="https://assets.calendly.com/assets/external/widget.js"]')) {
-      document.head.appendChild(script);
-    }
-  }, []);
 
   const packages = pricingData[activeTab].packages;
 
@@ -46,6 +34,14 @@ export default function ServicesPage() {
     <main className="bg-background light:bg-white">
       <GrainOverlay />
       <NavBar />
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
+      <link
+        rel="stylesheet"
+        href="https://assets.calendly.com/assets/external/widget.css"
+      />
 
       <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">

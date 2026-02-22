@@ -120,7 +120,7 @@ function NavBar() {
             {/* Instagram - hidden on landing page */}
             {pathname !== "/" && (
               <a
-                href="https://instagram.com/leekshotit"
+                href="https://instagram.com/leekshotitt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/80 light:text-gray-600 hover:text-white light:hover:text-gray-900 transition-colors duration-200"
@@ -215,7 +215,7 @@ function NavBar() {
             ))}
             {pathname !== "/" && (
               <a
-                href="https://instagram.com/leekshotit"
+                href="https://instagram.com/leekshotitt"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMenu(false)}
