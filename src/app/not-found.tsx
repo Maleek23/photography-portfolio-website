@@ -53,10 +53,6 @@ export default function NotFound() {
             About
           </Link>
           <span className="text-customGrayAlt2">•</span>
-          <Link href="/blog" className="text-customGrayAlt hover:text-primary transition-colors">
-            Blog
-          </Link>
-          <span className="text-customGrayAlt2">•</span>
           <Link href="/contact" className="text-customGrayAlt hover:text-primary transition-colors">
             Contact
           </Link>

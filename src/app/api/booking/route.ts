@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { rateLimit } from "@/lib/rateLimit";
 
 function escapeHtml(str: string): string {
   return str
@@ -12,6 +13,11 @@ function escapeHtml(str: string): string {
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for") ?? "unknown";
+    if (!rateLimit(ip)) {
+      return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+    }
+
     const body = await request.json();
     const { name, email, phone, sessionType, packageTier, preferredDate, message } = body;
 

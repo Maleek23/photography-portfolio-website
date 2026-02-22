@@ -56,7 +56,7 @@ export default function VideoPage() {
                 muted
                 playsInline
                 className="w-full h-full object-cover"
-                preload="auto"
+                preload="none"
                 poster="/videos/showreel-poster.jpg"
               >
                 <source src="/videos/showreel.mp4" type="video/mp4" />
@@ -84,7 +84,7 @@ export default function VideoPage() {
                 muted
                 playsInline
                 className="w-full h-full object-cover"
-                preload="auto"
+                preload="none"
                 poster="/videos/showreel-horizontal-poster.jpg"
               >
                 <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
@@ -114,7 +114,7 @@ export default function VideoPage() {
               muted
               playsInline
               className="w-full h-full object-cover"
-              preload="auto"
+              preload="none"
             >
               <source src="/videos/shoot.mov" type="video/quicktime" />
               <source src="/videos/shoot.mov" type="video/mp4" />
@@ -143,7 +143,7 @@ export default function VideoPage() {
               muted
               playsInline
               className="w-full h-full object-cover"
-              preload="auto"
+              preload="none"
               poster="/videos/cinematic-poster.jpg"
             >
               <source src="/videos/cinematic.mp4" type="video/mp4" />
