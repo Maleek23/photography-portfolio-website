@@ -72,7 +72,12 @@ export const projects: Project[] = [
       "This series is about showcasing personality and confidence through powerful imagery.",
       "Each shot was carefully crafted to highlight the subject's unique presence and style.",
     ],
-    images: [],
+    images: [
+      "/images/portraits/portrait-1.jpg",
+      "/images/portraits/portrait-2.jpg",
+      "/images/portraits/portrait-3.jpg",
+      "/images/portraits/portrait-4.jpg",
+    ],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "50mm f/1.4, 85mm f/1.8",
@@ -124,7 +129,12 @@ export const projects: Project[] = [
       "This project captures the anticipation and energy of embarking on new adventures.",
       "Every image invites viewers to imagine their own journey and possibilities ahead.",
     ],
-    images: [],
+    images: [
+      "/images/creative/creative-3.jpg",
+      "/images/creative/creative-4.jpg",
+      "/images/creative/creative-5.jpg",
+      "/images/creative/creative-6.jpg",
+    ],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "16-35mm f/2.8, 50mm f/1.4",
@@ -146,7 +156,12 @@ export const projects: Project[] = [
       "This campaign captured the essence of the HIGHSTATUS brand through striking visuals and bold styling.",
       "Every shot was crafted to showcase the brand's unique aesthetic and streetwear influence.",
     ],
-    images: [],
+    images: [
+      "/images/creative/creative-1.jpg",
+      "/images/creative/creative-2.jpg",
+      "/images/creative/creative-7.jpg",
+      "/images/creative/creative-8.jpg",
+    ],
     technicalDetails: {
       camera: "Sony A7III",
       lenses: "35mm f/1.8, 85mm f/1.8",

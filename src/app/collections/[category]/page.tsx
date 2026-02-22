@@ -170,11 +170,15 @@ export default function CategoryPage({ params }: { params: { category: string } 
               onClick={() => setSelectedImage(image)}
             >
               <div className="relative w-full overflow-hidden rounded-sm bg-superGray/30 light:bg-gray-100">
-                <img
+                <Image
                   src={image}
-                  alt={`${category.title} ${index + 1}`}
+                  alt={`${category.title} photography - image ${index + 1}`}
+                  width={800}
+                  height={1000}
                   className="w-full h-auto block transition-all duration-500 group-hover:scale-[1.02] group-hover:brightness-95"
                   loading={index < 6 ? "eager" : "lazy"}
+                  sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
+                  quality={85}
                 />
               </div>
             </div>
@@ -202,20 +206,25 @@ export default function CategoryPage({ params }: { params: { category: string } 
       {/* Lightbox Modal */}
       {selectedImage && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image lightbox"
           className="fixed inset-0 bg-black/90 backdrop-blur-2xl z-[9999] flex items-center justify-center p-0 md:p-4 animate-in fade-in duration-300"
           onClick={() => setSelectedImage(null)}
+          onKeyDown={(e) => { if (e.key === "Escape") setSelectedImage(null); }}
         >
           <button
             onClick={() => setSelectedImage(null)}
             className="absolute top-4 right-4 md:top-8 md:right-8 text-white/80 hover:text-white transition-colors z-[10000] text-[2rem] w-12 h-12 flex items-center justify-center hover:scale-110"
             aria-label="Close lightbox"
+            autoFocus
           >
             ×
           </button>
           <div className="relative w-full h-full flex items-center justify-center animate-in zoom-in-95 duration-300" onClick={(e) => e.stopPropagation()}>
             <Image
               src={selectedImage}
-              alt="Full size photography"
+              alt={`Full size ${category.title} photography`}
               fill
               className="object-contain drop-shadow-2xl"
               quality={100}

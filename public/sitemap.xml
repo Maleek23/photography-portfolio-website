@@ -2,92 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://leekshotit.com/</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/home</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/services</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/collections</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/collections/portraits</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/collections/graduation</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/collections/creative-projects</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/collections/concerts-events</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/about</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://leekshotit.com/contact</loc>
-    <lastmod>2024-11-15</lastmod>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://leekshotit.com/blog</loc>
-    <lastmod>2024-11-15</lastmod>
+    <loc>https://leekshotit.com/projects</loc>
+    <lastmod>2026-02-22</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://leekshotit.com/blog/mastering-concert-photography</loc>
-    <lastmod>2024-10-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://leekshotit.com/blog/creative-portrait-lighting-techniques</loc>
-    <lastmod>2024-10-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://leekshotit.com/blog/graduation-photography-guide</loc>
-    <lastmod>2024-09-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://leekshotit.com/blog/behind-the-scenes-creative-project</loc>
-    <lastmod>2024-09-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
