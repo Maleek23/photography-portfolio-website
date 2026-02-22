@@ -14,6 +14,7 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
+    website: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "rate_limited">("idle");
   const lastSubmitTime = useRef<number>(0);
@@ -40,7 +41,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "", website: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
@@ -82,6 +83,19 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field - hidden from humans, bots fill it */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}>
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div>
                     <label htmlFor="name" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       Name *
