@@ -3,8 +3,10 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
-import { PORTFOLIO_EMAIL } from "@/lib/constant";
-import { useState } from "react";
+import { PORTFOLIO_EMAIL, SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant";
+import { useState, useRef } from "react";
+
+const RATE_LIMIT_MS = 60_000; // 1 minute between submissions
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -13,11 +15,21 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "rate_limited">("idle");
+  const lastSubmitTime = useRef<number>(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const now = Date.now();
+    if (now - lastSubmitTime.current < RATE_LIMIT_MS) {
+      setStatus("rate_limited");
+      setTimeout(() => setStatus("idle"), 3000);
+      return;
+    }
+
     setStatus("sending");
+    lastSubmitTime.current = now;
 
     try {
       const response = await fetch("/api/contact", {
@@ -152,6 +164,11 @@ export default function ContactPage() {
                       ✗ Something went wrong. Please email me directly at {PORTFOLIO_EMAIL}
                     </p>
                   )}
+                  {status === "rate_limited" && (
+                    <p className="text-yellow-500 text-[0.875rem] text-center">
+                      Please wait a moment before sending another message.
+                    </p>
+                  )}
                 </form>
               </div>
 
@@ -194,7 +211,7 @@ export default function ContactPage() {
                   </h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://instagram.com/leekshotitt"
+                      href={SOCIAL_INSTAGRAM}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-lightDark border border-superGray rounded-lg flex items-center justify-center hover:border-primary transition-colors"
@@ -206,7 +223,7 @@ export default function ContactPage() {
                       </svg>
                     </a>
                     <a
-                      href="https://tiktok.com/@leekshotit"
+                      href={SOCIAL_TIKTOK}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-lightDark border border-superGray rounded-lg flex items-center justify-center hover:border-primary transition-colors"

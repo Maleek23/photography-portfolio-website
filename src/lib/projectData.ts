@@ -27,7 +27,7 @@ export const projects: Project[] = [
     date: "2022",
     category: "Creative Projects",
     coverImage: "/images/projects/houston-afro-plex/afroplex-1.jpg",
-    videoUrl: "",
+
     description: "A vibrant portrait series celebrating culture and community in Houston.",
     story: [
       "This studio portrait session captured the energy and spirit of Houston's diverse cultural scene.",
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Portraits",
     coverImage: "/images/portraits/portrait-1.jpg",
-    videoUrl: "",
+
     description: "A portrait series capturing confidence, style, and personal expression.",
     story: [
       "This series is about showcasing personality and confidence through powerful imagery.",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/projects/lottery-kid-cover.png",
-    videoUrl: "",
+
     description: "A creative project exploring themes of ambition, dreams, and the journey to success.",
     story: [
       "This project tells a visual story of chasing dreams and beating the odds.",
@@ -123,7 +123,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/creative/creative-3.jpg",
-    videoUrl: "",
+
     description: "A visual exploration of movement, travel, and the excitement of new beginnings.",
     story: [
       "This project captures the anticipation and energy of embarking on new adventures.",
@@ -150,7 +150,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/creative/creative-1.jpg",
-    videoUrl: "",
+
     description: "A bold fashion campaign for HIGHSTATUS clothing brand.",
     story: [
       "This campaign captured the essence of the HIGHSTATUS brand through striking visuals and bold styling.",
