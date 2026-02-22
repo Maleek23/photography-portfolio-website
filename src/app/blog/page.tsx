@@ -1,6 +1,8 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import Link from "next/link";
+import Image from "next/image";
 import { getAllBlogPosts } from "@/lib/blogData";
 import { Metadata } from "next";
 
@@ -22,17 +24,18 @@ export default function BlogPage() {
   const posts = getAllBlogPosts();
 
   return (
-    <main className="bg-background">
+    <main className="bg-background light:bg-white">
+      <GrainOverlay />
       <NavBar />
       <div className="pt-32 md:pt-40 lg:pt-44">
-        <div className="bg-gradient-to-b from-primary/5 via-background to-background">
+        <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">
           <div className="px-4 md:px-[6rem] py-12 md:py-16">
             {/* Header */}
             <div className="mb-8 md:mb-12">
-            <h1 className="text-white text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
+            <h1 className="text-white light:text-gray-900 text-[2.25rem] md:text-[3.5rem] font-[700] uppercase mb-3 md:mb-4 leading-tight">
               Blog
             </h1>
-            <p className="text-customGrayAlt text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
+            <p className="text-customGrayAlt light:text-gray-600 text-[0.938rem] md:text-[1.25rem] max-w-3xl leading-relaxed">
               Photography tips, behind-the-scenes stories, and creative insights
             </p>
           </div>
@@ -43,14 +46,17 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group glass glass-hover glass-lift backdrop-blur-xl rounded-2xl overflow-hidden hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/20"
+                className="group glass glass-hover glass-lift light:bg-gray-50 light:border-gray-200 backdrop-blur-xl rounded-2xl overflow-hidden hover:border-primary shadow-xl hover:shadow-2xl hover:shadow-primary/20"
               >
                 {/* Image */}
-                <div className="aspect-[16/9] overflow-hidden bg-superGray">
-                  <img
+                <div className="aspect-[16/9] overflow-hidden bg-superGray light:bg-gray-100 relative">
+                  <Image
                     src={post.imageUrl}
                     alt={post.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    quality={85}
                   />
                 </div>
 
@@ -60,15 +66,15 @@ export default function BlogPage() {
                     <span className="text-primary text-[0.75rem] md:text-[0.875rem] font-[600] uppercase tracking-wider">
                       {post.category}
                     </span>
-                    <span className="text-customGrayAlt text-[0.75rem] md:text-[0.875rem]">•</span>
-                    <span className="text-customGrayAlt text-[0.75rem] md:text-[0.875rem]">{post.date}</span>
+                    <span className="text-customGrayAlt light:text-gray-400 text-[0.75rem] md:text-[0.875rem]">•</span>
+                    <span className="text-customGrayAlt light:text-gray-500 text-[0.75rem] md:text-[0.875rem]">{post.date}</span>
                   </div>
 
-                  <h2 className="text-white text-[1.25rem] md:text-[1.5rem] font-[600] mb-2 md:mb-3 group-hover:text-primary transition-colors leading-tight">
+                  <h2 className="text-white light:text-gray-900 text-[1.25rem] md:text-[1.5rem] font-[600] mb-2 md:mb-3 group-hover:text-primary transition-colors leading-tight">
                     {post.title}
                   </h2>
 
-                  <p className="text-customGrayAlt2 text-[0.875rem] md:text-[1rem] leading-relaxed mb-3 md:mb-4">
+                  <p className="text-customGrayAlt2 light:text-gray-600 text-[0.875rem] md:text-[1rem] leading-relaxed mb-3 md:mb-4">
                     {post.excerpt}
                   </p>
 

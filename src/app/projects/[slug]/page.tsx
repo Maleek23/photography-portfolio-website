@@ -2,6 +2,7 @@
 
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
+import GrainOverlay from "@/components/common/GrainOverlay";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { getProject, getAllProjects } from "@/lib/projectData";
 import { notFound } from "next/navigation";
@@ -30,6 +31,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <main className="bg-background light:bg-white">
+      <GrainOverlay />
       <NavBar />
       <div className="pt-32 md:pt-40 lg:pt-44">
         <div className="bg-gradient-to-b from-primary/5 light:from-primary/2 via-background light:via-white to-background light:to-white">

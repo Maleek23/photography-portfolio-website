@@ -3,6 +3,7 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
+import { PORTFOLIO_EMAIL } from "@/lib/constant";
 import { useState } from "react";
 
 export default function ContactPage() {
@@ -148,7 +149,7 @@ export default function ContactPage() {
                   )}
                   {status === "error" && (
                     <p className="text-red-500 text-[0.875rem] text-center">
-                      ✗ Something went wrong. Please email me directly at leekshotit@gmail.com
+                      ✗ Something went wrong. Please email me directly at {PORTFOLIO_EMAIL}
                     </p>
                   )}
                 </form>
@@ -157,7 +158,7 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-white text-[1.5rem] font-[600] uppercase mb-4">
+                  <h3 className="text-white light:text-gray-900 text-[1.5rem] font-[600] uppercase mb-4">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
@@ -168,8 +169,8 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-customGrayAlt text-[0.875rem] mb-1">Email</p>
-                        <a href="mailto:leekshotit@gmail.com" className="text-white hover:text-primary transition-colors">
-                          leekshotit@gmail.com
+                        <a href={`mailto:${PORTFOLIO_EMAIL}`} className="text-white light:text-gray-900 hover:text-primary transition-colors">
+                          {PORTFOLIO_EMAIL}
                         </a>
                       </div>
                     </div>
@@ -181,14 +182,14 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-customGrayAlt text-[0.875rem] mb-1">Location</p>
-                        <p className="text-white">Texas, USA</p>
+                        <p className="text-white light:text-gray-900">Texas, USA</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-white text-[1.5rem] font-[600] uppercase mb-4">
+                  <h3 className="text-white light:text-gray-900 text-[1.5rem] font-[600] uppercase mb-4">
                     Follow Me
                   </h3>
                   <div className="flex gap-4">
@@ -217,11 +218,11 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-lightDark border border-superGray rounded-lg p-6">
-                  <h3 className="text-white text-[1.125rem] font-[600] mb-3">
+                <div className="bg-lightDark light:bg-gray-50 border border-superGray light:border-gray-200 rounded-lg p-6">
+                  <h3 className="text-white light:text-gray-900 text-[1.125rem] font-[600] mb-3">
                     Response Time
                   </h3>
-                  <p className="text-customGrayAlt text-[0.875rem] leading-relaxed">
+                  <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem] leading-relaxed">
                     I typically respond within 24 hours. For urgent inquiries, please email me directly.
                   </p>
                 </div>
