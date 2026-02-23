@@ -51,7 +51,7 @@ export async function POST(request: Request) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: 'Leekshotit Portfolio <onboarding@resend.dev>',
+          from: `Leekshotit Portfolio <${process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'}>`,
           to: ['leekshotit@gmail.com'],
           replyTo: email.trim(),
           subject: `New Contact Form: ${safeName}`,
