@@ -50,10 +50,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  // TODO: Add real Google Search Console verification code
-  // verification: {
-  //   google: 'your-google-verification-code-here',
-  // },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || '',
+  },
 }
 
 const manrope = Manrope({ 
