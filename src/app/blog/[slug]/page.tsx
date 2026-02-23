@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
@@ -5,6 +6,25 @@ import Image from "next/image";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blogData";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const post = getBlogPost(params.slug);
+
+  if (!post) {
+    return { title: "Blog | Leekshotit Photography" };
+  }
+
+  return {
+    title: `${post.title} | Leekshotit Photography`,
+    description: post.excerpt,
+    openGraph: {
+      title: `${post.title} | Leekshotit Photography`,
+      description: post.excerpt,
+      images: [{ url: post.imageUrl }],
+      type: "article",
+    },
+  };
+}
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = getBlogPost(params.slug);
