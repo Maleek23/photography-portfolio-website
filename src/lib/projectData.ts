@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   title: string;
   subtitle: string;
+  editorial?: string;
   client: string;
   date: string;
   category: string;
@@ -23,6 +24,7 @@ export const projects: Project[] = [
     slug: "houston-afro-plex",
     title: "Houston Afro-Plex",
     subtitle: "Celebrating culture and identity",
+    editorial: "A studio session turned cultural moment — 12 creatives, one vision, zero scripts.",
     client: "Community",
     date: "2022",
     category: "Creative Projects",
@@ -62,6 +64,7 @@ export const projects: Project[] = [
     slug: "man-of-the-year",
     title: "Man of the Year",
     subtitle: "Bold portraits celebrating individuality",
+    editorial: "What happens when confidence meets the lens — a portrait series that speaks before you do.",
     client: "Private Client",
     date: "2024",
     category: "Portraits",
@@ -89,6 +92,7 @@ export const projects: Project[] = [
     slug: "lottery-kid",
     title: "Lottery Kid",
     subtitle: "Dreams and determination",
+    editorial: "Chasing a dream with nothing but a camera and a plan — the story behind the shot.",
     client: "Self-Portrait",
     date: "2024",
     category: "Creative Projects",
