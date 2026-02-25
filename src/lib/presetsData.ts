@@ -35,7 +35,7 @@ export const presets: Preset[] = [
     sampleImages: [
       "/images/portraits/portrait-3.jpg",
       "/images/portraits/portrait-4.jpg",
-      "/images/graduation/grad-1.jpg",
+      "/images/graduation/graduation-1.jpg",
     ],
   },
   {
@@ -85,7 +85,7 @@ export const presets: Preset[] = [
     afterImage: "/images/hero_small.png",
     sampleImages: [
       "/images/portraits/portrait-1.jpg",
-      "/images/graduation/grad-1.jpg",
+      "/images/graduation/graduation-1.jpg",
       "/images/creative/creative-1.jpg",
     ],
   },
