@@ -11,12 +11,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
-    outputFileTracingExcludes: {
-      '*': [
-        'node_modules/sharp/**',
-        'node_modules/@img/**',
-      ],
-    },
   },
 }
 
