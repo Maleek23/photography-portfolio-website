@@ -35,11 +35,7 @@ function TestimonialSection() {
         </div>
       </section>
 
-      <section className="flex justify-between gap-[1.25rem]">
-        <div>
-          <Header title="Total Reviews" description="323" isSmall />
-        </div>
-      </section>
+      {/* TODO: Add real review count once you have verified testimonials */}
       <Separator className="bg-lightDark my-8 mb-[2.5rem] md:mb-[5rem]" />
       <div className="grid grid-cols-1 xl:grid-cols-3 justify-between gap-[3.12rem] xl:flex-row mb-8">
         {testimonialCardData.map((review) => (

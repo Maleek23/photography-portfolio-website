@@ -51,7 +51,7 @@ export default function VideographySection() {
           preload="auto"
           poster="/videos/showreel-horizontal-poster.jpg"
         >
-          <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
+          <source src="/videos/showreel.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         

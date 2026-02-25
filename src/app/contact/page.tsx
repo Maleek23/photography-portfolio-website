@@ -3,7 +3,10 @@
 import NavBar from "@/components/common/NavBar";
 import FooterSection from "@/components/sections/FooterSection";
 import GrainOverlay from "@/components/common/GrainOverlay";
-import { useState } from "react";
+import { PORTFOLIO_EMAIL, SOCIAL_INSTAGRAM, SOCIAL_TIKTOK } from "@/lib/constant";
+import { useState, useRef } from "react";
+
+const RATE_LIMIT_MS = 60_000; // 1 minute between submissions
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -11,12 +14,23 @@ export default function ContactPage() {
     email: "",
     phone: "",
     message: "",
+    website: "",
   });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error" | "rate_limited">("idle");
+  const lastSubmitTime = useRef<number>(0);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const now = Date.now();
+    if (now - lastSubmitTime.current < RATE_LIMIT_MS) {
+      setStatus("rate_limited");
+      setTimeout(() => setStatus("idle"), 3000);
+      return;
+    }
+
     setStatus("sending");
+    lastSubmitTime.current = now;
 
     try {
       const response = await fetch("/api/contact", {
@@ -27,7 +41,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         setStatus("success");
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "", website: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
@@ -69,6 +83,19 @@ export default function ContactPage() {
               {/* Contact Form */}
               <div>
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot field - hidden from humans, bots fill it */}
+                  <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, overflow: "hidden" }}>
+                    <label htmlFor="website">Website</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleChange}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
                   <div>
                     <label htmlFor="name" className="block text-white light:text-gray-900 text-[0.875rem] font-[500] mb-2">
                       Name *
@@ -148,7 +175,12 @@ export default function ContactPage() {
                   )}
                   {status === "error" && (
                     <p className="text-red-500 text-[0.875rem] text-center">
-                      ✗ Something went wrong. Please email me directly at leekshotit@gmail.com
+                      ✗ Something went wrong. Please email me directly at {PORTFOLIO_EMAIL}
+                    </p>
+                  )}
+                  {status === "rate_limited" && (
+                    <p className="text-yellow-500 text-[0.875rem] text-center">
+                      Please wait a moment before sending another message.
                     </p>
                   )}
                 </form>
@@ -157,7 +189,7 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-white text-[1.5rem] font-[600] uppercase mb-4">
+                  <h3 className="text-white light:text-gray-900 text-[1.5rem] font-[600] uppercase mb-4">
                     Contact Information
                   </h3>
                   <div className="space-y-4">
@@ -168,8 +200,8 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-customGrayAlt text-[0.875rem] mb-1">Email</p>
-                        <a href="mailto:leekshotit@gmail.com" className="text-white hover:text-primary transition-colors">
-                          leekshotit@gmail.com
+                        <a href={`mailto:${PORTFOLIO_EMAIL}`} className="text-white light:text-gray-900 hover:text-primary transition-colors">
+                          {PORTFOLIO_EMAIL}
                         </a>
                       </div>
                     </div>
@@ -181,19 +213,19 @@ export default function ContactPage() {
                       </svg>
                       <div>
                         <p className="text-customGrayAlt text-[0.875rem] mb-1">Location</p>
-                        <p className="text-white">Texas, USA</p>
+                        <p className="text-white light:text-gray-900">Texas, USA</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="text-white text-[1.5rem] font-[600] uppercase mb-4">
+                  <h3 className="text-white light:text-gray-900 text-[1.5rem] font-[600] uppercase mb-4">
                     Follow Me
                   </h3>
                   <div className="flex gap-4">
                     <a
-                      href="https://instagram.com/leekshotitt"
+                      href={SOCIAL_INSTAGRAM}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-lightDark border border-superGray rounded-lg flex items-center justify-center hover:border-primary transition-colors"
@@ -205,7 +237,7 @@ export default function ContactPage() {
                       </svg>
                     </a>
                     <a
-                      href="https://tiktok.com/@leekshotit"
+                      href={SOCIAL_TIKTOK}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 bg-lightDark border border-superGray rounded-lg flex items-center justify-center hover:border-primary transition-colors"
@@ -217,11 +249,11 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className="bg-lightDark border border-superGray rounded-lg p-6">
-                  <h3 className="text-white text-[1.125rem] font-[600] mb-3">
+                <div className="bg-lightDark light:bg-gray-50 border border-superGray light:border-gray-200 rounded-lg p-6">
+                  <h3 className="text-white light:text-gray-900 text-[1.125rem] font-[600] mb-3">
                     Response Time
                   </h3>
-                  <p className="text-customGrayAlt text-[0.875rem] leading-relaxed">
+                  <p className="text-customGrayAlt light:text-gray-600 text-[0.875rem] leading-relaxed">
                     I typically respond within 24 hours. For urgent inquiries, please email me directly.
                   </p>
                 </div>

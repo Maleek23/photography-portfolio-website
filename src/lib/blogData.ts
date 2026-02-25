@@ -221,6 +221,180 @@ What I took away from this project:
 This project reminded me why I fell in love with photography. It's not just about technical skills—it's about storytelling, vision, and artistic expression.
     `,
   },
+  {
+    slug: "how-to-prepare-for-your-portrait-session",
+    title: "How to Prepare for Your Portrait Session: A Client's Guide",
+    excerpt: "Everything you need to know before your portrait session — from outfit choices to mindset tips — so you show up confident and camera-ready.",
+    date: "November 5, 2025",
+    category: "Client Guide",
+    imageUrl: "/images/portraits/portrait-1.jpg",
+    content: `
+Booking a portrait session is exciting, but showing up prepared makes all the difference. Here's my guide to help you get the most out of your session.
+
+## What to Wear
+
+Your outfit sets the tone for the entire shoot:
+- **Solid colors** photograph better than busy patterns or logos
+- **Layering** adds visual interest — jackets, accessories, and textures work well
+- **Bring 2-3 outfits** for variety (even if we don't use them all)
+- **Avoid neon colors** — they can reflect onto your skin
+- **Iron or steam** your clothes beforehand to avoid wrinkles in close-up shots
+
+## Grooming Tips
+
+Small details make a big difference on camera:
+- Get haircuts or touch-ups 3-5 days before (not the day of)
+- Keep nails clean and groomed if hands will be in the shot
+- Moisturize the night before for healthy, glowing skin
+- Guys: trim or shape facial hair the morning of
+
+## On the Day
+
+A few things to remember:
+- **Get a good night's sleep** — it shows on camera
+- **Stay hydrated** — it genuinely improves how your skin looks
+- **Eat before the session** so your energy stays up
+- **Arrive on time** so we don't rush through setups
+
+## Mindset Matters
+
+The biggest thing I tell every client: **you don't need to know how to pose.** That's my job. All you need to bring is yourself.
+
+If you're nervous, that's completely normal. Most people loosen up within the first 5-10 minutes once the music is playing and we start shooting. I'll guide you through every pose and angle.
+
+## What to Expect During the Session
+
+Here's the typical flow:
+1. We'll chat briefly about the vibe you're going for
+2. Start with natural, relaxed poses to warm up
+3. Move through outfit changes and location shifts
+4. I'll show you some shots on the back of the camera to build your confidence
+5. We'll wrap up with any specific shots you had in mind
+
+## After the Session
+
+Expect your edited gallery within 7-14 days depending on your package. I'll send a private online gallery where you can download, share, and even order prints.
+
+The most important thing? Have fun with it. The best photos happen when you're genuinely enjoying yourself.
+    `,
+  },
+  {
+    slug: "why-every-graduate-needs-professional-photos",
+    title: "Why Every Graduate Needs Professional Photos (Not Just iPhone Pics)",
+    excerpt: "Your graduation is a once-in-a-lifetime milestone. Here's why investing in professional photography is worth it.",
+    date: "November 18, 2025",
+    category: "Graduation",
+    imageUrl: "/images/graduation/graduation-1.jpg",
+    content: `
+You've spent years studying, grinding, and pushing through. Graduation day comes and goes in a blur. Professional photos are the one thing that makes the moment last forever.
+
+## Phone Photos vs. Professional Photos
+
+Let's be honest — your friend can take a decent iPhone photo. But there's a reason professionals exist:
+- **Lighting**: We know how to use natural and artificial light to make you look your best
+- **Composition**: Every frame is intentional — no awkward cropping or cluttered backgrounds
+- **Editing**: Professional color grading and retouching that iPhone filters can't replicate
+- **Direction**: We'll guide you into poses that look natural and flattering
+
+## It's About More Than Just a Photo
+
+A graduation session is an experience. It's a chance to:
+- Celebrate YOUR achievement on YOUR terms
+- Express your personality beyond the cap and gown
+- Create images your family will treasure for decades
+- Have content for LinkedIn, social media, and your personal brand
+
+## When to Book
+
+Timing matters more than you think:
+- **Before graduation day** is ideal — you'll have more time, better energy, and we can pick the perfect golden hour slot
+- **Spring graduates**: Book in March or April to beat the rush
+- **Fall graduates**: September through early November gives us the best light and weather
+- Graduation day itself is hectic — you'll be rushing between ceremonies, family, and friends
+
+## What's Included
+
+My graduation packages include:
+- 1-2 hour session with multiple outfit changes
+- On-campus and off-campus locations
+- Professional editing and color grading
+- Digital gallery with download access
+- Quick turnaround (7-14 business days)
+
+## Real Talk
+
+I've photographed hundreds of graduates, and the one thing they all say afterward is: "I'm so glad I did this." Nobody regrets investing in professional photos of one of the biggest milestones of their life.
+
+Your degree took years of work. Your photos should reflect that same level of quality.
+    `,
+  },
+  {
+    slug: "choosing-the-right-photographer-in-houston",
+    title: "How to Choose the Right Photographer in Houston (What to Look For)",
+    excerpt: "With so many photographers in Houston, here's how to find the one that's actually right for your style, budget, and vision.",
+    date: "December 2, 2025",
+    category: "Photography Tips",
+    imageUrl: "/images/creative/creative-1.jpg",
+    content: `
+Houston has no shortage of photographers. A quick Google search returns thousands of results. So how do you pick the right one? Here's what actually matters.
+
+## 1. Look at Their Portfolio — Not Just Their Best 5 Photos
+
+Every photographer can curate 5 amazing shots. What you want to see is consistency:
+- Do their images have a recognizable style?
+- Is the quality consistent across different sessions?
+- Do the subjects look natural and comfortable?
+- Does their editing style match what you're looking for?
+
+## 2. Style Matters More Than Equipment
+
+A photographer with a $500 camera and great vision will outshoot someone with a $5,000 setup and no creativity. Focus on:
+- **Moody vs. bright**: Do you want dramatic, cinematic tones or light and airy vibes?
+- **Posed vs. candid**: Some photographers excel at directed shoots, others at documentary-style
+- **Color grading**: Their editing style should match the look you want
+
+## 3. Check Reviews and Communication
+
+Red flags to watch for:
+- Slow or vague responses to your initial inquiry
+- No clear pricing or packages listed
+- Pushy upselling before you've even booked
+- No contract or terms of service
+
+Green flags:
+- Quick, friendly communication
+- Transparent pricing
+- A clear process from booking to delivery
+- Genuine interest in your vision
+
+## 4. Understand What You're Paying For
+
+Photography pricing varies wildly in Houston. Here's what affects cost:
+- **Experience level**: Established photographers charge more because their work is proven
+- **Session length**: Longer sessions = more outfit changes, locations, and final images
+- **Editing quality**: Professional retouching takes hours per image
+- **Deliverables**: Number of edited photos, turnaround time, print options
+
+## 5. Meet or Video Call Before Booking
+
+Chemistry matters. You'll be spending 1-2 hours together, and the best photos come when you're comfortable with your photographer. A quick call helps you gauge:
+- Do they listen to your ideas?
+- Are they flexible or rigid?
+- Do they seem genuinely excited about your session?
+
+## 6. Location Knowledge
+
+A Houston-based photographer who knows the city is invaluable:
+- Best golden hour spots (Hermann Park, Buffalo Bayou, UH campus)
+- Hidden gems most people don't know about
+- How to work with Houston's unpredictable weather
+- Permit requirements for certain locations
+
+## The Bottom Line
+
+The "best" photographer isn't the most expensive one or the one with the most followers. It's the one whose style matches your vision, whose communication makes you feel valued, and whose work consistently delivers quality. Trust your gut — if their portfolio makes you excited, that's your answer.
+    `,
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {

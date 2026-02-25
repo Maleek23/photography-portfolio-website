@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { rateLimit } from "@/lib/rateLimit";
 
 function escapeHtml(str: string): string {
   return str
@@ -12,8 +13,18 @@ function escapeHtml(str: string): string {
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for") ?? "unknown";
+    if (!rateLimit(ip)) {
+      return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+    }
+
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, website } = body;
+
+    // Honeypot check - if filled, silently accept (bots fill hidden fields)
+    if (website) {
+      return NextResponse.json({ success: true });
+    }
 
     // Input validation
     if (!name || typeof name !== "string" || name.trim().length === 0 || name.length > 200) {
@@ -40,7 +51,7 @@ export async function POST(request: Request) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
-          from: 'Leekshotit Portfolio <onboarding@resend.dev>',
+          from: `Leekshotit Portfolio <${process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'}>`,
           to: ['leekshotit@gmail.com'],
           replyTo: email.trim(),
           subject: `New Contact Form: ${safeName}`,

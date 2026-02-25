@@ -33,6 +33,9 @@ function FooterSection() {
             <Link href="/video" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
               Video
             </Link>
+            <Link href="/presets" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
+              Presets
+            </Link>
             <Link href="/services" className="text-white/60 light:text-gray-500 hover:text-white light:hover:text-gray-900 transition-colors">
               Booking
             </Link>

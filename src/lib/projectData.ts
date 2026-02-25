@@ -2,6 +2,7 @@ export interface Project {
   slug: string;
   title: string;
   subtitle: string;
+  editorial?: string;
   client: string;
   date: string;
   category: string;
@@ -23,11 +24,12 @@ export const projects: Project[] = [
     slug: "houston-afro-plex",
     title: "Houston Afro-Plex",
     subtitle: "Celebrating culture and identity",
+    editorial: "A studio session turned cultural moment — 12 creatives, one vision, zero scripts.",
     client: "Community",
     date: "2022",
     category: "Creative Projects",
     coverImage: "/images/projects/houston-afro-plex/afroplex-1.jpg",
-    videoUrl: "",
+
     description: "A vibrant portrait series celebrating culture and community in Houston.",
     story: [
       "This studio portrait session captured the energy and spirit of Houston's diverse cultural scene.",
@@ -62,11 +64,12 @@ export const projects: Project[] = [
     slug: "man-of-the-year",
     title: "Man of the Year",
     subtitle: "Bold portraits celebrating individuality",
+    editorial: "What happens when confidence meets the lens — a portrait series that speaks before you do.",
     client: "Private Client",
     date: "2024",
     category: "Portraits",
     coverImage: "/images/portraits/portrait-1.jpg",
-    videoUrl: "",
+
     description: "A portrait series capturing confidence, style, and personal expression.",
     story: [
       "This series is about showcasing personality and confidence through powerful imagery.",
@@ -89,11 +92,12 @@ export const projects: Project[] = [
     slug: "lottery-kid",
     title: "Lottery Kid",
     subtitle: "Dreams and determination",
+    editorial: "Chasing a dream with nothing but a camera and a plan — the story behind the shot.",
     client: "Self-Portrait",
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/projects/lottery-kid-cover.png",
-    videoUrl: "",
+
     description: "A creative project exploring themes of ambition, dreams, and the journey to success.",
     story: [
       "This project tells a visual story of chasing dreams and beating the odds.",
@@ -123,7 +127,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/creative/creative-3.jpg",
-    videoUrl: "",
+
     description: "A visual exploration of movement, travel, and the excitement of new beginnings.",
     story: [
       "This project captures the anticipation and energy of embarking on new adventures.",
@@ -150,7 +154,7 @@ export const projects: Project[] = [
     date: "2024",
     category: "Creative Projects",
     coverImage: "/images/creative/creative-1.jpg",
-    videoUrl: "",
+
     description: "A bold fashion campaign for HIGHSTATUS clothing brand.",
     story: [
       "This campaign captured the essence of the HIGHSTATUS brand through striking visuals and bold styling.",

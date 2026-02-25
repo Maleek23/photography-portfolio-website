@@ -15,6 +15,7 @@ function NavBar() {
   const navLinks = [
     { href: "/home", label: "Home" },
     { href: "/projects", label: "Projects" },
+    { href: "/presets", label: "Presets" },
     { href: "/services", label: "Booking" },
     { href: "/contact", label: "Inquire" },
     { href: "/about", label: "About" },

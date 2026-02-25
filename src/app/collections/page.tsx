@@ -43,10 +43,10 @@ export default function CollectionsPage() {
       <NavBar />
       <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-16 md:pb-24">
         <div className="mb-10 md:mb-12">
-          <p className="text-primary text-xs font-medium uppercase tracking-widest mb-3">
+          <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-widest mb-3">
             Portfolio
           </p>
-          <h1 className="text-white light:text-gray-900 text-2xl md:text-3xl font-medium">
+          <h1 className="text-white light:text-gray-900 text-[2rem] md:text-[2.75rem] font-[700] uppercase tracking-tight leading-tight">
             Collections
           </h1>
         </div>

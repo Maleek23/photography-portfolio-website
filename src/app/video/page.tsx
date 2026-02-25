@@ -9,8 +9,6 @@ import { useRef } from "react";
 export default function VideoPage() {
   const videoRef1 = useRef<HTMLVideoElement>(null);
   const videoRef2 = useRef<HTMLVideoElement>(null);
-  const videoRef3 = useRef<HTMLVideoElement>(null);
-  const videoRef4 = useRef<HTMLVideoElement>(null);
 
   const handleMouseEnter = (videoRef: React.RefObject<HTMLVideoElement>) => {
     if (videoRef.current) {
@@ -28,9 +26,9 @@ export default function VideoPage() {
     <main className="bg-background light:bg-white min-h-screen">
       <GrainOverlay />
       <NavBar />
-      
+
       <div className="px-4 md:px-[6rem] pt-32 md:pt-40 lg:pt-44 pb-12 md:pb-16">
-        
+
         <div className="mb-10 md:mb-12">
           <p className="text-primary text-[0.813rem] font-[600] uppercase tracking-widest mb-2">
             Motion
@@ -43,20 +41,20 @@ export default function VideoPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-end">
           <div className="md:col-span-1">
-            <div 
+            <div
               className="relative aspect-[9/16] bg-black overflow-hidden cursor-pointer group"
-              onMouseEnter={() => handleMouseEnter(videoRef2)}
-              onMouseLeave={() => handleMouseLeave(videoRef2)}
+              onMouseEnter={() => handleMouseEnter(videoRef1)}
+              onMouseLeave={() => handleMouseLeave(videoRef1)}
             >
               <video
-                ref={videoRef2}
+                ref={videoRef1}
                 loop
                 muted
                 playsInline
                 className="w-full h-full object-cover"
-                preload="auto"
+                preload="none"
                 poster="/videos/showreel-poster.jpg"
               >
                 <source src="/videos/showreel.mp4" type="video/mp4" />
@@ -70,24 +68,24 @@ export default function VideoPage() {
                 </div>
               </div>
             </div>
-            <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Objects in Motion</p>
+            <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Showreel</p>
           </div>
-          <div className="md:col-span-3">
-            <div 
+          <div className="md:col-span-2">
+            <div
               className="relative aspect-video bg-black overflow-hidden cursor-pointer group"
-              onMouseEnter={() => handleMouseEnter(videoRef1)}
-              onMouseLeave={() => handleMouseLeave(videoRef1)}
+              onMouseEnter={() => handleMouseEnter(videoRef2)}
+              onMouseLeave={() => handleMouseLeave(videoRef2)}
             >
               <video
-                ref={videoRef1}
+                ref={videoRef2}
                 loop
                 muted
                 playsInline
                 className="w-full h-full object-cover"
-                preload="auto"
-                poster="/videos/showreel-horizontal-poster.jpg"
+                preload="none"
+                poster="/videos/cinematic-poster.jpg"
               >
-                <source src="/videos/showreel-horizontal.mp4" type="video/mp4" />
+                <source src="/videos/cinematic.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
               <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
@@ -98,66 +96,8 @@ export default function VideoPage() {
                 </div>
               </div>
             </div>
-            <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Nike Inspired Ad</p>
+            <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Cinematic Reel</p>
           </div>
-        </div>
-
-        <div className="mb-8">
-          <div 
-            className="relative aspect-video bg-black overflow-hidden cursor-pointer group max-w-4xl mx-auto"
-            onMouseEnter={() => handleMouseEnter(videoRef4)}
-            onMouseLeave={() => handleMouseLeave(videoRef4)}
-          >
-            <video
-              ref={videoRef4}
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              preload="auto"
-            >
-              <source src="/videos/shoot.mov" type="video/quicktime" />
-              <source src="/videos/shoot.mov" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:opacity-0 transition-opacity">
-                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Behind The Scenes</p>
-        </div>
-
-        <div className="mb-12 md:mb-16">
-          <div 
-            className="relative aspect-video bg-black overflow-hidden cursor-pointer group max-w-4xl mx-auto"
-            onMouseEnter={() => handleMouseEnter(videoRef3)}
-            onMouseLeave={() => handleMouseLeave(videoRef3)}
-          >
-            <video
-              ref={videoRef3}
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              preload="auto"
-              poster="/videos/cinematic-poster.jpg"
-            >
-              <source src="/videos/cinematic.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-transparent transition-all pointer-events-none">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:opacity-0 transition-opacity">
-                <svg className="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </div>
-            </div>
-          </div>
-          <p className="text-center text-customGrayAlt light:text-gray-500 text-[0.813rem] mt-3 uppercase tracking-wider">Cinematic Reel</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16">
@@ -169,7 +109,7 @@ export default function VideoPage() {
               Multi-camera event filming with professional editing and same-day highlights
             </p>
           </div>
-          
+
           <div className="bg-superGray/50 light:bg-gray-50 p-6 md:p-8 border border-white/5 light:border-gray-200">
             <h3 className="text-white light:text-gray-900 text-[1.25rem] font-[600] uppercase mb-3">
               Music Videos
@@ -178,7 +118,7 @@ export default function VideoPage() {
               Creative direction and cinematography for artists and musicians
             </p>
           </div>
-          
+
           <div className="bg-superGray/50 light:bg-gray-50 p-6 md:p-8 border border-white/5 light:border-gray-200">
             <h3 className="text-white light:text-gray-900 text-[1.25rem] font-[600] uppercase mb-3">
               Short Films
@@ -204,7 +144,7 @@ export default function VideoPage() {
           </Link>
         </div>
       </div>
-      
+
       <FooterSection />
     </main>
   );
