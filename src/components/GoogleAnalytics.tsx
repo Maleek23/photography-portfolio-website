@@ -2,10 +2,10 @@
 
 import Script from 'next/script'
 import { usePathname, useSearchParams } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, Suspense } from 'react'
 import * as gtag from '@/lib/gtag'
 
-export default function GoogleAnalytics() {
+function GoogleAnalyticsPageView() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -17,12 +17,19 @@ export default function GoogleAnalytics() {
     }
   }, [pathname, searchParams])
 
+  return null
+}
+
+export default function GoogleAnalytics() {
   if (!gtag.GA_TRACKING_ID || gtag.GA_TRACKING_ID === '') {
     return null
   }
 
   return (
     <>
+      <Suspense fallback={null}>
+        <GoogleAnalyticsPageView />
+      </Suspense>
       <Script
         strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
